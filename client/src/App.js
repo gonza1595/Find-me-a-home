@@ -1,8 +1,5 @@
-
 function App() {
-  return (
-    <div>Prueba 2</div>
-  )
+  return <div>Prueba Gonza</div>;
 }
 
 export default App;
