@@ -19,6 +19,10 @@ export const mascotasSlice = createSlice({
     }
 })
 
+    //export de acciones para trabajar en componentess
+
 export const { traerMascotas } = mascotasSlice.actions
+
+    //export al store
 
 export default mascotasSlice.reducer
