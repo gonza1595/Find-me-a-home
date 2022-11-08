@@ -19,6 +19,10 @@ export const productosSlice = createSlice({
     }
 })
 
+//export de acciones para trabajar en componentes
+
 export const { traerProductos } = productosSlice.actions
+
+ //export al store
 
 export default productosSlice.reducer

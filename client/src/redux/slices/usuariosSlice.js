@@ -19,6 +19,10 @@ export const usuariosSlice = createSlice({
     }
 })
 
+//export de acciones para trabajar en componentes
+
 export const { traerUsuarios } = usuariosSlice.actions
+
+ //export al store
 
 export default usuariosSlice.reducer
