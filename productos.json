@@ -1,0 +1,96 @@
+{
+    "productos": [
+        {
+            "id": "1",
+            "nombre": "Collar cuero",
+            "descripcion": "Collar de cuero realizado de manera artesanal, forrado con cuero PU. Apliques, hebilla y medialuna metalicas color plata. MEDIDAS LARGO: 30CM, 40CM, 50CM, 60CM, 70CM. MEDIDA ANCHO: 3CM",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/125/556/products/correas-y-collares-tiendanube-151-0ddfb4c1946e5eec0816298187951596-480-0.png",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 2.500
+        },
+        {
+            
+            "id": "2",
+            "nombre": "Pretal",
+            "descripcion": "Pretal color negro. Para perros pequeños o cachorros. Regulable",
+            "imagen": "https://d368r8jqz0fwvm.cloudfront.net/23155-product_lg/pretal-pet.jpg",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 3.500
+        },
+        {
+            "id": "3",
+            "nombre": "Collar",
+            "descripcion": "Collar color negro. Soga doble reforzado para perro Grande 30mm 65cm. Apliques, hebilla y medialuna metalicas color plata",
+            "imagen": "https://leocan.com.ar/wp-content/uploads/2022/05/collar-tibet-nylon-doble-rojo-para-perro-24pg-24-x-1pg-D_NQ_NP_555225-MLM25393127505_022017-F.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 1.500
+        },
+        {
+            "id": "4",
+            "nombre": "Comedero",
+            "descripcion": "Comedero de acero inoxidable. Diametro: 13cm",
+            "imagen": "https://punto-mascota.com.ar/wp-content/uploads/2020/08/comedero-acero-inoxidable-perros.jpg",
+            "stock": 15,
+            "calificacion": "",
+            "precio": 800
+        },
+        {
+            "id": "5",
+            "nombre": "Soga",
+            "descripcion": "Juguete mascota, soga de cuerda 2 nudos 240 mm",
+            "imagen": "https://http2.mlstatic.com/D_NQ_NP_768492-MLA31787987585_082019-O.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 800
+        },
+        {
+            "id": "6",
+            "nombre": "Correa",
+            "descripcion": "Correa de soga trenzada reforzada, para perros grandes. Largo 135mm",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/575/267/products/htb17qibkhsybunjssphq6zgvvxax1-c8fb7ccbf29dd83d2c16043758500882-1024-1024.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 800
+        },
+        {
+            "id": "7",
+            "nombre": "Rascador",
+            "descripcion": "Rascador para gatos. Ancho x Altura: 75 mm x 45 cm",
+            "imagen": "https://static.miscota.com/media/1/photos/products/014277/14277-13155_1_g.png",
+            "stock": 2,
+            "calificacion": "",
+            "precio": 2.800
+        },
+        {
+            "id": "8",
+            "nombre": "Correa y collar",
+            "descripcion": "Correa + Collar Nylon color celeste. Largo: 100cm. Ancho: 1.5cm. Para perros pequeños",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/880/994/products/d_nq_np_950931-mla31229432161_062019-o1-19bf8a445028400ae516225697803741-480-0.jpg",
+            "stock": 2,
+            "calificacion": "",
+            "precio": 2.800
+        },
+        {
+            "id": "9",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Excellent formula, bolsa de 20 Kg para perros adultos. Marca: Purina",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/019/016/products/excellent_adult_700x700_web-7931b62c71a1ae6ed715121879948859-1024-1024.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 8.300
+        },
+        {
+            "id": "10",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Alimento para gato, a base de pescado. Bolsa 1,5kg. Marca: Whiskas",
+            "imagen": "https://plazavea.vteximg.com.br/arquivos/ids/432645-1000-1000/20200762.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2.300
+        }
+
+    ]
+}
