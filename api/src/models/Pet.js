@@ -10,36 +10,36 @@ module.exports = (sequelize) => {
         allowNull: false,
         primaryKey: true
       },
-      name: {
+      nombre: {
         type: DataTypes.STRING,
         allowNull: false,
         
       },
-      description: {
+      descripcion: {
         type: DataTypes.TEXT,
         allowNull: false
       },
-      image: {
+      imagen: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      age: {
+      edad: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      size: {
+      tamaño: {
         type: DataTypes.ENUM("pequeño", "mediano", "grande"),
         allowNull: false
       },
-      race: {
+      raza: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      sex: {
+      sexo: {
         type: DataTypes.ENUM("masculino", "femenino"),
         allowNull: false
       },
-      species: {
+      especie: {
         type: DataTypes.ENUM("perro", "gato"),
         allowNull: false
       }

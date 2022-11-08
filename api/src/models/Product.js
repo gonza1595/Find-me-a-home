@@ -10,16 +10,16 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true
     },
-    name: {
+    nombre: {
       type: DataTypes.STRING,
       allowNull: false,
       
     },
-    description: {
+    descripcion: {
       type: DataType.TEXT,
       allowNull: false
     },
-    image: {
+    imagen: {
       type: DataTypes.TEXT,
       allowNull: false
     },
@@ -27,10 +27,10 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
 
     },
-    rating: {
+    calificacion: {
       type: DataTypes.FLOAT
     },
-    price: {
+    precio: {
       type: DataTypes.FLOAT,
       allowNull: false
     }

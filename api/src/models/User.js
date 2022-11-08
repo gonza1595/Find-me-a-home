@@ -10,29 +10,29 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true
     },
-    name: {
+    nombre: {
       type: DataTypes.STRING,
       allowNull: false,
       
     },
-    password: {
+    contraseña: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
+    correo: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false
     },
-    age: {
+    edad: {
      type: DataTypes.INTEGER,
      allowNull: false
     },
-    address: {
+    direccion: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    range: {
+    rango: {
       type: DataType.ENUM("admin", "usuario", "refugio"),
       defaultValue: "usuario"
     }
