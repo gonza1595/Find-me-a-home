@@ -1,12 +1,14 @@
-import rootReducer from "./reducer";
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import usuarios from "./slices/usuariosSlice";
+import productos from "./slices/productosSlice";
+import mascotas from "./slices/mascotasSlice";
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
-// thunk nos permite trabajar con asincronismo en el front
+export default configureStore({
+  reducer:{
 
-export default store;
+      usuarios: usuarios,
+      productos: productos,
+      mascotas: mascotas,
+
+  }
+})
