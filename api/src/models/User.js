@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     rango: {
-      type: DataType.ENUM("admin", "usuario", "refugio"),
+      type: DataTypes.ENUM("admin", "usuario", "refugio"),
       defaultValue: "usuario"
     }
   });
