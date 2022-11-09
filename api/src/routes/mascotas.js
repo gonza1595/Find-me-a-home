@@ -18,6 +18,7 @@ router.post('/', async (req, res, next) => {
             sexo,
             especie
         })
+        //console.log(nuevaMascota)
         res.status(200).send(nuevaMascota)
     } catch(error) {
         next(error)
