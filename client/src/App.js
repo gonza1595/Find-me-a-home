@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import home from "./componentes/Home/Home.jsx";
+import Form from "./componentes/Formulario/Form.jsx"
 
 
 
@@ -17,6 +18,7 @@ function App() {
        
        
         <Route exact path="/" component = {home} />
+        <Route exact path="/form" component = {Form} />
 
         
         </Switch>
