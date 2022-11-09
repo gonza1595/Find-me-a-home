@@ -7,7 +7,7 @@
             "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/125/556/products/correas-y-collares-tiendanube-151-0ddfb4c1946e5eec0816298187951596-480-0.png",
             "stock": 10,
             "calificacion": "",
-            "precio": 2.500
+            "precio": 2500
         },
         {
             
@@ -17,7 +17,7 @@
             "imagen": "https://d368r8jqz0fwvm.cloudfront.net/23155-product_lg/pretal-pet.jpg",
             "stock": 10,
             "calificacion": "",
-            "precio": 3.500
+            "precio": 3500
         },
         {
             "id": "3",
@@ -26,7 +26,7 @@
             "imagen": "https://leocan.com.ar/wp-content/uploads/2022/05/collar-tibet-nylon-doble-rojo-para-perro-24pg-24-x-1pg-D_NQ_NP_555225-MLM25393127505_022017-F.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 1.500
+            "precio": 1500
         },
         {
             "id": "4",
@@ -62,7 +62,7 @@
             "imagen": "https://static.miscota.com/media/1/photos/products/014277/14277-13155_1_g.png",
             "stock": 2,
             "calificacion": "",
-            "precio": 2.800
+            "precio": 2800
         },
         {
             "id": "8",
@@ -71,7 +71,7 @@
             "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/880/994/products/d_nq_np_950931-mla31229432161_062019-o1-19bf8a445028400ae516225697803741-480-0.jpg",
             "stock": 2,
             "calificacion": "",
-            "precio": 2.800
+            "precio": 2800
         },
         {
             "id": "9",
@@ -80,7 +80,7 @@
             "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/019/016/products/excellent_adult_700x700_web-7931b62c71a1ae6ed715121879948859-1024-1024.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 8.300
+            "precio": 8300
         },
         {
             "id": "10",
@@ -89,7 +89,7 @@
             "imagen": "https://plazavea.vteximg.com.br/arquivos/ids/432645-1000-1000/20200762.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 2.300
+            "precio": 2300
         }
 
     ]
