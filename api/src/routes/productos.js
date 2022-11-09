@@ -32,5 +32,23 @@ router.get("/", async (req, res) => {
 })
 
 
+router.post("/", async (req, res, next) => {
+  const { nombre, descripcion, imagen, stock, calificacion, precio } = req.body;
+
+  try {
+    let nuevoProducto = await Product.create({
+      nombre,
+      descripcion,
+      imagen,
+      stock,
+      calificacion,
+      precio,
+    });
+    res.status(200).send(nuevoProducto);
+  } catch (error) {
+    next(error);
+  }
+});
+
 
 module.exports = router;
