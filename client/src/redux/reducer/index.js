@@ -11,13 +11,16 @@ const initialState = {
 function rootReducer(state=initialState, action){
 
     switch(action.type){
-        case "BUSCAR_POR_NOMBRE":
+        case "BUSCAR_POR_NOMBRE_MASCOTA":
             return {
                 ...state,
-                productos: action.payload,
                 mascotas: action.payload
-
             }
+            case "BUSCAR_POR_NOMBRE_PRODUCTO":
+                return{
+                    ...state,
+                    productos: action.payload
+                }
             default :
             return state;    
     }
