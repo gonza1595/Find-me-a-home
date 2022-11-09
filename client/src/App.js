@@ -1,19 +1,34 @@
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Detalle from "./componentes/DetalleMascotas/Detalle";
-import DetalleRefugio from "./componentes/DetalleRefugio/DetalleRefugio";
+import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
+import home from "./componentes/Home/Home.jsx";
+import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
+
+
 
 function App() {
+
+
   return (
-    <BrowserRouter>
-    <div className="App">
-      <Switch>
-      <Route exact path='/mascotas/:id' component= {Detalle}/>
+  
+<BrowserRouter>
+
+  <div className="app">
+
+        <Switch>
+       
+       
+        <Route exact path="/" component = {home} />
+        <Route exact path='/mascotas/:id' component= {Detalle}/>
       <Route exact path='/adopta' component= {DetalleRefugio}/>
 
-      </Switch>
-    </div>
-    </BrowserRouter>
-  );
+        
+        </Switch>
+
+  </div>
+
+  </BrowserRouter>
+  )
 }
 
 export default App;

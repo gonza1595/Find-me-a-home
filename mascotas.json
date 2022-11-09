@@ -109,6 +109,171 @@
             "raza": "Mestizo",
             "sexo": "masculino",
             "especie": "perro"
+        },
+        {
+            "id": "11",
+            "nombre": "Balto",
+            "descripcion": "Es de la raza de perro más pequeña del mundo. Este perrito suele estar muy apegado a su amo y puede llegar a sentirse celoso si no se le presta atención.",
+            "edad": 5,
+            "imagen": "https://www.hogarmania.com/archivos/202011/razas-perros-pequenos-1-chihuahua-XxXx80.jpg",
+            "tamaño": "pequeño",
+            "raza": "Chihuahua",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "12",
+            "nombre": "Golfo",
+            "descripcion": "Macho adulto muy cariñoso.",
+            "edad": 6,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Birlingweb.jpg",
+            "tamaño": "grande",
+            "raza": "Galgo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "13",
+            "nombre": "Akari",
+            "descripcion": "Hembra adulta muy timida.",
+            "edad": 6,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Argy.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+         {
+            "id": "14",
+            "nombre": "Alejandro",
+            "descripcion": "Cachorro macho, jugueton.",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Beppoweb.jpg",
+            "tamaño": "grande",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "15",
+            "nombre": "Seiya",
+            "descripcion": "Hembra adulta, timida.",
+            "edad": 5,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Akiraweb.jpg",
+            "tamaño": "grande",
+            "raza": "Doberman",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+        {
+            "id": "16",
+            "nombre": "Izan",
+            "descripcion": "Macho adulto, muy sociable.",
+            "edad": 7,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Izanweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "17",
+            "nombre": "Ken",
+            "descripcion": "Macho adulto, muy cariñoso.",
+            "edad": 3,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Colemanweb.jpg",
+            "tamaño": "grande",
+            "raza": "Galgo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "18",
+            "nombre": "Troya",
+            "descripcion": "Cachorra juguetona.",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Troyaweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "gato"
+        },
+        {
+            "id": "19",
+            "nombre": "Jacobo",
+            "descripcion": "Macho adulto, muy cariñoso.",
+            "edad": 6,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Jacoboweb.jpg",
+            "tamaño": "grande",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "gato"
+        },
+        {
+            "id": "20",
+            "nombre": "Perla",
+            "descripcion": "Cachorra juguetona.",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Micaweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "gato"
+        },
+        {
+            "id": "21",
+            "nombre": "Milky",
+            "descripcion": "Cariñosa. Cachorra",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Milkyweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "gato"
+        },
+         {
+            "id": "22",
+            "nombre": "Becca",
+            "descripcion": "Cachorra, timida.",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Beccaweb.jpg",
+            "tamaño": "grande",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+        {
+            "id": "23",
+            "nombre": "Ommo",
+            "descripcion": "Cachorro cariñoso.",
+            "edad": 1,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Ommoweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "24",
+            "nombre": "Choko",
+            "descripcion": "Adulto dominante.",
+            "edad": 4,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Chokoweb_1.jpg",
+            "tamaño": "grande",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "25",
+            "nombre": "Tata",
+            "descripcion": "Adulto timida.",
+            "edad": 5,
+            "imagen": "https://elrefugio.org/contenido/animales/thumbsFicha/El-Refugio-Tatankaweb.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
         }
     ]
 }
