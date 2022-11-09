@@ -30,3 +30,10 @@ export function buscarPorNombreProducto(nombre){ //PRODUCTOS
         }
     }
 }
+
+export function formularioIniciarSesion(payload){
+    return async function(){
+        let json = await axios.post('http://localhost:3001/', payload);
+        return json;
+    }
+}
