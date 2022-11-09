@@ -38,6 +38,30 @@ const getMascotas = async () => {
   }
 };
 
+
+const filtroProductos = (array, filtro, orden) => {
+   if(filtro === "precio"){
+    if(orden === "ASC"){
+      array.sort((a, b ) => a.precio - b.precio );
+      return array;
+   }else if(orden === "DESC"){
+      array.sort((a, b) => b.precio - a.precio );
+      return array;
+   };
+    
+   }else if(filtro === "calificacion"){
+    if(orden === "ASC"){
+      array.sort((a, b ) => a.calificacion - b.calificacion );
+      return array;
+   }else if(orden === "DESC"){
+      array.sort((a, b) => b.calificacion - a.calificacion );
+      return array;
+   };
+   }else{
+      return array;
+   };
+};
 module.exports = {
   getMascotas,
+  filtroProductos
 };
