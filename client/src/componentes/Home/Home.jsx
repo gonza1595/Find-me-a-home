@@ -1,24 +1,25 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Home.css"
+import img from "../../assets/img/img1.png"
 
 export default function home (){
 
     return(
 
 
-<div class="parent">
+<div className="parent">
 
-<div class="div1">
+<div className="div1">
 
 <NavBar/>
 
 </div>
 
 
-<div class="div2"> La felicidad no se compra, se adopta. </div>
-<div class="div3"> <img src=""/> img </div>
-    <div class="div4">
+<div className="div2"> La felicidad no se compra, se adopta. </div>
+<div className="div3"> <img src={img} alt= "img"/></div>
+    <div className="div4">
 
         <p>Antes de adoptar debés saber la gran responsabilidad que implica tener un animal en nuestro hogar.
             Por eso, te sugerimos que tengas en cuenta los siguientes aspectos.
@@ -36,7 +37,7 @@ export default function home (){
 
     </div>
 
-<div class="div5">
+<div className="div5">
 
     <h1>Podés hacer mucho para ayudarnos</h1>
 
