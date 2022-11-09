@@ -1,0 +1,39 @@
+/* navbar.module.css */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(166, 202, 177);
+    padding: 1rem;
+  }
+  
+  .title {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+   
+  }
+  
+  .header_icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  
+  .title_text {
+    font-size: 20px;
+    margin-left: 0.25rem;
+    display: flex;
+    align-items: center;
+    padding: .4rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+
+
+  ul.navega li {
+    display: inline-block;
+    font-size: 18px;
+  
+}

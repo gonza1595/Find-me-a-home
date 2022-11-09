@@ -2,7 +2,7 @@ import axios from "axios";
 
 //crear actions necesarias
 
-export function  buscarPorNombre(nombre){ //mascotas
+export function buscarPorNombre(nombre){ //mascotas
     return async function(dispatch){
         try {
             let json = await axios.get('http://localhost:3001/mascotas?nombre=' + nombre);
