@@ -10,7 +10,11 @@
         "axios": "^0.24.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
+<<<<<<< HEAD
         "react-redux": "^7.2.6",
+=======
+        "react-redux": "^7.2.9",
+>>>>>>> dcd72fbcf601645629d88f94216ce01b70843838
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
         "redux": "^4.0.5",

@@ -38,6 +38,35 @@ const getMascotas = async () => {
   }
 };
 
+<<<<<<< HEAD
 module.exports = {
   getMascotas,
+=======
+
+const filtroProductos = (array, filtro, orden) => {
+   if(filtro === "precio"){
+    if(orden === "ASC"){
+      array.sort((a, b ) => a.precio - b.precio );
+      return array;
+   }else if(orden === "DESC"){
+      array.sort((a, b) => b.precio - a.precio );
+      return array;
+   };
+    
+   }else if(filtro === "calificacion"){
+    if(orden === "ASC"){
+      array.sort((a, b ) => a.calificacion - b.calificacion );
+      return array;
+   }else if(orden === "DESC"){
+      array.sort((a, b) => b.calificacion - a.calificacion );
+      return array;
+   };
+   }else{
+      return array;
+   };
+};
+module.exports = {
+  getMascotas,
+  filtroProductos
+>>>>>>> dcd72fbcf601645629d88f94216ce01b70843838
 };

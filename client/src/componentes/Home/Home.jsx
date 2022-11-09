@@ -18,7 +18,11 @@ export default function home (){
 
 
 <div className="div2"> La felicidad no se compra, se adopta. </div>
+<<<<<<< HEAD
 <div className="div3"> <img src={img} alt= "img" width='200px'/></div>
+=======
+<div className="div3"> <img src={img} alt= "img"/></div>
+>>>>>>> dcd72fbcf601645629d88f94216ce01b70843838
     <div className="div4">
 
         <p>Antes de adoptar debés saber la gran responsabilidad que implica tener un animal en nuestro hogar.
