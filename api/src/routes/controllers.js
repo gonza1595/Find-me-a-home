@@ -38,6 +38,10 @@ const getMascotas = async () => {
   }
 };
 
+<<<<<<< HEAD
+module.exports = {
+  getMascotas,
+=======
 
 const filtroProductos = (array, filtro, orden) => {
    if(filtro === "precio"){
@@ -64,4 +68,5 @@ const filtroProductos = (array, filtro, orden) => {
 module.exports = {
   getMascotas,
   filtroProductos
+>>>>>>> dcd72fbcf601645629d88f94216ce01b70843838
 };

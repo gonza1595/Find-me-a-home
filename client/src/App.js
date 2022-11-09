@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
 import home from "./componentes/Home/Home.jsx";
+import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
 
 
 
@@ -17,6 +19,8 @@ function App() {
        
        
         <Route exact path="/" component = {home} />
+        <Route exact path='/mascotas/:id' component= {Detalle}/>
+      <Route exact path='/adopta' component= {DetalleRefugio}/>
 
         
         </Switch>
