@@ -4,27 +4,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 
 import  NavBar  from '../NavBar/NavBar'
-// import { detalleMascota, limpiarEstadoDetalle } from '../../redux/actions';
+// import { detalleMascota, limpiarEstadoDetalle } from '../../redux/actions/index';
 
 const json = require('../../mascotas.json');
 const mascotas =json.mascotas;
-//console.log(mascotas.mascotas)
 
 export default function Detalle() {
 
-    const dispatch = useDispatch();
-    const params = useParams();
-    //const mascotas  = useSelector(state=> state.detalle)
+    // const dispatch = useDispatch();
+    // const params = useParams();
+    // const mascotas  = useSelector(state=> state.detalle)
 
     // useEffect(() => {
     //     dispatch(detalleMascota(params.id))
+    //     return () => {
+    //         dispatch(limpiarEstadoDetalle())
+    //     }
     // }, [dispatch, params.id])
 
  
     return (
         <div className="container">
 
-            {!mascotas.length > 0 ?  <p>Loader</p> :
+            {!mascotas  ?  <p>Loader</p> :
             <div>
                 <NavBar />
                 <a href="javascript:history.back()">
@@ -43,7 +45,7 @@ export default function Detalle() {
                         </ul>
                         <div className="descrip">
                         <h4 >Descripción:</h4>
-                        <p>{mascotas[params.id].descripcion}</p>
+                        <p>{mascotas[0].descripcion}</p>
 
                         </div>
                         <NavLink to='/adopta' className='link' >
