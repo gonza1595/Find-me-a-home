@@ -11,9 +11,16 @@ const initialState = {
 function rootReducer(state=initialState, action){
 
     switch(action.type){
+        case "BUSCAR_POR_NOMBRE":
+            return {
+                ...state,
+                productos: action.payload,
+                mascotas: action.payload
 
-        //case...
-
+            }
+            default :
+            return state;    
     }
-
 }
+
+export default rootReducer;
