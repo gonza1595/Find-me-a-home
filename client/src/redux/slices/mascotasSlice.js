@@ -7,6 +7,7 @@ export const mascotasSlice = createSlice({
 
     initialState: {
         mascotas:[],
+        detalle:{},
     },
 
     reducers:{
@@ -15,13 +16,21 @@ export const mascotasSlice = createSlice({
         
         traerMascotas:(state , action)=>{
             state.mascotas = action.payload
+        },
+
+        detalleMascotas:(state, action) =>{
+            state.detalle = action.payload
+        },
+
+        limpiarDetalle:(state)=>{
+            state.detalle = {}
         }
     }
 })
 
     //export de acciones para trabajar en componentess
 
-export const { traerMascotas } = mascotasSlice.actions
+export const { traerMascotas, detalleMascotas, limpiarDetalle } = mascotasSlice.actions
 
     //export al store
 
