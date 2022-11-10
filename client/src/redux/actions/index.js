@@ -16,21 +16,19 @@ export function buscarPorNombre(nombre){ //mascotas
     }
 }
 
-//Buscar un pokemon por el id 
-export const detalleMascota =(id) => dispatch => {
-    try {
-      return axios.get('http://localhost:3001/mascotas/'+id)
-        .then(respuesta =>{
-          dispatch({
-            type: "DETALLE_MASCOTA",
-            payload: respuesta.data,
-          });
-        })
-    } catch (e) {
-        console.log(e);
-        alert('No se pudo encontrar lo que buscaba')
+export function detalleMascota(id){
+    return async function(dispatch){
+        try{
+            var json = await axios.get(`http://localhost:3001/mascotas/${id}`)
+            return dispatch({
+                type: "DETALLE_MASCOTA",
+                payload: json.data
+            })
+        }catch(error){
+            console.log(error)
+        }
     }
-};
+}
 
 export const limpiarEstadoDetalle = () => {
     return {

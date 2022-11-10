@@ -2,7 +2,7 @@
 const initialState = {
     mascotas : [],
     productos : [],
-    detalle : [],
+    detalle : {},
     
 
     //agregar mas estados si se requiere...
@@ -28,7 +28,7 @@ function rootReducer(state=initialState, action){
         case "LIMPIAR_ESTADO_DETALLE":
             return{
               ...state,
-              detalle: []
+              detalle: {}
             }
             default :
             return state;    
