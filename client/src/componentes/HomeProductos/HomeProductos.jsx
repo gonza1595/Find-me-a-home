@@ -21,6 +21,53 @@ export default function HomeProductos (){
       }, [dispatch]);
 
     return (
-<h1>{productos}</h1>
-    )
+
+
+    <div className="homeContainer">
+
+        <NavBar/>
+
+        <div className="paginatedDiv">
+    
+  {/* paginado */}
+    
+        </div>
+
+        <div className="containerCards">
+
+{   productos.length>0?
+
+    productos.map((el)=>{
+        return (
+            <div>
+
+                <Link to = {"/producto/"+el.id}>
+
+{/* necesito el componente card */}
+
+                {/* <productoCard nambre={el.name} tipo={el.tipo} rating={el.rating} imagen={el.imagen} key={el.id}/> */}
+
+                </Link>
+
+            </div>
+          
+        );
+    })
+
+    :   <p>loader</p>
+
+}
+        </div>
+
+        <div className="filters">
+
+            <h4 className="underline">Filters</h4>
+
+            {/* componente filters */}
+
+        </div>
+
+    </div>
+
+        )
 }

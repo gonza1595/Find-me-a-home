@@ -3,12 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
 import home from "./componentes/Home/Home.jsx";
 import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
-<<<<<<< HEAD
 import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
-=======
->>>>>>> 41c93f6 (Home productos-1)
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 
 
@@ -31,6 +28,7 @@ function App() {
         <Route path='/InciarSesion' component={FormUsuario}/>
         <Route path='/formMascota' component={FormMascota}/>
         <Route exact path='/homeproductos' component= {HomeProductos}/>
+        <Route exact path='/productos' component= {HomeProductos}/>
 
 
         </Switch>

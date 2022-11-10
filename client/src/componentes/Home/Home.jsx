@@ -43,7 +43,7 @@ export default function home (){
 
 <h1>Podés hacer mucho para ayudarnos</h1>
 
-    <Link >
+    <Link to={"/mascotas"}>
 
 <button>Conocé a nuestras mascotas</button>
 
