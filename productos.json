@@ -7,7 +7,8 @@
             "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/125/556/products/correas-y-collares-tiendanube-151-0ddfb4c1946e5eec0816298187951596-480-0.png",
             "stock": 10,
             "calificacion": "",
-            "precio": 2500
+            "precio": 2500,
+            "tipo": "Paseo"
         },
         {
             
@@ -17,7 +18,8 @@
             "imagen": "https://d368r8jqz0fwvm.cloudfront.net/23155-product_lg/pretal-pet.jpg",
             "stock": 10,
             "calificacion": "",
-            "precio": 3500
+            "precio": 3500,
+            "tipo": "Paseo"
         },
         {
             "id": "3",
@@ -26,7 +28,8 @@
             "imagen": "https://leocan.com.ar/wp-content/uploads/2022/05/collar-tibet-nylon-doble-rojo-para-perro-24pg-24-x-1pg-D_NQ_NP_555225-MLM25393127505_022017-F.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 1500
+            "precio": 1500,
+            "tipo": "Paseo"
         },
         {
             "id": "4",
@@ -35,7 +38,8 @@
             "imagen": "https://punto-mascota.com.ar/wp-content/uploads/2020/08/comedero-acero-inoxidable-perros.jpg",
             "stock": 15,
             "calificacion": "",
-            "precio": 800
+            "precio": 800,
+            "tipo": "Alimentación"
         },
         {
             "id": "5",
@@ -44,7 +48,8 @@
             "imagen": "https://http2.mlstatic.com/D_NQ_NP_768492-MLA31787987585_082019-O.jpg",
             "stock": 8,
             "calificacion": "",
-            "precio": 800
+            "precio": 800,
+            "tipo": "Juguetes"
         },
         {
             "id": "6",
@@ -53,7 +58,8 @@
             "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/575/267/products/htb17qibkhsybunjssphq6zgvvxax1-c8fb7ccbf29dd83d2c16043758500882-1024-1024.jpg",
             "stock": 4,
             "calificacion": "",
-            "precio": 800
+            "precio": 800,
+            "tipo": "Paseo"
         },
         {
             "id": "7",
@@ -62,7 +68,8 @@
             "imagen": "https://static.miscota.com/media/1/photos/products/014277/14277-13155_1_g.png",
             "stock": 2,
             "calificacion": "",
-            "precio": 2800
+            "precio": 2800,
+            "tipo": "Juguetes"
         },
         {
             "id": "8",
@@ -71,7 +78,8 @@
             "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/880/994/products/d_nq_np_950931-mla31229432161_062019-o1-19bf8a445028400ae516225697803741-480-0.jpg",
             "stock": 2,
             "calificacion": "",
-            "precio": 2800
+            "precio": 2800,
+            "tipo": "Paseo"
         },
         {
             "id": "9",
@@ -80,7 +88,8 @@
             "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/019/016/products/excellent_adult_700x700_web-7931b62c71a1ae6ed715121879948859-1024-1024.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 8300
+            "precio": 8300,
+            "tipo": "Alimentación"
         },
         {
             "id": "10",
@@ -89,8 +98,210 @@
             "imagen": "https://plazavea.vteximg.com.br/arquivos/ids/432645-1000-1000/20200762.jpg",
             "stock": 5,
             "calificacion": "",
-            "precio": 2300
+            "precio": 2300,
+            "tipo": "Alimentación"
+        },
+        {
+           "id": "11",
+            "nombre": "Arnes cover",
+            "descripcion": "Arnés con 2 puntos de enganche, sobre la espalda y sobre el pecho, para perros que tironean mucho.",
+            "imagen": "https://dogston.com/1389-large_default/arnes-cover-hexa.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 3800,
+            "tipo": "Paseo" 
+        },
+        {
+            "id": "12",
+            "nombre": "Arnes K9",
+            "descripcion": "Ajustable tanto en el contorno del pecho como en el frente. Banda y costuras reflectivas. Medialuna superior para enganchar la correa. Fácil de lavar.",
+            "imagen": "https://dogston.com/1318-thickbox_default/arnes-k9.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 3200,
+            "tipo": "Paseo"
+        },
+        {
+           "id": "13",
+            "nombre": "Arnes cover flower BK",
+            "descripcion": "Arnés con 2 puntos de enganche, sobre la espalda y sobre el pecho, para perros que tironean mucho.",
+            "imagen": "https://dogston.com/1330-large_default/arnes-cover-flower-bk.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 3800,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "14",
+            "nombre": "Arnes training",
+            "descripcion": "El Arnés Training está diseñado para ayudar a perros a subir obstáculos, se usa para perros de trabajo, para montañismo, también en perros con dificultad al caminar. Su asa en la espalda más los puntos de apoyo en el pecho y abdomen lo hacen único al distribuir el peso en toda esa zona evitando lastimaduras",
+            "imagen": "https://dogston.com/1103-thickbox_default/arnes-training.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 8500,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "15",
+            "nombre": "Flamenco",
+            "descripcion": "Peluche flamenco con chifle. Patitas de soga. 30 cm de alto.",
+            "imagen": "https://dogston.com/1279-thickbox_default/flamenco.jpg",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 1900,
+            "tipo": "Juguetes" 
+        },
+        {
+           "id": "16",
+            "nombre": "Pollo chillon",
+            "descripcion": "Pollo llorón. Chifla al presionarlo. Tenemos en 3 medidas: Mini: 16 cm | Mediano: 31 cm | Grande: 37cm",
+            "imagen": "https://dogston.com/604-thickbox_default/pollo-chillon.jpg",
+            "stock": 15,
+            "calificacion": "",
+            "precio": 600,
+            "tipo": "Juguetes" 
+        },
+        {
+           "id": "17",
+            "nombre": "Peluche salchicha",
+            "descripcion": "Peluches de plush con chifle, recomendado para perros menores de 13 kilos. De largo mide 20 cm aprox. y de ancho en la parte del cuerpo 4 cm.",
+            "imagen": "https://dogston.com/823-thickbox_default/peluche-animales-salchicha.jpg",
+            "stock": 20,
+            "calificacion": "",
+            "precio": 1600,
+            "tipo": "Juguetes" 
+        },
+        {
+           "id": "18",
+            "nombre": "Limpia dientes",
+            "descripcion": "Diseñado para limpiar los dientes en ambos lados y encajar cómodamente en la boca de su mascota mintras juega.",
+            "imagen": "https://dogston.com/1286-large_default/limpia-dientes.jpg",
+            "stock": 7,
+            "calificacion": "",
+            "precio": 2600,
+            "tipo": "Juguetes" 
+        },
+        {
+           "id": "19",
+            "nombre": "Collar hexa",
+            "descripcion": "Collar con diseño de hexágonos en blanco, gris y negro. Lleva costura reforzada y es regulable. Posee hebilla para enganchar la chapita identificatoria.",
+            "imagen": "https://dogston.com/647-thickbox_default/collar-hexa.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 1800,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "20",
+            "nombre": "Collar inicornio",
+            "descripcion": "Para las fans de los unicornios! Lleva costura reforzada y es regulable. Posee hebilla para enganchar la chapita identificatoria.",
+            "imagen": "https://dogston.com/651-thickbox_default/collar-unicornio.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 1800,
+            "tipo": "Paseo" 
+        },
+         {
+           "id": "21",
+            "nombre": "Collar green fruits",
+            "descripcion": "Collar frutal, kiwi, manzana, pera, limón. Lleva costura reforzada y es regulable. Posee hebilla para enganchar la chapita identificatoria.",
+            "imagen": "https://dogston.com/836-thickbox_default/collar-green-fruits.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 2000,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "22",
+            "nombre": "Collar gold",
+            "descripcion": "Distinguido collar con diseños búlgaros. Por su color y el brillo propio de la cinta le da un aspecto dorado similar al oro. Lleva costura reforzada y es regulable. Posee hebilla para enganchar la chapita identificatoria.",
+            "imagen": "https://dogston.com/645-thickbox_default/collar-gold.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 1800,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "23",
+            "nombre": "Comedero rojo",
+            "descripcion": "Comedero de acero inoxidable con base de goma.",
+            "imagen": "https://dogston.com/1342-thickbox_default/comedero-color.jpg",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 1200,
+            "tipo": "Alimentación" 
+        },
+        {
+           "id": "24",
+            "nombre": "Comedero doble",
+            "descripcion": "Comedero doble de plastico y hacer inoxidable.",
+            "imagen": "https://dogston.com/1311-thickbox_default/comedero-bebedero-de-plastico-y-acero.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 2800,
+            "tipo": "Alimentación" 
+        },
+        {
+           "id": "25",
+            "nombre": "Limpia patas",
+            "descripcion": "Las cerdas de silicona entran entre los dedos de las patas y remueven cualquier bacteria que quede ahí alojada. Ideal para despues de un paseo.",
+            "imagen": "https://dogston.com/1350-thickbox_default/limpia-patas-soft.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 3700,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "26",
+            "nombre": "Correa hexa",
+            "descripcion": "Correa estilo deportivo, degradado de negro a blanco con diseño de hexágonos. Posee hebilla para colgar accesorios. Costura en sus extremos reforzado con remaches. El ancho de la correa es de 2,5 cms. y el largo de 1,42 m.",
+            "imagen": "https://dogston.com/658-thickbox_default/correa-hexa.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 2600,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "27",
+            "nombre": "Correa gold",
+            "descripcion": "Distinguida correa con diseños búlgaros. Por su color y el brillo propio de la correa le da un aspecto dorado similar al oro. Posee medialuna para colgar accesorios. Costura en sus extremos reforzado con remaches. El ancho de la correa es de 2,5 cms. y el largo de 1,42 m.",
+            "imagen": "https://dogston.com/656-thickbox_default/correa-gold.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 2600,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "28",
+            "nombre": "Correa green fruits",
+            "descripcion": "Correa verde vibrante con dibujos de frutas verdes. Posee medialuna para colgar accesorios. Costura en sus extremos reforzado con remaches. El ancho de la correa es de 2,5 cms. y el largo de 1,42 m.",
+            "imagen": "https://dogston.com/660-thickbox_default/correa-green-fruits.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 2600,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "29",
+            "nombre": "Combo hexa",
+            "descripcion": "Collar y correa con patrón de hexágonos. Collar regulable, incluye medialuna para colgar chapita de identificación. La correa mide 1,42 cm de largo y 2,5 cm de ancho, tiene una medialuna para colgar accesorios.",
+            "imagen": "https://dogston.com/845-thickbox_default/combo-hexa.jpg",
+            "stock": 3,
+            "calificacion": "",
+            "precio": 4200,
+            "tipo": "Paseo" 
+        },
+        {
+           "id": "30",
+            "nombre": "Combo flower BK",
+            "descripcion": "Collar y correa con flores sobre fondo negro. Collar regulable, incluye medialuna para colgar chapita de identificación. La correa mide 1,42 cm de largo y 2,5 cm de ancho, tiene una medialuna para colgar accesorios.",
+            "imagen": "https://dogston.com/854-thickbox_default/combo-flower-bk.jpg",
+            "stock": 3,
+            "calificacion": "",
+            "precio": 4200,
+            "tipo": "Paseo" 
         }
+
 
     ]
 }

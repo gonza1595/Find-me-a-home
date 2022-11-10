@@ -1,0 +1,74 @@
+.HomeContainer{
+    
+    height: 100vh;
+    overflow: auto;
+}
+
+.paginatedDiv{
+    /* border: solid black 1px; */
+    display: flex;
+    flex-direction: column;
+    height: 12%;
+    width: 100%;
+    padding: 1rem;
+}
+
+.searchbar{
+    /* border: solid black 1px; */
+    height: 2%;
+    width: 100%;
+}
+
+.containerCards{
+    
+    float: right;
+    display: flex;
+    flex-wrap:wrap;
+    width: 75%;
+    gap: 2.5em;
+    right: 20%;
+    padding: 1.25rem;
+    /* border: solid black 1px; */
+}
+
+
+
+.filters {
+
+    padding: 0.5rem;
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 70vh;
+    /* width: 25%; */
+    justify-content: center;
+
+    
+    border: solid #b33939 1px;
+    color: white;
+    height: 65vh;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    border-radius: 10px;
+    margin-left: 5rem;
+    margin-top: 1rem;
+    background-color: #212121;
+    padding: 1.5rem;
+    width: 15rem;
+    border: solid red 1 px;
+  }
+  
+  .underline{
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+  
+  .options{
+    width: 70%;
+  }
+  
+  .aligns{
+  margin-top:0em;
+  }
