@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
-import {formularioIniciarSesion} from "../../redux/actions/index"
+import {formularioRegistroUsuario} from "../../redux/actions/index"
 import NavBar from "../NavBar/NavBar"
 /* recordar cuando usar usuario */
 
@@ -10,33 +10,35 @@ function validate(input) {
     let errors = {}
 
     if(!input.nombre){
-        errors.name = ("Se requiere un nombre") 
+        errors.nombre = ("Se requiere un nombre") 
     } 
     
     else if(!input.contraseña){
-        errors.difficulty = ("Se requiere una contraseña")
+        errors.contraseña = ("Se requiere una contraseña")
     }
 
     else if(!input.correo){
-        errors.difficulty = ("Se requiere correo")
+        errors.correo = ("Se requiere correo")
     }
 
     else if(!input.edad){
-        errors.difficulty = ("Se requiere edad")
+        errors.edad = ("Se requiere edad")
     }
     else if(!input.direccion){
-        errors.difficulty = ("Se requiere direccion")
+        errors.direccion = ("Se requiere direccion")
     }
     else if(!input.rango){
-        errors.difficulty = ("Se requiere rango")
+        errors.rango = ("Se requiere rango")
     }
+    
+   
     return errors
 }
     
 export default function Form() {
     const dispatch = useDispatch()
     const history = useHistory() 
-    const usuario = useSelector((state) => state.usuario)
+    const usuario = useSelector((state) => state.usuario) //no haria falta
     
     const [errors, setErrors] = useState({})  
 
@@ -53,6 +55,7 @@ export default function Form() {
 
     function handleChange(e){
         e.preventDefault();
+        
         setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         setErrors(validate({
           ...input,
@@ -66,7 +69,7 @@ export default function Form() {
             if(e.target.checked){
                 setInput({
                     ...input, 
-                    [e.target.name] : e.target.value
+                    [usuario] : e.target.value // [e.target.name]
                 })
             }
              setErrors(validate({
@@ -75,16 +78,18 @@ export default function Form() {
              }))
         }
 
+
+
         function handleSubmit(e){
             if(!input.nombre || !input.contraseña || !input.correo || !input.edad || !input.direccion || !input.rango ){
                 e.preventDefault();
                 alert('Verifique los campos para poder continuar')
             } else {
                 e.preventDefault();
-                dispatch(formularioIniciarSesion(input));
-                alert('Tu usuario ha sido creado exitosamente');
+                dispatch(formularioRegistroUsuario(input));
+                alert('Su usuario ha sido creado exitosamente');
                 
-                history.push('/home')
+                history.push('/home') //fijarse si se deja o no
                 
                 setInput({
                     nombre: '',
@@ -107,7 +112,7 @@ return (
     <div>
         <NavBar/>
         <h1>Registrarse</h1>
-        <form>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <div>
                 <label>Nombre: </label>
                 <input type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
