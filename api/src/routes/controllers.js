@@ -38,6 +38,7 @@ const getMascotas = async () => {
   }
 };
 
+
 const filtroProductos = (array, filtro, orden) => {
    if(filtro === "precio"){
     if(orden === "ASC"){
