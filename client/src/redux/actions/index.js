@@ -81,3 +81,13 @@ export function formularioPostMascota(payload){
         return json;
     }
 }
+
+export const detalleProducto = (id) => async dispatch => {
+    try {
+      const { data } = await axios.get('http://localhost:3001/productos/' + id);
+      dispatch({ type: "DETALLE_PRODUCTO", payload: data });
+    } catch (error) {
+      console.log(error)
+      alert('El producto no existe')
+    }
+};
