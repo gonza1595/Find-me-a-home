@@ -1,0 +1,27 @@
+.main-footer{
+    
+   display: flex;
+   flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #c5f5f2;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 5 rem;
+}
+
+
+
+.conactanos-items{
+    display: flex;
+  flex-direction: row;
+  padding: 5px;
+    
+}
+
+
+
+.mail{
+    display: flex;
+    flex-direction: row;
+}

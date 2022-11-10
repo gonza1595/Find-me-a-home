@@ -7,6 +7,8 @@ import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
+import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
+import HomeAdopta from "./componentes/HomeAdopta/HomeAdopta.jsx"
 
 
 
@@ -31,6 +33,7 @@ function App() {
         <Route exact path='/homeproductos' component= {HomeProductos}/>
         <Route exact path='/productos' component= {HomeProductos}/>
         <Route exact path='/QuienesSomos' component= {QuienesSomos}/>
+        <Route exact path='/adopta' component= {HomeAdopta}/>
 
 
         </Switch>
