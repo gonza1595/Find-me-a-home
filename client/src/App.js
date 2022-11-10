@@ -3,14 +3,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
 import home from "./componentes/Home/Home.jsx";
 import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
-import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
-
-import SearchBarMascota from "./componentes/SearchBar/SearchBarMascota"
-import SearchBarProducto from "./componentes/SearchBar/SearchBarProducto.jsx";
-
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
+
 
 
 function App() {
@@ -33,6 +29,7 @@ function App() {
         <Route path='/formMascota' component={FormMascota}/>
         <Route exact path='/homeproductos' component= {HomeProductos}/>
         <Route exact path='/productos' component= {HomeProductos}/>
+
 
 
         </Switch>
