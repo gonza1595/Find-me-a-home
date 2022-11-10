@@ -61,7 +61,7 @@ export default function Form(){
     })
 
     function handleChange(e){
-        // Le agregamos el e.target.value (lo que vamos modificando) al input actual 
+     
 
         e.preventDefault();
         setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -148,27 +148,27 @@ return(
         <div>
             <label>Sexo: </label>
             <label>
-            <input type="radio" value='masculino' name='masculino' onChange={(e) => handleCheck(e)}/> Masculino </label>
+            <input type="radio" autoComplete="off" value={input.sexo} name='sexo' onChange={(e) => handleCheck(e)}/> Masculino </label>
             <label>
-            <input type="radio" value='femenino' name='femenino' onChange={(e) => handleCheck(e)}/> Femenino </label>
+            <input type="radio" autoComplete="off" value={input.sexo} name='sexo' onChange={(e) => handleCheck(e)}/> Femenino </label>
             {errors.sexo && (<p>{errors.sexo}</p>)}
         </div>
         <div>
             <label>Especie: </label>
             <label>
-            <input type="radio" value='perro' name='perro' onChange={(e) => handleCheck(e)}/> Perro </label>
+            <input type="radio" autoComplete="off" value={input.especie} name='especie' onChange={(e) => handleCheck(e)}/> Perro </label>
             <label>
-            <input type="radio" value='gato' name='gato' onChange={(e) => handleCheck(e)}/> Gato </label>
+            <input type="radio" autoComplete="off" value={input.especie} name='especie' onChange={(e) => handleCheck(e)}/> Gato </label>
             {errors.especie && (<p>{errors.especie}</p>)}
         </div>
         <div>
-            <label>tamaño: </label>
+            <label>Tamaño: </label>
             <label>
-            <input type="radio" value='pequeño' name='pequeño' onChange={(e) => handleCheck(e)}/> Pequeño </label>
+            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Pequeño </label>
             <label>
-            <input type="radio" value='mediano' name='mediano' onChange={(e) => handleCheck(e)}/> Mediano </label>
+            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Mediano </label>
             <label>
-            <input type="radio" value='grande' name='grande' onChange={(e) => handleCheck(e)}/> Grande </label>
+            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Grande </label>
             {errors.tamaño && (<p>{errors.tamaño}</p>)}
         </div>
         <div>
