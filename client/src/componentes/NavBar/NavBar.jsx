@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import "./NavBar.css"
-import SearchBar from "../SearchBar/SearchBar";
+
 
 
 function NavBar () {
-    const [clicked, setClicked] = useState() //false
+    const [clicked, setClicked] = useState(false) //false
 
 console.log(clicked)
 
@@ -19,23 +18,15 @@ console.log(clicked)
             <ul  className="navega">
             <h2  className="title">Find me a HOME</h2>    
             <li><a className="title_text" onClick={handleClick} href ="/" >Inicio</a ></li>   
-            <li><a className="title_text" onClick={handleClick} href ="/" >Quienes somos</a ></li>
-            <li><a className="title_text" onClick={handleClick} href ="/" >Productos</a ></li>
-            <li><a className="title_text" onClick={handleClick} href ="/" >Adopta!</a ></li>
-            <li><a className="title_text" onClick={handleClick} href ="/" >Iniciar sesion</a ></li>
-            <li><a className="title_text" onClick={handleClick} href="/">Noticias</a></li>
-            <SearchBar/>
-            </ul>
-          
+            <li><a className="title_text" onClick={handleClick} href ="/QuienesSomos?" >Quienes somos</a ></li>
+            <li><a className="title_text" onClick={handleClick} href ="/Productos" >Productos</a ></li>
+            <li><a className="title_text" onClick={handleClick} href ="/Mascotas" >Adopta!</a ></li>
+            <li><a className="title_text" onClick={handleClick} href ="/InciarSesion" >Iniciar sesion</a ></li>
+            <li><a className="title_text" onClick={handleClick} href="/Noticias">Noticias</a></li>
+        
+            </ul>          
  </nav>
- 
-
     )
 }
 
 export default NavBar
-/*
- className={`links ${clicked ? 'active' : ''}`}
-
- 
-  */
