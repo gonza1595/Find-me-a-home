@@ -12,6 +12,6 @@ export default function CardProductos(props) {
        <p>Precio: {props.precio}</p>
        </div>
     </div>
-</div> 
+</div>
   )
 }
