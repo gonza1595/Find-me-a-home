@@ -51,3 +51,16 @@ export const limpiarEstadoDetalle = () => {
     }
 };
 
+export function formularioRegistroUsuario(payload){
+    return async function(){
+        let json = await axios.post('http://localhost:3001/', payload);
+        return json;
+    }
+}
+
+export function formularioPostMascota(payload){
+    return async function(){
+        let json = await axios.post('http://localhost:3001/mascotas', payload);
+        return json;
+    }
+}
