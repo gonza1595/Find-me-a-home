@@ -6,6 +6,10 @@ import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
 import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
+
+import SearchBarMascota from "./componentes/SearchBar/SearchBarMascota"
+import SearchBarProducto from "./componentes/SearchBar/SearchBarProducto.jsx";
+
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 
 

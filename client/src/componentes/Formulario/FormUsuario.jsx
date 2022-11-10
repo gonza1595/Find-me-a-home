@@ -143,11 +143,11 @@ return (
             <div>
                 <label>Rango: </label>
                 <label>
-                <input type="radio" value='admin' name='admin' onChange={(e) => handleCheck(e)}/> Administrador </label>
+                <input type="radio" value='admin' name='rango' onChange={(e) => handleCheck(e)}/> Administrador </label>
                 <label>
-                <input type="radio" value='usuario' name='usuario' onChange={(e) => handleCheck(e)}/> Usuario </label>
+                <input type="radio" value='usuario' name='rango' onChange={(e) => handleCheck(e)}/> Usuario </label>
                 <label>
-                <input type="radio" value='refugio' name='refugio' onChange={(e) => handleCheck(e)}/> Refugio </label>
+                <input type="radio" value='refugio' name='rango' onChange={(e) => handleCheck(e)}/> Refugio </label>
                 {errors.rango && (<p>{errors.rango}</p>)}
             </div>
 
