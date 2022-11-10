@@ -7,7 +7,7 @@ import SearchBar from "../SearchBar/SearchBarProducto";
 import "./HomeProductos.css"
 import {traerProductos} from "../../redux/actions/index.js"
 //importar paginado cuando este disponible
-//importar carta de producto cuando este disponible
+import CardProductos from "../CardProductos/CardProductos";
 
 export default function HomeProductos (){
 
@@ -39,13 +39,11 @@ export default function HomeProductos (){
 
     productos.map((el)=>{
         return (
-            <div>
+            <div className="cards">
 
-                <Link to = {"/producto/"+el.id}>
+                <Link to = {"/productos/"+el.id}>
 
-{/* necesito el componente card */}
-
-                {/* <productoCard nambre={el.name} tipo={el.tipo} rating={el.rating} imagen={el.imagen} key={el.id}/> */}
+                <CardProductos nombre={el.nombre} tipo={el.tipo} rating={el.rating} imagen={el.imagen} precio={el.precio} key={el.id}/>
 
                 </Link>
 

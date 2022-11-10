@@ -44,18 +44,18 @@ export default function Form() {
 
     // Inputs 
     const [input, setInput] = useState({ 
-        nombre: '',
-        contraseña: '',
-        correo: '',
-        edad:'',
-        direccion: '',
-        rango: '',
-        usuario: [],
+        "nombre": '',
+        "contraseña": '',
+        "correo": '',
+        "edad":'',
+        "direccion": '',
+        "rango": '',
+        "usuario": [],
     })
 
     function handleChange(e){
         e.preventDefault();
-        
+        console.log(input);
         setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         setErrors(validate({
           ...input,
@@ -67,9 +67,11 @@ export default function Form() {
 
         function handleCheck(e){ // rango
             if(e.target.checked){
+            console.log(input)
+                
                 setInput({
                     ...input, 
-                    [usuario] : e.target.value // [e.target.name]
+                    rango : e.target.value // [e.target.name]
                 })
             }
              setErrors(validate({
@@ -89,7 +91,7 @@ export default function Form() {
                 dispatch(formularioRegistroUsuario(input));
                 alert('Su usuario ha sido creado exitosamente');
                 
-                history.push('/home') //fijarse si se deja o no
+                history.push('/') //fijarse si se deja o no
                 
                 setInput({
                     nombre: '',
@@ -143,11 +145,9 @@ return (
             <div>
                 <label>Rango: </label>
                 <label>
-                <input type="radio" value='admin' name='rango' onChange={(e) => handleCheck(e)}/> Administrador </label>
+                <input type="radio" value='usuario' name='rango' onClick={(e) => handleCheck(e)}/> Usuario </label>
                 <label>
-                <input type="radio" value='usuario' name='rango' onChange={(e) => handleCheck(e)}/> Usuario </label>
-                <label>
-                <input type="radio" value='refugio' name='rango' onChange={(e) => handleCheck(e)}/> Refugio </label>
+                <input type="radio" value='refugio' name='rango' onClick={(e) => handleCheck(e)}/> Refugio </label>
                 {errors.rango && (<p>{errors.rango}</p>)}
             </div>
 

@@ -13,7 +13,7 @@ router.use('/mascotas', mascotas);
 router.use('/mascotas/', getMascotasById);
 router.use("/productos", getAllProducts);
 router.use('/productos', getAllProducts);
-router.use('/productos', getProductosById);
+router.use('/productos/', getProductosById);
 router.use('/productos', productos);
 router.use("/usuario", postUser);
 

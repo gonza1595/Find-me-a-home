@@ -3,7 +3,7 @@ const initialState = {
     mascotas : [],
     productos : [],
     detalle : {},
-    
+    usuarios:[],
 
     //agregar mas estados si se requiere...
 }
