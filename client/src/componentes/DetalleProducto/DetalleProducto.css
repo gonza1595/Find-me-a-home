@@ -1,0 +1,65 @@
+.page{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color:  #027a74 ;
+    background-size: cover;
+}
+
+.informacion{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-right: 20vh;
+    
+    border: solid 1px rgb(171, 212, 180);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 0 30px #222;
+    width: auto;
+    height: auto;
+    background-color:  #c5f5f2 ;
+    background-size: cover;
+    border-radius: 20px;
+    font-family: cursive;
+}
+
+.descrip {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+ul{
+    margin-left: 10px;
+    margin-right: 20px;
+}
+#nombre {
+    align-items:center;
+    justify-content:center;
+}
+
+button {
+    background-color: rgb(253, 215, 112) ;
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid rgb(235, 199, 102) ;
+    font-family: cursive;
+}
+
+button:hover{
+    background-color:  #027a74 ;
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid rgb(235, 199, 102) ;
+    font-family: cursive;
+
+}
