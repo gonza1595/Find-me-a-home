@@ -274,6 +274,116 @@
             "raza": "Mestizo",
             "sexo": "femenino",
             "especie": "perro"
+        },
+        {
+            "id": "26",
+            "nombre": "Romeo",
+            "descripcion": "Adulto juegueton, energico y sociable con otros perros.",
+            "edad": 2,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/28292/d_b262262c-5f03-470b-8a6c-fc95236e342e.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "27",
+            "nombre": "Blanca",
+            "descripcion": "Muy activa. Necesita mucha actividad diaria pero tambien es una perra obediente y divertida.",
+            "edad": 3,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/26462/d_83751ded-2340-41ee-b2dd-715217a7d625.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+         {
+            "id": "28",
+            "nombre": "Kika",
+            "descripcion": "Cariñosa y sociable.",
+            "edad": 4,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/24242/d_8091f6ea-ab10-4753-ba01-267285b619a1.jpeg",
+            "tamaño": "grande",
+            "raza": "Galgo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+        {
+            "id": "29",
+            "nombre": "Hugo",
+            "descripcion": "Protector, sociable con perros y gatos, muy tranquilo y muy cariñoso.",
+            "edad": 3,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/20919/d_b8a0ea0f-6128-48cf-8a04-7ec0dc905d88.JPG",
+            "tamaño": "mediano",
+            "raza": "Siames",
+            "sexo": "masculino",
+            "especie": "gato"
+        },
+        {
+            "id": "30",
+            "nombre": "Roque",
+            "descripcion": "Roque es un perro cariñoso, sociable y con muy buen carácter. Tiene tres años. Busca acogida o adopción.",
+            "edad": 3,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/27091/d_505d35fd-d4a0-4f9c-96b4-39d8aef8cbe0.jpeg",
+            "tamaño": "grande",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "31",
+            "nombre": "Perdigon",
+            "descripcion": "Perdigón es nuestro galgo luchador con IBD. El tiene una inflamación grave y crónica del intestino, apenas asimila lo que come y no sube peso.",
+            "edad": 8,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/27093/d_bd358a5c-3a37-416d-b0d2-9956f0b7ddef.jpg",
+            "tamaño": "grande",
+            "raza": "Galgo",
+            "sexo": "masculino",
+            "especie": "perro"
+        },
+        {
+            "id": "32",
+            "nombre": "Aramis",
+            "descripcion": "Aramis es un gatito criado en ambiente casero y acostumbrado a los perros, muy cariñoso.",
+            "edad": 1,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/23190/d_6e26b562-d3d7-4cc4-83f0-a93b2bf123c6.jpg",
+            "tamaño": "pequeño",
+            "raza": "Bobay",
+            "sexo": "masculino",
+            "especie": "gato"
+        },
+        {
+            "id": "33",
+            "nombre": "Dela",
+            "descripcion": "Divertida y juguetona.Muy cariñosa.",
+            "edad": 6,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/26461/d_b285fc8c-f676-42cb-9e94-761a36765767.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+        {
+            "id": "34",
+            "nombre": "Laila",
+            "descripcion": "Laila al principio recelaba de otros perros; poco a poco va confiando. Su acogida nos dice que es una perra cariñosísima. Con los niños también va bien.",
+            "edad": 2,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/24060/d_0debba2d-b46b-48e4-8589-fa671fc8ca41.jpg",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "femenino",
+            "especie": "perro"
+        },
+        {
+            "id": "35",
+            "nombre": "Oreo",
+            "descripcion": "Oreo es un Border collie espectacular. Totalmente adiestrado. Como todos los Collies es un perro muy inteligente. Le encanta jugar y necesita buenos paseos y estimulación.",
+            "edad": 3,
+            "imagen": "https://es.buscafuska.com/uploads/pet/file/29418/d_a06ea434-11df-4e0c-8c06-83921118d2e4.png",
+            "tamaño": "mediano",
+            "raza": "Mestizo",
+            "sexo": "masculino",
+            "especie": "perro"
         }
     ]
 }
