@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./NavBar.css"
+//import SearchBar from "../SearchBar/SearchBar";
 
 
 function NavBar () {

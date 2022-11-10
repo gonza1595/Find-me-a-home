@@ -1,4 +1,9 @@
 
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
 
     .parent {
         display: grid;
@@ -6,6 +11,8 @@
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 15px;
         grid-row-gap: 8px;
+        background-color: #027a74;
+ 
         }
         
         .div1 { grid-area: 1 / 1 / 2 / 3; }
@@ -15,6 +22,7 @@
             justify-content: center;
         }
         .div3 { grid-area: 2 / 2 / 3 / 3; 
+            
             display: flex;
             align-items: center;
             justify-content: center;
