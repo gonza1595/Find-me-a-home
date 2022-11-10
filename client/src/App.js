@@ -6,6 +6,7 @@ import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
+import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
 
 
 
@@ -29,7 +30,7 @@ function App() {
         <Route path='/formMascota' component={FormMascota}/>
         <Route exact path='/homeproductos' component= {HomeProductos}/>
         <Route exact path='/productos' component= {HomeProductos}/>
-
+        <Route exact path='/QuienesSomos' component= {QuienesSomos}/>
 
 
         </Switch>
