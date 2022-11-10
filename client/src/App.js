@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
 import home from "./componentes/Home/Home.jsx";
 import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
+import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 
 
 
@@ -20,9 +21,9 @@ function App() {
        
         <Route exact path="/" component = {home} />
         <Route exact path='/mascotas/:id' component= {Detalle}/>
-       <Route exact path='/adopta' component= {DetalleRefugio}/>
+        <Route exact path='/adopta' component= {DetalleRefugio}/>
+        <Route exact path='/contacto' component= {DetalleRefugio}/>
 
-        
         </Switch>
 
   </div>
