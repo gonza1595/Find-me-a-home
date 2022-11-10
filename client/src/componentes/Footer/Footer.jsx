@@ -1,34 +1,47 @@
 import React from 'react';
-import {facebook} from './img/facebook'
-import {mail} from './img/mail';
-import {instagram} from './img/instagram';
-import {tel} from './tel';
-import {twitter} from './img/twitter';
-import {whatsapp} from './img/whatsapp';
+
+import mail from "../Footer/img/mail.png"
+import tel from "../Footer/img/tel.png"
+import facebook from "../Footer/img/facebook.png"
+import instagram from "../Footer/img/instagram.png"
+import twitter from "../Footer/img/twitter.png"
+import whatsapp from "../Footer/img/whatsapp.png"
+
+import "./Footer.css"
 
 export default function Footer(){
     return(
         <footer >
-            <div>
-                <div>
-                <p>CONTACTANOS</p>
-                <img src={mail} alt="mail"/>
-                <p>findmeahome@gmail.com</p>
-                <img src={whatsapp}alt="whatsapp"/>
-                <p>11 2699 5890</p>
-                <img src={tel} alt="telefono"/>
-                <p>011 - 4706 5890</p>
+            <div className='main-footer'>
+                
+                <div className='contactanos-info'>
+                <div className='contactanos'>
+                    <p className='titulo.contacto'>CONTACTANOS</p>
+                </div>
+                    <div className='conactanos-items'>
+                        <img src={mail} alt="mail" width='50px'/> 
+                        <a href="mailto:findmeahome@gmail.com">findmeahome@gmail.com</a>
+                        
+                    </div>
+                    <div className='conactanos-items'>
+                        <img src={whatsapp}alt="whatsapp" width='50px'/> 
+                        <p>11 2699 5890</p>
+                    </div>
+                    <div className='conactanos-items'>
+                        <img src={tel} alt="telefono" width='50px'/>
+                        <p>011 - 4706 5890</p>
+                    </div>
                 </div>
     
-                <div>
+                <div className='redes'>
                 <a href="https://instagram.com">
-                <h1><img src={instagram} alt="instagram"/></h1>
+                <img src={instagram} alt="instagram" width='50px'/>
                 </a>
                 <a href="https://twitter.com">
-                    <img src={twitter} alt="twitter"/>
+                <img src={twitter} alt="twitter" width='50px'/>
                 </a>
                 <a href="https://facebook.com">
-                    <img src={facebook} alt="facebook"/>
+                <img src={facebook} alt= "img" width='50px'/>
                 </a>
                 </div>
     

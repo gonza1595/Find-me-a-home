@@ -4,6 +4,8 @@ import "./Home.css";
 import img from "../../assets/img/img1.png";
 import {Link} from "react-router-dom";
 
+import Footer from "../Footer/Footer.jsx"
+
 
 export default function home (){
 
@@ -58,6 +60,9 @@ export default function home (){
 
 
 
+</div>
+<div className="div-6-footer">
+        <Footer/>
 </div>
 </div>
 

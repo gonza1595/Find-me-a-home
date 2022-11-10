@@ -6,7 +6,13 @@ import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
+
 import DetalleProducto from "../src/componentes/DetalleProducto/DetalleProducto.jsx"
+
+import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
+import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
+import HomeAdopta from "./componentes/HomeAdopta/HomeAdopta.jsx"
+
 
 
 function App() {
@@ -30,6 +36,8 @@ function App() {
         <Route exact path='/homeproductos' component= {HomeProductos}/>
         <Route exact path='/productos' component= {HomeProductos}/>
         <Route exact path='/productos/:id' component= {DetalleProducto}/>
+        <Route exact path='/QuienesSomos' component= {QuienesSomos}/>
+        <Route exact path='/adopta' component= {HomeAdopta}/>
 
 
 
