@@ -11,7 +11,7 @@
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
     font-family: cursive;
     font-weight: bold;
-    color: rgb(253, 215, 112);
+    color: rgb(253, 215, 112); 
 }
 
 .card:hover{

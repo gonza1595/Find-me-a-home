@@ -13,7 +13,7 @@ export default function CardMascotas(props) {
                <p>Sexo: {props.sexo}</p>
                </div>
             </div>
-        </div>
+        </div> 
         
     )
 }
