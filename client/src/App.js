@@ -6,6 +6,8 @@ import DetalleRefugio from './componentes/DetalleRefugio/DetalleRefugio';
 import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx"
+import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
+
 
 function App() {
 
@@ -25,6 +27,9 @@ function App() {
         <Route exact path='/contacto' component= {DetalleRefugio}/>
         <Route path='/InciarSesion' component={FormUsuario}/>
         <Route path='/formMascota' component={FormMascota}/>
+        <Route exact path='/homeproductos' component= {HomeProductos}/>
+
+
         </Switch>
 
   </div>

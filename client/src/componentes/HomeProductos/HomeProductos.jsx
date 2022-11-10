@@ -9,7 +9,6 @@ import {traerProductos} from "../../redux/actions/index.js"
 //importar paginado cuando este disponible
 //importar carta de producto cuando este disponible
 
-
 export default function HomeProductos (){
 
     const dispatch = useDispatch()

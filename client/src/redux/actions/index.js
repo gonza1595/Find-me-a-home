@@ -31,19 +31,37 @@ export function buscarPorNombreProducto(nombre){ //PRODUCTOS
     }
 }
 
-export function detalleMascota(id){
+
+
+
+export function traerProductos (){
+
     return async function(dispatch){
-        try{
-            var json = await axios.get(`http://localhost:3001/mascotas/${id}`)
-            return dispatch({
-                type: "DETALLE_MASCOTA",
-                payload: json.data
+        var json = await axios.get ("http://localhost:3001/productos")
+        
+        return dispatch({
+            type: "TRAER_PRODUCTOS",
+            payload: json.data,
             })
-        }catch(error){
-            console.log(error)
-        }
+    }
+};
+
+export const detalleMascota =(id) => dispatch => {
+    try {
+      return axios.get('http://localhost:3001/mascotas/'+id)
+        .then(respuesta =>{
+          dispatch({
+            type: "DETALLE_MASCOTA",
+            payload: respuesta.data,
+          });
+        })
+    } catch (e) {
+        console.log(e);
+        alert('No se pudo encontrar lo que buscaba')
     }
 }
+
+
 
 export const limpiarEstadoDetalle = () => {
     return {

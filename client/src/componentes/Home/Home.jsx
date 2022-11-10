@@ -1,7 +1,9 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
-import "./Home.css"
-import img from "../../assets/img/img1.png"
+import "./Home.css";
+import img from "../../assets/img/img1.png";
+import {Link} from "react-router-dom";
+
 
 export default function home (){
 
@@ -39,10 +41,22 @@ export default function home (){
 
 <div className="div5">
 
-    <h1>Podés hacer mucho para ayudarnos</h1>
+<h1>Podés hacer mucho para ayudarnos</h1>
+
+    <Link >
+
+<button>Conocé a nuestras mascotas</button>
+
+    </Link>
+
+    <Link >
 
 <button>Doná productos o dinero a nuestros refugios</button>
-<button>Conocé a nuestras mascotas</button>
+
+
+    </Link>
+
+
 
 </div>
 </div>
