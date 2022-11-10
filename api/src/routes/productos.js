@@ -6,7 +6,7 @@ const products = require("../../../productos.json");
 const { filtroProductos } = require("./controllers");
 
 router.get("/", async (req, res) => {
-      const {filtro, orden, nombre} = req.query;
+      const {filtro, orden, nombre, tipo} = req.query;
     try{
       const allProducts= await Product.findAll();
 
@@ -17,7 +17,8 @@ router.get("/", async (req, res) => {
                 descripcion: p.descripcion,
                 precio: p.precio,
                 imagen: p.imagen,
-                stock: p.stock
+                stock: p.stock,
+                tipo: p.tipo
             }
         });
         
@@ -44,7 +45,8 @@ router.get("/", async (req, res) => {
                     imagen: p.imagen,
                     stock: p.stock,
                     precio: p.precio,
-                    calificacion: p.calificacion
+                    calificacion: p.calificacion,
+                    tipo: p.tipo
                     }
                 })
                 res.status(200).send(productoNombre);
@@ -61,10 +63,11 @@ router.get("/", async (req, res) => {
                     imagen: p.imagen,
                     stock: p.stock,
                     precio: p.precio,
-                    calificacion: p.calificacion
+                    calificacion: p.calificacion,
+                    tipo: p.tipo
                 }
             })
-            const filtrados= await filtroProductos(productos, filtro, orden);
+            const filtrados= await filtroProductos(productos, filtro, orden, tipo);
             res.status(200).send(filtrados);
         }
       }

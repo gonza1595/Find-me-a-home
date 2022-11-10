@@ -38,27 +38,54 @@ const getMascotas = async () => {
   }
 };
 
-const filtroProductos = (array, filtro, orden) => {
-   if(filtro === "precio"){
-    if(orden === "ASC"){
-      array.sort((a, b ) => a.precio - b.precio );
-      return array;
-   }else if(orden === "DESC"){
-      array.sort((a, b) => b.precio - a.precio );
-      return array;
-   };
-    
-   }else if(filtro === "calificacion"){
-    if(orden === "ASC"){
-      array.sort((a, b ) => a.calificacion - b.calificacion );
-      return array;
-   }else if(orden === "DESC"){
-      array.sort((a, b) => b.calificacion - a.calificacion );
-      return array;
-   };
-   }else{
-      return array;
-   };
+const filtroProductos = (array, filtro, orden, tipo) => {
+
+  if(tipo){
+    const tipoProducto= array.filter((p) => p.tipo === tipo);
+
+    if(filtro === "precio"){
+      if(orden === "ASC"){
+        tipoProducto.sort((a, b ) => a.precio - b.precio );
+        return tipoProducto;
+     }else if(orden === "DESC"){
+        tipoProducto.sort((a, b) => b.precio - a.precio );
+        return tipoProducto;
+     };
+      
+     }else if(filtro === "calificacion"){
+      if(orden === "ASC"){
+        tipoProducto.sort((a, b ) => a.calificacion - b.calificacion );
+        return tipoProducto;
+     }else if(orden === "DESC"){
+        tipoProducto.sort((a, b) => b.calificacion - a.calificacion );
+        return tipoProducto;
+     };
+     }else{
+        return tipoProducto;
+     };
+  }else{
+
+    if(filtro === "precio"){
+     if(orden === "ASC"){
+       array.sort((a, b ) => a.precio - b.precio );
+       return array;
+    }else if(orden === "DESC"){
+       array.sort((a, b) => b.precio - a.precio );
+       return array;
+    };
+     
+    }else if(filtro === "calificacion"){
+     if(orden === "ASC"){
+       array.sort((a, b ) => a.calificacion - b.calificacion );
+       return array;
+    }else if(orden === "DESC"){
+       array.sort((a, b) => b.calificacion - a.calificacion );
+       return array;
+    };
+    }else{
+       return array;
+    };
+  }
 };
 module.exports = {
   getMascotas,
