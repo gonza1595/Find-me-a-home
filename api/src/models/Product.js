@@ -33,6 +33,10 @@ module.exports = (sequelize) => {
     precio: {
       type: DataTypes.FLOAT,
       allowNull: false
+    },
+    tipo: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   })
 }
