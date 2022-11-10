@@ -9,7 +9,7 @@ const router = Router();
 // Configurar los routers
 
 router.use('/mascotas', mascotas);
-router.use('/mascotas', getMascotasById);
+router.use('/mascotas/', getMascotasById);
 router.use("/productos", getAllProducts);
 router.use('/productos', getAllProducts);
 router.use('/productos', getProductosById);
