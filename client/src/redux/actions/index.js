@@ -168,3 +168,7 @@ export function orderByEdad(payload) {
     payload,
   };
 }
+
+export function adminBorrarProducto(id) {
+  return { type: "ADMIN_BORRAR_PRODUCTO", payload: id };
+}
