@@ -70,7 +70,7 @@ export const limpiarEstadoDetalle = () => {
 
 export function formularioRegistroUsuario(payload){
     return async function(){
-        let json = await axios.post('http://localhost:3001/', payload);
+        let json = await axios.post('http://localhost:3001/usuario/registro', payload);
         return json;
     }
 }
