@@ -19,19 +19,19 @@ export function buscarPorNombreMascota(nombre) {
   };
 }
 
-// export function traerMascotas() {
-//   return async function (dispatch) {
-//     try {
-//       let json = await axios.get("http://localhost:3001/mascotas");
-//       return dispatch({
-//         type: "TRAER_MASCOTAS",
-//         payload: json.data,
-//       });
-//     } catch (error) {
-//       alert("No se pueden traer las mascotas");
-//     }
-//   };
-// }
+export function traerMascotas() {
+  return async function (dispatch) {
+    try {
+      let json = await axios.get("http://localhost:3001/mascotas");
+      return dispatch({
+        type: "TRAER_MASCOTAS",
+        payload: json.data,
+      });
+    } catch (error) {
+      alert("No se pueden traer las mascotas");
+    }
+  };
+}
 
 export function buscarPorNombreProducto(nombre) {
   //PRODUCTOS
@@ -109,3 +109,62 @@ export const detalleProducto = (id) => async (dispatch) => {
     alert("El producto no existe");
   }
 };
+export function formularioIniciarSesion(payload) {
+  return async function () {
+    let json = await axios.post("http://localhost:3001/", payload);
+    return json;
+  };
+}
+
+// Filtrados
+
+export function filterBySexo(payload) {
+  return {
+    type: "FILTER_BY_SEXO",
+    payload,
+  };
+}
+
+export function filterByTamañoPequeño(payload) {
+  return {
+    type: "FILTER_BY_TAMAÑO_PEQUEÑO",
+    payload,
+  };
+}
+
+export function filterByTamañoMediano(payload) {
+  return {
+    type: "FILTER_BY_TAMAÑO_MEDIANO",
+    payload,
+  };
+}
+
+export function filterByTamañoGrande(payload) {
+  return {
+    type: "FILTER_BY_TAMAÑO_GRANDE",
+    payload,
+  };
+}
+
+// Ordenamientos
+
+export function orderByNameAsc(payload) {
+  return {
+    type: "ORDER_BY_NAMEASC",
+    payload,
+  };
+}
+
+export function orderByNameDes(payload) {
+  return {
+    type: "ORDER_BY_NAMEDES",
+    payload,
+  };
+}
+
+export function orderByEdad(payload) {
+  return {
+    type: "ORDER_BY_EDAD",
+    payload,
+  };
+}

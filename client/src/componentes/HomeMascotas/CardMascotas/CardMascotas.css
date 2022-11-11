@@ -12,6 +12,7 @@
     font-family: cursive;
     font-weight: bold;
     color: rgb(253, 215, 112); 
+   
 }
 
 .card:hover{
@@ -21,4 +22,3 @@
 .p{
     font-size: 20px;
 }
-

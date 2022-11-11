@@ -11,6 +11,10 @@ import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
 import CardMascotas from "./componentes/CardMascotas/CardMascotas.jsx";
 import HomeAdopta from "./componentes/HomeAdopta/HomeAdopta.jsx";
 import ReqAdopcion from "./componentes/ReqAdopcion/ReqAdopcion.jsx";
+import HomeMascotas from "../src/componentes/HomeMascotas/HomeMascotas";
+import SearchBarMascota from "./componentes/SearchBar/SearchBarMascota";
+import SearchBarProducto from "./componentes/SearchBar/SearchBarProducto.jsx";
+import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 
 function App() {
   return (
@@ -29,6 +33,7 @@ function App() {
           <Route exact path="/QuienesSomos" component={QuienesSomos} />
           <Route exact path="/adopta" component={HomeAdopta} />
           <Route exact path="/requisitos" component={ReqAdopcion} />
+          <Route exact path="/Mascotas" component={HomeMascotas} />
         </Switch>
       </div>
     </BrowserRouter>
