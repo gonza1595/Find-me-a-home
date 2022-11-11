@@ -1,0 +1,31 @@
+.tabla-productos {
+    border-collapse: collapse;
+    margin: 2rem 5rem;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-productos thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+    padding: 8px 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.tabla-productos tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabla-productos tbody {
+    border-bottom: 2px solid #009879;
+}

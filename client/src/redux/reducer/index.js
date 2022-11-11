@@ -125,6 +125,12 @@ function rootReducer(state = initialState, action) {
         mascotas: orderEdad,
       };
 
+    case "ADMIN_BORRAR_PRODUCTO":
+      return {
+        ...state,
+        productos: state.productos.filter((e) => e.id !== action.payload)
+      };
+
     default:
       return state;
   }
