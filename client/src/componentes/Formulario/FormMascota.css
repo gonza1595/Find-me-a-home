@@ -1,0 +1,64 @@
+
+.create{
+
+    height: 49rem;
+    padding: 5rem;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.titulo{
+    color: rgba(242, 128, 128, 0.8);
+	 display: inline-block;
+	 font-size: 24px;
+  
+}
+
+.container{
+    background: #f9c7c2;
+    display: grid;
+    grid-template-areas: "." ".";
+   width: 40rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    margin: 17px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(67%, 50%);
+  
+    
+}
+
+.input{
+    
+    padding: 5px 50px 5px 10px;
+    font-size: 0.8rem;
+   
+    background-color: #BCE0ED;
+    display: grid;
+    grid-template-areas: "." ".";
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, .1);
+	 border-radius: 7px;
+	 height: 38px;
+	 line-height: 38px;
+
+}
+
+.input:focus{
+    outline: none;
+    border: 1px solid #211C42;
+    box-shadow: 0 0 5px #211C42;
+}
+
+.label{
+    height: 20px;
+    border-radius: 20px;
+    padding: 5px 10px 10px 10px;
+    font-size: 1.2rem;
+}
+
+
