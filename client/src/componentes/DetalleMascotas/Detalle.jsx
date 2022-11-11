@@ -31,7 +31,7 @@ export default function Detalle() {
           <a href="javascript:history.back()">
             <button className="home_button">Volver</button>
           </a>
-          <div className="informacion">
+          <div className="informacionDetalleMascotas">
             <div className="nombreimg">
               <h2 id="nombre">{mascotas.nombre}</h2>
               <img
@@ -47,7 +47,7 @@ export default function Detalle() {
               <li>Raza: {mascotas.raza}</li>
               <li>Tamaño: {mascotas.tamaño}</li>
             </ul>
-            <div className="descrip">
+            <div className="descripDetalleMascota">
               <h4>Descripción:</h4>
               <p>{mascotas.descripcion}</p>
             </div>

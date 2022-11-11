@@ -28,7 +28,7 @@ body{
             justify-content: center;
         }
 
-        .subdiv4{
+        .subdiv4 {
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;

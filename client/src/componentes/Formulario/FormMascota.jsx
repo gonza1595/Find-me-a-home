@@ -1,186 +1,273 @@
-import React, {useState, useEffect} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import {formularioPostMascota} from "../../redux/actions/index";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
+import { formularioPostMascota } from "../../redux/actions/index";
 import NavBar from "../NavBar/NavBar";
 import "./FormMascota.css";
 
-
 function validate(input) {
-    let errors = {}
+  let errors = {};
 
-    if(!input.nombre){
-        errors.nombre = ("Se requiere un nombre") 
-    }   
-    else if(!input.descripcion){
-        errors.descripcion = ("Se requiere una descripcion")
-    }
+  if (!input.nombre) {
+    errors.nombre = "Se requiere un nombre";
+  } else if (!input.descripcion) {
+    errors.descripcion = "Se requiere una descripcion";
+  } else if (!input.imagen) {
+    errors.imagen = "Se requiere imagen";
+  } else if (!input.edad) {
+    errors.edad = "Se requiere edad";
+  } else if (!input.tamaño) {
+    errors.tamaño = "Se requiere tamaño";
+  } else if (!input.raza) {
+    errors.raza = "Se requiere raza";
+  } else if (!input.sexo) {
+    errors.sexo = "Se requiere sexo";
+  } else if (!input.especie) {
+    errors.especie = "Se requiere especie";
+  }
 
-    else if(!input.imagen){
-        errors.imagen = ("Se requiere imagen")
-    }
-
-    else if(!input.edad){
-        errors.edad = ("Se requiere edad")
-    }
-    else if(!input.tamaño){
-        errors.tamaño = ("Se requiere tamaño")
-    }
-    else if(!input.raza){
-        errors.raza = ("Se requiere raza")
-    }
-    else if(!input.sexo){
-        errors.sexo = ("Se requiere sexo")
-    }
-    else if(!input.especie){
-        errors.especie = ("Se requiere especie")
-    }
-   
-    return errors
+  return errors;
 }
 
-export default function Form(){
-    const dispatch = useDispatch()
-    const history = useHistory() 
+export default function Form() {
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-    const [errors, setErrors] = useState({})  
+  const [errors, setErrors] = useState({});
 
+  // Inputs
+  const [input, setInput] = useState({
+    nombre: "",
+    descripcion: "",
+    imagen: "",
+    edad: "",
+    raza: "",
+    sexo: "",
+    especie: "",
+    tamaño: "",
+    //arreglo de Pet
+  });
 
-     // Inputs 
-     const [input, setInput] = useState({ 
-        "nombre": '',
-        "descripcion": '',
-        "imagen": '',
-        "edad":'',
-        "raza": '',
-        "sexo": '',
-        "especie": '',
-        "tamaño": '',
-      //arreglo de Pet
-    })
+  function handleChange(e) {
+    e.preventDefault();
+    console.log(input);
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: [e.target.value],
+      })
+    );
+  }
 
-    function handleChange(e){
-     
-
-        e.preventDefault();
-        console.log(input)
-        setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-        setErrors(validate({
-          ...input,
-          [e.target.name]: [e.target.value]
-        })
-        )
+  function handleCheck(e) {
+    if (e.target.checked) {
+      setInput({
+        ...input,
+        [e.target.name]: e.target.value,
+      });
     }
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: e.target.value,
+      })
+    );
+  }
 
+  function handleSubmit(e) {
+    if (
+      !input.especie ||
+      !input.sexo ||
+      !input.raza ||
+      !input.tamaño ||
+      !input.edad ||
+      !input.imagen ||
+      !input.descripcion ||
+      !input.nombre
+    ) {
+      e.preventDefault();
+      alert("Verifique los campos para poder continuar");
+    } else {
+      e.preventDefault();
+      dispatch(formularioPostMascota(input));
+      alert("Su mascota ha sido posteado exitosamente");
+      history.push("/"); //fijarse si se deja o no
 
-    function handleCheck(e){
-        if(e.target.checked){
-            setInput({
-                ...input, 
-                [e.target.name] : e.target.value
-            })
-        }
-         setErrors(validate({
-             ...input, 
-             [e.target.name] : e.target.value
-         }))
+      setInput({
+        nombre: "",
+        descripcion: "",
+        imagen: "",
+        edad: "",
+        raza: "",
+        sexo: "",
+        especie: "",
+      });
     }
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: e.target.value,
+      })
+    );
+  }
 
+  return (
+    <div>
+      <NavBar />
+      <div className="createFormMascota">
+        <h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
 
-    function handleSubmit(e){
-        if( !input.especie || !input.sexo || !input.raza || !input.tamaño ||!input.edad ||!input.imagen ||!input.descripcion ||!input.nombre ){
-            e.preventDefault();
-            alert('Verifique los campos para poder continuar')
-        } else {
-            e.preventDefault();
-            dispatch(formularioPostMascota(input));
-            alert('Su mascota ha sido posteado exitosamente'); 
-            history.push('/') //fijarse si se deja o no
-       
-            setInput({
-                nombre: '',
-                descripcion: '',
-                imagen: '',
-                edad:'',
-                raza: '',
-                sexo: '',
-                especie: '',
-            })
-        }
-         setErrors(validate({
-             ...input, 
-            [e.target.name] : e.target.value
-         }))    
-    }
-
-return(
-    <div >
-    <NavBar/>
-    <div className='create' >
-    <h1 className='titulo'>POSTEAR MASCOTA</h1>
-   
-    <form onSubmit={(e) => handleSubmit(e)}>
-        <div className='container' >
-            <label  > Nombre: </label>
-            <input type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange} className="input"/>
-            {errors.nombre && (<p>{errors.nombre}</p>)}
-        </div>
-        <div className='container'>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="containerFormMascotas">
+            <label> Nombre: </label>
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.nombre}
+              name="nombre"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.nombre && <p>{errors.nombre}</p>}
+          </div>
+          <div className="containerFormMascotas">
             <label>Descripcion: </label>
-            <input type="text" autoComplete="off" value={input.descripcion} name='descripcion' onChange={handleChange} className="input"/>
-            {errors.descripcion && (<p>{errors.descripcion}</p>)}
-        </div>
-        <div className='container'>
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.descripcion}
+              name="descripcion"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.descripcion && <p>{errors.descripcion}</p>}
+          </div>
+          <div className="containerFormMascotas">
             <label>Imagen: </label>
-            <input type="text" autoComplete="off" value={input.imagen} name='imagen' onChange={handleChange} className="input"/>
-            {errors.imagen && (<p>{errors.imagen}</p>)}
-        </div>
-        <div className='container'>
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.imagen}
+              name="imagen"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.imagen && <p>{errors.imagen}</p>}
+          </div>
+          <div className="containerFormMascotas">
             <label>Edad: </label>
-            <input type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange} className="input"/>
-            {errors.edad && (<p>{errors.edad}</p>)}
-        </div>
-        <div className='container'>
+            <input
+              type="number"
+              autoComplete="off"
+              value={input.edad}
+              name="edad"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.edad && <p>{errors.edad}</p>}
+          </div>
+          <div className="containerFormMascotas">
             <label>Raza: </label>
-            <input type="text" autoComplete="off" value={input.raza} name='raza' onChange={handleChange} className="input"/>
-            {errors.raza && (<p>{errors.raza}</p>)}
-        </div>
-        
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.raza}
+              name="raza"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.raza && <p>{errors.raza}</p>}
+          </div>
 
-        <div className='container'>
+          <div className="containerFormMascotas">
             <label>Sexo: </label>
             <label>
-            <input type="radio" autoComplete="off" value="masculino" name='sexo' onClick={(e) => handleCheck(e)}/> Masculino </label>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="masculino"
+                name="sexo"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Masculino{" "}
+            </label>
             <label>
-            <input type="radio" autoComplete="off" value="femenino" name='sexo' onClick={(e) => handleCheck(e)}/> Femenino </label>
-            {errors.sexo && (<p>{errors.sexo}</p>)}
-        </div>
-        <div className='container'>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="femenino"
+                name="sexo"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Femenino{" "}
+            </label>
+            {errors.sexo && <p>{errors.sexo}</p>}
+          </div>
+          <div className="containerFormMascotas">
             <label>Especie: </label>
             <label>
-            <input type="radio" autoComplete="off" value="perro" name='especie' onClick={(e) => handleCheck(e)}/> Perro </label>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="perro"
+                name="especie"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Perro{" "}
+            </label>
             <label>
-            <input type="radio" autoComplete="off" value="gato" name='especie' onClick={(e) => handleCheck(e)}/> Gato </label>
-            {errors.especie && (<p>{errors.especie}</p>)}
-        </div>
-        <div className='container'>
-            <label className=''>Tamaño: </label>
-            <label >
-            <input type="radio" autoComplete="off" value="pequeño" name='tamaño' onClick={(e) => handleCheck(e)}/> Pequeño </label>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="gato"
+                name="especie"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Gato{" "}
+            </label>
+            {errors.especie && <p>{errors.especie}</p>}
+          </div>
+          <div className="containerFormMascotas">
+            <label className="">Tamaño: </label>
             <label>
-            <input type="radio" autoComplete="off" value="mediano" name='tamaño' onClick={(e) => handleCheck(e)}/> Mediano </label>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="pequeño"
+                name="tamaño"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Pequeño{" "}
+            </label>
             <label>
-            <input type="radio" autoComplete="off" value="grande" name='tamaño' onClick={(e) => handleCheck(e)}/> Grande </label>
-            {errors.tamaño && (<p>{errors.tamaño}</p>)}
-        </div>
-        <div>
-            <button type='submit'> Postear </button>
-        </div>
-
-    </form>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="mediano"
+                name="tamaño"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Mediano{" "}
+            </label>
+            <label>
+              <input
+                type="radio"
+                autoComplete="off"
+                value="grande"
+                name="tamaño"
+                onClick={(e) => handleCheck(e)}
+              />{" "}
+              Grande{" "}
+            </label>
+            {errors.tamaño && <p>{errors.tamaño}</p>}
+          </div>
+          <div>
+            <button type="submit"> Postear </button>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-
-)
+  );
 }

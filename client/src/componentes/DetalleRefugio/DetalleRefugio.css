@@ -9,7 +9,7 @@
     background-size: cover;
 }
 
-.datos{
+.datosDetalleRefugio{
     display: flex;
     flex-direction: row;
     align-items:flex-start;
@@ -35,21 +35,21 @@ h1,h2{
     color:#027a74;
     
 }
-.title{
+.titleDetalleRefugio {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
 }
 
-.lista{
+.listaDetalleRefugio {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 80px 200px 0px 0px;
  
 }
-.botoncitos{
+.botoncitosDetalleRefugio {
     display: flex;
     flex-direction: column;
     align-items: center;
