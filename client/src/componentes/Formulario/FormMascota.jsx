@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router'
-import {formularioPostMascota} from "../../redux/actions/index"
-import NavBar from "../NavBar/NavBar"
-
+import React, {useState, useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
+import {formularioPostMascota} from "../../redux/actions/index";
+import NavBar from "../NavBar/NavBar";
+import "./FormMascota.css";
 
 
 function validate(input) {
@@ -115,38 +115,40 @@ export default function Form(){
     }
 
 return(
-    <div>
+    <div >
     <NavBar/>
-    <h1>Postear Mascota</h1>
+    <div className='create' >
+    <h1 className='titulo'>POSTEAR MASCOTA</h1>
+   
     <form onSubmit={(e) => handleSubmit(e)}>
-        <div>
-            <label>Nombre: </label>
-            <input type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
+        <div className='container' >
+            <label  > Nombre: </label>
+            <input type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange} className="input"/>
             {errors.nombre && (<p>{errors.nombre}</p>)}
         </div>
-        <div>
+        <div className='container'>
             <label>Descripcion: </label>
-            <input type="text" autoComplete="off" value={input.descripcion} name='descripcion' onChange={handleChange}/>
+            <input type="text" autoComplete="off" value={input.descripcion} name='descripcion' onChange={handleChange} className="input"/>
             {errors.descripcion && (<p>{errors.descripcion}</p>)}
         </div>
-        <div>
+        <div className='container'>
             <label>Imagen: </label>
-            <input type="text" autoComplete="off" value={input.imagen} name='imagen' onChange={handleChange}/>
+            <input type="text" autoComplete="off" value={input.imagen} name='imagen' onChange={handleChange} className="input"/>
             {errors.imagen && (<p>{errors.imagen}</p>)}
         </div>
-        <div>
+        <div className='container'>
             <label>Edad: </label>
-            <input type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
+            <input type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange} className="input"/>
             {errors.edad && (<p>{errors.edad}</p>)}
         </div>
-        <div>
+        <div className='container'>
             <label>Raza: </label>
-            <input type="text" autoComplete="off" value={input.raza} name='raza' onChange={handleChange}/>
+            <input type="text" autoComplete="off" value={input.raza} name='raza' onChange={handleChange} className="input"/>
             {errors.raza && (<p>{errors.raza}</p>)}
         </div>
         
 
-        <div>
+        <div className='container'>
             <label>Sexo: </label>
             <label>
             <input type="radio" autoComplete="off" value="masculino" name='sexo' onClick={(e) => handleCheck(e)}/> Masculino </label>
@@ -154,7 +156,7 @@ return(
             <input type="radio" autoComplete="off" value="femenino" name='sexo' onClick={(e) => handleCheck(e)}/> Femenino </label>
             {errors.sexo && (<p>{errors.sexo}</p>)}
         </div>
-        <div>
+        <div className='container'>
             <label>Especie: </label>
             <label>
             <input type="radio" autoComplete="off" value="perro" name='especie' onClick={(e) => handleCheck(e)}/> Perro </label>
@@ -162,9 +164,9 @@ return(
             <input type="radio" autoComplete="off" value="gato" name='especie' onClick={(e) => handleCheck(e)}/> Gato </label>
             {errors.especie && (<p>{errors.especie}</p>)}
         </div>
-        <div>
-            <label>Tamaño: </label>
-            <label>
+        <div className='container'>
+            <label className=''>Tamaño: </label>
+            <label >
             <input type="radio" autoComplete="off" value="pequeño" name='tamaño' onClick={(e) => handleCheck(e)}/> Pequeño </label>
             <label>
             <input type="radio" autoComplete="off" value="mediano" name='tamaño' onClick={(e) => handleCheck(e)}/> Mediano </label>
@@ -177,6 +179,8 @@ return(
         </div>
 
     </form>
+    </div>
 </div>
+
 )
 }

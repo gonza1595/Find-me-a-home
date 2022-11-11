@@ -6,7 +6,6 @@ import './NavBar.css';
 function NavBar() {
 	const [clicked, setClicked] = useState(false); //false
 
-	console.log(clicked);
 
 	const handleClick = () => {
 		//cuando esta true lo pasa a false y vice versa
