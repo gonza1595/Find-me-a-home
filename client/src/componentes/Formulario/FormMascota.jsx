@@ -49,14 +49,14 @@ export default function Form(){
 
      // Inputs 
      const [input, setInput] = useState({ 
-        nombre: '',
-        descripcion: '',
-        imagen: '',
-        edad:'',
-        raza: '',
-        sexo: '',
-        especie: '',
-        tamaño: '',
+        "nombre": '',
+        "descripcion": '',
+        "imagen": '',
+        "edad":'',
+        "raza": '',
+        "sexo": '',
+        "especie": '',
+        "tamaño": '',
       //arreglo de Pet
     })
 
@@ -64,6 +64,7 @@ export default function Form(){
      
 
         e.preventDefault();
+        console.log(input)
         setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
         setErrors(validate({
           ...input,
@@ -95,7 +96,7 @@ export default function Form(){
             e.preventDefault();
             dispatch(formularioPostMascota(input));
             alert('Su mascota ha sido posteado exitosamente'); 
-            history.push('/home') //fijarse si se deja o no
+            history.push('/') //fijarse si se deja o no
        
             setInput({
                 nombre: '',
@@ -148,27 +149,27 @@ return(
         <div>
             <label>Sexo: </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.sexo} name='sexo' onChange={(e) => handleCheck(e)}/> Masculino </label>
+            <input type="radio" autoComplete="off" value="masculino" name='sexo' onClick={(e) => handleCheck(e)}/> Masculino </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.sexo} name='sexo' onChange={(e) => handleCheck(e)}/> Femenino </label>
+            <input type="radio" autoComplete="off" value="femenino" name='sexo' onClick={(e) => handleCheck(e)}/> Femenino </label>
             {errors.sexo && (<p>{errors.sexo}</p>)}
         </div>
         <div>
             <label>Especie: </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.especie} name='especie' onChange={(e) => handleCheck(e)}/> Perro </label>
+            <input type="radio" autoComplete="off" value="perro" name='especie' onClick={(e) => handleCheck(e)}/> Perro </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.especie} name='especie' onChange={(e) => handleCheck(e)}/> Gato </label>
+            <input type="radio" autoComplete="off" value="gato" name='especie' onClick={(e) => handleCheck(e)}/> Gato </label>
             {errors.especie && (<p>{errors.especie}</p>)}
         </div>
         <div>
             <label>Tamaño: </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Pequeño </label>
+            <input type="radio" autoComplete="off" value="pequeño" name='tamaño' onClick={(e) => handleCheck(e)}/> Pequeño </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Mediano </label>
+            <input type="radio" autoComplete="off" value="mediano" name='tamaño' onClick={(e) => handleCheck(e)}/> Mediano </label>
             <label>
-            <input type="radio" autoComplete="off" value={input.tamaño} name='tamaño' onChange={(e) => handleCheck(e)}/> Grande </label>
+            <input type="radio" autoComplete="off" value="grande" name='tamaño' onClick={(e) => handleCheck(e)}/> Grande </label>
             {errors.tamaño && (<p>{errors.tamaño}</p>)}
         </div>
         <div>

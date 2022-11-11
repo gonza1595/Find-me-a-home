@@ -24,7 +24,7 @@ h3{
     background-color: rgb(243, 238, 245);
     padding: 20px;
     border-radius: 20px; 
-    
+    color:#027a74;
 }
 
 h1,h2{
@@ -32,7 +32,8 @@ h1,h2{
     padding: 15px 20px;
     border-radius: 0 60px 60px 0;
     font-style: oblique;
-    color:#c5f5f2;
+    color:#027a74;
+    
 }
 .title{
     display: flex;
