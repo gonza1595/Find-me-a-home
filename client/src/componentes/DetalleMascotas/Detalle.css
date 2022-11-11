@@ -9,7 +9,7 @@
     background-size: cover;
 }
 
-.informacion{
+.informacionDetalleMascotas{
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -31,7 +31,7 @@
     font-family: cursive;
 }
 
-.descrip {
+.descripDetalleMascota {
     display: flex;
     flex-direction: column;
     margin-right: 10px;

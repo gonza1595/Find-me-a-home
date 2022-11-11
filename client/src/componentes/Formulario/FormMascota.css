@@ -1,5 +1,5 @@
 
-.create{
+.createFormMascota{
 
     height: 49rem;
     padding: 5rem;
@@ -8,14 +8,14 @@
     
 }
 
-.titulo{
+.tituloFormMascota {
     color: rgba(242, 128, 128, 0.8);
 	 display: inline-block;
 	 font-size: 24px;
   
 }
 
-.container{
+.containerFormMascota{
     background: #f9c7c2;
     display: grid;
     grid-template-areas: "." ".";
@@ -32,7 +32,7 @@
     
 }
 
-.input{
+.inputFormMascotas {
     
     padding: 5px 50px 5px 10px;
     font-size: 0.8rem;
@@ -48,7 +48,7 @@
 
 }
 
-.input:focus{
+.inputFormMascotas:focus{
     outline: none;
     border: 1px solid #211C42;
     box-shadow: 0 0 5px #211C42;

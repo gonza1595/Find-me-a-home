@@ -9,7 +9,7 @@
     background-size: cover;
 }
 
-.informacion{
+.informacionDetalleProducto {
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -31,7 +31,7 @@
     font-family: cursive;
 }
 
-.descrip {
+.descripDetalleProducto {
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -61,5 +61,13 @@ button:hover{
     padding: 8px;
     border: 1px solid rgb(235, 199, 102) ;
     font-family: cursive;
+
+}
+
+.detalleCard {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 
 }

@@ -1,4 +1,4 @@
-.card {
+.cardMascotas {
     display:flex;
     flex-direction: row;
     border-radius: 20px;
@@ -15,10 +15,10 @@
    
 }
 
-.card:hover{
+.cardMascotas:hover{
     border: 2px solid #027a74;
 }
 
-.p{
+.pMascotas{
     font-size: 20px;
 }
