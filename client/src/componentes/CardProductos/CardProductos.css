@@ -1,4 +1,4 @@
-.card {
+.cardProductos {
     display:flex;
     flex-direction: row;
     border-radius: 20px;
@@ -14,11 +14,11 @@
     color: rgb(253, 215, 112); 
 }
  
-.card:hover{
+.cardProductos:hover{
     border: 2px solid #027a74;
 }
 
-.p{
+.pProductos {
     font-size: 20px;
 }
 
