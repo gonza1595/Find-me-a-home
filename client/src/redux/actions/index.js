@@ -61,6 +61,17 @@ export function traerProductos() {
   };
 }
 
+export function traerProductosfltrados(filtro, orden, tipo) {
+  return async function (dispatch) {
+    var json = await axios.get(`http://localhost:3001/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`);
+
+    return dispatch({
+      type: "TRAER_PRODUCTOS",
+      payload: json.data,
+    });
+  };
+}
+
 export const detalleMascota = (id) => (dispatch) => {
   try {
     return axios
