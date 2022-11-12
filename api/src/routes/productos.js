@@ -49,7 +49,8 @@ router.get("/", async (req, res) => {
                     tipo: p.tipo
                     }
                 })
-                res.status(200).send(productoNombre);
+                const productoNombreFiltrado= await filtroProductos(productoNombre, filtro, orden, tipo);
+                res.status(200).send(productoNombreFiltrado);
             }catch(error){
                 res.status(400).send("producto no encontrado");
             }
