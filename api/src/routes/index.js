@@ -5,6 +5,8 @@ const getMascotasById = require('./getMascotaById.js');
 const getProductosById = require('./getProductosById')
 const getAllProducts = require("./productos");
 const postUser= require("./usuarios");
+const checkAuth = require("../middleware/auth");
+const checkRangoAuth = require("../middleware/rangoAuth");
 const router = Router();
 
 // Configurar los routers
