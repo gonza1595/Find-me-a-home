@@ -2,6 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const { User } = require('../db');
 const {encrypt, compare} = require("../helpers/bcrypt");
+const {tokenSign} = require("../helpers/generarToken");
 
 router.post("/registro" , async (req, res) => {
     const {nombre, contraseña, correo, edad, direccion, rango}= req.body;
@@ -36,9 +37,9 @@ router.post("/login" , async (req, res) => {
         res.status(404).send({error: "Usuario no encontrado"});
        }
        const checkContraseña= await compare(contraseña, usuario.contraseña);
-
+       const tokenSesion= await tokenSign(usuario);
        if(checkContraseña) {
-        res.status(200).send(usuario);
+        res.status(200).send({usuario, tokenSesion});
        }
        if(!checkContraseña){
         res.status(400).send({error: "contraseña incorrecta"});
