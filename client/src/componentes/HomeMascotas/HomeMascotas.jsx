@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import CardMascotas from './CardMascotas/CardMascotas.jsx';
-import NavBar from '../NavBar/NavBar';
 import {useSelector, useDispatch} from 'react-redux';
 import {useEffect} from 'react';
 import {traerMascotas} from '../../redux/actions/index';
@@ -9,7 +8,7 @@ import './HomeMascotas.css';
 import Pagination from '../Pagination/Pagination.jsx';
 import FiltrosMascotas from './FiltrosMascotas/FiltrosMascotas.jsx';
 import SearchBarMascota from '../SearchBar/SearchBarMascota.jsx';
-import loading from './img/loading_.gif';
+import Loader from '../Loader/Loader.jsx';
 
 export default function HomeMascotas() {
 	let mascotasState = useSelector((state) => state.mascotas);
@@ -34,14 +33,14 @@ export default function HomeMascotas() {
 
 	return (
 		<div>
-			<NavBar />
+			
 			<div>
+				<SearchBarMascota />
 				<FiltrosMascotas
 					setFilterSelected={setFilterSelected}
 					setPage={setPage}
 					showMascotas={showMascotas}
 				/>
-				<SearchBarMascota />
 			</div>
 
 			<div className='containerMascotas'>
@@ -57,7 +56,7 @@ export default function HomeMascotas() {
 						</Link>
 					))
 				) : (
-					<img src={loading} alt='loading' />
+					<Loader />
 				)}
 			</div>
 			{!showMascotas.length > 0 ? null : (

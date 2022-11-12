@@ -29,6 +29,9 @@
     background-size: cover;
     border-radius: 20px;
     font-family: cursive;
+    color: #027a74;
+    font-size: 18px;
+
 }
 
 .descripDetalleMascota {
@@ -37,30 +40,15 @@
     margin-right: 10px;
     margin-left: 40px;
 }
-
-ul{
-    margin-left: 10px;
-    margin-right: 20px;
+.informacionDetalleMascotas ul{
+    padding: 20px;
 }
+
+.nombreimg img{
+    border-radius: 15px;
+}
+
 #nombre {
     align-items:center;
     justify-content:center;
-}
-
-button {
-    background-color: rgb(253, 215, 112) ;
-    border-radius: 20px;
-    padding: 8px;
-    border: 1px solid rgb(235, 199, 102) ;
-    font-family: cursive;
-    color:#027a74;
-}
-
-button:hover{
-    background-color:  #027a74 ;
-    border-radius: 20px;
-    padding: 8px;
-    border: 1px solid rgb(235, 199, 102) ;
-    font-family: cursive;
-
 }

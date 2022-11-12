@@ -20,14 +20,14 @@
     background-size: cover;
     border-radius: 20px;
 }
-h3{
+.datosDetalleRefugio h3{
     background-color: rgb(243, 238, 245);
     padding: 20px;
     border-radius: 20px; 
     color:#027a74;
 }
 
-h1,h2{
+.datosDetalleRefugio h1{
     background-color: rgb(253, 215, 112);
     padding: 15px 20px;
     border-radius: 0 60px 60px 0;

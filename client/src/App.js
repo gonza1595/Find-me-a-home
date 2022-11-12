@@ -10,28 +10,28 @@ import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
 import HomeAdopta from "./componentes/HomeAdopta/HomeAdopta.jsx";
 import ReqAdopcion from "./componentes/ReqAdopcion/ReqAdopcion.jsx";
 import HomeMascotas from "../src/componentes/HomeMascotas/HomeMascotas";
-import SearchBarMascota from "./componentes/SearchBar/SearchBarMascota";
-import SearchBarProducto from "./componentes/SearchBar/SearchBarProducto.jsx";
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
+import Dashboard from "./componentes/Dashboard/Dashboard/Dashboard.jsx";
+import NavBar from "./componentes/NavBar/NavBar.jsx";
 
 function App() {
   return (
     <BrowserRouter>
+    <NavBar/>
       <div className="app">
         <Switch>
           <Route exact path="/" component={home} />
           <Route exact path="/mascotas/:id" component={Detalle} />
-          <Route exact path="/adopta" component={DetalleRefugio} />
           <Route exact path="/contacto" component={DetalleRefugio} />
-          <Route path="/InciarSesion" component={FormUsuario} />
+          <Route path="/iniciarSesion" component={FormUsuario} />
           <Route path="/formMascota" component={FormMascota} />
-          <Route exact path="/homeproductos" component={HomeProductos} />
           <Route exact path="/productos" component={HomeProductos} />
           <Route exact path="/productos/:id" component={DetalleProducto} />
           <Route exact path="/QuienesSomos" component={QuienesSomos} />
           <Route exact path="/adopta" component={HomeAdopta} />
           <Route exact path="/requisitos" component={ReqAdopcion} />
-          <Route exact path="/Mascotas" component={HomeMascotas} />
+          <Route exact path="/mascotas" component={HomeMascotas} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </div>
     </BrowserRouter>

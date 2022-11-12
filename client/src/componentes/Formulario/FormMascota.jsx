@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { formularioPostMascota } from "../../redux/actions/index";
-import NavBar from "../NavBar/NavBar";
 import "./FormMascota.css";
 
 function validate(input) {
@@ -115,7 +114,6 @@ export default function Form() {
 
   return (
     <div>
-      <NavBar />
       <div className="createFormMascota">
         <h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
 

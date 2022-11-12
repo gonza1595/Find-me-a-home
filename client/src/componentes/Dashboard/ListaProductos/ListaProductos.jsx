@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './ListaProductos.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { traerProductos } from '../../redux/actions/index';
-import { adminBorrarProducto } from '../../redux/actions/index';
+import { traerProductos } from '../../../redux/actions/index';
+import { adminBorrarProducto } from '../../../redux/actions/index';
 
 
 const TablaProductos = () => {

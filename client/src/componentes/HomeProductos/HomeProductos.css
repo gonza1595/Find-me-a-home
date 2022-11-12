@@ -1,10 +1,13 @@
 
 *{text-decoration: none;}
 
-.HomeContainer{
-    
-    height: 100vh;
-    overflow: auto;
+.container_homeProd{
+    background-color: #027a74;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+
 }
 
 
@@ -25,11 +28,9 @@
 }
 
 .containerCards{
-    
-    float: right;
     display: flex;
     flex-wrap:wrap;
-    width: 75%;
+    width: 100%;
     gap: 2.5em;
     right: 20%;
     padding: 1.25rem;
@@ -39,30 +40,28 @@
 
 
 .filters {
-
     padding: 0.5rem;
     display: flex;
-    position: sticky;
-    top: 0;
-    height: 70vh;
-    /* width: 25%; */
-    justify-content: center;
-
-    
-    /* border: solid #b33939 1px; */
-    color: white;
-    height: 65vh;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;;
+    flex-direction: row;
     gap: 5rem;
-    border-radius: 10px;
-    margin-left: 5rem;
-    margin-top: 1rem;
     background-color: #027a74;
-    padding: 1.5rem;
-    width: 15rem;
-   
+  }
+
+  .filters select {
+    background-color: #c5f5f2;
+    border-radius: 10px;
+    padding: 5px;
+    color: #027a74;
+    font-family: cursive;
+    font-weight:bolder;
+    width: 100%;
+  }
+
+  .filters select:hover {
+    background-color: #027a74;
+    border: #c5f5f2 1px solid;
+    color:#c5f5f2
   }
   
   .underline{

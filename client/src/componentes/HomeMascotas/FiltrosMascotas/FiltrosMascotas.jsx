@@ -57,7 +57,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   }
 
   return (
-    <div>
+    <div className="filters">
       <select
         onChange={(e) => handleFilterBySexo(e)}
         defaultValue="Filtrar por sexo"

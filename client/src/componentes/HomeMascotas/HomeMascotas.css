@@ -1,8 +1,10 @@
 .containerMascotas {
     background-color: #027a74;
-    display: grid;
-    grid-template-columns: repeat(5, 290px);
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    gap: 2.5em;
+    right: 20%;
+    padding: 1.25rem;
     justify-content: center;
-    padding-left: 70px;
-    padding-top: 20px;
 }

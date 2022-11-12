@@ -21,6 +21,9 @@ export function buscarPorNombreMascota(nombre) {
 
 export function traerMascotas() {
   return async function (dispatch) {
+    dispatch({
+      type: "LOADING",
+  })
     try {
       let json = await axios.get("http://localhost:3001/mascotas");
       return dispatch({
@@ -52,6 +55,9 @@ export function buscarPorNombreProducto(nombre) {
 
 export function traerProductos() {
   return async function (dispatch) {
+    dispatch({
+      type: "LOADING",
+  })
     var json = await axios.get("http://localhost:3001/productos");
 
     return dispatch({
@@ -63,6 +69,9 @@ export function traerProductos() {
 
 export function traerProductosfltrados(filtro, orden, tipo) {
   return async function (dispatch) {
+    dispatch({
+      type: "LOADING",
+  })
     var json = await axios.get(`http://localhost:3001/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`);
 
     return dispatch({
@@ -73,6 +82,9 @@ export function traerProductosfltrados(filtro, orden, tipo) {
 }
 
 export const detalleMascota = (id) => (dispatch) => {
+  dispatch({
+    type: "LOADING",
+})
   try {
     return axios
       .get("http://localhost:3001/mascotas/" + id)
@@ -112,6 +124,9 @@ export function formularioPostMascota(payload) {
 }
 
 export const detalleProducto = (id) => async (dispatch) => {
+  dispatch({
+    type: "LOADING",
+})
   try {
     const { data } = await axios.get("http://localhost:3001/productos/" + id);
     dispatch({ type: "DETALLE_PRODUCTO", payload: data });

@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer.jsx"
 import "./HomeAdopta.css"
 
@@ -13,7 +12,7 @@ export default function HomeAdopta() {
         <div className="main">
         
             <div className="div1">
-                <NavBar/>
+                
             </div>  
 
             <div className="div2">

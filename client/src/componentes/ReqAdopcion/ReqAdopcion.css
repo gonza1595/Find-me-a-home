@@ -1,5 +1,6 @@
 .conteinerRequisitos {
-    background-color: #f2f2f2;
+    background-color: #027a74;
+    font-family: cursive;
 }
 
 .tituloReq {
@@ -7,6 +8,9 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    color: #c5f5f2;
+    font-size: 30px;
+
 }
 
 .img {
@@ -24,12 +28,12 @@
 
 .texto1{
     padding: 1rem 8rem;
-    text-align:justify
+    text-align:justify;
+    color: #c5f5f2;
 }
-p {
+.texto1 p {
     padding: 1rem 4rem;
     font-size: 18px;
-    color: black;
     line-height: 1.3rem;
 }
 
@@ -43,6 +47,11 @@ p {
 
 .l2 {
    padding-left: 4rem;
+}
+
+.linksRequisitos button {
+    font-family: cursive;
+    font-weight: bolder;
 }
 
 

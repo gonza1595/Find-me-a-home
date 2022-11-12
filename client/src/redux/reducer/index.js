@@ -4,17 +4,24 @@ const initialState = {
   productos: [],
   detalle: {},
   usuarios: [],
+  loading: false,
 
   //agregar mas estados si se requiere...
 };
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
+    case "LOADING":
+        return {
+            ...state,
+            loading: true
+        }
     case "TRAER_MASCOTAS":
       return {
         ...state,
         mascotas: action.payload,
         allMascotas: action.payload,
+        loading: false,
       };
     case "BUSCAR_POR_NOMBRE_MASCOTA":
       return {
@@ -43,6 +50,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         productos: action.payload,
+        loading: false,
       };
 
     case "FILTER_BY_SEXO":
