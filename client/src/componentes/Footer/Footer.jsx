@@ -1,7 +1,5 @@
 import React from "react";
-
 import mail from "../Footer/img/mail.png";
-import tel from "../Footer/img/tel.png";
 import facebook from "../Footer/img/facebook.png";
 import instagram from "../Footer/img/instagram.png";
 import twitter from "../Footer/img/twitter.png";
@@ -18,33 +16,29 @@ export default function Footer() {
             <p className="titulo.contacto">CONTACTANOS</p>
           </div>
           <div className="contactanos-items">
-            <img src={mail} alt="mail" width="50px" />
+            <img src={mail} alt="mail" width="25px" height='25px' />
             <a href="mailto:findmeahome@gmail.com">findmeahome@gmail.com</a>
           </div>
-          <div className="contactanos-items">
-            <img src={whatsapp} alt="whatsapp" width="50px" />
+          <div className="wsp_item">
+            <img src={whatsapp} alt="whatsapp" width="25px" height='25px'/>
             <p>11 2699 5890</p>
-          </div>
-          <div className="contactanos-items">
-            <img src={tel} alt="telefono" width="50px" />
-            <p>011 - 4706 5890</p>
           </div>
         </div>
 
         <div className="redes">
           <a href="https://instagram.com">
-            <img src={instagram} alt="instagram" width="50px" />
+            <img src={instagram} alt="instagram" width="25px" />
           </a>
           <a href="https://twitter.com">
-            <img src={twitter} alt="twitter" width="50px" />
+            <img src={twitter} alt="twitter" width="25px" />
           </a>
           <a href="https://facebook.com">
-            <img src={facebook} alt="img" width="50px" />
+            <img src={facebook} alt="img" width="25px" />
           </a>
         </div>
 
         <section>
-          <form>
+          <form className="form_f">
             <p>Subscrirse al newsletter.</p>
             <p>
               <input

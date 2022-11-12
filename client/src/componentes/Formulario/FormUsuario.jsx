@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
 import {formularioRegistroUsuario} from "../../redux/actions/index"
-import NavBar from "../NavBar/NavBar"
+import './FormUsuario.css'
 /* recordar cuando usar usuario */
 
 function validate(input) {
@@ -111,51 +111,61 @@ export default function Form() {
        
 
 return (
-    <div>
-        <NavBar/>
-        <h1>Registrarse</h1>
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <div>
-                <label>Nombre: </label>
-                <input type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
-                {errors.nombre && (<p>{errors.nombre}</p>)}
-            </div>
-            <div>
-                <label>Contraseña: </label>
-                <input type="password" autoComplete="off" value={input.contraseña} name='contraseña' onChange={handleChange}/>
-                {errors.contraseña && (<p>{errors.contraseña}</p>)}
-            </div>
-            <div>
-                <label>Correo: </label>
-                <input type="text" autoComplete="off" value={input.correo} name='correo' onChange={handleChange}/>
-                {errors.correo && (<p>{errors.correo}</p>)}
-            </div>
-            <div>
-                <label>Edad: </label>
-                <input type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
-                {errors.edad && (<p>{errors.edad}</p>)}
-            </div>
-            <div>
-                <label>Direccion: </label>
-                <input type="text" autoComplete="off" value={input.direccion} name='direccion' onChange={handleChange}/>
-                {errors.direccion && (<p>{errors.direccion}</p>)}
-            </div>
-            
+<div>
+       
+       <h1 class='welcome'>Registrarse</h1>
+     
+       <form  onSubmit={(e) => handleSubmit(e)}>
+      
+       <div class='container_formUs'>
+ <div class='window'>
 
-            <div>
-                <label>Rango: </label>
-                <label>
-                <input type="radio" value='usuario' name='rango' onClick={(e) => handleCheck(e)}/> Usuario </label>
-                <label>
-                <input type="radio" value='refugio' name='rango' onClick={(e) => handleCheck(e)}/> Refugio </label>
-                {errors.rango && (<p>{errors.rango}</p>)}
-            </div>
+   <div class='input-fields'>
+           <div>
+               <label >Nombre: </label>
+               <input class='input-line full-width' type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
+               {errors.nombre && (<p>{errors.nombre}</p>)}
+           </div>
+           <div>
+               <label >Contraseña: </label>
+               <input class='input-line full-width' type="password" autoComplete="off" value={input.contraseña} name='contraseña' onChange={handleChange}/>
+               {errors.contraseña && (<p>{errors.contraseña}</p>)}
+           </div>
+           <div>
+               <label >Correo: </label>
+               <input class='input-line full-width' type="text" autoComplete="off" value={input.correo} name='correo' onChange={handleChange}/>
+               {errors.correo && (<p>{errors.correo}</p>)}
+           </div>
+           <div>
+               <label>Edad: </label>
+               <input class='input-line full-width' type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
+               {errors.edad && (<p>{errors.edad}</p>)}
+           </div>
+           <div>
+               <label >Direccion: </label>
+               <input  class='input-line full-width' type="text" autoComplete="off" value={input.direccion} name='direccion' onChange={handleChange}/>
+               {errors.direccion && (<p>{errors.direccion}</p>)}
+           </div>
+           
 
-            <div>
-                <button type='submit'> Registrarse </button>
-            </div>
+           <div>
+               <label class='rango' >Rango: </label>
+               <label>
+               <input  type="radio" value='usuario' name='rango' onClick={(e) => handleCheck(e)}/> Usuario </label>
+               <label>
+               <input   type="radio" value='refugio' name='rango' onClick={(e) => handleCheck(e)}/> Refugio </label>
+               {errors.rango && (<p>{errors.rango}</p>)}
+           </div>
+           </div>
 
-        </form>
-    </div>
+           <div>
+               <button  class='ghost-round full-width' type='submit'> Registrarse </button>
+           </div>
+           </div>
+           </div>
+           
+       </form>
+   
+   </div>
 
 )}

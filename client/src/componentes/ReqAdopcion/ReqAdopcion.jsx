@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
 import requisito from "./img/adop.jpg";
 import "./ReqAdopcion.css";
 
 function ReqAdopcion() {
   return (
     <div>
-      <NavBar />
+
       <div className="conteinerRequisitos">
         <div className="tituloReq">
           <h3>Requisitos de adopción</h3>

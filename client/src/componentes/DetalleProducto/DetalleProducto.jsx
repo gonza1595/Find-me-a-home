@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import "./DetalleProducto.css";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-import NavBar from "../NavBar/NavBar";
 import {
   detalleProducto,
   limpiarEstadoDetalle,
 } from "../../redux/actions/index";
 import axios from "axios";
+import Loader from "../Loader/Loader";
 
 const DetalleProducto = () => {
   //   const producto = useSelector((state) => state.detalle);
@@ -41,11 +41,10 @@ const DetalleProducto = () => {
   }, [id]);
   return (
     <>
-      <NavBar />
 
       <div className="container">
         {!producto ? (
-          <p>Loader</p>
+          <Loader/>
         ) : (
           <div>
             <a href="javascript:history.back()">
@@ -62,7 +61,7 @@ const DetalleProducto = () => {
                 />
               </div>
               <ul>
-                <li>Precio: {producto.precio}</li>
+                <li>Precio: ${producto.precio}</li>
                 <li>Calificación: {producto.calificacion}</li>
                 <li>Stock: {producto.stock}</li>
                 <li>Tipo: {producto.tipo}</li>

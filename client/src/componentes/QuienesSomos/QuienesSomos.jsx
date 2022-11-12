@@ -1,13 +1,11 @@
 import React from 'react';
 import './QuienesSomos.css'
-import  NavBar  from '../NavBar/NavBar'
 import img from '../../assets/img/quienes-somos.jpg'
 
 const QuienesSomos = () => {
 
     return (
         <div>
-            <NavBar/>
             <div className="contenedor">
                 <div className="foto-contenedor">
                     <img src={img} alt="img not found" width='600px' height='auto' />

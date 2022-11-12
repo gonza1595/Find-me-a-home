@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import "./Detalle.css";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-
-import NavBar from "../NavBar/NavBar";
 import {
   detalleMascota,
   limpiarEstadoDetalle,
 } from "../../redux/actions/index";
+import Loader from "../Loader/Loader";
 
 export default function Detalle() {
   const dispatch = useDispatch();
@@ -24,10 +23,9 @@ export default function Detalle() {
   return (
     <div className="container">
       {!mascotas ? (
-        <p>Loader</p>
+        <Loader/>
       ) : (
         <div>
-          <NavBar />
           <a href="javascript:history.back()">
             <button className="home_button">Volver</button>
           </a>
@@ -51,7 +49,7 @@ export default function Detalle() {
               <h4>Descripción:</h4>
               <p>{mascotas.descripcion}</p>
             </div>
-            <NavLink to="/adopta" className="link">
+            <NavLink to="/contacto" className="link">
               <button className="adopta">Adopta</button>
             </NavLink>
           </div>

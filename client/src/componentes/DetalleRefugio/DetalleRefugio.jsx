@@ -1,13 +1,11 @@
 import React from "react";
 import "./DetalleRefugio.css";
-import NavBar from "../NavBar/NavBar";
 import wsp from "./iconWsp.png";
 import insta from "./iconInsta.png";
 
 export default function DetalleRefugio() {
   return (
     <div className="container">
-      <NavBar />
       <a href="javascript:history.back()">
         <button className="home_button">Volver</button>
       </a>

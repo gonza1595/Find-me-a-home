@@ -15,9 +15,8 @@ export default function CardProductos({ imagen, precio, nombre }) {
           />
         </div>
         <h2>{nombre}</h2>
-        <div className="pProductos">
-          <p>Precio: {precio}</p>
-        </div>
+        <p>Precio: ${precio}</p>
+        
       </div>
     </div>
   );

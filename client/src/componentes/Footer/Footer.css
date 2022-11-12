@@ -1,16 +1,28 @@
 .main-footer{
-    
    display: flex;
    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #c5f5f2;
-    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 5 rem;
+    min-height: 2px;
+    font-family: cursive;
+    
+}
+.wsp_item {
+  display: flex;
+  flex-direction: row;
 }
 
+.wsp_item p {
+  padding: 0%;
+}
 
+.redes {
+  display: flex;
+  flex-direction: column;
+}
 
 .contactanos-items{
     display: flex;
@@ -20,8 +32,3 @@
 }
 
 
-
-.mail{
-    display: flex;
-    flex-direction: row;
-}

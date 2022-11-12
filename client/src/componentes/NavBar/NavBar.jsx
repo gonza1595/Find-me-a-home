@@ -13,8 +13,8 @@ function NavBar() {
 
   return (
     <nav className="headerNavBar">
-      <ul className="navega">
         <h2 className="titleNavBar">Find me a HOME</h2>
+      <ul className="navega">
         <li>
           <a className="title_textNavBar" onClick={handleClick} href="/">
             Inicio
@@ -33,7 +33,7 @@ function NavBar() {
           <a
             className="title_textNavBar"
             onClick={handleClick}
-            href="/Productos"
+            href="/productos"
           >
             Productos
           </a>
@@ -42,7 +42,7 @@ function NavBar() {
           <a
             className="title_textNavBar"
             onClick={handleClick}
-            href="/Mascotas"
+            href="/mascotas"
           >
             Adopta!
           </a>
@@ -51,7 +51,7 @@ function NavBar() {
           <a
             className="title_textNavBar"
             onClick={handleClick}
-            href="/InciarSesion"
+            href="/iniciarSesion"
           >
             Iniciar sesion
           </a>
