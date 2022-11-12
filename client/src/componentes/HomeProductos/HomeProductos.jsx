@@ -78,7 +78,7 @@ export default function HomeProductos() {
 
         <NavBar/>
 
-        <SearchBar/>
+        <SearchBarProducto/>
 
         <div className="paginatedDiv">
     
