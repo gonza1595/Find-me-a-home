@@ -1,0 +1,55 @@
+.conteinerTablaMascotas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabla-mascotas {
+    margin: 1rem 0.8rem;
+    font-family: cursive;
+    border-collapse: collapse;
+    margin: 2rem 5rem;
+    font-size: 0.6em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tbodyMascotas {
+border-bottom: 2px solid #009879;
+font-weight: bold;
+}
+
+.filas {
+    border-bottom: 1px solid #dddddd;
+    font-weight: bold;
+}
+
+.nombres-columnas{
+    background-color: #009879;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.descripciontablamascota {
+    width: 300px;
+}
+.imagentablamascota {
+    display: flex;
+    overflow: auto;
+    width: 200px;
+}
+.edadtablamascota,
+.tamañotablamascota,
+.nombretablamascota,
+.razatablamascota,
+.sexotablamascota,
+.especietablamascota,
+.borrartablamascota,
+.actualizartablamascota{
+    width: 90px;
+    text-align: center;
+}
+
+
