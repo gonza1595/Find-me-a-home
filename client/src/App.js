@@ -13,6 +13,7 @@ import HomeMascotas from "../src/componentes/HomeMascotas/HomeMascotas";
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 import Dashboard from "./componentes/Dashboard/Dashboard/Dashboard.jsx";
 import NavBar from "./componentes/NavBar/NavBar.jsx";
+import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
           <Route exact path="/" component={home} />
           <Route exact path="/mascotas/:id" component={Detalle} />
           <Route exact path="/contacto" component={DetalleRefugio} />
-          <Route path="/iniciarSesion" component={FormUsuario} />
-          <Route path="/formMascota" component={FormMascota} />
+          <Route exact path="/iniciarSesion" component={FormInicioSesion} />
+          <Route exact path="/formMascota" component={FormMascota} />
+          <Route exact path="/registrate" component={FormUsuario} />
           <Route exact path="/productos" component={HomeProductos} />
           <Route exact path="/productos/:id" component={DetalleProducto} />
           <Route exact path="/QuienesSomos" component={QuienesSomos} />
