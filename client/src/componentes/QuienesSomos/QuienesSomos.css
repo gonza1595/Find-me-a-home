@@ -1,5 +1,7 @@
 .contenedor {
     background-color: #027a74;
+    width: 1920px;
+    height: 823px;
 }
 
 .foto-contenedor {
@@ -8,12 +10,14 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    
 }
 
     
     .foto-contenedor img{
         border-radius: 10px;
-        box-shadow: 4px 4px 8px #999
+        box-shadow: 4px 4px 8px #999;
+        margin: 35px;
     }
 
 
@@ -24,6 +28,7 @@
     align-items: center;
     align-content: center;
     font-family: cursive;
+    margin: 20px;
     
 }
 

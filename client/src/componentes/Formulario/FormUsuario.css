@@ -101,6 +101,7 @@ button:focus {
   -ms-flex-pack: center;
   justify-content: center;
   background: #027a74;
+  height: 770px;
 }
 
 

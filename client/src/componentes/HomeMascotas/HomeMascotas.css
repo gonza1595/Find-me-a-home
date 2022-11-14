@@ -2,9 +2,12 @@
     background-color: #027a74;
     display: flex;
     flex-wrap:wrap;
-    width: 100%;
+    width: 1920px;
+    height: 823px;
     gap: 2.5em;
     right: 20%;
     padding: 1.25rem;
     justify-content: center;
+
 }
+
