@@ -5,7 +5,7 @@
     border-radius: 20px;
     width: 200px;
     height: 280px;
-    padding: 15px;
+    padding: 10px;
     background-color: #c5f5f2;
     margin: 10px;
     box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
@@ -24,8 +24,10 @@
     padding: 0%;
 }
 
-.cardMascotas img{
-    width: 150px;
-    max-height: 180px;
+.imageCard {
+    width: 165px;
+    height: 165px;
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 15px;
 }
