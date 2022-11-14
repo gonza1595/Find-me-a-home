@@ -15,9 +15,14 @@ import Dashboard from "./componentes/Dashboard/Dashboard/Dashboard.jsx";
 import NavBar from "./componentes/NavBar/NavBar.jsx";
 import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
 
+
+import {UserContextProvider} from "./context/UserContext"
+
 function App() {
   return (
+  
     <BrowserRouter>
+      <UserContextProvider> 
     <NavBar/>
       <div className="app">
         <Switch>
@@ -36,7 +41,9 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </div>
+      </UserContextProvider>
     </BrowserRouter>
+   
   );
 }
 
