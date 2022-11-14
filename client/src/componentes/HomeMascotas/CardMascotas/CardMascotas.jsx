@@ -6,7 +6,7 @@ export default function CardMascotas({ imagen, nombre, edad, sexo }) {
   return (
     <div className="cardMascotas">
       <div>
-        <img src={imagen ? imagen : img} alt="img" />
+        <img className="imageCard" src={imagen ? imagen : img} alt="img" />
         <h2>{nombre.toUpperCase()}</h2>
         <div className="pMascotas">
           <p>Edad: {edad === 1 ? `${edad} año` : `${edad} años`}</p>

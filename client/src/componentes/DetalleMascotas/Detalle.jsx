@@ -23,7 +23,7 @@ export default function Detalle() {
   return (
     <div className="container">
       {!mascotas ? (
-        <Loader/>
+        <Loader />
       ) : (
         <div>
           <a href="javascript:history.back()">
@@ -40,7 +40,12 @@ export default function Detalle() {
               />
             </div>
             <ul>
-              <li>Edad: {mascotas.edad}</li>
+              <li>
+                Edad:{" "}
+                {mascotas.edad === 1
+                  ? `${mascotas.edad} año`
+                  : `${mascotas.edad} años`}
+              </li>
               <li>Sexo: {mascotas.sexo}</li>
               <li>Raza: {mascotas.raza}</li>
               <li>Tamaño: {mascotas.tamaño}</li>
