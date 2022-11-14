@@ -300,8 +300,216 @@
             "calificacion": "",
             "precio": 4200,
             "tipo": "Paseo" 
+        },
+        {
+            "id": "31",
+            "nombre": "Collar landscape black",
+            "descripcion": "Collar regulable.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/landscape-black-collar1-831b72bc68364e2c2e15380645067860-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2750,
+            "tipo": "Paseo" 
+        },
+        {
+            "id": "32",
+            "nombre": "Collar be rexy white",
+            "descripcion": "Collar regulable.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/trex-blanco-collar1-15827ae85aafa7565915380158196557-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2350,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "33",
+            "nombre": "Correa landscape black",
+            "descripcion": "Correa de 2mts.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/landscape-black-correa1-3ab2480337e01481b415380975228526-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 3900,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "34",
+            "nombre": "Cinturon de seguridad be rexy white",
+            "descripcion": "Está pensado para viajar en auto de forma segura, pudiendo engancharlo al pretal. Regulable en dos medidas de largo según el tamaño del perro. Podés darle mayor libertad para que espie por la ventana ó cortito para que no se mueva del lugar en donde está sentado, permitiendo controlar su movimiento dentro del auto.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/trex-blanco-cinturon1-0f9a436550afde09b915381586676014-640-0.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 2700,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "35",
+            "nombre": "Cinturon de seguridad rocket blue",
+            "descripcion": "Está pensado para viajar en auto de forma segura, pudiendo engancharlo al pretal. Regulable en dos medidas de largo según el tamaño del perro. Podés darle mayor libertad para que espie por la ventana ó cortito para que no se mueva del lugar en donde está sentado, permitiendo controlar su movimiento dentro del auto.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/rocket-blue-cinturon1-d52391ba85d847804415381592704281-640-0.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 2700,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "36",
+            "nombre": "Pretal rocket blue",
+            "descripcion": "Pretal regulable.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/rocket-blue-pretal11-e2247dd915b5b521f415380163734713-640-0.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 5050,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "36",
+            "nombre": "Pretal landscape black",
+            "descripcion": "Pretal regulable.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/382/573/products/landscape-black-pretal1-214971ef3abad0463315380647260414-640-0.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 5050,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "37",
+            "nombre": "Chifle gigante",
+            "descripcion": "Juguetes para perros con sonido con forma de hamburguesa. Tamaño gigante. No tóxico",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/974-chifle-hamburguesa-gigante-640x480-9e54f3bd1c849315d915122102769146-320-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 500,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "38",
+            "nombre": "Pack x 3 Pelotas Tenis",
+            "descripcion": "Pack de 3 pelotas de tenis para mascotas.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/318-pelotas-de-tenis-pack-3-unidades-640x480-931e3c4e7d85e3246a15122097135124-320-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 750,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "39",
+            "nombre": "Pelota de tenis con sogas",
+            "descripcion": "Pelota tenis con 4 sogas de hilo.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/970-pelota-de-tenis-con-4-sogas-a-los-costados-640x480-f47a60098a2aa5eda215122102692654-320-0.jpg",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 550,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "40",
+            "nombre": "Peluche",
+            "descripcion": "Simpática tortuguita de peluche con la que se divertirán sus mascotas.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/451-juguete-de-peluche-para-mascotas-con-forma-de-tortuga1-8ca5ac91222f64690216675652170271-320-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 1020,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "41",
+            "nombre": "Tirador",
+            "descripcion": "Colorido juguete tirador de soga con 2 asas y en el centro tiene un nudo de 7 vueltas de cuerda de algodón. Permite juegos de búsqueda, tire y afloja o simplemente para masticar. Ideal para perros pequeños y medianos.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/934-juguetes-perro-soga-cuerda-nudo-asa1-2997ac1c217906ffe915963249511434-320-0.jpg",
+            "stock": 7,
+            "calificacion": "",
+            "precio": 430,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "42",
+            "nombre": "Bebedero portatil",
+            "descripcion": "Si te gusta salir de paseo con tu mascota, este producto es perfecto para ti. Se trata de una botella de plástico unida a una pieza que sirve a la vez como plato y como estuche para la botella.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/129-bebedero-y-botella-de-agua-portatil-para-perros-y-gatos21-7a6aab9c43a5f72e1f15308210387923-320-0.jpg",
+            "stock": 25,
+            "calificacion": "",
+            "precio": 1300,
+            "tipo": "Paseo"
+        },
+        {
+            "id": "43",
+            "nombre": "Rascador",
+            "descripcion": "Exclusivo rascador para gatos recubierto en soga sisal.  De forma tubular, contiene un cascabel en su interior que emite sonido cuando el animal lo mueve. Puede colgarse de distintos lugares debido a que posee una soga para ese fin.  Ofrece a su gato una superficie ideal donde afilarse las uñas y jugar.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/120/791/products/9553-ac5a5b015feb2025f715122102264788-320-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 720,
+            "tipo": "Juguetes"
+        },
+        {
+            "id": "44",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Dog Chow Adulto Raza Mediana y Grande Carne y Pollo x 21 KG. PURINA DOG CHOW® Sin Colorantes Adultos Medianos y Grandes ahora con ExtraLife®, una mezcla especial libre de colorantes, con antioxidantes, vitaminas y minerales que ayuda a maximizar la calidad de vida de tu perro, día tras día.",
+            "imagen": "https://www.timberline.com.ar/5313-large_default/dog-chow-adulto-raza-mediana-y-grande-carne-y-pollo-x-21-kg.jpg",
+            "stock": 10,
+            "calificacion": "",
+            "precio": 8700,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "45",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Dog Chow Cachorro x 21 KG. PURINA DOG CHOW® Cachorros Sin Colorantes Todos los Tamaños   ahora viene con ExtraLife®, una mezcla especial de antioxidantes, vitaminas y minerales que ayuda a maximizar la calidad de vida de tu cachorro, día tras día.",
+            "imagen": "https://www.timberline.com.ar/5312-large_default/dog-chow-cachorro-x-21-kg-sin-colorante.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 9400,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "46",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Dog Chow Adulto Raza Mini y Pequeño x 21 KG Con Colorante. Adulto Adulto Pequeño es un alimento Standard para perros adultos de razas pequeñas con edades entre 1 y 7 años. ",
+            "imagen": "https://www.timberline.com.ar/5309-large_default/dog-chow-adulto-raza-mini-y-pequeno-x-21-kg-con-colorante.jpg",
+            "stock": 8,
+            "calificacion": "",
+            "precio": 8700,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "47",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Pro Plan Puppy Raza Grande x 15 KG. Alimento para cachorros (0 a 2 años) de raza grande o gigante.",
+            "imagen": "https://www.timberline.com.ar/3675-large_default/pro-plan-puppy-raza-grande-x-15-kg.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 14300,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "48",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Pro Plan Puppy Raza Mediana x 7,5 KG. Purina Pro Plan Puppy Complete es un alimento Súper Premium para cachorros de 0 a 1 año.",
+            "imagen": "https://www.timberline.com.ar/3234-large_default/pro-plan-puppy-raza-mediana-x-75-kg.jpg",
+            "stock": 12,
+            "calificacion": "",
+            "precio": 7850,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "49",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Pedrigree Adulto Senior x 8 Kg. Pedigree® Adulto Etapa 3 es alimento completo y balanceado, elaborado especialmente para perros mayores a 7 años. Con antioxidantes, vitaminas y minerales para mayor vitalidad.",
+            "imagen": "https://www.timberline.com.ar/4107-large_default/pedrigree-adulto-senior-7-x-8-kg.jpg",
+            "stock": 6,
+            "calificacion": "",
+            "precio": 3300,
+            "tipo": "Alimentación"
+        },
+        {
+            "id": "50",
+            "nombre": "Alimento balanceado",
+            "descripcion": "Pedrigree Adulto Razas Pequeñas x 15 Kg. Pedigree® Adulto Etapa 2 para Razas Pequeñas es alimento completo y balanceado, pensando para perros de tamaño pequeño que en su etapa adulta pesan menos de 15 kg.",
+            "imagen": "https://www.timberline.com.ar/4103-large_default/pedrigree-adulto-razas-pequenas-x-15-kg.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 5850,
+            "tipo": "Alimentación"
         }
-
-
     ]
 }
