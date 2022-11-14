@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import "./NavBar.css";
-//import SearchBar from "../SearchBar/SearchBar";
+import Header from "../Header/Header";
 
 function NavBar() {
   const [clicked, setClicked] = useState(false); //false
@@ -47,7 +47,9 @@ function NavBar() {
             Adopta!
           </a>
         </li>
-        <li>
+        <Header> </Header>
+       { /*ACA IRIA EL COMPONENTE HEADER <Header> </Header>*/}
+        {/*<li>
           <a
             className="title_textNavBar"
             onClick={handleClick}
@@ -55,7 +57,7 @@ function NavBar() {
           >
             Iniciar sesion
           </a>
-        </li>
+        </li>*/}
         <li>
           <a
             className="title_textNavBar"
