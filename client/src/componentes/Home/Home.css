@@ -4,8 +4,7 @@
         justify-content: center;
         align-items: center;
         background-color: #027a74;
-        width: 1920px;
-        height: 823px;
+       
  
         }
         
@@ -16,7 +15,7 @@
             font-family: cursive;
             font-size: 40px;
             color: #c5f5f2;
-            margin: 30px;
+           
         }
 
         .subdiv4_h {
@@ -26,7 +25,7 @@
             font-family: cursive;
             font-size: 20px;
             color: black;
-            margin: 25px;
+           
         }
 
         .div4_h { 
@@ -37,14 +36,14 @@
             font-family: cursive;
             font-size: 20px;   
             border-radius: 20px; 
-            margin: 30px;
+            
         }
         .div5_h { 
             font-family: cursive;
             font-size: 17px;
             color: #c5f5f2;
             margin-bottom: 10px;
-            margin: 30px;
+            
         }
 
         .botones_home {
@@ -56,5 +55,5 @@
         .div6_footer{
             width: 100%;
             max-height: 40px;
-            margin: 50px;
+            
         }
