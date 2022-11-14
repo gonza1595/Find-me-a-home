@@ -384,6 +384,171 @@
             "raza": "Mestizo",
             "sexo": "masculino",
             "especie": "perro"
+        },
+        {
+			"id": "36",
+			"nombre": "Abel",
+			"descripcion": "Soy Abel, tengo mucha energía, amo jugar, puedo ser un poco bruto pero lo compenso con mucho amor.",
+			"edad": 4,
+			"imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/084/377/products/dsc_198711-1c9f2bb4256ff6dea116506737457668-640-0.png",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "perro"
+		},
+        {
+            "id": "37",
+			"nombre": "Alma",
+			"descripcion": "Mi color es vainilla, soy hembra, cariñosa, de tamaño mediano y estoy llena de amor.",
+			"edad": 5,
+			"imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/084/377/products/dsc_16201-33f10659031d430e5116506413497390-640-0.png",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "perro"
+        },
+        {
+            "id": "38",
+			"nombre": "Chili",
+			"descripcion": "Soy Chili, soy un cachorro negro muy juguetón y dulce, soy un torbellino de cariño.",
+			"edad": 1,
+			"imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/084/377/products/dsc_18531-839a2534949ccf84e616506731290576-640-0.png",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "perro"
+        },
+        {
+            "id": "39",
+			"nombre": "Igor",
+			"descripcion": "¡Yo soy Igor! Soy un Dogo, muy fuerte y con energía para la actividad. Lo que tengo de fuerza también lo tengo de mimoso.",
+			"edad": 4,
+			"imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/084/377/products/dsc_24861-2c5efe56675532ec0716506379612906-640-0.png",
+			"tamaño": "grande",
+			"raza": "Dogo argentino",
+			"sexo": "masculino",
+			"especie": "perro"
+        },
+        {
+            "id": "40",
+			"nombre": "Marta",
+			"descripcion": "Hola, soy Marta, me operaron de la columna y no puedo caminar, pero eso no me impide ser una perrita feliz llena de amor para dar, puedo ser tu mejor compañía.",
+			"edad": 3,
+			"imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/084/377/products/dsc_33001-eb8316fb2e2c86636116506857338390-640-0.png",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "perro"
+        },
+        {
+            "id": "41",
+			"nombre": "Adelina",
+			"descripcion": "Gata color blanco y naranja, cariñosa.",
+			"edad": 2,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2020/06/adelina-gata-adulta-en-adopcion.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "gato"
+        },
+        {
+            "id": "42",
+			"nombre": "Jose",
+			"descripcion": "Jose es un gato color blanco y naranda, busca adopcion, rescatado.",
+			"edad": 2,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2020/10/jose-gato-adulto-en-adopcion-1.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "gato"
+        },
+        {
+            "id": "43",
+			"nombre": "Titán",
+			"descripcion": "Titán ha crecido rodeado de varios gatos y de humanos, no obstante es un gato muy prudente y primero te tiene que conocer para acercarse, pero es un gato muy sociable, además de ser tranquilo, cariñoso y algo curioso.",
+			"edad": 1,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2021/10/titan-gato-en-adopcion-castellon-barcelona-adopta-gato.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "gato"
+        },
+        {
+            "id": "44",
+			"nombre": "Negra",
+			"descripcion": "Negra es una gata muy cariñosa que disfruta de la compañía de las personas, por ello buscamos para ella una familia que pueda brindarle todo el amor que ella necesita.",
+			"edad": 2,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2021/06/palmira-gata-adopcion3-820x820.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "gato"
+        },
+        {
+            "id": "45",
+			"nombre": "Ramon",
+			"descripcion": "Ramon es un precioso gato adulto, muy cariñoso y bueno que está buscando adopción.",
+			"edad": 3,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2021/10/clot-gato-adulto-en-adopcion.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "gato"
+        },
+         {
+            "id": "46",
+			"nombre": "Mila",
+			"descripcion": "Mila es una gata encantadora, no pierde la oportunidad de restregarse a todo el que ve, es lo que se conoce como un perrigat. Es imposible describir lo buena y fantástica que es.",
+			"edad": 3,
+			"imagen": "https://www.huellascallejeras.com/wp-content/uploads/2020/10/mila-gato-en-adopcion-5.jpg",
+			"tamaño": "pequeño",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "gato"
+        },
+        {
+            "id": "47",
+			"nombre": "Adelo",
+			"descripcion": "Delicado y bueno.",
+			"edad": 3,
+			"imagen": "https://www.anaaweb.org/imagenes/adopcion/perros/B21_012.jpg",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "perro"
+        },
+        {
+            "id": "48",
+			"nombre": "Bangle",
+			"descripcion": "Timido.",
+			"edad": 1,
+			"imagen": "https://www.anaaweb.org/imagenes/adopcion/perros/A22_184.jpg",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "perro"
+        },
+        {
+            "id": "49",
+			"nombre": "Barrilete",
+			"descripcion": "Es un perrete con el espíritu de un cachorrote. Atolondrado, divertido y deseoso de mimos y juegos que no ha recibido ni el cariño ni la guía necesarias para madurar. Le encanta pasear, jugar y retozar en el agua contigo.",
+			"edad": 4,
+			"imagen": "https://www.anaaweb.org/imagenes/adopcion/perros/A20_061.jpg",
+			"tamaño": "mediano",
+			"raza": "Mestizo",
+			"sexo": "masculino",
+			"especie": "perro"
+        },
+        {
+            "id": "50",
+			"nombre": "Careta",
+			"descripcion": "Buena, juguetona y algo miedosa. Tiene algo de miedo a los humanos, pero está progresando.",
+			"edad": 3,
+			"imagen": "https://www.anaaweb.org/imagenes/adopcion/perros/B21_204.jpg",
+			"tamaño": "grande",
+			"raza": "Mestizo",
+			"sexo": "femenino",
+			"especie": "perro"
         }
     ]
 }
