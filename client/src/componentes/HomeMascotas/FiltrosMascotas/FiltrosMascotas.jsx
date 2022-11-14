@@ -4,8 +4,10 @@ import {
   filterByTamañoPequeño,
   filterByTamañoMediano,
   filterByTamañoGrande,
-  filterBySexo,
-  traerMascotas,
+  filterByTodosTamaños,
+  filterBySexoMasculino,
+  filterBySexoFemenino,
+  filterByAmbosSexos,
   orderByNameAsc,
   orderByNameDes,
   orderByEdad,
@@ -15,10 +17,22 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
 
   function handleFilterBySexo(e) {
-    e.preventDefault();
-    dispatch(filterBySexo(e.target.value));
-    setPage(1);
-    setFilterSelected(e.target.value);
+    if (e.target.value === "masc") {
+      e.preventDefault();
+      dispatch(filterBySexoMasculino(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    } else if (e.target.value === "fem") {
+      e.preventDefault();
+      dispatch(filterBySexoFemenino(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    } else if (e.target.value === "all") {
+      e.preventDefault();
+      dispatch(filterByAmbosSexos(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    }
   }
 
   function handleFilterByTamaño(e) {
@@ -26,18 +40,22 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
       e.preventDefault();
       dispatch(filterByTamañoPequeño(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     } else if (e.target.value === "media") {
       e.preventDefault();
       dispatch(filterByTamañoMediano(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     } else if (e.target.value === "grande") {
       e.preventDefault();
       dispatch(filterByTamañoGrande(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     } else if (e.target.value === "all") {
       e.preventDefault();
-      dispatch(traerMascotas(e.target.value));
+      dispatch(filterByTodosTamaños(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     }
   }
 
@@ -45,15 +63,18 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
     if (e.target.value === "asc") {
       dispatch(orderByNameAsc(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     } else if (e.target.value === "des") {
       dispatch(orderByNameDes(e.target.value));
       setPage(1);
+      setFilterSelected(e.target.value);
     }
   }
 
   function handleOrderByEdad(e) {
     dispatch(orderByEdad(e.target.value));
     setPage(1);
+    setFilterSelected(e.target.value);
   }
 
   return (
@@ -63,6 +84,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
         defaultValue="Filtrar por sexo"
       >
         <option disabled>Filtrar por sexo</option>
+        <option value="all">Ambos sexos</option>
         <option value="masc">Masculino</option>
         <option value="fem">Femenino</option>
       </select>
