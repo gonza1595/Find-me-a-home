@@ -113,43 +113,43 @@ export default function Form() {
 return (
 <div>
        
-       <h1 class='welcome'>Registrarse</h1>
+       <h1 className='welcome'>Registrarse</h1>
      
        <form  onSubmit={(e) => handleSubmit(e)}>
       
-       <div class='container_formUs'>
- <div class='window'>
+       <div className='container_formUs'>
+ <div className='window'>
 
-   <div class='input-fields'>
+   <div className='input-fields'>
            <div>
                <label >Nombre: </label>
-               <input class='input-line full-width' type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
+               <input className='input-line full-width' type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
                {errors.nombre && (<p>{errors.nombre}</p>)}
            </div>
            <div>
                <label >Contraseña: </label>
-               <input class='input-line full-width' type="password" autoComplete="off" value={input.contraseña} name='contraseña' onChange={handleChange}/>
+               <input className='input-line full-width' type="password" autoComplete="off" value={input.contraseña} name='contraseña' onChange={handleChange}/>
                {errors.contraseña && (<p>{errors.contraseña}</p>)}
            </div>
            <div>
                <label >Correo: </label>
-               <input class='input-line full-width' type="text" autoComplete="off" value={input.correo} name='correo' onChange={handleChange}/>
+               <input className='input-line full-width' type="text" autoComplete="off" value={input.correo} name='correo' onChange={handleChange}/>
                {errors.correo && (<p>{errors.correo}</p>)}
            </div>
            <div>
                <label>Edad: </label>
-               <input class='input-line full-width' type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
+               <input className='input-line full-width' type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
                {errors.edad && (<p>{errors.edad}</p>)}
            </div>
            <div>
                <label >Direccion: </label>
-               <input  class='input-line full-width' type="text" autoComplete="off" value={input.direccion} name='direccion' onChange={handleChange}/>
+               <input  className='input-line full-width' type="text" autoComplete="off" value={input.direccion} name='direccion' onChange={handleChange}/>
                {errors.direccion && (<p>{errors.direccion}</p>)}
            </div>
            
 
            <div>
-               <label class='rango' >Rango: </label>
+               <label className='rango' >Rango: </label>
                <label>
                <input  type="radio" value='usuario' name='rango' onClick={(e) => handleCheck(e)}/> Usuario </label>
                <label>
@@ -159,7 +159,7 @@ return (
            </div>
 
            <div>
-               <button  class='ghost-round full-width' type='submit'> Registrarse </button>
+               <button  className='ghost-round full-width' type='submit'> Registrarse </button>
            </div>
            </div>
            </div>
