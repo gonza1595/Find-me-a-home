@@ -14,7 +14,7 @@ import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
 import Dashboard from "./componentes/Dashboard/Dashboard/Dashboard.jsx";
 import NavBar from "./componentes/NavBar/NavBar.jsx";
 import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
-
+import FormPago from "./componentes/Formulario/FormPago";
 
 import {UserContextProvider} from "./context/UserContext"
 
@@ -39,6 +39,7 @@ function App() {
           <Route exact path="/requisitos" component={ReqAdopcion} />
           <Route exact path="/mascotas" component={HomeMascotas} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/pagos" component={FormPago} />
         </Switch>
       </div>
       </UserContextProvider>
