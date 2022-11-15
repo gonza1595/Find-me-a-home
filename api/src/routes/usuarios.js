@@ -3,8 +3,6 @@ const router = Router();
 const {User, Product, Pet} = require('../db');
 const {encrypt, compare} = require('../helpers/bcrypt');
 const {tokenSign} = require('../helpers/generarToken');
-const {encrypt, compare} = require('../helpers/bcrypt');
-const {tokenSign} = require('../helpers/generarToken');
 const {mailUsuarioCreado} = require('../helpers/mailsService');
 
 router.post('/registro', async (req, res) => {
