@@ -43,5 +43,7 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("perro", "gato"),
         allowNull: false
       }
-  });
+  },
+  { timestamps: false }
+  );
 };

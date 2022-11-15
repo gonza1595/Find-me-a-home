@@ -35,9 +35,15 @@ module.exports = (sequelize) => {
 			type: DataTypes.ENUM('admin', 'usuario', 'refugio'),
 			defaultValue: 'usuario',
 		},
-		favoritos: {
+		favoritoProducto: {
 			type: DataTypes.JSON,
 			defaultValue: [],
 		},
-	});
+		favoritoMascota: {
+			type: DataTypes.JSON,
+			defaultValue: [],
+		},
+	},
+	{ timestamps: false }
+	);
 };
