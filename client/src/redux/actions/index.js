@@ -233,3 +233,16 @@ export function adminBorrarProducto(id) {
 export function adminBorrarMascota(id) {
   return { type: "ADMIN_BORRAR_MASCOTA", payload: id };
 }
+
+// pago 
+
+export function realizarPago(id, amount) {
+  return async function() {
+    const {data}= await axios.post("http://localhost:3001/pagos" , {
+      id,
+      amount
+    });
+    console.log(data);
+    return data;
+  }
+}
