@@ -41,8 +41,8 @@ sequelize.models = Object.fromEntries(capsEntries)
 // Para relacionarlos hacemos un destructuring
 const {Pet, Product, User} = sequelize.models;
 // Aca vendrian las relaciones
-User.belongsToMany(Product, {through: "ventas"});
-Product.belongsToMany(User, {through: "ventas"});
+User.belongsToMany(Product, {through: "ventas", timestamps: false});
+Product.belongsToMany(User, {through: "ventas", timestamps: false});
 User.hasMany(Pet, {foreignKey: "userId"});
 Pet.belongsTo(User);
 module.exports = {
