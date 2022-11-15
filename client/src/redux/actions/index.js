@@ -125,6 +125,14 @@ export function formularioPostMascota(payload) {
   };
 }
 
+
+export function formularioPostAdopcion(payload) {
+  return async function () {
+    let json = await axios.post("http://localhost:3001/formAdopcion", payload); 
+  };
+}
+
+
 export const detalleProducto = (id) => async (dispatch) => {
   dispatch({
     type: "LOADING",

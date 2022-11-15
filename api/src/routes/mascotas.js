@@ -25,6 +25,8 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+
+
 router.get("/", async (req, res) => {
   try {
     const { nombre } = req.query;
