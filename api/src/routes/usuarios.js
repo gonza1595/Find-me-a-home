@@ -3,39 +3,38 @@ const router = Router();
 const {User, Product, Pet} = require('../db');
 const {encrypt, compare} = require('../helpers/bcrypt');
 const {tokenSign} = require('../helpers/generarToken');
-const { User } = require('../db');
-const {encrypt, compare} = require("../helpers/bcrypt");
-const {tokenSign} = require("../helpers/generarToken");
-const { mailUsuarioCreado } = require("../helpers/mailsService");
+const {encrypt, compare} = require('../helpers/bcrypt');
+const {tokenSign} = require('../helpers/generarToken');
+const {mailUsuarioCreado} = require('../helpers/mailsService');
 
 router.post('/registro', async (req, res) => {
 	const {nombre, contraseña, correo, edad, direccion, rango} = req.body;
 
-  try{
-    const contraseñaHash= await encrypt(contraseña);
-    const createUser= await User.create({
-      nombre,
-      contraseña: contraseñaHash,
-      correo,
-      edad,
-      direccion,
-      rango
-    });
-    
-    ///// notificación por mail - usuario registrado
+	try {
+		const contraseñaHash = await encrypt(contraseña);
+		const createUser = await User.create({
+			nombre,
+			contraseña: contraseñaHash,
+			correo,
+			edad,
+			direccion,
+			rango,
+		});
 
-    const asunto = "Bienvenid@ a Find me a home";
+		///// notificación por mail - usuario registrado
 
-    const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com<br><br>Nos vemos!</p>`;
+		const asunto = 'Bienvenid@ a Find me a home';
 
-    mailUsuarioCreado(correo, asunto, texto);
+		const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com<br><br>Nos vemos!</p>`;
 
-    /////////
+		mailUsuarioCreado(correo, asunto, texto);
 
-    res.status(200).send( createUser);
-  }catch(error){
-    res.status(400).send({error: error.message});
-  }
+		/////////
+
+		res.status(200).send(createUser);
+	} catch (error) {
+		res.status(400).send({error: error.message});
+	}
 });
 
 router.post('/login', async (req, res) => {
