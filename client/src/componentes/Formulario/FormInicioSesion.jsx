@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
-
+import {login} from "../../services/login"
 import './FormInicioSesion.css'
 
 export default function FormInicioSesion() {
@@ -20,10 +20,9 @@ useEffect(()=>{
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //alert(username)
+    alert(username)
     login({username, password}) //fijarse si tiene que ser el mismo nombre que los models
-   // history.push('/')
- 
+   //history.push('/')
 
   };
 
@@ -34,7 +33,7 @@ useEffect(()=>{
       <h1 className="titulo-sesion">Iniciar Sesion</h1>
       <div  className='input-fields-sesion'>
         <label>
-            Correo:
+            Correo:{" "}
             <input  className="input-InicioSesion"
             type="email"
             placeholder="correo"
@@ -44,10 +43,11 @@ useEffect(()=>{
           </label>
 <div>
           <label >
-            Contraseña:
+            Contraseña:{" "}
             <input   className="input-InicioSesion"
               type="password"
               placeholder="contraseña"
+              autoComplete="on"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
