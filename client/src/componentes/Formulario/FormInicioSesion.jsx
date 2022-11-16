@@ -3,25 +3,25 @@ import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import useUser from "../hooks/useUser";
-import {login} from "../../services/login"
 import './FormInicioSesion.css'
 
 export default function FormInicioSesion() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const {login, isLogged} = useUser()
+  const  [, {login}] = useUser()
+ 
 
 const history = useHistory();
 
-useEffect(()=>{
-  if(isLogged) history.push('/')
-}, [isLogged, history]) //quiza tambien le tengo que poner el history, pero no deberia cambiar
+// useEffect(()=>{
+//   if(isLogged) history.push('/')
+// }, [isLogged, history])    //quiza tambien le tengo que poner el history, pero no deberia cambiar
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(username)
-    login({username, password}) //fijarse si tiene que ser el mismo nombre que los models
+    // e.preventDefault();  
+    alert(username,password)
+    login(
+      username, password) //fijarse si tiene que ser el mismo nombre que los models
    //history.push('/')
 
   };

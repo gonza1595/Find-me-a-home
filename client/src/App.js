@@ -16,14 +16,14 @@ import NavBar from "./componentes/NavBar/NavBar.jsx";
 import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
 import FormAdopcion from "./componentes/Formulario/FormAdopcion.jsx";
 import FormPago from "./componentes/Formulario/FormPago";
-import {UserContextProvider} from "./context/UserContext"
+
 
 
 function App() {
   return (
   
-    <BrowserRouter>
-      <UserContextProvider> 
+<>
+     
     <NavBar/>
       <div className="app">
         <Switch>
@@ -47,9 +47,9 @@ function App() {
 
         </Switch>
       </div>
-      </UserContextProvider>
-    </BrowserRouter>
-   
+      
+ 
+      </>
   );
 }
 

@@ -5,19 +5,19 @@ import useUser from "../hooks/useUser";
 
 export default function Header(){
     //const isLogged = false
-const {isLogged, logout} = useUser()
+//const {isLogged, logout} = useUser()
 
-const handleClick = e =>{
+/*const handleClick = e =>{
     e.preventDefault()
-    logout()
-}
+    //logout()
+}*/
     return (
         <header>
             {
-                isLogged
+                /*isLogged
                 ? <Link to="#" onClick={handleClick}>
                 Cerrar Sesion</Link>
-                :
+                :*/
                 <Link to="iniciarSesion">
                 iniciar sesion
                 </Link >
