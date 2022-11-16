@@ -37,7 +37,7 @@ router.post('/registro', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 	const {correo, contraseña} = req.body;
-
+console.log(correo, contraseña)
 	try {
 		const usuario = await User.findOne({
 			where: {
