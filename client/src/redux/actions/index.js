@@ -117,9 +117,11 @@ export function formularioPostMascota(payload) {
 }
 
 export function formularioPostAdopcion(payload) {
-	return async function () {
-		let json = await axios.post(`${URL_BACK}/mascotas/formAdopcion`, payload);
-	};
+
+  return async function () {
+    let json = await axios.post(`${URL_BACK}/formAdopcion`, payload); 
+  };
+
 }
 
 export const detalleProducto = (id) => async (dispatch) => {
