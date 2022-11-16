@@ -267,6 +267,7 @@ export function realizarPago(id, amount) {
 }
 
 // trae la mascota por ID para bajar toda la data a un form y poder editar
+// blabla
 export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 	dispatch({
 		type: 'LOADING',
