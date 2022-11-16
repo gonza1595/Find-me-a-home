@@ -23,7 +23,9 @@ router.post('/registro', async (req, res) => {
 
 		const asunto = 'Bienvenid@ a Find me a home';
 
-		const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com<br><br>Nos vemos!</p>`;
+		const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar 
+						una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
+						<br><br>Nos vemos!</p>`;
 
 		mailUsuarioCreado(correo, asunto, texto);
 
@@ -61,9 +63,12 @@ router.post('/login', async (req, res) => {
 	}
 });
 
+
+//// USUARIO FAVORITOS PRODUCTO ////
+
 // trae todos los productos de la lista de favoritos del usuario por id
 
-router.get('/favoritos', async (req, res) => {
+router.get('/favoritos-producto', async (req, res) => {
 	const {userId} = req.query;
 	try {
 		const usuario = await User.findOne({
@@ -71,7 +76,7 @@ router.get('/favoritos', async (req, res) => {
 				id: userId,
 			},
 		});
-		const favoritosUsuario = usuario.favoritos;
+		const favoritosUsuario = usuario.favoritoProducto;
 		if (!usuario) {
 			return res.status(400).send('No existe usuario');
 		} else if (!favoritosUsuario) {
@@ -86,16 +91,16 @@ router.get('/favoritos', async (req, res) => {
 
 // agrega productos a la lista de favoritos del usuario por id
 
-router.post('/favoritos', async (req, res) => {
+router.post('/favoritos-producto', async (req, res) => {
 	const {userId, productId} = req.body;
 	try {
 		const usuario = await User.findByPk(userId);
 		const producto = await Product.findByPk(productId);
 		if (!producto) {
 			res.status(400).send('El producto no existe');
-		} else if (!usuario.favoritos.includes(productId)) {
+		} else if (!usuario.favoritoProducto.includes(productId)) {
 			await usuario.update({
-				favoritos: [...usuario.favoritos, productId],
+				favoritoProducto: [...usuario.favoritoProducto, productId],
 			});
 			res.status(200).send('Agregado con exito!');
 		} else {
@@ -105,5 +110,82 @@ router.post('/favoritos', async (req, res) => {
 		res.status(404).send(error);
 	}
 });
+
+// elimina productos de la lista de favoritos del usuario por id
+
+router.delete("/favoritos-producto", async function(req, res) {
+    const {userId, productId} = req.body;
+	try {
+		const user = await User.findByPk(userId);
+        await user.update({
+			favoritoProducto: user.favoritoProducto.filter(e => e !== productId)
+		});
+        res.status(200).send('El producto fue eliminado de favoritos')
+    } catch (error) { 
+        res.status(404).send(error);
+    }
+})
+
+//// FIN USUARIO FAVORITOS PRODUCTO ////
+
+
+
+//// USUARIO FAVORITOS MASCOTA ////
+
+router.get('/favoritos-mascota', async (req, res) => {
+	const {userId} = req.query;
+	try {
+		const usuario = await User.findOne({
+			where: {
+				id: userId,
+			},
+		});
+		const favoritosMascotaUsuario = usuario.favoritoMascota;
+		if (!usuario) {
+			return res.status(400).send('No existe usuario');
+		} else if (!favoritosMascotaUsuario) {
+			return res.status(400).send('Este usuario no tiene mascotas en favoritos');
+		} else {
+			return res.status(200).json(favoritosMascotaUsuario);
+		}
+	} catch (error) {
+		console.log(error);
+	}
+});
+
+router.post('/favoritos-mascota', async (req, res) => {
+	const {userId, petId} = req.body;
+	try {
+		const usuario = await User.findByPk(userId);
+		const mascota = await Pet.findByPk(petId);
+		if (!mascota) {
+			res.status(400).send('La mascota no existe');
+		} else if (!usuario.favoritoMascota.includes(petId)) {
+			await usuario.update({
+				favoritoMascota: [...usuario.favoritoMascota, petId],
+			});
+			res.status(200).send('Agregado con exito!');
+		} else {
+			res.status(400).send('La mascota ya esta agregada a favoritos');
+		}
+	} catch (error) {
+		res.status(404).send(error);
+	}
+});
+
+router.delete("/favoritos-mascota", async function(req, res) {
+    const {userId, petId} = req.body;
+	try {
+		const user = await User.findByPk(userId);
+        await user.update({
+			favoritoMascota: user.favoritoMascota.filter(e => e !== petId)
+		});
+        res.status(200).send('La mascota fue eliminada de favoritos')
+    } catch (error) { 
+        res.status(404).send(error);
+    }
+})
+
+//// FIN USUARIO FAVORITOS MASCOTA ////
 
 module.exports = router;
