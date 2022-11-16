@@ -3,6 +3,7 @@ import './ListaProductos.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { traerProductos } from '../../../redux/actions/index';
 import { adminBorrarProducto } from '../../../redux/actions/index';
+import SideBar from '../Dashboard/SideBar/SideBar';
 
 
 const TablaProductos = () => {
@@ -21,7 +22,11 @@ const TablaProductos = () => {
 
 
     return (
-        <div>
+        <div className='container_tabla_dash'>
+           <div className="nameTabla">
+
+           <h2>PRODUCTOS</h2>
+           </div>
             <table className='tabla-productos'>
                 <thead>
                     <tr className='tabla-head'>
@@ -45,7 +50,7 @@ const TablaProductos = () => {
                                         <td>{e.precio}</td> 
                                         <td>{e.stock}</td> 
                                         <td>{e.descripcion}</td> 
-                                        <td>{e.imagen}</td>
+                                        <td className='imagentablaprod'>{e.imagen}</td>
                                         <td>
                                             <button onClick={() => handleDelete(e.id)}>Borrar</button>
                                         </td>

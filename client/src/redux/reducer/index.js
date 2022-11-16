@@ -6,6 +6,7 @@ const initialState = {
   productos: [],
   detalle: {},
   usuarios: [],
+  refugios: [],
   loading: false,
 
   //agregar mas estados si se requiere...

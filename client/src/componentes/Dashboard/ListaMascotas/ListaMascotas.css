@@ -1,23 +1,36 @@
-.conteinerTablaMascotas{
+/* .conteinerTablaMascotas{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .tabla-mascotas {
-    margin: 1rem 0.8rem;
-    font-family: cursive;
     border-collapse: collapse;
-    margin: 2rem 5rem;
-    font-size: 0.6em;
+    margin: 1rem 0 0 14rem;
+    font-size: 0.8em;
     min-width: 400px;
+    max-width: 80%;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+.tabla-mascotas thead tr {
+    background-color: #027a74;
+    color: #c5f5f2;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.tabla-mascotas th{
+    padding: 8px 5px;
+    text-align: center;
+    align-items: center;
+}
+
 .tbodyMascotas {
-border-bottom: 2px solid #009879;
+border-bottom: 2px solid #027a74;
 font-weight: bold;
 }
 
@@ -27,7 +40,8 @@ font-weight: bold;
 }
 
 .nombres-columnas{
-    background-color: #009879;
+    background-color: #027a74;
+    color: #c5f5f2;
     font-weight: bold;
     font-size: 12px;
 }

@@ -31,8 +31,8 @@ function App() {
           <Route exact path="/adopta" component={HomeAdopta} />
           <Route exact path="/requisitos" component={ReqAdopcion} />
           <Route exact path="/mascotas" component={HomeMascotas} />
-          <Route exact path="/dashboard" component={Dashboard} />
-        </Switch>
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+        </Switch> 
       </div>
     </BrowserRouter>
   );

@@ -31,9 +31,12 @@ function TablaMascotas({
 	const handleUpdate = () => {};
 
 	return (
-		<div className='conteinerTablaMascotas'>
+		<div className='container_tabla_dash'>
+			<div className="nameTabla">
+				<h2>MASCOTAS</h2>
+			</div>
 			<table className='tabla-mascotas'>
-				<thead className='theadMasctotas'>
+				<thead>
 					<tr className='nombres-columnas'>
 						<th scope='col'>Nombre</th>
 						<th scope='col'>Descripción</th>
