@@ -1,5 +1,5 @@
 import axios from "axios";
-
+const {URL_BACK} = process.env
 //crear actions necesarias
 
 export function buscarPorNombreMascota(nombre) {
@@ -7,7 +7,7 @@ export function buscarPorNombreMascota(nombre) {
   return async function (dispatch) {
     try {
       let json = await axios.get(
-        `http://localhost:3001/mascotas?nombre=${nombre}`
+        `${URL_BACK}/mascotas?nombre=${nombre}`
       );
       return dispatch({
         type: "BUSCAR_POR_NOMBRE_MASCOTA",
@@ -25,7 +25,7 @@ export function traerMascotas() {
       type: "LOADING",
     });
     try {
-      let json = await axios.get("http://localhost:3001/mascotas");
+      let json = await axios.get(`${URL_BACK}/mascotas`);
       return dispatch({
         type: "TRAER_MASCOTAS",
         payload: json.data,
@@ -41,7 +41,7 @@ export function buscarPorNombreProducto(nombre) {
   return async function (dispatch) {
     try {
       let json = await axios.get(
-        `http://localhost:3001/productos?nombre=${nombre}`
+        `${URL_BACK}/productos?nombre=${nombre}`
       );
       return dispatch({
         type: "BUSCAR_POR_NOMBRE_PRODUCTO",
@@ -58,7 +58,7 @@ export function traerProductos() {
     dispatch({
       type: "LOADING",
     });
-    var json = await axios.get("http://localhost:3001/productos");
+    var json = await axios.get(`${URL_BACK}/productos`);
 
     return dispatch({
       type: "TRAER_PRODUCTOS",
@@ -73,7 +73,7 @@ export function traerProductosfltrados(filtro, orden, tipo) {
       type: "LOADING",
     });
     var json = await axios.get(
-      `http://localhost:3001/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`
+      `${URL_BACK}/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`
     );
 
     return dispatch({
@@ -89,7 +89,7 @@ export const detalleMascota = (id) => (dispatch) => {
   });
   try {
     return axios
-      .get("http://localhost:3001/mascotas/" + id)
+      .get(`${URL_BACK}/mascotas/` + id)
       .then((respuesta) => {
         dispatch({
           type: "DETALLE_MASCOTA",
@@ -111,7 +111,7 @@ export const limpiarEstadoDetalle = () => {
 export function formularioRegistroUsuario(payload) {
   return async function () {
     let json = await axios.post(
-      "http://localhost:3001/usuario/registro",
+      `${URL_BACK}/usuario/registro`,
       payload
     );
     return json;
@@ -120,7 +120,7 @@ export function formularioRegistroUsuario(payload) {
 
 export function formularioPostMascota(payload) {
   return async function () {
-    let json = await axios.post("http://localhost:3001/mascotas", payload);
+    let json = await axios.post(`${URL_BACK}/mascotas`, payload);
     return json;
   };
 }
@@ -138,16 +138,16 @@ export const detalleProducto = (id) => async (dispatch) => {
     type: "LOADING",
   });
   try {
-    const { data } = await axios.get("http://localhost:3001/productos/" + id);
+    const { data } = await axios.get(`${URL_BACK}/productos/` + id);
     dispatch({ type: "DETALLE_PRODUCTO", payload: data });
   } catch (error) {
-    console.log(error);
+    console.log(error)
     alert("El producto no existe");
   }
 };
 export function formularioIniciarSesion(payload) {
   return async function () {
-    let json = await axios.post("http://localhost:3001/", payload);
+    let json = await axios.post(`${URL_BACK}/`, payload);
     return json;
   };
 }
@@ -238,7 +238,7 @@ export function adminBorrarMascota(id) {
 
 export function realizarPago(id, amount) {
   return async function() {
-    const {data}= await axios.post("http://localhost:3001/pagos" , {
+    const {data}= await axios.post(`${URL_BACK}/pagos` , {
       id,
       amount
     });
