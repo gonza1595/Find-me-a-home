@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const {Pet, User} = require('../db.js');
-const jsonMascotas = require('../../../mascotas.json');
+const jsonMascotas = require('../../mascotas.json');
 const router = Router();
 
 router.get('/:id', async (req, res, next) => {

@@ -1,200 +1,210 @@
 const initialState = {
-  mascotas: [],
-  allMascotas: [],
-  filteredBySexo: [],
-  filteredByTamaño: [],
-  productos: [],
-  detalle: {},
-  usuarios: [],
-  refugios: [],
-  loading: false,
+	mascotas: [],
+	allMascotas: [],
+	filteredBySexo: [],
+	filteredByTamaño: [],
+	productos: [],
+	detalle: {},
+	usuarios: [],
+	loading: false,
+	actualizarMascota: [],
 
-  //agregar mas estados si se requiere...
+	//agregar mas estados si se requiere...
 };
 
 function rootReducer(state = initialState, action) {
-  switch (action.type) {
-    case "LOADING":
-      return {
-        ...state,
-        loading: true,
-      };
-    case "TRAER_MASCOTAS":
-      return {
-        ...state,
-        mascotas: action.payload,
-        allMascotas: action.payload,
-        loading: false,
-      };
-    case "BUSCAR_POR_NOMBRE_MASCOTA":
-      return {
-        ...state,
-        mascotas: action.payload,
-      };
-    case "BUSCAR_POR_NOMBRE_PRODUCTO":
-      return {
-        ...state,
-        productos: action.payload,
-      };
+	switch (action.type) {
+		case 'LOADING':
+			return {
+				...state,
+				loading: true,
+			};
+		case 'TRAER_MASCOTAS':
+			return {
+				...state,
+				mascotas: action.payload,
+				allMascotas: action.payload,
+				loading: false,
+			};
+		case 'BUSCAR_POR_NOMBRE_MASCOTA':
+			return {
+				...state,
+				mascotas: action.payload,
+			};
+		case 'BUSCAR_POR_NOMBRE_PRODUCTO':
+			return {
+				...state,
+				productos: action.payload,
+			};
 
-    case "DETALLE_MASCOTA":
-      return {
-        ...state,
-        detalle: action.payload,
-      };
+		case 'DETALLE_MASCOTA':
+			return {
+				...state,
+				detalle: action.payload,
+			};
 
-    case "LIMPIAR_ESTADO_DETALLE":
-      return {
-        ...state,
-        detalle: {},
-      };
+		case 'LIMPIAR_ESTADO_DETALLE':
+			return {
+				...state,
+				detalle: {},
+			};
 
-    case "TRAER_PRODUCTOS":
-      return {
-        ...state,
-        productos: action.payload,
-        loading: false,
-      };
+		case 'TRAER_PRODUCTOS':
+			return {
+				...state,
+				productos: action.payload,
+				loading: false,
+			};
 
-    case "FILTER_BY_SEXOMASCULINO":
-      state.filteredBySexo = "masculino";
-      const bySexoMasculino = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.sexo.toLowerCase() === "masculino" &&
-              e.sexo === state.filteredBySexo
-          : e.sexo.toLowerCase() === "masculino";
-      });
-      return {
-        ...state,
-        mascotas: bySexoMasculino,
-      };
+		case 'FILTER_BY_SEXOMASCULINO':
+			state.filteredBySexo = 'masculino';
+			const bySexoMasculino = state.allMascotas.filter((e) => {
+				return state.filteredBySexo
+					? e.sexo.toLowerCase() === 'masculino' &&
+							e.sexo === state.filteredBySexo
+					: e.sexo.toLowerCase() === 'masculino';
+			});
+			return {
+				...state,
+				mascotas: bySexoMasculino,
+			};
 
-    case "FILTER_BY_SEXOFEMENINO":
-      state.filteredBySexo = "femenino";
-      const bySexoFemenino = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.sexo.toLowerCase() === "femenino" &&
-              e.sexo === state.filteredBySexo
-          : e.sexo.toLowerCase() === "femenino";
-      });
-      return {
-        ...state,
-        mascotas: bySexoFemenino,
-      };
+		case 'FILTER_BY_SEXOFEMENINO':
+			state.filteredBySexo = 'femenino';
+			const bySexoFemenino = state.allMascotas.filter((e) => {
+				return state.filteredBySexo
+					? e.sexo.toLowerCase() === 'femenino' &&
+							e.sexo === state.filteredBySexo
+					: e.sexo.toLowerCase() === 'femenino';
+			});
+			return {
+				...state,
+				mascotas: bySexoFemenino,
+			};
 
-    case "FILTER_BY_AMBOS_SEXOS":
-      state.filteredBySexo = null;
-      const byAmbosSexos = state.filteredByTamaño
-        ? state.allMascotas.filter((e) => e.tamaño === state.filteredByTamaño)
-        : state.allMascotas;
+		case 'FILTER_BY_AMBOS_SEXOS':
+			state.filteredBySexo = null;
+			const byAmbosSexos = state.filteredByTamaño
+				? state.allMascotas.filter((e) => e.tamaño === state.filteredByTamaño)
+				: state.allMascotas;
 
-      return {
-        ...state,
-        mascotas: byAmbosSexos,
-      };
+			return {
+				...state,
+				mascotas: byAmbosSexos,
+			};
 
-    case "FILTER_BY_TAMAÑO_PEQUEÑO":
-      state.filteredByTamaño = "pequeño";
-      const byPequeño = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "pequeño" &&
-              e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "pequeño";
-      });
-      return {
-        ...state,
-        mascotas: byPequeño,
-      };
+		case 'FILTER_BY_TAMAÑO_PEQUEÑO':
+			state.filteredByTamaño = 'pequeño';
+			const byPequeño = state.allMascotas.filter((e) => {
+				return state.filteredBySexo
+					? e.tamaño.toLowerCase() === 'pequeño' &&
+							e.sexo === state.filteredBySexo
+					: e.tamaño.toLowerCase() === 'pequeño';
+			});
+			return {
+				...state,
+				mascotas: byPequeño,
+			};
 
-    case "FILTER_BY_TAMAÑO_MEDIANO":
-      state.filteredByTamaño = "mediano";
-      const byMediano = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "mediano" &&
-              e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "mediano";
-      });
+		case 'FILTER_BY_TAMAÑO_MEDIANO':
+			state.filteredByTamaño = 'mediano';
+			const byMediano = state.allMascotas.filter((e) => {
+				return state.filteredBySexo
+					? e.tamaño.toLowerCase() === 'mediano' &&
+							e.sexo === state.filteredBySexo
+					: e.tamaño.toLowerCase() === 'mediano';
+			});
 
-      return {
-        ...state,
-        mascotas: byMediano,
-      };
-    case "FILTER_BY_TAMAÑO_GRANDE":
-      state.filteredByTamaño = "grande";
-      const byGrande = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "grande" &&
-              e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "grande";
-      });
+			return {
+				...state,
+				mascotas: byMediano,
+			};
+		case 'FILTER_BY_TAMAÑO_GRANDE':
+			state.filteredByTamaño = 'grande';
+			const byGrande = state.allMascotas.filter((e) => {
+				return state.filteredBySexo
+					? e.tamaño.toLowerCase() === 'grande' &&
+							e.sexo === state.filteredBySexo
+					: e.tamaño.toLowerCase() === 'grande';
+			});
 
-      return {
-        ...state,
-        mascotas: byGrande,
-      };
+			return {
+				...state,
+				mascotas: byGrande,
+			};
 
-    case "FILTER_BY_TODOS_TAMAÑOS":
-      state.filteredByTamaño = null;
-      const todosTamaños = state.filteredBySexo
-        ? state.allMascotas.filter((e) => e.sexo === state.filteredBySexo)
-        : state.allMascotas;
-      return {
-        ...state,
-        mascotas: todosTamaños,
-      };
+		case 'FILTER_BY_TODOS_TAMAÑOS':
+			state.filteredByTamaño = null;
+			const todosTamaños = state.filteredBySexo
+				? state.allMascotas.filter((e) => e.sexo === state.filteredBySexo)
+				: state.allMascotas;
+			return {
+				...state,
+				mascotas: todosTamaños,
+			};
 
-    case "ORDER_BY_NAMEASC":
-      const ascOrder = state.mascotas.sort(function (a, b) {
-        if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
-        if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
-        return 0;
-      });
-      return {
-        ...state,
-        mascotas: ascOrder,
-      };
-    case "ORDER_BY_NAMEDES":
-      const desOrder = state.mascotas.sort(function (a, b) {
-        if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return -1;
-        if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
-        return 0;
-      });
-      return {
-        ...state,
-        mascotas: desOrder,
-      };
+		case 'ORDER_BY_NAMEASC':
+			const ascOrder = state.mascotas.sort(function (a, b) {
+				if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+				if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+				return 0;
+			});
+			return {
+				...state,
+				mascotas: ascOrder,
+			};
+		case 'ORDER_BY_NAMEDES':
+			const desOrder = state.mascotas.sort(function (a, b) {
+				if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return -1;
+				if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
+				return 0;
+			});
+			return {
+				...state,
+				mascotas: desOrder,
+			};
 
-    case "ORDER_BY_EDAD":
-      const orderEdad =
-        action.payload === "max"
-          ? state.mascotas.sort(function (a, b) {
-              return b.edad - a.edad;
-            })
-          : state.mascotas.sort(function (a, b) {
-              return a.edad - b.edad;
-            });
-      return {
-        ...state,
-        mascotas: orderEdad,
-      };
+		case 'ORDER_BY_EDAD':
+			const orderEdad =
+				action.payload === 'max'
+					? state.mascotas.sort(function (a, b) {
+							return b.edad - a.edad;
+					  })
+					: state.mascotas.sort(function (a, b) {
+							return a.edad - b.edad;
+					  });
+			return {
+				...state,
+				mascotas: orderEdad,
+			};
 
-    case "ADMIN_BORRAR_PRODUCTO":
-      return {
-        ...state,
-        productos: state.productos.filter((e) => e.id !== action.payload),
-      };
+		case 'ADMIN_BORRAR_PRODUCTO':
+			return {
+				...state,
+				productos: state.productos.filter((e) => e.id !== action.payload),
+			};
 
-    case "ADMIN_BORRAR_MASCOTA":
-      return {
-        ...state,
-        mascotas: state.mascotas.filter(
-          (mascota) => mascota.id !== action.payload
-        ),
-      };
+		case 'ADMIN_BORRAR_MASCOTA':
+			return {
+				...state,
+				mascotas: state.mascotas.filter(
+					(mascota) => mascota.id !== action.payload
+				),
+			};
+		case 'CREAR_NUEVA_MASCOTA':
+			return {
+				...state,
+				mascotas: action.payload,
+			};
+		case 'TRAER_MASCOTA_PARA_ACTUALIZAR':
+			return {
+				...state,
+				actualizarMascota: action.payload,
+			};
 
-    default:
-      return state;
-  }
+		default:
+			return state;
+	}
 }
 
 export default rootReducer;

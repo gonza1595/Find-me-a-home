@@ -2,7 +2,7 @@ const { Router } = require('express');
 const {Op , where} = require ("sequelize");
 const router = Router();
 const { Product } = require('../db');
-const products = require("../../../productos.json");
+const products = require("../../productos.json");
 const { filtroProductos } = require("./controllers");
 
 router.get("/", async (req, res) => {

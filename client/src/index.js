@@ -5,14 +5,18 @@ import { Provider } from "react-redux";
 import store from "./redux/store/index";
 import { BrowserRouter } from "react-router-dom";
 import AppAdmin from "./AppAdmin";
+import {UserContextProvider} from "./context/UserContext"
 
 ReactDOM.render(
   <BrowserRouter>
+
     <Provider store={store}>
+    <UserContextProvider> 
       <React.StrictMode>
         <App />
         <AppAdmin />
       </React.StrictMode>
+      </UserContextProvider>
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")
