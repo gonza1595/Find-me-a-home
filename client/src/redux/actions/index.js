@@ -246,3 +246,47 @@ export function realizarPago(id, amount) {
     return data;
   }
 }
+
+// carrito
+
+export function addToCart(payload) {
+  return {
+      type: "ADD_TO_CART",
+      payload
+  }
+};
+
+export function getNumberCart() {
+  return {
+      type: "GET_NUMBER_CART"
+  }
+};
+
+
+export function deleteCart(payload) {
+  return {
+      type: "DELETE_CART",
+      payload
+  }
+};
+
+export function increaseCart(payload) {
+  return {
+      type: "INCREASE_QUANTITY",
+      payload
+  }
+};
+
+export function decreaseCart(payload) {
+  return {
+      type: "DECREASE_QUANTITY",
+      payload
+  }
+};
+
+export function refreshCart(payload) {
+  return {
+      type: "REFRESH_CART",
+      payload
+  }
+};

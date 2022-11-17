@@ -16,14 +16,14 @@ import NavBar from "./componentes/NavBar/NavBar.jsx";
 import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
 import FormAdopcion from "./componentes/Formulario/FormAdopcion.jsx";
 import FormPago from "./componentes/Formulario/FormPago";
+import Cart from "./componentes/Carrito/Cart.jsx"
 
 
 
 function App() {
   return (
-  
 <>
-     
+
     <NavBar/>
       <div className="app">
         <Switch>
@@ -42,14 +42,14 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
 
           <Route exact path="/formAdopcion" component={FormAdopcion} />
-
           <Route exact path="/pagos" component={FormPago} />
+
+          <Route path={"/carrito"} component= {Cart} />
 
         </Switch>
       </div>
       
- 
-      </>
+     </>
   );
 }
 
