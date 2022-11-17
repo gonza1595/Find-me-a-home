@@ -313,7 +313,6 @@ export function refreshCart(payload) {
       payload
   }
 };
-=======
 	return async function () {
 		const {data} = await axios.post(`/pagos`, {
 			id,
