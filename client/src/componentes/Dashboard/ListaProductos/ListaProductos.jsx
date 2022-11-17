@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import './ListaProductos.css'
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,13 +7,13 @@ import { adminBorrarProducto } from '../../../redux/actions/index';
 import SideBar from '../Dashboard/SideBar/SideBar';
 
 
+
 const TablaProductos = () => {
-
 	const productos = useSelector((state) => state.productos);
-    
-    const dispatch= useDispatch()
 
-    useEffect(() => {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
 		dispatch(traerProductos());
 	}, []);
 

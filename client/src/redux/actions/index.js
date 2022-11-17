@@ -259,6 +259,61 @@ export function adminCrearNuevaMascota(obj) {
 // pago
 
 export function realizarPago(id, amount) {
+
+  return async function() {
+    const {data}= await axios.post("http://localhost:3001/pagos" , {
+      id,
+      amount
+    });
+    console.log(data);
+    return data;
+  }
+}
+
+// carrito
+
+export function addToCart(payload) {
+  return {
+      type: "ADD_TO_CART",
+      payload
+  }
+};
+
+export function getNumberCart() {
+  return {
+      type: "GET_NUMBER_CART"
+  }
+};
+
+
+export function deleteCart(payload) {
+  return {
+      type: "DELETE_CART",
+      payload
+  }
+};
+
+export function increaseCart(payload) {
+  return {
+      type: "INCREASE_QUANTITY",
+      payload
+  }
+};
+
+export function decreaseCart(payload) {
+  return {
+      type: "DECREASE_QUANTITY",
+      payload
+  }
+};
+
+export function refreshCart(payload) {
+  return {
+      type: "REFRESH_CART",
+      payload
+  }
+};
+=======
 	return async function () {
 		const {data} = await axios.post(`/pagos`, {
 			id,
@@ -289,3 +344,4 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 		alert('No se pudo encontrar lo que buscaba');
 	}
 };
+
