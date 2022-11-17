@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const {Product, User} = require('../db.js');
-const jsonProductos = require('../../../productos.json');
+const jsonProductos = require('../../productos.json');
 const router = Router();
 
 router.get('/:id', async (req, res, next) => {

@@ -47,18 +47,29 @@ router.get('/', async (req, res) => {
 	}
 });
 
-router.put('', async (req, res) => {
+router.put('/:id', async (req, res) => {
+	const {id} = req.params;
 	const mascota = req.body;
+	req.body;
 	try {
-		await Pet.update(
-			{edad: mascota.edad},
+		const actualizacion = await Pet.update(
+			{
+				nombre: mascota.nombre,
+				descripcion: mascota.descripcion,
+				imagen: mascota.imagen,
+				edad: mascota.edad,
+				tamaño: mascota.tamaño,
+				raza: mascota.raza,
+				sexo: mascota.sexo,
+				especie: mascota.especie,
+			},
 			{
 				where: {
-					id: mascota.id,
+					id,
 				},
 			}
 		);
-		return res.status(200).send(`Mascota actualizada`);
+		return res.status(200).json(actualizacion);
 	} catch (error) {
 		res.status(404).json(error);
 	}

@@ -1,6 +1,6 @@
 const { Pet } = require("../db");
 const db = require("../db.js");
-const mascotasJson = require("../../../mascotas.json");
+const mascotasJson = require("../../mascotas.json");
 
 const setMascotasJson = async () => {
   try {
