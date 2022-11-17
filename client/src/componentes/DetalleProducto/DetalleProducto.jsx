@@ -25,7 +25,7 @@ const DetalleProducto = () => {
 
   const getProduct = useEffect(() => {
     try {
-      fetch(`http://localhost:3001/productos/${id}`, {
+      fetch(`/productos/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
