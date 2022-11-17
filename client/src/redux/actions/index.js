@@ -1,12 +1,13 @@
 import axios from 'axios';
-const {URL_BACK} = process.env;
+// const {URL_BACK} = process.env;
+
 //crear actions necesarias
 
 export function buscarPorNombreMascota(nombre) {
 	//MASCOTAS
 	return async function (dispatch) {
 		try {
-			let json = await axios.get(`${URL_BACK}/mascotas?nombre=${nombre}`);
+			let json = await axios.get(`/mascotas?nombre=${nombre}`);
 			return dispatch({
 				type: 'BUSCAR_POR_NOMBRE_MASCOTA',
 				payload: json.data,
@@ -23,7 +24,7 @@ export function traerMascotas() {
 			type: 'LOADING',
 		});
 		try {
-			let json = await axios.get(`${URL_BACK}/mascotas`);
+			let json = await axios.get(`/mascotas`);
 			return dispatch({
 				type: 'TRAER_MASCOTAS',
 				payload: json.data,
@@ -38,7 +39,7 @@ export function buscarPorNombreProducto(nombre) {
 	//PRODUCTOS
 	return async function (dispatch) {
 		try {
-			let json = await axios.get(`${URL_BACK}/productos?nombre=${nombre}`);
+			let json = await axios.get(`/productos?nombre=${nombre}`);
 			return dispatch({
 				type: 'BUSCAR_POR_NOMBRE_PRODUCTO',
 				payload: json.data,
@@ -54,7 +55,7 @@ export function traerProductos() {
 		dispatch({
 			type: 'LOADING',
 		});
-		var json = await axios.get(`${URL_BACK}/productos`);
+		var json = await axios.get(`/productos`);
 
 		return dispatch({
 			type: 'TRAER_PRODUCTOS',
@@ -69,7 +70,7 @@ export function traerProductosfltrados(filtro, orden, tipo) {
 			type: 'LOADING',
 		});
 		var json = await axios.get(
-			`${URL_BACK}/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`
+			`/productos?filtro=${filtro}&orden=${orden}&tipo=${tipo}`
 		);
 
 		return dispatch({
@@ -84,7 +85,7 @@ export const detalleMascota = (id) => (dispatch) => {
 		type: 'LOADING',
 	});
 	try {
-		return axios.get(`${URL_BACK}/mascotas/` + id).then((respuesta) => {
+		return axios.get(`/mascotas/` + id).then((respuesta) => {
 			dispatch({
 				type: 'DETALLE_MASCOTA',
 				payload: respuesta.data,
@@ -104,14 +105,14 @@ export const limpiarEstadoDetalle = () => {
 
 export function formularioRegistroUsuario(payload) {
 	return async function () {
-		let json = await axios.post(`${URL_BACK}/usuario/registro`, payload);
+		let json = await axios.post(`/usuario/registro`, payload);
 		return json;
 	};
 }
 
 export function formularioPostMascota(payload) {
 	return async function () {
-		let json = await axios.post(`${URL_BACK}/mascotas`, payload);
+		let json = await axios.post(`/mascotas`, payload);
 		return json;
 	};
 }
@@ -119,7 +120,7 @@ export function formularioPostMascota(payload) {
 export function formularioPostAdopcion(payload) {
 
   return async function () {
-    let json = await axios.post(`${URL_BACK}/formAdopcion`, payload); 
+    let json = await axios.post(`/formAdopcion`, payload); 
   };
 
 }
@@ -129,7 +130,7 @@ export const detalleProducto = (id) => async (dispatch) => {
 		type: 'LOADING',
 	});
 	try {
-		const {data} = await axios.get(`${URL_BACK}/productos/` + id);
+		const {data} = await axios.get(`/productos/` + id);
 		dispatch({type: 'DETALLE_PRODUCTO', payload: data});
 	} catch (error) {
 		console.log(error);
@@ -139,7 +140,7 @@ export const detalleProducto = (id) => async (dispatch) => {
 
 export function formularioIniciarSesion(payload) {
 	return async function () {
-		let json = await axios.post(`${URL_BACK}/`, payload);
+		let json = await axios.post(`/`, payload);
 		return json;
 	};
 }
@@ -229,7 +230,7 @@ export function adminBorrarMascota(id) {
 // esta accion es provisoria, hay que probar que funcione bien
 export function adminActualizarMascota(id) {
 	return async function () {
-		const {data} = await axios.put(`${URL_BACK}/mascotas`, {
+		const {data} = await axios.put(`/mascotas`, {
 			id,
 		});
 		return data;
@@ -238,7 +239,7 @@ export function adminActualizarMascota(id) {
 
 export function adminCrearNuevaMascota(obj) {
 	return (dispatch) =>
-		fetch(`${URL_BACK}/mascotas`, {
+		fetch(`/mascotas`, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
@@ -259,7 +260,7 @@ export function adminCrearNuevaMascota(obj) {
 
 export function realizarPago(id, amount) {
 	return async function () {
-		const {data} = await axios.post(`${URL_BACK}/pagos`, {
+		const {data} = await axios.post(`/pagos`, {
 			id,
 			amount,
 		});
@@ -276,7 +277,7 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 	});
 	try {
 		return axios
-			.get(`${URL_BACK}/mascotas/mascotas/` + id)
+			.get(`/mascotas/mascotas/` + id)
 			.then((respuesta) => {
 				dispatch({
 					type: 'TRAER_MASCOTA_PARA_ACTUALIZAR',
