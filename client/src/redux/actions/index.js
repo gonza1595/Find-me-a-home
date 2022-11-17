@@ -1,5 +1,8 @@
 import axios from 'axios';
-const {URL_BACK} = process.env;
+// const {URL_BACK} = process.env;
+const URL_BACK="https://back-proyecto-final-production.up.railway.app/"
+
+
 //crear actions necesarias
 
 export function buscarPorNombreMascota(nombre) {
