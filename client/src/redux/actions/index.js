@@ -239,7 +239,7 @@ export function adminActualizarMascota(id) {
 
 export function adminCrearNuevaMascota(obj) {
 	return (dispatch) =>
-		fetch(`/mascotas`, {
+		axios.post(`/mascotas`, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',
