@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/adopta" component={HomeAdopta} />
           <Route exact path="/requisitos" component={ReqAdopcion} />
           <Route exact path="/mascotas" component={HomeMascotas} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
 
           <Route exact path="/formAdopcion" component={FormAdopcion} />
           <Route exact path="/pagos" component={FormPago} />
