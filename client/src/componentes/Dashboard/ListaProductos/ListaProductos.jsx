@@ -34,8 +34,10 @@ const TablaProductos = () => {
                         <th scope="col">Tipo</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Imagen</th>
+                        {/* <th scope="col">Descripción</th> */}
+                        {/* <th scope="col">Imagen</th> */}
+
+                        <th scope="col">Id</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -49,8 +51,9 @@ const TablaProductos = () => {
                                         <td>{e.tipo}</td>
                                         <td>{e.precio}</td> 
                                         <td>{e.stock}</td> 
-                                        <td>{e.descripcion}</td> 
-                                        <td className='imagentablaprod'>{e.imagen}</td>
+                                        <td>{e.id}</td> 
+                                        {/* <td>{e.descripcion}</td> 
+                                        <td className='imagentablaprod'>{e.imagen}</td> */}
                                         <td>
                                             <button onClick={() => handleDelete(e.id)}>Borrar</button>
                                         </td>

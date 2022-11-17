@@ -33,8 +33,8 @@ function TablaMascotas() {
 				<thead>
 					<tr className='nombres-columnas'>
 						<th scope='col'>Nombre</th>
-						<th scope='col'>Descripción</th>
-						<th scope='col'>Imagen</th>
+						{/* <th scope='col'>Descripción</th> */}
+						<th scope='col'>Id</th>
 						<th scope='col'>Edad</th>
 						<th scope='col'>Tamaño</th>
 						<th scope='col'>Raza</th>
@@ -49,17 +49,18 @@ function TablaMascotas() {
 						return (
 							<tr className='filas'>
 								<td className='nombretablamascota'>{mascota.nombre}</td>
-								<td className='descripciontablamascota'>
+								{/* <td className='descripciontablamascota'>
 									{mascota.descripcion}
 								</td>
-								<td className='imagentablamascota'>{mascota.imagen}</td>
+								<td className='imagentablamascota'>{mascota.imagen}</td> */}
+								<td className='idtablamascota'>{mascota.id}</td>
 								<td className='edadtablamascota'>{mascota.edad}</td>
 								<td className='tamañotablamascota'>{mascota.tamaño}</td>
 								<td className='razatablamascota'>{mascota.raza}</td>
 								<td className='sexotablamascota'>{mascota.sexo}</td>
 								<td className='especietablamascota'>{mascota.especie}</td>
 								<td className='borrartablamascota'>
-									<button onClick={(e) => handleDelete(e, id)}>Borrar</button>
+									<button onClick={(e) => handleDelete(e, e.id)}>Borrar</button>
 								</td>
 								<td className='actualizartablamascota'>
 									<Link to={`dashboard/formActualizarMascota/${mascota.id}`}>
