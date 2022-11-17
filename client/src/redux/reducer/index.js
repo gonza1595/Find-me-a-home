@@ -1,5 +1,6 @@
 const initialState = {
-	mascotas: [],
+
+  mascotas: [],
 	allMascotas: [],
 	filteredBySexo: [],
 	filteredByTamaño: [],
@@ -8,8 +9,10 @@ const initialState = {
 	usuarios: [],
 	loading: false,
 	actualizarMascota: [],
+  cart: [],
+  numberCart: 0,
 
-	//agregar mas estados si se requiere...
+  //agregar mas estados si se requiere...
 };
 
 function rootReducer(state = initialState, action) {
@@ -202,9 +205,93 @@ function rootReducer(state = initialState, action) {
 				actualizarMascota: action.payload,
 			};
 
-		default:
-			return state;
-	}
+    /* carrito */
+    case "GET_NUMBER_CART":
+            return {
+                ...state
+            };
+
+        case "ADD_TO_CART":
+            if (state.numberCart === 0) {
+                let shoppingCart = {
+                    id: action.payload.id,
+                    quantity: action.payload.quantitySelected,
+                    nombre: action.payload.nombre,
+                    imagen: action.payload.imagen,
+                    precio: action.payload.precio,
+                    stock: action.payload.stock
+                }
+                state.cart.push(shoppingCart);
+            } else {
+                let check = false;
+                state.cart.map((item, key) => {
+                    if (item.id === action.payload.id) {
+                        state.cart[key].quantity++;
+                        check = true;
+                    }
+                });
+                if (!check) {
+                    let cartShopping = {
+                        id: action.payload.id,
+                        /* age: action.payload.age, */
+                        quantity: action.payload.quantitySelected,
+                        nombre: action.payload.nombre,
+                        imagen: action.payload.imagen,
+                        precio: action.payload.precio,
+                        stock: action.payload.stock
+                    }
+                    state.cart.push(cartShopping);
+                }
+            }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return {
+                ...state,
+                numberCart: state.numberCart + 1
+            };
+
+            case "INCREASE_QUANTITY":
+            const increaseItem = state.cart.find(x => x.id === action.payload);
+            state.numberCart++
+                increaseItem.quantity++;
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return {
+                ...state
+            };
+        case "DECREASE_QUANTITY":
+            const decreaseItem = state.cart.find(x => x.id === action.payload);
+            if (decreaseItem.quantity > 1) {
+                state.numberCart--;
+                decreaseItem.quantity--;
+            }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return {
+                ...state}
+
+            case "DELETE_CART":
+            const deleteItem = state.cart.find(x => x.id === action.payload);
+            const newCart = state.cart.filter(item => {
+                return item.id != deleteItem.id
+            })
+            localStorage.setItem("cart", JSON.stringify(newCart));
+            return {
+                ...state,
+                numberCart: state.numberCart - deleteItem.quantity,
+                cart: newCart
+            };
+        case "REFRESH_CART":
+            let cart = [];
+            if (localStorage.getItem("cart")) {
+                cart = JSON.parse(localStorage.getItem("cart"))
+            }
+            return {
+                ...state,
+                numberCart: 1,
+                cart: cart
+            }
+
+    default:
+      return state;
+  }
 }
 
 export default rootReducer;
