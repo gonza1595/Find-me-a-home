@@ -59,7 +59,7 @@ function TablaMascotas() {
 									<button onClick={(e) => handleDelete(e, id)}>Borrar</button>
 								</td>
 								<td className='actualizartablamascota'>
-									<Link to={`dashboard/formActualizarMascota/${mascota.id}`}>
+									<Link to={`dashboard/formActualizarMascota/${mascotas.id}`}>
 										<button>Editar</button>
 									</Link>
 								</td>
@@ -69,28 +69,6 @@ function TablaMascotas() {
 				</tbody>
 			</table>
 			<FormMascota />
-			{/* <form>
-				<h2>Crear nueva mascota</h2>
-				<label>Nombre</label>
-				<input type='text'></input>
-				<label>Descripción</label>
-				<input type='text'></input>
-				<label>Imagen</label>
-				<input type='text'></input>
-				<label>Edad</label>
-				<input type='number'></input>
-				<label>Tamaño</label>
-				<select></select>
-				<label>Raza</label>
-				<input type='text'></input>
-				<label>Sexo</label>
-				<select></select>
-				<label>Raza</label>
-				<input type='text'></input>
-				<label>Especie</label>
-				<select></select>
-				<button>CREAR</button>
-			</form> */}
 		</div>
 	);
 }
