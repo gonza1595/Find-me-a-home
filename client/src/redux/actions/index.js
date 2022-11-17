@@ -321,7 +321,6 @@ export function refreshCart(payload) {
 		console.log(data);
 		return data;
 	};
-}
 
 // trae la mascota por ID para bajar toda la data a un form y poder editar
 // blabla
