@@ -1,51 +1,47 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import "./FormMascota.css";
-import {
-  detalleMascota,
-  adminActualizarMascota,
-} from "../../redux/actions/index";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  adminEditarUsuario,
+  traerUsuariosPorId,
+} from "../../../redux/actions/index";
 
-export default function EditarMascota(props) {
-  const mascotaId = useSelector((state) => state.detalle);
+export default function EditarUsuario(props) {
+  const usuarioId = useSelector((state) => state.usuarioId);
 
-  const [mascota, setMascota] = useState(mascotaId);
-
-  const petId = props.match.params.id;
-
+  const [user, setUser] = useState(usuarioId);
+  const userId = props.match.params.id;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(detalleMascota(petId));
+    dispatch(traerUsuariosPorId(userId));
   }, [dispatch]);
 
   useEffect(() => {
-    setMascota(mascotaId);
-  }, [mascotaId]);
+    setUser(usuarioId);
+  }, [usuarioId]);
 
   const handleClick = (e) => {
     e.preventDefault();
-    dispatch(adminActualizarMascota(petId, mascota));
+    dispatch(adminEditarUsuario(userId, user));
   };
 
   const handleChangeInput = (e) => {
-    setMascota({
-      ...mascota,
+    setUser({
+      ...user,
       [e.target.name]: e.target.value,
     });
   };
 
   return (
     <div>
-      <h1>Editar Mascota</h1>
+      <h1>Editar Usuario</h1>
       <form>
         <div>
           <label>Nombre: </label>
           <input
             type="text"
-            value={mascota.nombre || ""}
+            value={user.nombre || ""}
             name="nombre"
             onChange={(e) => {
               handleChangeInput(e);
@@ -53,21 +49,21 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Descripcion: </label>
+          <label>Contraseña: </label>
           <input
             type="text"
-            value={mascota.descripcion || ""}
-            name="descripcion"
+            value={user.contraseña || ""}
+            name="contraseña"
             onChange={(e) => {
               handleChangeInput(e);
             }}
           />
         </div>
         <div>
-          <label>Imagen: </label>
+          <label>Correo: </label>
           <input
-            value={mascota.imagen || ""}
-            name="imagen"
+            value={user.correo || ""}
+            name="correo"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -77,7 +73,7 @@ export default function EditarMascota(props) {
         <div>
           <label>Edad: </label>
           <input
-            value={mascota.edad || ""}
+            value={user.edad || ""}
             name="edad"
             onChange={(e) => {
               handleChangeInput(e);
@@ -86,10 +82,10 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Tamaño: </label>
+          <label>Direccion: </label>
           <input
-            value={mascota.tamaño || ""}
-            name="tamaño"
+            value={user.direccion || ""}
+            name="direccion"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -97,39 +93,16 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Raza: </label>
+          <label>Rango: </label>
           <input
-            value={mascota.raza || ""}
-            name="raza"
+            value={user.rango || ""}
+            name="rango"
             onChange={(e) => {
               handleChangeInput(e);
             }}
             type="text"
           />
         </div>
-        <div>
-          <label>Sexo: </label>
-          <input
-            value={mascota.sexo || ""}
-            name="sexo"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-        <div>
-          <label>Especie: </label>
-          <input
-            value={mascota.especie || ""}
-            name="especie"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-
         <Link to="/requisitos">
           <button>Atras</button>
         </Link>

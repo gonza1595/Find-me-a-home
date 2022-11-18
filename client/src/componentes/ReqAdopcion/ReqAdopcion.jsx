@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import requisito from "./img/adop.jpg";
 import "./ReqAdopcion.css";
-
+import ListaUsuarios from "../Dashboard/ListaUsuarios/ListaUsuarios";
+import ListaMascotas from "../Dashboard/ListaMascotas/ListaMascotas";
+import ListaProductos from "../Dashboard/ListaProductos/ListaProductos";
 function ReqAdopcion() {
   return (
     <div>
-
       <div className="conteinerRequisitos">
         <div className="tituloReq">
           <h3>Requisitos de adopción</h3>
@@ -20,6 +21,8 @@ function ReqAdopcion() {
             height="auto"
           />
         </div>
+        <ListaProductos />
+
         <div className="texto1">
           <p>
             Adoptar es un acto de responsabilidad y compromiso por lo que es
