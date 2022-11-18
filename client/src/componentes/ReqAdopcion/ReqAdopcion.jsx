@@ -21,7 +21,7 @@ function ReqAdopcion() {
             height="auto"
           />
         </div>
-        <ListaProductos />
+    
 
         <div className="texto1">
           <p>
