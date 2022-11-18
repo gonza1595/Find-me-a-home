@@ -5,6 +5,7 @@
 } */
 
 .tabla-mascotas {
+    background-color: aliceblue;
     border-collapse: collapse;
     margin: 1rem 0 0 14rem;
     font-size: 0.8em;

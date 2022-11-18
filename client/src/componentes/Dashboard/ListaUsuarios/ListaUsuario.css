@@ -1,16 +1,16 @@
-.conteinerTablaUsuario{
+/* .conteinerTablaUsuario{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .tabla-usuarios {
-    margin: 1rem 0.8rem;
-    font-family: cursive;
+    background-color: aliceblue;
     border-collapse: collapse;
-    margin: 2rem 5rem;
-    font-size: 0.6em;
+    margin: 1rem 0 0 14rem;
+    font-size: 0.8em;
     min-width: 400px;
+    max-width: 80%;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);

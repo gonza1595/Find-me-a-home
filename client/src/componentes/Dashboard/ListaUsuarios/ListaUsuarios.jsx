@@ -6,7 +6,6 @@ import {
   adminBorrarUsuarios,
 } from "../../../redux/actions/index";
 import "../ListaUsuarios/ListaUsuario.css";
-import SideBar from "../Dashboard/SideBar/SideBar";
 
 const TablaUsuarios = () => {
   const usuarios = useSelector((state) => state.usuarios);
@@ -21,7 +20,7 @@ const TablaUsuarios = () => {
   };
 
   return (
-    <div className="conteinerTablaUsuario">
+    <div className="container_tabla_dash">
       <table className="tabla-usuarios">
         <thead>
           <tr className="nombres-columnas">

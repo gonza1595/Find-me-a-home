@@ -8,6 +8,7 @@ import {
 } from "../../../redux/actions";
 import FormMascota from "../../Formulario/FormMascota";
 import "../ListaMascotas/ListaMascotas.css";
+import SearchBarMascotas from '../../SearchBar/SearchBarMascota'
 
 function TablaMascotas() {
   const dispatch = useDispatch();
@@ -24,7 +25,11 @@ function TablaMascotas() {
   };
 
   return (
-    <div className="conteinerTablaMascotas">
+    <div className="container_tabla_dash">
+      <h2>MASCOTAS</h2>
+      <div className="searchBarDashboard">
+      <SearchBarMascotas />
+      </div>
       <table className="tabla-mascotas">
         <thead className="theadMasctotas">
           <tr className="nombres-columnas">

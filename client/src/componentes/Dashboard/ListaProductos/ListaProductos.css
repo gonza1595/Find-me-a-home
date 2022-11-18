@@ -8,6 +8,7 @@
 }
 
 .tabla-productos {
+    background-color: aliceblue;
     border-collapse: collapse;
     margin: 1rem 0 0 14rem;
     font-size: 0.8em;
@@ -17,6 +18,25 @@
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+
+.btn-agregar-dash{
+    margin-left: 60%;
+}
+
+.searchYbtn{
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-agregar-dash{
+    width: 150px;
+}
+
+.searchBarDashboard{
+    width: 252px;
+    margin-left: 60%;
+}
+
 
 .container_tabla_dash h2{
     display: flex;
