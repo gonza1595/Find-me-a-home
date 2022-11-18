@@ -26,10 +26,13 @@ font-weight: bold;
     font-weight: bold;
 }
 
-.nombres-columnas{
-    background-color: #009879;
+.nombres-columnasUsuario{
+    background-color: #027a74;
+    color: #c5f5f2;
     font-weight: bold;
-    font-size: 18px;
+   font-size: 15px;
+   height: 35px;
+    
 }
 
 .descripciontablausuario{
@@ -56,8 +59,6 @@ font-weight: bold;
 .rangotablusuario,
 .borrartablausuario,
 .actualizartablausuario{
-    width: 150px;
+    width: 90px;
     text-align: center;
-    font-size: medium;
-    font-weight:lighter;
 }
