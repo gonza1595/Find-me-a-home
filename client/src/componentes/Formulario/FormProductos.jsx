@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
-import {
-  formularioPostMascota,
-  traerMascotas,
-} from "../../redux/actions/index";
+import { crearProducto } from "../../redux/actions/index";
 import "./FormMascota.css";
 
 function validate(input) {
@@ -17,18 +14,15 @@ function validate(input) {
     errors.descripcion = "Se requiere una descripcion";
   } else if (!input.imagen) {
     errors.imagen = "Se requiere imagen";
-  } else if (!input.edad) {
-    errors.edad = "Se requiere edad";
-  } else if (!input.tamaño) {
-    errors.tamaño = "Se requiere tamaño";
-  } else if (!input.raza) {
-    errors.raza = "Se requiere raza";
-  } else if (!input.sexo) {
-    errors.sexo = "Se requiere sexo";
-  } else if (!input.especie) {
-    errors.especie = "Se requiere especie";
+  } else if (!input.stock) {
+    errors.stock = "Se requiere stock";
+  } else if (!input.calificacion) {
+    errors.calificacion = "Se requiere calificacion";
+  } else if (!input.tipo) {
+    errors.tipo = "Se requiere tipo";
+  } else if (!input.precio) {
+    errors.precio = "Se requiere precio";
   }
-
   return errors;
 }
 
@@ -43,12 +37,11 @@ export default function Form() {
     nombre: "",
     descripcion: "",
     imagen: "",
-    edad: "",
-    raza: "",
-    sexo: "",
-    especie: "",
-    tamaño: "",
-    //arreglo de Pet
+    stock: "",
+    calificacion: "",
+    tipo: "",
+    precio: "",
+    //arreglo de Product
   });
 
   function handleChange(e) {
@@ -80,11 +73,10 @@ export default function Form() {
 
   function handleSubmit(e) {
     if (
-      !input.especie ||
-      !input.sexo ||
-      !input.raza ||
-      !input.tamaño ||
-      !input.edad ||
+      !input.precio ||
+      !input.tipo ||
+      !input.calificacion ||
+      !input.stock ||
       !input.imagen ||
       !input.descripcion ||
       !input.nombre
@@ -93,18 +85,18 @@ export default function Form() {
       alert("Verifique los campos para poder continuar");
     } else {
       e.preventDefault();
-      dispatch(formularioPostMascota(input));
-      alert("Su mascota ha sido posteado exitosamente");
+      dispatch(crearProducto(input));
+      alert("Su producto ha sido creado exitosamente");
       // history.push("/"); //fijarse si se deja o no
 
       setInput({
         nombre: "",
         descripcion: "",
         imagen: "",
-        edad: "",
-        raza: "",
-        sexo: "",
-        especie: "",
+        stock: "",
+        calificacion: "",
+        tipo: "",
+        precio: "",
       });
     }
     setErrors(
@@ -118,7 +110,7 @@ export default function Form() {
   return (
     <div>
       <div className="createFormMascota">
-        <h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
+        <h1 className="tituloFormMascota">CREAR PRODUCTO</h1>
 
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="containerFormMascotas">
@@ -158,114 +150,56 @@ export default function Form() {
             {errors.imagen && <p>{errors.imagen}</p>}
           </div>
           <div className="containerFormMascotas">
-            <label>Edad: </label>
+            <label>Stock: </label>
             <input
               type="number"
               autoComplete="off"
-              value={input.edad}
-              name="edad"
+              value={input.stock}
+              name="stock"
               onChange={handleChange}
               className="inputFormMascotas"
             />
-            {errors.edad && <p>{errors.edad}</p>}
+            {errors.stock && <p>{errors.stock}</p>}
           </div>
           <div className="containerFormMascotas">
-            <label>Raza: </label>
+            <label>Calificacion: </label>
             <input
               type="text"
               autoComplete="off"
-              value={input.raza}
-              name="raza"
+              value={input.calificacion}
+              name="calificacion"
               onChange={handleChange}
               className="inputFormMascotas"
             />
-            {errors.raza && <p>{errors.raza}</p>}
+            {errors.calificacion && <p>{errors.calificacion}</p>}
           </div>
 
           <div className="containerFormMascotas">
-            <label>Sexo: </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="masculino"
-                name="sexo"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Masculino{" "}
-            </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="femenino"
-                name="sexo"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Femenino{" "}
-            </label>
-            {errors.sexo && <p>{errors.sexo}</p>}
+            <label>Precio: </label>
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.precio}
+              name="precio"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.precio && <p>{errors.precio}</p>}
           </div>
           <div className="containerFormMascotas">
-            <label>Especie: </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="perro"
-                name="especie"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Perro{" "}
-            </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="gato"
-                name="especie"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Gato{" "}
-            </label>
-            {errors.especie && <p>{errors.especie}</p>}
-          </div>
-          <div className="containerFormMascotas">
-            <label className="">Tamaño: </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="pequeño"
-                name="tamaño"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Pequeño{" "}
-            </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="mediano"
-                name="tamaño"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Mediano{" "}
-            </label>
-            <label>
-              <input
-                type="radio"
-                autoComplete="off"
-                value="grande"
-                name="tamaño"
-                onClick={(e) => handleCheck(e)}
-              />{" "}
-              Grande{" "}
-            </label>
-            {errors.tamaño && <p>{errors.tamaño}</p>}
+            <label>Tipo: </label>
+            <input
+              type="text"
+              autoComplete="off"
+              value={input.tipo}
+              name="tipo"
+              onChange={handleChange}
+              className="inputFormMascotas"
+            />
+            {errors.tipo && <p>{errors.tipo}</p>}
           </div>
           <div>
-            <button type="submit"> Postear </button>
+            <button type="submit"> Crear</button>
             <Link to="/requisitos">
               <button>Volver</button>
             </Link>
