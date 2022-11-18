@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams} from "react-router-dom";
 import { useHistory } from "react-router";
 import { addToCart } from "../../redux/actions/index";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 import {
   detalleMascota,
@@ -61,25 +61,21 @@ function addToCart(id){
   function handleAddToCart(){
       mascotas.quantitySelected = quantitySelected;
       dispatch(addToCart(mascotas));
-     /*  notifyOK(); */
-      setTimeout(() => {
-          history.push("/")
-      }, 3000);
+    //  /*  notifyOK(); */
+    //   setTimeout(() => {
+    //       history.push("/")
+    //   }, 3000);
   };
 
-  const notifyOK = () => {
-      toast.success("Added to cart", {
-        theme: "colored",
-      });
-  };
+
 
   function handleBuyCart(){
       mascotas.quantitySelected = quantitySelected;
       dispatch(addToCart(mascotas));
-      notifyOK();
-      setTimeout(() => {
-        history.push("/carrito")
-      }, 3000);
+      // notifyOK();
+      // setTimeout(() => {
+      //   history.push("/carrito")
+      // }, 3000);
   }
 
   return (
