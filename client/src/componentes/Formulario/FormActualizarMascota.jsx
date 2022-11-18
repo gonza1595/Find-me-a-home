@@ -38,36 +38,39 @@ export default function EditarMascota(props) {
   };
 
   return (
-    <div>
-      <h1>Editar Mascota</h1>
+    <div className="createFormMascota">
+      <h1 className="tituloUsuario">Editar Mascota</h1>
       <form>
         <div>
-          <label>Nombre: </label>
+          <label className="labelUsuario">Nombre: </label>
           <input
             type="text"
             value={mascota.nombre || ""}
             name="nombre"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
           />
         </div>
         <div>
-          <label>Descripcion: </label>
+          <label className="labelUsuario">Descripcion: </label>
           <input
             type="text"
             value={mascota.descripcion || ""}
             name="descripcion"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
           />
         </div>
         <div>
-          <label>Imagen: </label>
+          <label className="labelUsuario">Imagen: </label>
           <input
             value={mascota.imagen || ""}
             name="imagen"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -75,10 +78,11 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Edad: </label>
+          <label className="labelUsuario">Edad: </label>
           <input
             value={mascota.edad || ""}
             name="edad"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -86,10 +90,11 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Tamaño: </label>
+          <label className="labelUsuario">Tamaño: </label>
           <input
             value={mascota.tamaño || ""}
             name="tamaño"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -97,10 +102,11 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Raza: </label>
+          <label className="labelUsuario">Raza: </label>
           <input
             value={mascota.raza || ""}
             name="raza"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -108,10 +114,11 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Sexo: </label>
+          <label className="labelUsuario">Sexo: </label>
           <input
             value={mascota.sexo || ""}
             name="sexo"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -119,22 +126,26 @@ export default function EditarMascota(props) {
           />
         </div>
         <div>
-          <label>Especie: </label>
+          <label className="labelUsuario">Especie: </label>
           <input
             value={mascota.especie || ""}
             name="especie"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
             type="text"
           />
         </div>
-
-        <Link to="/requisitos">
-          <button>Atras</button>
-        </Link>
-        <div>
-          <button onClick={(e) => handleClick(e)}>Editar</button>
+        <div className="buttonUsuario">
+          <div className="buttonAtras">
+            <Link to="/dashboard/mascotas">
+              <button>Atras</button>
+            </Link>
+          </div>
+          <div className="buttonEditar">
+            <button onClick={(e) => handleClick(e)}>Editar</button>
+          </div>
         </div>
       </form>
       ;

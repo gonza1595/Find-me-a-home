@@ -8,7 +8,7 @@ import {
 } from "../../../redux/actions";
 import FormMascota from "../../Formulario/FormMascota";
 import "../ListaMascotas/ListaMascotas.css";
-import SearchBarMascotas from '../../SearchBar/SearchBarMascota'
+import SearchBarMascotas from "../../SearchBar/SearchBarMascota";
 
 function TablaMascotas() {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function TablaMascotas() {
     <div className="container_tabla_dash">
       <h2>MASCOTAS</h2>
       <div className="searchBarDashboard">
-      <SearchBarMascotas />
+        <SearchBarMascotas />
       </div>
       <table className="tabla-mascotas">
         <thead className="theadMasctotas">
@@ -67,11 +67,6 @@ function TablaMascotas() {
                 <td className="actualizartablamascota">
                   <Link to={`/dashboard/formActualizarMascota/${mascota.id}`}>
                     <button>Editar</button>
-                  </Link>
-                </td>
-                <td className="actualizartablamascota">
-                  <Link to={`/formMascota`}>
-                    <button>Agregar</button>
                   </Link>
                 </td>
               </tr>

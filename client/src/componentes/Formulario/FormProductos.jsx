@@ -200,7 +200,7 @@ export default function Form() {
           </div>
           <div>
             <button type="submit"> Crear</button>
-            <Link to="/requisitos">
+            <Link to="/dashboard/productos">
               <button>Volver</button>
             </Link>
           </div>

@@ -24,13 +24,12 @@ const TablaProductos = () => {
     <div className="container_tabla_dash">
       <h2>PRODUCTOS</h2>
       <div className="searchYbtn">
-      <div className="searchBarDashboard">
-      <SearchBarProducto />
-      </div>
-      <Link to={"/dashboard/formProducto"}>
-        <button className="btn-agregar-dash">Agregar Producto</button>
-      </Link>
-
+        <div className="searchBarDashboard">
+          <SearchBarProducto />
+        </div>
+        <Link to={"/dashboard/formProducto"}>
+          <button className="btn-agregar-dash">Agregar Producto</button>
+        </Link>
       </div>
       <table className="tabla-productos">
         <thead>
@@ -41,7 +40,8 @@ const TablaProductos = () => {
             <th scope="col">Stock</th>
             <th scope="col">Descripción</th>
             <th scope="col">Imagen</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Borrar</th>
+            <th scope="col">Editar</th>
           </tr>
         </thead>
 
@@ -55,10 +55,10 @@ const TablaProductos = () => {
                 <td>{e.stock}</td>
                 <td>{e.descripcion}</td>
                 <td className="imagentablaprod">{e.imagen}</td>
-                <td>
+                <td className="borrartablamascota">
                   <button onClick={() => handleDelete(e.id)}>Borrar</button>
                 </td>
-                <td>
+                <td className="actualizartablamascota">
                   <Link to={`/dashboard/formActualizarProducto/${e.id}`}>
                     <button>Editar</button>
                   </Link>

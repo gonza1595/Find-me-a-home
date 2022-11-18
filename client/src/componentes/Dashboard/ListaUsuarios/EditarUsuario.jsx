@@ -5,6 +5,7 @@ import {
   adminEditarUsuario,
   traerUsuariosPorId,
 } from "../../../redux/actions/index";
+import "./EditarUsuario.css";
 
 export default function EditarUsuario(props) {
   const usuarioId = useSelector((state) => state.usuarioId);
@@ -35,82 +36,94 @@ export default function EditarUsuario(props) {
 
   return (
     <div>
-      <h1>Editar Usuario</h1>
-      <form>
-        <div>
-          <label>Nombre: </label>
-          <input
-            type="text"
-            value={user.nombre || ""}
-            name="nombre"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-          />
-        </div>
-        <div>
-          <label>Contraseña: </label>
-          <input
-            type="text"
-            value={user.contraseña || ""}
-            name="contraseña"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-          />
-        </div>
-        <div>
-          <label>Correo: </label>
-          <input
-            value={user.correo || ""}
-            name="correo"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-        <div>
-          <label>Edad: </label>
-          <input
-            value={user.edad || ""}
-            name="edad"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-        <div>
-          <label>Direccion: </label>
-          <input
-            value={user.direccion || ""}
-            name="direccion"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-        <div>
-          <label>Rango: </label>
-          <input
-            value={user.rango || ""}
-            name="rango"
-            onChange={(e) => {
-              handleChangeInput(e);
-            }}
-            type="text"
-          />
-        </div>
-        <Link to="/requisitos">
-          <button>Atras</button>
-        </Link>
-        <div>
-          <button onClick={(e) => handleClick(e)}>Editar</button>
-        </div>
-      </form>
-      ;
+      <div className="createFormMascota">
+        <h1 className="tituloUsuario">Editar Usuario</h1>
+        <form>
+          <div>
+            <label className="labelUsuario">Nombre: </label>
+            <input
+              type="text"
+              value={user.nombre || ""}
+              name="nombre"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+            />
+          </div>
+          <div>
+            <label className="labelUsuario">Contraseña: </label>
+            <input
+              type="text"
+              value={user.contraseña || ""}
+              name="contraseña"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+            />
+          </div>
+          <div>
+            <label className="labelUsuario">Correo: </label>
+            <input
+              value={user.correo || ""}
+              name="correo"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+              type="text"
+            />
+          </div>
+          <div>
+            <label className="labelUsuario">Edad: </label>
+            <input
+              value={user.edad || ""}
+              name="edad"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+              type="text"
+            />
+          </div>
+          <div>
+            <label className="labelUsuario">Direccion: </label>
+            <input
+              value={user.direccion || ""}
+              name="direccion"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+              type="text"
+            />
+          </div>
+          <div>
+            <label className="labelUsuario">Rango: </label>
+            <input
+              value={user.rango || ""}
+              name="rango"
+              className="inputUsuario"
+              onChange={(e) => {
+                handleChangeInput(e);
+              }}
+              type="text"
+            />
+          </div>
+          <div className="buttonUsuario">
+            <div className="buttonAtras">
+              <Link to="/dashboard/usuarios">
+                <button>Atras</button>
+              </Link>
+            </div>
+            <div className="buttonEditar">
+              <button onClick={(e) => handleClick(e)}>Editar</button>
+            </div>
+          </div>
+        </form>
+        ;
+      </div>
     </div>
   );
 }
