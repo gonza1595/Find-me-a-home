@@ -5,6 +5,7 @@ import { traerProductos } from "../../../redux/actions/index";
 import { adminBorrarProducto } from "../../../redux/actions/index";
 import { Link } from "react-router-dom";
 import SideBar from "../Dashboard/SideBar/SideBar";
+import SearchBarProducto from "../../SearchBar/SearchBarProducto";
 
 const TablaProductos = () => {
   const productos = useSelector((state) => state.productos);
@@ -20,10 +21,17 @@ const TablaProductos = () => {
   };
 
   return (
-    <div>
+    <div className="container_tabla_dash">
+      <h2>PRODUCTOS</h2>
+      <div className="searchYbtn">
+      <div className="searchBarDashboard">
+      <SearchBarProducto />
+      </div>
       <Link to={"/dashboard/formProducto"}>
-        <button>Agregar Producto</button>
+        <button className="btn-agregar-dash">Agregar Producto</button>
       </Link>
+
+      </div>
       <table className="tabla-productos">
         <thead>
           <tr className="tabla-head">
@@ -46,7 +54,7 @@ const TablaProductos = () => {
                 <td>{e.precio}</td>
                 <td>{e.stock}</td>
                 <td>{e.descripcion}</td>
-                <td>{e.imagen}</td>
+                <td className="imagentablaprod">{e.imagen}</td>
                 <td>
                   <button onClick={() => handleDelete(e.id)}>Borrar</button>
                 </td>

@@ -6,7 +6,10 @@ import TablaMascotas from './componentes/Dashboard/ListaMascotas/ListaMascotas.j
 import TablaProductos from './componentes/Dashboard/ListaProductos/ListaProductos.jsx';
 // import ListaRefugios from './componentes/Dashboard/ListaRefugios/ListaRefugios.jsx';
 import ListaUsuarios from './componentes/Dashboard/ListaUsuarios/ListaUsuarios.jsx';
-
+import FormProducto from "./componentes/Formulario/FormProductos";
+import EditarUsuario from "./componentes/Dashboard/ListaUsuarios/EditarUsuario";
+import FormActualizarMascota from "./componentes/Formulario/FormActualizarMascota";
+import FormActualizarProducto from "./componentes/Formulario/FormActualizarProductos";
 
 export default function () {
   return (
@@ -19,6 +22,27 @@ export default function () {
           <Route exact path="/dashboard/mascotas" component={TablaMascotas} />
           <Route exact path="/dashboard/usuarios" component={ListaUsuarios} />
           {/* <Route exact path="/dashboard/refugios" component={ListaRefugios} /> */}
+          <Route
+            exact
+            path="/dashboard/formActualizarMascota/:id"
+            component={FormActualizarMascota}
+          />
+
+          <Route
+            exact
+            path="/dashboard/editarUsuario/:id"
+            component={EditarUsuario}
+          />
+          <Route
+            exact
+            path="/dashboard/formActualizarProducto/:id"
+            component={FormActualizarProducto}
+          />
+          <Route
+            exact
+            path="/dashboard/formProducto"
+            component={FormProducto}
+          />
         </Switch> 
       </div>
     </BrowserRouter>

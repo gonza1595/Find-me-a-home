@@ -391,14 +391,14 @@ export function refreshCart(payload) {
     payload,
   };
 }
-return async function () {
-  const { data } = await axios.post(`/pagos`, {
-    id,
-    amount,
-  });
-  console.log(data);
-  return data;
-};
+// return async function () {
+//   const { data } = await axios.post(`/pagos`, {
+//     id,
+//     amount,
+//   });
+//   console.log(data);
+//   return data;
+// };
 
 // trae la mascota por ID para bajar toda la data a un form y poder editar
 // blabla

@@ -4,7 +4,6 @@ import Detalle from "./componentes/DetalleMascotas/Detalle.jsx";
 import home from "./componentes/Home/Home.jsx";
 import DetalleRefugio from "./componentes/DetalleRefugio/DetalleRefugio";
 import FormUsuario from "./componentes/Formulario/FormUsuario.jsx";
-import FormProducto from "./componentes/Formulario/FormProductos";
 import FormMascota from "./componentes/Formulario/FormMascota.jsx";
 import DetalleProducto from "../src/componentes/DetalleProducto/DetalleProducto.jsx";
 import QuienesSomos from "./componentes/QuienesSomos/QuienesSomos.jsx";
@@ -12,15 +11,12 @@ import HomeAdopta from "./componentes/HomeAdopta/HomeAdopta.jsx";
 import ReqAdopcion from "./componentes/ReqAdopcion/ReqAdopcion.jsx";
 import HomeMascotas from "../src/componentes/HomeMascotas/HomeMascotas";
 import HomeProductos from "./componentes/HomeProductos/HomeProductos.jsx";
-import Dashboard from "./componentes/Dashboard/Dashboard/Dashboard.jsx";
 import NavBar from "./componentes/NavBar/NavBar.jsx";
 import FormInicioSesion from "./componentes/Formulario/FormInicioSesion";
 import FormAdopcion from "./componentes/Formulario/FormAdopcion.jsx";
 import FormPago from "./componentes/Formulario/FormPago";
 import Cart from "./componentes/Carrito/Cart.jsx";
-import EditarUsuario from "./componentes/Dashboard/ListaUsuarios/EditarUsuario";
-import FormActualizarMascota from "./componentes/Formulario/FormActualizarMascota";
-import FormActualizarProducto from "./componentes/Formulario/FormActualizarProductos";
+
 
 function App() {
   return (
@@ -40,35 +36,9 @@ function App() {
           <Route exact path="/adopta" component={HomeAdopta} />
           <Route exact path="/requisitos" component={ReqAdopcion} />
           <Route exact path="/mascotas" component={HomeMascotas} />
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
-
           <Route exact path="/formAdopcion" component={FormAdopcion} />
           <Route exact path="/pagos" component={FormPago} />
-
           <Route path={"/carrito"} component={Cart} />
-
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route
-            exact
-            path="/dashboard/formActualizarMascota/:id"
-            component={FormActualizarMascota}
-          />
-
-          <Route
-            exact
-            path="/dashboard/editarUsuario/:id"
-            component={EditarUsuario}
-          />
-          <Route
-            exact
-            path="/dashboard/formActualizarProducto/:id"
-            component={FormActualizarProducto}
-          />
-          <Route
-            exact
-            path="/dashboard/formProducto"
-            component={FormProducto}
-          />
         </Switch>
       </div>
     </>
