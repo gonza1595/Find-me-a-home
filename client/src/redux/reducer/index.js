@@ -202,43 +202,43 @@ function rootReducer(state = initialState, action) {
         ...state,
       };
 
-    case "ADD_TO_CART":
-      if (state.numberCart === 0) {
-        let shoppingCart = {
-          id: action.payload.id,
-          quantity: action.payload.quantitySelected,
-          nombre: action.payload.nombre,
-          imagen: action.payload.imagen,
-          precio: action.payload.precio,
-          stock: action.payload.stock,
-        };
-        state.cart.push(shoppingCart);
-      } else {
-        let check = false;
-        state.cart.map((item, key) => {
-          if (item.id === action.payload.id) {
-            state.cart[key].quantity++;
-            check = true;
-          }
-        });
-        if (!check) {
-          let cartShopping = {
-            id: action.payload.id,
-            /* age: action.payload.age, */
-            quantity: action.payload.quantitySelected,
-            nombre: action.payload.nombre,
-            imagen: action.payload.imagen,
-            precio: action.payload.precio,
-            stock: action.payload.stock,
-          };
-          state.cart.push(cartShopping);
-        }
-      }
-      localStorage.setItem("cart", JSON.stringify(state.cart));
-      return {
-        ...state,
-        numberCart: state.numberCart + 1,
-      };
+        case "ADD_TO_CART":
+            if (state.numberCart === 0) {
+                let shoppingCart = {
+                    id: action.payload.id,
+                    quantity: action.payload.quantitySelected,
+                    nombre: action.payload.nombre,
+                    imagen: action.payload.imagen,
+                    precio: action.payload.precio,
+                    stock: action.payload.stock
+                }
+                state.cart.push(shoppingCart);
+            } else {
+                let check = false;
+                state.cart.map((item, key) => {
+                    if (item.id === action.payload.id) {
+                        state.cart[key].quantity++;
+                        check = true;
+                    }
+                });
+                if (!check) {
+                    let cartShopping2 = {
+                        id: action.payload.id,
+                        /* age: action.payload.age, */
+                        quantity: action.payload.quantitySelected,
+                        nombre: action.payload.nombre,
+                        imagen: action.payload.imagen,
+                        precio: action.payload.precio,
+                        stock: action.payload.stock
+                    }
+                    state.cart.push(cartShopping2);
+                }
+            }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return {
+                ...state,
+                numberCart: state.numberCart + 1
+            };
 
     case "INCREASE_QUANTITY":
       const increaseItem = state.cart.find((x) => x.id === action.payload);

@@ -43,10 +43,10 @@ export default function Cart() {
 
   const quantityState = listCart.map(el => el.quantity);
 
-/*   useEffect(() => {
-    quantityState;
-  }, [numberCart])
-   */
+   /*useEffect(() => {
+     quantityState
+  }, [numberCart])*/
+   
 
   function totalPrice(precio, item) {
     return Number(precio * item).toLocaleString('en-US');
@@ -64,12 +64,13 @@ export default function Cart() {
 
   function handleDelete(e) {
     e.preventDefault();
-    window.confirm('Do you want to delete this product from the cart?');
+    //window.confirm('Do you want to delete this product from the cart?');
     dispatch(deleteCart(e.target.id));
+    
   };
 
   function handleNext() {
-    history.push('/paymentgateway');
+    history.push('/payment');
   }
 
   return (
@@ -78,11 +79,6 @@ export default function Cart() {
         <div>My Cart ( {myCartQuantity} )</div>
       </div>
       <div ></div>
-      <div>
-      
-        <i></i>
-        Free shipping from $500
-      </div>
       <section >
         <div >
       {(productsInTheCart.length === 0) && (<div ><h1 >Your cart is empty.</h1>
@@ -129,7 +125,7 @@ export default function Cart() {
                 </ul>
               </div>
               <div >
-                <a href="/">Buy more Products </a>
+                <a href="/productos">Buy more Products </a>
               </div>
               <br />
               <br />
