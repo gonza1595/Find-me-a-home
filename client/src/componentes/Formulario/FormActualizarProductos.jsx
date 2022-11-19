@@ -38,36 +38,39 @@ export default function EditarProducto(props) {
   };
 
   return (
-    <div>
-      <h1>Editar Producto</h1>
+    <div className="createFormMascota">
+      <h1 className="tituloUsuario">Editar Producto</h1>
       <form>
         <div>
-          <label>Nombre: </label>
+          <label className="labelUsuario">Nombre: </label>
           <input
             type="text"
             value={producto.nombre || ""}
             name="nombre"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
           />
         </div>
         <div>
-          <label>Descripcion: </label>
+          <label className="labelUsuario">Descripcion: </label>
           <input
             type="text"
             value={producto.descripcion || ""}
             name="descripcion"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
           />
         </div>
         <div>
-          <label>Imagen: </label>
+          <label className="labelUsuario">Imagen: </label>
           <input
             value={producto.imagen || ""}
             name="imagen"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -75,10 +78,11 @@ export default function EditarProducto(props) {
           />
         </div>
         <div>
-          <label>Stock: </label>
+          <label className="labelUsuario">Stock: </label>
           <input
             value={producto.stock || ""}
             name="stock"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -86,10 +90,11 @@ export default function EditarProducto(props) {
           />
         </div>
         <div>
-          <label>Calificacion: </label>
+          <label className="labelUsuario">Calificacion: </label>
           <input
             value={producto.calificacion || ""}
             name="calificacion"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -97,10 +102,11 @@ export default function EditarProducto(props) {
           />
         </div>
         <div>
-          <label>Precio: </label>
+          <label className="labelUsuario">Precio: </label>
           <input
             value={producto.precio || ""}
             name="precio"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -108,21 +114,26 @@ export default function EditarProducto(props) {
           />
         </div>
         <div>
-          <label>Tipo: </label>
+          <label className="labelUsuario">Tipo: </label>
           <input
             value={producto.tipo || ""}
             name="tipo"
+            className="inputUsuario"
             onChange={(e) => {
               handleChangeInput(e);
             }}
             type="text"
           />
         </div>
-        <Link to="/requisitos">
-          <button>Atras</button>
-        </Link>
-        <div>
-          <button onClick={(e) => handleClick(e)}>Editar</button>
+        <div className="buttonUsuario">
+          <div className="buttonAtras">
+            <Link to="/dashboard/productos">
+              <button>Atras</button>
+            </Link>
+          </div>
+          <div className="buttonEditar">
+            <button onClick={(e) => handleClick(e)}>Editar</button>
+          </div>
         </div>
       </form>
       ;

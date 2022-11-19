@@ -8,6 +8,7 @@ import axios from "axios";
 import Loader from "../Loader/Loader";
 
 
+
 const DetalleProducto = () => {
   //   const producto = useSelector((state) => state.detalle);
   const { id } = useParams();
@@ -63,6 +64,7 @@ useEffect(() => {
 function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
+
     /*
     setTimeout(() => {
         history.push(console.log)
@@ -70,15 +72,14 @@ function handleAddToCart(){
 };
 
 
+
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
     history.push("/carrito")
+
  
-    setTimeout(() => {
-     
-    }, 3000);
-}
+
 
 
   return (

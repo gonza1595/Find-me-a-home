@@ -21,16 +21,18 @@ const TablaUsuarios = () => {
 
   return (
     <div className="container_tabla_dash">
+      <h2>USUARIOS</h2>
       <table className="tabla-usuarios">
-        <thead>
-          <tr className="nombres-columnas">
+        <thead className="theadMasctotas">
+          <tr className="nombres-columnasUsuario">
             <th scope="col">Nombre</th>
             <th scope="col">Contraseña</th>
             <th scope="col">Correo</th>
             <th scope="col">Edad</th>
             <th scope="col">Direccion</th>
             <th scope="col">Rango</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Borrar</th>
+            <th scope="col">Editar</th>
           </tr>
         </thead>
 
@@ -39,18 +41,22 @@ const TablaUsuarios = () => {
             return (
               <tr className="tabla-body">
                 <td className="nombretablusuario">{usuario.nombre}</td>
-                <td className="contraseñatablusuario">{usuario.contraseña}</td>
+                <td className="contraseñatablausuario">{usuario.contraseña}</td>
                 <td className="correotablusuario">{usuario.correo}</td>
                 <td className="edadtablausuario">{usuario.edad}</td>
                 <td className="direcciontablusuario">{usuario.direccion}</td>
                 <td className="rangotablusuario">{usuario.rango}</td>
-                <td className="tdBotonesUsuarios">
-                  <Link to={`/dashboard/editarUsuario/${usuario.id}`}>
-                    <button>Editar</button>
-                  </Link>
+
+                <td className="borrartablausuario">
                   <button onClick={() => handleDelete(usuario.id)}>
                     Borrar
                   </button>
+                </td>
+
+                <td className="actualizartablausuario">
+                  <Link to={`/dashboard/editarUsuario/${usuario.id}`}>
+                    <button>Editar</button>
+                  </Link>
                 </td>
               </tr>
             );

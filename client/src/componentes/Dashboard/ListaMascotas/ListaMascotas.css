@@ -48,12 +48,13 @@ font-weight: bold;
 }
 
 .descripciontablamascota {
-    width: 300px;
+    width: 400px;
 }
 .imagentablamascota {
     display: flex;
     overflow: auto;
-    width: 200px;
+    width: 400px;
+   
 }
 .edadtablamascota,
 .tamañotablamascota,
@@ -65,6 +66,7 @@ font-weight: bold;
 .actualizartablamascota{
     width: 90px;
     text-align: center;
+    
 }
 
 

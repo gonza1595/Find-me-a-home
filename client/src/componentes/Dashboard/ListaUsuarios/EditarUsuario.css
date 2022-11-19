@@ -1,0 +1,72 @@
+.createFormMascota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 49rem;
+    padding: 5rem;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    font-family: cursive;
+}
+
+.tituloUsuario {
+    color: rgba(12, 12, 12, 0.8);
+	 font-size: 24px;
+     margin: 20px;
+  
+}
+
+
+.inputUsuario{
+    
+    padding: 5px 50px 5px 10px;
+    font-size: 0.8rem;
+   
+    background-color: #BCE0ED;
+    display: grid;
+    grid-template-areas: "." ".";
+    width: 300px;
+    border: 1px solid rgba(0, 0, 0, .1);
+	 border-radius: 7px;
+	 height: 38px;
+	 line-height: 38px;
+    
+}
+
+/* .containerFormUsuario {
+    display: grid;
+    grid-template-areas: "." ".";
+   width: 40rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(67%, 50%);
+} */
+
+.labelUsuario{
+    height: 20px;
+    border-radius: 20px;
+    padding: 5px 10px 10px 10px;
+    font-size: 1.2rem;
+}
+
+.buttonUsuario{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
+.buttonAtras {
+padding-right: 5px;
+}
+
+.buttonEditar {
+    padding-left: 5px;
+}
