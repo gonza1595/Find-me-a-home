@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader";
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
+
 const DetalleProducto = () => {
   //   const producto = useSelector((state) => state.detalle);
   const { id } = useParams();
@@ -64,17 +65,15 @@ useEffect(() => {
 function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
-    /*notifyOK(); 
-    setTimeout(() => {
-        history.push(console.log)
-    }, 3000);*/
-};
 
 // const notifyOK = () => {
 //     toast.success("Added to cart", {
 //       theme: "colored",
 //     });
 // };
+
+};
+
 
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
@@ -84,6 +83,7 @@ function handleBuyCart(){
     setTimeout(() => {
      
     }, 3000);
+
 }
 
 
