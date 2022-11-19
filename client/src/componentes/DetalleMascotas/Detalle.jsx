@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams} from "react-router-dom";
 import { useHistory } from "react-router";
 import { addToCart } from "../../redux/actions/index";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 import {
   detalleMascota,
@@ -54,10 +52,6 @@ export default function Detalle() {
   function handleAddToCart(){
       mascotas.quantitySelected = quantitySelected;
       dispatch(addToCart(mascotas));
-    //  /*  notifyOK(); */
-    //   setTimeout(() => {
-    //       history.push("/")
-    //   }, 3000);
   };
 
 
@@ -65,10 +59,6 @@ export default function Detalle() {
   function handleBuyCart(){
       mascotas.quantitySelected = quantitySelected;
       dispatch(addToCart(mascotas));
-      // notifyOK();
-      // setTimeout(() => {
-      //   history.push("/carrito")
-      // }, 3000);
   }
 
   return (
