@@ -6,8 +6,7 @@ import { useHistory } from "react-router";
 import { detalleProducto, limpiarEstadoDetalle,addToCart} from "../../redux/actions/index";
 import axios from "axios";
 import Loader from "../Loader/Loader";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+
 
 
 const DetalleProducto = () => {
@@ -66,25 +65,21 @@ function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
 
-// const notifyOK = () => {
-//     toast.success("Added to cart", {
-//       theme: "colored",
-//     });
-// };
-
+    /*
+    setTimeout(() => {
+        history.push(console.log)
+    }, 3000);*/
 };
+
 
 
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
     history.push("/carrito")
-    // notifyOK();
-    setTimeout(() => {
-     
-    }, 3000);
 
-}
+ 
+
 
 
   return (

@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./NavBar.css";
 import Header from "../Header/Header";
+import { Link } from "react-router-dom";
+
+import carrito from "../Carrito/carritoimg.png"
 
 function NavBar() {
   const [clicked, setClicked] = useState(false); //false
@@ -66,6 +69,11 @@ function NavBar() {
           >
             Requisitos adopción
           </a>
+        </li>
+        <li >
+          <Link to="/carrito" >
+        <img src={carrito} alt="carrito" width="25px" />
+        </Link>
         </li>
       </ul>
     </nav>
