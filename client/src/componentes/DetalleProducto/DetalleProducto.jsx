@@ -66,11 +66,6 @@ function handleAddToCart(){
 
 };
 
-const notifyOK = () => {
-    toast.success("Added to cart", {
-      theme: "colored",
-    });
-};
 
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
