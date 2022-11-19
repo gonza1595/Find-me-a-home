@@ -5,16 +5,14 @@ import mascota from "./img/mascotas.png";
 import user from "./img/user.png";
 // import refugio from './img/refugio.png'
 import { useDispatch, useSelector } from "react-redux";
-import {
-  traerMascotas,
-  traerProductos,
-  traerUsuarios,
-} from "../../../redux/actions";
-import ListaProductos from "../ListaProductos/ListaProductos";
+import { traerMascotas, traerProductos, traerUsuarios} from "../../../redux/actions";
+import GraficoMascotas from "./Graficos/GraficoMascotas";
+import GraficoProductos from "./Graficos/GraficoProductos";
+import GraficoUsers from "./Graficos/GraficoUsers";
+// import ListaProductos from "../ListaProductos/ListaProductos";
 // import ListaMascotas from '../ListaMascotas/ListaMascotas'
 // import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
 // import ListaRefugios from '../ListaRefugios/ListaRefugios'
-// import SideBar from './SideBar/SideBar'
 
 export default function Dashboard() {
   const productos = useSelector((state) => state.productos);
@@ -32,9 +30,6 @@ export default function Dashboard() {
 
   return (
     <div className="containerDashboard">
-      {/* <div className="side_nav_bar">
-			<SideBar/>
-		</div> */}
       {/* ------------- MAIN ------------- */}
       <main className="containerMain_dash">
         <div className="headerDash">
@@ -70,6 +65,12 @@ export default function Dashboard() {
 			        </div>
 				</div> */}
         </div>
+
+        <div className="graficosDash">
+          <GraficoMascotas />
+          <GraficoProductos />
+        </div>
+          <GraficoUsers />
 
         {/* -------- PRODUCTOS -----------  */}
         {/* <div className="prodMain_dashb">
