@@ -1,6 +1,7 @@
-const { Pet } = require("../db");
+const { Pet, User } = require("../db");
 const db = require("../db.js");
 const mascotasJson = require("../../mascotas.json");
+const { userInfo } = require("os");
 
 const setMascotasJson = async () => {
   try {
@@ -39,55 +40,67 @@ const getMascotas = async () => {
 };
 
 const filtroProductos = (array, filtro, orden, tipo) => {
+  if (tipo) {
+    const tipoProducto = array.filter((p) => p.tipo === tipo);
 
-  if(tipo){
-    const tipoProducto= array.filter((p) => p.tipo === tipo);
-
-    if(filtro === "precio"){
-      if(orden === "ASC"){
-        tipoProducto.sort((a, b ) => a.precio - b.precio );
+    if (filtro === "precio") {
+      if (orden === "ASC") {
+        tipoProducto.sort((a, b) => a.precio - b.precio);
         return tipoProducto;
-     }else if(orden === "DESC"){
-        tipoProducto.sort((a, b) => b.precio - a.precio );
+      } else if (orden === "DESC") {
+        tipoProducto.sort((a, b) => b.precio - a.precio);
         return tipoProducto;
-     };
-      
-     }else if(filtro === "calificacion"){
-      if(orden === "ASC"){
-        tipoProducto.sort((a, b ) => a.calificacion - b.calificacion );
+      }
+    } else if (filtro === "calificacion") {
+      if (orden === "ASC") {
+        tipoProducto.sort((a, b) => a.calificacion - b.calificacion);
         return tipoProducto;
-     }else if(orden === "DESC"){
-        tipoProducto.sort((a, b) => b.calificacion - a.calificacion );
+      } else if (orden === "DESC") {
+        tipoProducto.sort((a, b) => b.calificacion - a.calificacion);
         return tipoProducto;
-     };
-     }else{
-        return tipoProducto;
-     };
-  }else{
-
-    if(filtro === "precio"){
-     if(orden === "ASC"){
-       array.sort((a, b ) => a.precio - b.precio );
-       return array;
-    }else if(orden === "DESC"){
-       array.sort((a, b) => b.precio - a.precio );
-       return array;
-    };
-     
-    }else if(filtro === "calificacion"){
-     if(orden === "ASC"){
-       array.sort((a, b ) => a.calificacion - b.calificacion );
-       return array;
-    }else if(orden === "DESC"){
-       array.sort((a, b) => b.calificacion - a.calificacion );
-       return array;
-    };
-    }else{
-       return array;
-    };
+      }
+    } else {
+      return tipoProducto;
+    }
+  } else {
+    if (filtro === "precio") {
+      if (orden === "ASC") {
+        array.sort((a, b) => a.precio - b.precio);
+        return array;
+      } else if (orden === "DESC") {
+        array.sort((a, b) => b.precio - a.precio);
+        return array;
+      }
+    } else if (filtro === "calificacion") {
+      if (orden === "ASC") {
+        array.sort((a, b) => a.calificacion - b.calificacion);
+        return array;
+      } else if (orden === "DESC") {
+        array.sort((a, b) => b.calificacion - a.calificacion);
+        return array;
+      }
+    } else {
+      return array;
+    }
   }
 };
+
+// elimina un usuario por id
+
+const borrarUsuario = async (id) => {
+  try {
+    await User.destroy({
+      where: {
+        id: id,
+      },
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getMascotas,
-  filtroProductos
+  filtroProductos,
+  borrarUsuario,
 };

@@ -1,0 +1,64 @@
+/* .conteinerTablaUsuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.tabla-usuarios {
+    background-color: aliceblue;
+    border-collapse: collapse;
+    margin: 1rem 0 0 14rem;
+    font-size: 0.8em;
+    min-width: 400px;
+    max-width: 80%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.tbodyUsuario {
+border-bottom: 2px solid #009879;
+font-weight: bold;
+}
+
+.filas {
+    border-bottom: 1px solid #dddddd;
+    font-weight: bold;
+}
+
+.nombres-columnasUsuario{
+    background-color: #027a74;
+    color: #c5f5f2;
+    font-weight: bold;
+   font-size: 15px;
+   height: 35px;
+    
+}
+
+.descripciontablausuario{
+    width: 300px;
+}
+.imagentablausuario {
+    display: flex;
+    overflow: auto;
+    width: 200px;
+}
+
+.tdBotonesUsuarios {
+    display:flex;
+   margin: 12px;
+    
+}
+
+
+.edadtablausuario,
+.contraseñatablausuario,
+.nombretablusuario,
+.correotablusuario,
+.direcciontablusuario,
+.rangotablusuario,
+.borrartablausuario,
+.actualizartablausuario{
+    width: 90px;
+    text-align: center;
+}

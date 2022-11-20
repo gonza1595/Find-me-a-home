@@ -1,7 +1,7 @@
 import { useHistory } from "react-router";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import "./carrito.css"
 import {decreaseCart, deleteCart, increaseCart } from "../../redux/actions/index";
 
 /* import {withAuthenticationRequired} from '@auth0/auth0-react' */
@@ -43,10 +43,10 @@ export default function Cart() {
 
   const quantityState = listCart.map(el => el.quantity);
 
-/*   useEffect(() => {
-    quantityState;
-  }, [numberCart])
-   */
+   /*useEffect(() => {
+     quantityState
+  }, [numberCart])*/
+   
 
   function totalPrice(precio, item) {
     return Number(precio * item).toLocaleString('en-US');
@@ -64,29 +64,24 @@ export default function Cart() {
 
   function handleDelete(e) {
     e.preventDefault();
-    window.confirm('Do you want to delete this product from the cart?');
+    //window.confirm('Do you want to delete this product from the cart?');
     dispatch(deleteCart(e.target.id));
+    
   };
 
   function handleNext() {
-    history.push('/paymentgateway');
+    history.push('/payment');
   }
 
   return (
-    <div >
+    <div className="carrito-container" >
       <div >
-        <div>My Cart ( {myCartQuantity} )</div>
-      </div>
-      <div ></div>
-      <div>
-      
-        <i></i>
-        Free shipping from $500
+        <div className="myCart">My Cart ( {myCartQuantity} )</div>
       </div>
       <section >
         <div >
       {(productsInTheCart.length === 0) && (<div ><h1 >Your cart is empty.</h1>
-      <p >But we have a lot of products waiting for you!</p></div>) }
+      {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
           <div>
           </div>
           <div >
@@ -96,10 +91,12 @@ export default function Cart() {
                   <div  key={key}>
                     <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
                     <a href={`/mascotas/${item.id}`}> {/* VER */}
-                    <h3>{item.nombre.toUpperCase()}</h3>
-                    <img src={item.imagen} alt={item.nombre} />
+                    <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
+                    <div className="img-carrito">
+                    <img  src={item.imagen} alt={item.nombre} />
+                    </div>
                     </a>
-                    <ul>
+                    <ul className="items-carrito">
                         <li><strong>Stock: </strong>{item.stock}</li>
                     </ul>
                     <div >
@@ -107,7 +104,9 @@ export default function Cart() {
                     <span id={item.id}>{quantityState.shift()}</span>
                     <button onClick={e => handleIncrease(e)} id={item.id}>＋</button>
                     </div>
-                    <span>Total $ {totalPrice(item.precio, item.quantity)} </span>
+                    <div  className="items-carrito" >
+                    <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
+                    </div>
                     <hr/>
                   </div>
                 )
@@ -120,16 +119,16 @@ export default function Cart() {
       {<section >
             <div >
               <div >
-                <div >Purchase Summary</div>
+                <div className="items-carrito"  >Purchase Summary</div>
                 <ul >
                   <li >
-                    <span>Total</span>
+              <span className="items-carrito">Total</span> 
                     <span id="carritoTotal">$ {Number(totalCart).toLocaleString('en-US')}</span>
                   </li>
                 </ul>
               </div>
-              <div >
-                <a href="/">Buy more Products </a>
+              <div className="items-carrito" >
+                <a href="/productos">Buy more Products </a>
               </div>
               <br />
               <br />
