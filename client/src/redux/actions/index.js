@@ -393,9 +393,6 @@ export function realizarPago(id, amount) {
 		console.log(data);
 		return data;
 	};
-
-    type: "REFRESH_CART",
-    payload,
   };
 
 // return async function () {

@@ -128,7 +128,7 @@ export default function Cart() {
                 </ul>
               </div>
               <div className="items-carrito" >
-                <a href="/productos">Buy more Products </a>
+                <a href="/productos">Comprar mas productos </a>
               </div>
               <br />
               <br />

@@ -133,8 +133,8 @@ function handleBuyCart(){
 
                                     {(producto.stock <= 0) ?
                                          (<div >
-                                         <button  id="comprar">Buy now</button>
-                                         <button  type="button"  id='agregarAlCarrito'  >Add to cart</button>
+                                         <button  id="comprar">Comprar ahora</button>
+                                         <button  type="button"  id='agregarAlCarrito'>Añadir al carrito</button>
                                          </div>)  
                                          : 
                                          (<div >
