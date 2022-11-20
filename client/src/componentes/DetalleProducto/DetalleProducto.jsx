@@ -113,9 +113,9 @@ function handleBuyCart(){
                 <h4>Descripción:</h4>
                 <p>{producto.descripcion}</p>
               </div>
-              <NavLink to="/comprar" className="link">
+              {/*<NavLink to="/comprar" className="link">
                 <button className="adopta">Comprar</button>
-              </NavLink>
+              </NavLink>*/}
             </div>
             {/* carrito */}
           <div> 
@@ -138,8 +138,8 @@ function handleBuyCart(){
                                          </div>)  
                                          : 
                                          (<div >
-                                         <button type="button" onClick={handleBuyCart}  id="comprar">Buy now</button>
-                                         <button type="button" onClick={handleAddToCart} id='agregarAlCarrito'>Add to cart</button>
+                                         <button type="button" onClick={handleBuyCart}  id="comprar">Comprar ahora</button>
+                                         <button type="button" onClick={handleAddToCart} id='agregarAlCarrito'>Añadir al carrito</button>
                                         </div>)
                                     }
                                    

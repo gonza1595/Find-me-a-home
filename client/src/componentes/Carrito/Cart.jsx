@@ -70,7 +70,7 @@ export default function Cart() {
   };
 
   function handleNext() {
-    history.push('/payment');
+    history.push('/pagos');
   }
 
   return (
@@ -119,7 +119,7 @@ export default function Cart() {
       {<section >
             <div >
               <div >
-                <div className="items-carrito"  >Purchase Summary</div>
+                <div className="items-carrito" >Resumen de compra</div>
                 <ul >
                   <li >
               <span className="items-carrito">Total</span> 
@@ -134,11 +134,11 @@ export default function Cart() {
               <br />
               {(productsInTheCart.length === 0) ? 
               (<div>
-                <button type="button" onClick={handleNext} >Continue</button>
+                <button type="button" onClick={handleNext} >Continuar</button>
               </div>)
               :
               (<div >
-              <button type="button" onClick={handleNext} >Continue</button>
+              <button type="button" onClick={handleNext} >Continuar</button>
             </div>)
             }
             </div>
