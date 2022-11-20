@@ -93,7 +93,7 @@ function handleBuyCart(){
       <div className="container">
         {!producto ? (
           <Loader/>
-        ) : (
+        ) : ( 
           <div>
             <a href="javascript:history.back()">
               <button className="home_button">Volver</button>

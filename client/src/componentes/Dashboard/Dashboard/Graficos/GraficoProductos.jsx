@@ -37,7 +37,7 @@ export default function GraficoProductos() {
         } 
       ];
     
-      const configPie = {
+      const configPie = { 
         appendPadding: 10,
         data: dataPie,
         angleField: 'value',

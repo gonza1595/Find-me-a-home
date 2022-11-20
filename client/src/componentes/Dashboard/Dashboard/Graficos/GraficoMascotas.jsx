@@ -34,8 +34,9 @@ export default function GraficoMascotas() {
         colorField: 'type',
         height: 450,
         radius: 0.5,
+        color: ['#d62728', '#2ca02c', '#000000'],
         label: {
-          type: 'inner',
+          type: 'inner', 
           offset: '-0.5',
           content: '{name} {value}',
           style: {

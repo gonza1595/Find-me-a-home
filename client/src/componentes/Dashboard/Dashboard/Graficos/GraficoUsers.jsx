@@ -18,7 +18,7 @@ export default function GraficoUsers() {
 
     const dataPie = [
         {
-          type: 'Usuarios', 
+          type: 'Usuarios',
           value: usuario,
         },
         {
@@ -34,6 +34,7 @@ export default function GraficoUsers() {
         colorField: 'type',
         height: 450,
         radius: 0.5,
+        color: ['#e69528', '#2cf02c'],
         label: {
           type: 'inner',
           offset: '-0.5',
