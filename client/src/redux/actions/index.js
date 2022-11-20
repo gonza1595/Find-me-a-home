@@ -256,20 +256,6 @@ export function adminCrearNuevaMascota(obj) {
 			});
 }
 
-// pago
-
-/* export function realizarPago(id, amount) {
-
-  return async function() {
-    const {data}= await axios.post("http://localhost:3001/pagos" , {
-      id,
-      amount
-    });
-    console.log(data);
-    return data;
-  }
-}
- */
 // carrito
 
 export function addToCart(payload) {
