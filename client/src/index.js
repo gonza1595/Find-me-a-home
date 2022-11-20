@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import {UserContextProvider} from "./context/UserContext"
 import axios from "axios"
 
-axios.defaults.baseURL="https://back-proyecto-final-production.up.railway.app"
+/* axios.defaults.baseURL="https://back-proyecto-final-production.up.railway.app" */
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,3 +22,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+
+axios.defaults.baseURL="http://localhost:3001"

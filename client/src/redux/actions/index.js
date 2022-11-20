@@ -258,7 +258,7 @@ export function adminCrearNuevaMascota(obj) {
 
 // pago
 
-export function realizarPago(id, amount) {
+/* export function realizarPago(id, amount) {
 
   return async function() {
     const {data}= await axios.post("http://localhost:3001/pagos" , {
@@ -269,7 +269,7 @@ export function realizarPago(id, amount) {
     return data;
   }
 }
-
+ */
 // carrito
 
 export function addToCart(payload) {
@@ -313,7 +313,8 @@ export function refreshCart(payload) {
       payload
   }
 };
-=======
+
+export function realizarPago(id, amount) {
 	return async function () {
 		const {data} = await axios.post(`/pagos`, {
 			id,

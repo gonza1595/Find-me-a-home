@@ -25,15 +25,9 @@ const DetalleProducto = () => {
 
   const getProduct = useEffect(() => {
     try {
-      fetch(`/productos/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => response.json())
+      axios.get(`/productos/${id}`)
         .then((data) => {
-          setProducto(data);
+          setProducto(data.data);
         });
     } catch (e) {
       console.log(e);
