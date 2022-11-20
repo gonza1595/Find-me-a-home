@@ -22,7 +22,7 @@ export const  UserContextProvider = (props) => {
 
   const  login = useCallback(async ( correo, contraseña ) => {               
         try {
-           await axios.post('http://localhost:3001/usuario/login', {
+           await axios.post('/usuario/login', {
             method: 'POST',
             headers: {
               "Content-Type": "application/json"

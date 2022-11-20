@@ -1,0 +1,49 @@
+.containerDashboard{
+    display: flex;
+    flex-direction: row;
+    font-family: cursive;
+    background-color: #c5f5f2;
+    margin: 0 0 0 12rem;
+    color: #015c57;
+}
+
+.containerMain_dash{
+    border-collapse: collapse;
+    position: static;
+    margin: 1.25rem 15rem;
+}
+
+.side_nav_bar{
+position: fixed;
+}
+
+.cardsDash{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-dash{
+    border-radius: 10px;
+    border: 2px solid #015c57;
+    padding: 10px;
+    margin: 20px 0 0 50px;
+    font-size: 12px;
+}
+
+.img_cant{
+    display: flex;
+    flex-direction: row;
+}
+
+.headerDash{
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.graficosDash{
+    display: flex;
+    flex-direction: row;
+}
+

@@ -20,7 +20,6 @@ export default function SearchBarProducto(){
     dispatch(buscarPorNombreProducto(nombre));
     setNombre('')
   };
-  console.log(nombre)
 
     return(
         <form className="search" onSubmit={(event) => handleClick(event)}>

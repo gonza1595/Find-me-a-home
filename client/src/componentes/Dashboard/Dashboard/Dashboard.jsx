@@ -1,102 +1,97 @@
-import {
-	DesktopOutlined,
-	FileOutlined,
-	PieChartOutlined,
-	TeamOutlined,
-	UserOutlined,
-} from '@ant-design/icons';
-import {Breadcrumb, Layout, Menu} from 'antd';
-import React, {useState} from 'react';
-const {Header, Content, Footer, Sider} = Layout;
-function getItem(label, key, icon, children) {
-	return {
-		key,
-		icon,
-		children,
-		label,
-	};
+import React, { useEffect } from "react";
+import "./Dashboard.css";
+import producto from "./img/productos.png";
+import mascota from "./img/mascotas.png";
+import user from "./img/user.png";
+// import refugio from './img/refugio.png'
+import { useDispatch, useSelector } from "react-redux";
+import { traerMascotas, traerProductos, traerUsuarios} from "../../../redux/actions";
+import GraficoMascotas from "./Graficos/GraficoMascotas";
+import GraficoProductos from "./Graficos/GraficoProductos";
+import GraficoUsers from "./Graficos/GraficoUsers";
+// import ListaProductos from "../ListaProductos/ListaProductos";
+// import ListaMascotas from '../ListaMascotas/ListaMascotas'
+// import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
+// import ListaRefugios from '../ListaRefugios/ListaRefugios'
+
+export default function Dashboard() {
+  const productos = useSelector((state) => state.productos);
+  const mascotas = useSelector((state) => state.mascotas);
+  const usuarios = useSelector((state) => state.usuarios);
+  // const refugios = useSelector((state)=> state.refugios);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(traerProductos());
+    dispatch(traerMascotas());
+    dispatch(traerUsuarios());
+  }, []);
+
+  return (
+    <div className="containerDashboard">
+      {/* ------------- MAIN ------------- */}
+      <main className="containerMain_dash">
+        <div className="headerDash">
+          <h1>Admin Dashboard</h1>
+        </div>
+        <div className="cardsDash">
+          <div className="card-dash">
+            <h2>Productos</h2>
+            <div className="img_cant">
+              <img src={producto} width="30px" />
+              <h4>{productos.length}</h4>
+            </div>
+          </div>
+          <div className="card-dash">
+            <h2>Mascotas</h2>
+            <div className="img_cant">
+              <img src={mascota} width="50px" />
+              <h4>{mascotas.length}</h4>
+            </div>
+          </div>
+          <div className="card-dash">
+            <h2>Usuarios</h2>
+            <div className="img_cant">
+              <img src={user} width="30px" />
+              <h4>{usuarios.length}</h4>
+            </div>
+          </div>
+          {/* <div className="card-dash">
+			        <h2>Refugios</h2>
+                    <div className="img_cant">
+			            <img src={refugio} width='30px'/>
+			            <h4>{refugios.length}</h4>
+			        </div>
+				</div> */}
+        </div>
+
+        <div className="graficosDash">
+          <GraficoMascotas />
+          <GraficoProductos />
+        </div>
+          <GraficoUsers />
+
+        {/* -------- PRODUCTOS -----------  */}
+        {/* <div className="prodMain_dashb">
+				<ListaProductos/>
+			</div> */}
+
+        {/* -------- MASCOTAS ----------- */}
+        {/* <div key="ListaMascotas" className="mascMain_dashb">
+				<ListaMascotas />
+		    </div> */}
+
+        {/* -------- USUARIOS ----------- */}
+        {/* <div className="userMain_dashb">
+				<ListaUsuarios/>
+			</div> */}
+
+        {/* -------- REFUGIOS ----------- */}
+        {/* <div className="refuMain_dashb">
+				<ListaRefugios/>
+			</div> */}
+      </main>
+    </div>
+  );
 }
-const items = [
-	getItem('Option 1', '1', <PieChartOutlined />),
-	getItem('Option 2', '2', <DesktopOutlined />),
-	getItem('User', 'sub1', <UserOutlined />, [
-		getItem('Tom', '3'),
-		getItem('Bill', '4'),
-		getItem('Alex', '5'),
-	]),
-	getItem('Team', 'sub2', <TeamOutlined />, [
-		getItem('Team 1', '6'),
-		getItem('Team 2', '8'),
-	]),
-	getItem('Files', '9', <FileOutlined />),
-];
-
-function Dashboard() {
-	const [collapsed, setCollapsed] = useState(false);
-	return (
-		<Layout
-			style={{
-				minHeight: '100vh',
-			}}
-		>
-			<Sider
-				collapsible
-				collapsed={collapsed}
-				onCollapse={(value) => setCollapsed(value)}
-			>
-				<div className='logo' />
-				<Menu
-					theme='dark'
-					defaultSelectedKeys={['1']}
-					mode='inline'
-					items={items}
-				/>
-			</Sider>
-			<Layout className='site-layout'>
-				<Header
-					className='site-layout-background'
-					style={{
-						padding: 0,
-					}}
-				/>
-				<Content
-					style={{
-						margin: '0 16px',
-					}}
-				>
-					<Breadcrumb
-						style={{
-							margin: '16px 0',
-						}}
-					>
-						<Breadcrumb.Item>User</Breadcrumb.Item>
-						<Breadcrumb.Item>Bill</Breadcrumb.Item>
-					</Breadcrumb>
-					<div
-						className='site-layout-background'
-						style={{
-							padding: 24,
-							minHeight: 360,
-						}}
-					>
-						Bill is a cat.
-					</div>
-				</Content>
-				<Footer
-					style={{
-						textAlign: 'center',
-					}}
-				>
-					Ant Design ©2018 Created by Ant UED
-				</Footer>
-			</Layout>
-		</Layout>
-	);
-
-	// 	<div>
-	// 		<h1>Holis</h1>
-	// 	</div>
-	// );
-}
-
-export default Dashboard;
