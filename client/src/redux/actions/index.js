@@ -286,6 +286,7 @@ export function adminCrearNuevaMascota(obj) {
       });
 }
 
+
 // acciones para traer, borrar y editar usuarios
 
 export const traerUsuarios = () => {
@@ -338,16 +339,6 @@ export const adminEditarUsuario = (id, userActualizado) => {
 
 // pago
 
-export function realizarPago(id, amount) {
-  return async function () {
-    const { data } = await axios.post("http://localhost:3001/pagos", {
-      id,
-      amount,
-    });
-    console.log(data);
-    return data;
-  };
-}
 
 // carrito
 
@@ -387,10 +378,23 @@ export function decreaseCart(payload) {
 
 export function refreshCart(payload) {
   return {
-    type: "REFRESH_CART",
-    payload,
+
+      type: "REFRESH_CART",
+      payload
+  }
+};
+
+export function realizarPago(id, amount) {
+	return async function () {
+		const {data} = await axios.post(`/pagos`, {
+			id,
+			amount,
+		});
+		console.log(data);
+		return data;
+	};
   };
-}
+
 // return async function () {
 //   const { data } = await axios.post(`/pagos`, {
 //     id,

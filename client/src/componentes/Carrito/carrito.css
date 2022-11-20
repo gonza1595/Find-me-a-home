@@ -1,0 +1,31 @@
+.carrito-container{
+    margin-left: 10rem;
+    margin-top: 5rem;
+   
+}
+
+
+.myCart{
+    color: brown;
+   font-size: 1.5rem;
+   padding: 1rem;
+   font-family: roboto;
+}
+
+.img-carrito{
+   width: 40%;
+    
+}
+
+.nombre-carrito{
+color: rgb(22, 19, 26);
+font-family: roboto;
+font-size: 2rem;
+
+
+}
+
+.items-carrito{
+    font-size: 1.5rem;
+    padding: 1rem;
+}

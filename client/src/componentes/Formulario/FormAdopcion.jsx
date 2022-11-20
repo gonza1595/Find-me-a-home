@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { formularioPostAdopcion } from "../../redux/actions/index"; 
-// import "./FormAdopcion.css"; crearlo
+import "./FormAdopcion.css"; 
 
 function validate(input) {
   let errors = {};
@@ -196,17 +196,18 @@ export default function FormAdopcion() {
 
 return (
     
-    <form onSubmit={(e)=> handleSubmit(e)}>
-        <div className="formAdopcion-contenedor">
+    <form className="formAdopcion-ppal" onSubmit={(e)=> handleSubmit(e)}>
+      <div className="formAdopcion-contenedor">
+        <div className="formAdopcion-titulo">
             <h1 className="formAdopcion-tit">FORMULARIO DE ADOPCION</h1>
         </div>
-        <div>
+        <div className="formAdopcion-p">
             <p>El objetivo del siguiente cuestionario es encontrar la combinación óptima entre adoptado y adoptante de manera que ambos sean felices para siempre.</p>
             <p>Por favor, lea todas las preguntas y los requisitos de adopción y, de estar de acuerdo, responda el cuestionario con la mayor claridad posible.</p>
             <p> Las adopciones se limitan geográficamente a Capital Federal y Gran Buenos Aires, Argentina (sujeto a consideración)</p>
         </div>
-        <div>
-            <label>Antes de empezar ¿Está interesado en algún perro/gato en particular? Si es así escriba su nombre aquí.</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Antes de empezar ¿Está interesado en algún perro/gato en particular? Si es así escriba su nombre aquí.</label>
             <input
               type="text"
               autoComplete="off"
@@ -217,9 +218,9 @@ return (
             />
             {errors.nombreMascota && <p>{errors.nombreMascota}</p>}
         </div>
-         <div>
-            <label>En caso de que ya haya sido adoptado ¿Estaría interesado en otro?</label>
-            <label>
+         <div className="formAdopcion-container">
+            <label className="formAdopcion-label">En caso de que ya haya sido adoptado ¿Estaría interesado en otro?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -228,20 +229,20 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
                 value="no"
                 name="adoptarOtro"
                 onClick={(e) => handleCheck(e)}/> {" "}
-                No {" "}
+                No {"  "}
             </label>
             {errors.adoptarOtro && <p>{errors.adoptarOtro}</p>}
         </div>
-        <div>
-            <label>1. ¿El animal que va a adoptar es para usted o para un tercero?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">1. ¿El animal que va a adoptar es para usted o para un tercero?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -250,7 +251,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Para mi {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -261,8 +262,8 @@ return (
             </label>
             {errors.adoptarParaQuien && <p>{errors.adoptarParaQuien}</p>}
         </div>
-        <div>
-            <label>2. ¿Cuántas personas habitan en el hogar? ¿Cuáles son sus edades? ¿ Cual es su parentesco o vinculo?</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">2. ¿Cuántas personas habitan en el hogar? ¿Cuáles son sus edades? ¿ Cual es su parentesco o vinculo?</label>
             <input
               type="text"
               autoComplete="off"
@@ -273,8 +274,8 @@ return (
             />
             {errors.convivientesYedades && <p>{errors.convivientesYedades}</p>}
         </div>
-        <div>
-            <label>3. ¿Hay niños en la casa? ¿De qué edad?</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">3. ¿Hay niños en la casa? ¿De qué edad?</label>
             <input
               type="text"
               autoComplete="off"
@@ -285,9 +286,9 @@ return (
             />
             {errors.convivientesMenores && <p>{errors.convivientesMenores}</p>}
         </div>
-        <div>
-            <label>4. ¿Están todos los miembros de la familia de acuerdo en adoptar?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">4. ¿Están todos los miembros de la familia de acuerdo en adoptar?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -296,7 +297,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -307,9 +308,9 @@ return (
             </label>
             {errors.comunAcuerdo && <p>{errors.comunAcuerdo}</p>}
         </div>
-        <div>
-            <label>5. ¿Hay otros animales en la casa?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">5. ¿Hay otros animales en la casa?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -318,7 +319,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -329,8 +330,8 @@ return (
             </label>
             {errors.hayMascotas && <p>{errors.hayMascotas}</p>}
         </div>
-        <div>
-            <label>6. En caso que los haya, ¿están vacunados y/o castrados? ¿Cuáles son sus edades?</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">6. En caso que los haya, ¿están vacunados y/o castrados? ¿Cuáles son sus edades?</label>
             <input
               type="text"
               autoComplete="off"
@@ -341,8 +342,8 @@ return (
             />
             {errors.hayMascotasDetalle && <p>{errors.hayMascotasDetalle}</p>}
         </div>
-        <div>
-            <label>7. En caso que no los haya, ¿ha tenido? ¿Qué pasó con ellos?</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">7. En caso que no los haya, ¿ha tenido? ¿Qué pasó con ellos?</label>
             <input
               type="text"
               autoComplete="off"
@@ -353,8 +354,8 @@ return (
             />
             {errors.mascotasAnteriores && <p>{errors.mascotasAnteriores}</p>}
         </div>
-        <div>
-            <label>8. ¿Ha pensado qué hará con el animal en vacaciones?</label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">8. ¿Ha pensado qué hará con el animal en vacaciones?</label>
             <input
               type="text"
               autoComplete="off"
@@ -366,9 +367,9 @@ return (
             {errors.vacaciones && <p>{errors.vacaciones}</p>}
 
         </div>
-        <div>
-            <label>9. ¿Conoce los gastos y cuidados que implicará incorporar un animal y está dispuesto a asumirlos? (alimentación, atención veterinaria, etc.)</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">9. ¿Conoce los gastos y cuidados que implicará incorporar un animal y está dispuesto a asumirlos? (alimentación, atención veterinaria, etc.)</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -377,7 +378,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -388,64 +389,76 @@ return (
             </label>
             {errors.gastos && <p>{errors.gastos}</p>}
         </div>
-        <div>
-            <label>10. ¿Dónde vivirá el animal adoptado?</label>     
-                <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">10. ¿Dónde vivirá el animal adoptado?</label>     
+                <label className="formAdopcion-label-radio">
                 <input type="radio" value='casa' name='vivienda' onChange={(e) => handleCheck(e)}/> Casa </label>
-                <label>
+                <label className="formAdopcion-label-radio">
                 <input type="radio" value='departamento' name='vivienda' onChange={(e) => handleCheck(e)}/> Departamento </label>
-                <label>
+                <label className="formAdopcion-label-radio">
                 <input type="radio" value='ph' name='vivienda' onChange={(e) => handleCheck(e)}/> Ph </label>
-                <label>
-                <input type="radio" value='quinta' name='vivienda' onChange={(e) => handleCheck(e)}/> Casa quinta</label>
+                <label className="formAdopcion-label-radio">
+                <input type="radio" value='quinta' name='vivienda' onChange={(e) => handleCheck(e)}/> Quinta</label>
                 {errors.vivienda && (<p>{errors.vivienda}</p>)}
         </div>
-        <div>
-            <label>11. ¿Es propietario o alquila la propiedad? En caso de ser inquilino, ¿tiene certeza que permiten tener animales?</label>
-            <input type="text" autoComplete="off" value={input.propietarioOalquila} name="propietarioOalquila" onChange={handleChange} />
+
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">11. ¿Es propietario o alquila la propiedad? En caso de ser inquilino, ¿tiene certeza que permiten tener animales?</label>
+            <input type="text" 
+            autoComplete="off" 
+            value={input.propietarioOalquila} 
+            name="propietarioOalquila" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.propietarioOalquila && <p>{errors.propietarioOalquila}</p>}
         </div>
-        <div>
-            <label>12. En caso de mudanza ¿qué haría con el animal?</label>
-            <input type="text" autoComplete="off" value={input.mudanza} name="mudanza" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">12. En caso de mudanza ¿qué haría con el animal?</label>
+            <input type="text" autoComplete="off" value={input.mudanza} name="mudanza" onChange={handleChange} className="formAdopcion-input"/>
             {errors.mudanza && <p>{errors.mudanza}</p>}
         </div>
-        <div>
-            <label>13. ¿Posee algún espacio al aire libre? (balcón, terraza, patio, etc). En caso que lo posea indicar si tienen cercos y/o cerramientos y de qué tipo (rejas, muros, red, etc)</label>
-            <input type="text" autoComplete="off" value={input.espaciosSeguros} name="espaciosSeguros" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">13. ¿Posee algún espacio al aire libre? (balcón, terraza, patio, etc). En caso que lo posea indicar si tienen cercos y/o cerramientos y de qué tipo (rejas, muros, red, etc)</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.espaciosSeguros} 
+            name="espaciosSeguros" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.espaciosSeguros && <p>{errors.espaciosSeguros}</p>}
-            
         </div>
-        <div>
-            <label>14. ¿El animal que busca es para compañía, guardia, trabajo, etc.?</label>
-            <input type="text" autoComplete="off" value={input.tipoDeCompañia} name="tipoDeCompañia" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">14. ¿El animal que busca es para compañía, guardia, trabajo, etc.?</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.tipoDeCompañia} 
+            name="tipoDeCompañia" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.tipoDeCompañia && <p>{errors.tipoDeCompañia}</p>}
         </div>
           
-          
-          
-        <div>
-            <label>15. ¿Cuántas horas estima que el animal estará solo en la propiedad?</label>
-            <input type="text" value={input.mascotaSola} name="input.mascotaSola" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">15. ¿Cuántas horas estima que el animal estará solo en la propiedad?</label>
+            <input type="text" value={input.mascotaSola} name="input.mascotaSola" onChange={handleChange} className="formAdopcion-input" />
             {errors.mascotaSola && <p>{errors.mascotaSola}</p>}
         </div>  
 
-
-
-
-        <div>
-            <label>16. ¿Cuántas veces lo sacará a pasear por día?</label>
-            <input type="text" value={input.mascotaPaseos} name="input.mascotaPaseos" onChange={handleChange}  />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">16. ¿Cuántas veces lo sacará a pasear por día?</label>
+            <input type="text" value={input.mascotaPaseos} name="input.mascotaPaseos" onChange={handleChange} className="formAdopcion-input" />
             {errors.mascotaPaseos && <p>{errors.mascotaPaseos}</p>}
-
         </div>  
 
 
-
-
-        <div>
-            <label>17. ¿Está al tanto de que el animal necesitará un período aprox. de 15 a 30 días para adaptarse a su nueva familia, horarios, lugares, etc.?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">17. ¿Está al tanto de que el animal necesitará un período aprox. de 15 a 30 días para adaptarse a su nueva familia, horarios, lugares, etc.?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -454,7 +467,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -465,32 +478,59 @@ return (
             </label>
             {errors.adaptacion && <p>{errors.adaptacion}</p>}
         </div>
-        <div>
-            <label>18. Ante una inadaptación o problema de comportamiento en el animal que adopte, ¿qué haría?</label>
-            <input type="text" autoComplete="off" value={input.problemaComportamiento} name="problemaComportamiento" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">18. Ante una inadaptación o problema de comportamiento en el animal que adopte, ¿qué haría?</label>
+            <input type="text" 
+            autoComplete="off" 
+            value={input.problemaComportamiento} 
+            name="problemaComportamiento" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.problemaComportamiento && <p>{errors.problemaComportamiento}</p>}
         </div>
-        <div>
-            <label>19. Por favor describa las características del animal que busca adoptar y cualquier dato que considere importante a tener en cuenta.</label>
-            <input type="text" autoComplete="off" value={input.caractertisticasAdoptado} name="caractertisticasAdoptado" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">19. Por favor describa las características del animal que busca adoptar y cualquier dato que considere importante a tener en cuenta.</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.caractertisticasAdoptado} 
+            name="caractertisticasAdoptado" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.caractertisticasAdoptado && <p>{errors.caractertisticasAdoptado}</p>}
         </div>
-        <div>
-            <h3>LAS SIGUIENTES PREGUNTAS SON SÓLO PARA AQUELLOS INTERESADOS EN ADOPTAR UN CACHORRO.</h3>
+        <div className="formAdopcion-p">
+            <p className="formAdopcion-pp">LAS SIGUIENTES PREGUNTAS SON SÓLO PARA AQUELLOS INTERESADOS EN ADOPTAR UN CACHORRO.</p>
         </div>
-        <div>
-            <label>20. ¿Por qué se decide por un cachorro?</label>
-            <input type="text" autoComplete="off" value={input.cachorroMotivos} name="cachorroMotivos" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">20. ¿Por qué se decide por un cachorro?</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.cachorroMotivos} 
+            name="cachorroMotivos" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.cachorroMotivos && <p>{errors.cachorroMotivos}</p>}
         </div>
-        <div>
-            <label>21. ¿Qué cuidados cree que necesita un cachorro?</label>
-            <input type="text" autoComplete="off" value={input.chachorroCuidados} name="chachorroCuidados" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">21. ¿Qué cuidados cree que necesita un cachorro?</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.chachorroCuidados} 
+            name="chachorroCuidados" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.chachorroCuidados && <p>{errors.chachorroCuidados}</p>}
         </div>
-        <div>
-            <label>22. ¿Es usted consciente que un cachorro requiere de mayor atención y puede que durante la adaptación haga sus necesidades en diferentes lugares de la casa, rompa objetos, llore por las noches, etc?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">22. ¿Es usted consciente que un cachorro requiere de mayor atención y puede que durante la adaptación haga sus necesidades en diferentes lugares de la casa, rompa objetos, llore por las noches, etc?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -499,7 +539,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -510,9 +550,9 @@ return (
             </label>
             {errors.chachorroAtencion && <p>{errors.chachorroAtencion}</p>}
         </div>
-        <div>
-            <label>23. Es un requisito prioritario el compromiso de castrar al cachorro adoptado entre los 6 y los 8 meses de edad. Estás de acuerdo en cumplirlo?</label>
-            <label>
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">23. Es un requisito prioritario el compromiso de castrar al cachorro adoptado entre los 6 y los 8 meses de edad. Estás de acuerdo en cumplirlo?</label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -521,7 +561,7 @@ return (
                 onClick={(e) => handleCheck(e)}/> {" "}
                 Si, estoy de acuerdo {" "}
             </label>
-            <label>
+            <label className="formAdopcion-label-radio">
                 <input 
                 type="radio"
                 autoComplete="off"
@@ -532,61 +572,126 @@ return (
             </label>
             {errors.chachorroCastrar && <p>{errors.chachorroCastrar}</p>}
         </div>
-        <div>
-            <label>24. ¿Qué ocurriría si el cachorro crece más de lo esperado?</label>
-            <input type="text" autoComplete="off" value={input.cachorroCrecimiento} name="cachorroCrecimiento" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">24. ¿Qué ocurriría si el cachorro crece más de lo esperado?</label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.cachorroCrecimiento} 
+            name="cachorroCrecimiento" 
+            onChange={handleChange} 
+            className="formAdopcion-input" 
+            />
             {errors.cachorroCrecimiento && <p>{errors.cachorroCrecimiento}</p>}
         </div>
 
-        <div>
-            <h3>DATOS DE CONTACTO</h3>
+        <div className="formAdopcion-titulo" >
+            <h2 className="formAdopcion-tit" >DATOS DE CONTACTO</h2>
         </div>
-        <div>
-            <label>Nombre y Apellido: </label>
-            <input type="text" autoComplete="off" value={input.contactoNombreApe} name="contactoNombreApe" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Nombre y Apellido: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoNombreApe} 
+            name="contactoNombreApe" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoNombreApe && <p>{errors.contactoNombreApe}</p>}
         </div>
-        <div>
-            <label>Zona de Residencia (Localidad/Barrio): </label>
-            <input type="text" autoComplete="off" value={input.contactoZona} name="contactoZona" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Zona de Residencia (Localidad/Barrio): </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoZona} 
+            name="contactoZona" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoZona && <p>{errors.contactoZona}</p>}
         </div>
-        <div>
-            <label>Dirección: </label>
-            <input type="text" autoComplete="off" value={input.contactoDireccion} name="contactoDireccion" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Dirección: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoDireccion} 
+            name="contactoDireccion" 
+            onChange={handleChange}
+            className="formAdopcion-input" 
+            />
             {errors.contactoDireccion && <p>{errors.contactoDireccion}</p>}
         </div>
-        <div>
-            <label>Ocupación: </label>
-            <input type="text" autoComplete="off" value={input.contactoOcupacion} name="contactoOcupacion" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Ocupación: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoOcupacion} 
+            name="contactoOcupacion" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoOcupacion && <p>{errors.contactoOcupacion}</p>}
         </div>
-        <div>
-            <label>Correo electrónico </label>
-            <input type="email" autoComplete="off" value={input.contactoMail} name="contactoMail" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Correo electrónico: </label>
+            <input 
+            type="email" 
+            autoComplete="off" 
+            value={input.contactoMail} 
+            name="contactoMail" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoMail && <p>{errors.contactoMail}</p>}
         </div>
-        <div>
-            <label>Edad </label>
-            <input type="text" autoComplete="off" value={input.contactoEdad} name="contactoEdad" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Edad: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoEdad} 
+            name="contactoEdad" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoEdad && <p>{errors.contactoEdad}</p>}
         </div>
-        <div>
-            <label>Teléfono fijo </label>
-            <input type="text" autoComplete="off" value={input.contactoTelFijo} name="contactoTelFijo" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Teléfono fijo: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoTelFijo} 
+            name="contactoTelFijo" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoTelFijo && <p>{errors.contactoTelFijo}</p>}
         </div>
-        <div>
-            <label>Teléfono celular </label>
-            <input type="text" autoComplete="off" value={input.contactoCelular} name="contactoCelular" onChange={handleChange} />
+        <div className="formAdopcion-container">
+            <label className="formAdopcion-label">Teléfono celular: </label>
+            <input 
+            type="text" 
+            autoComplete="off" 
+            value={input.contactoCelular} 
+            name="contactoCelular" 
+            onChange={handleChange} 
+            className="formAdopcion-input"
+            />
             {errors.contactoCelular && <p>{errors.contactoCelular}</p>}
         </div>
-        <div>
+        <div className="formAdopcion-btn">
             <button type="submit"> Enviar </button>
         </div>
         <div>
             
-        </div>  
+        </div> 
+        </div> 
+      
     </form>
     
 );}
