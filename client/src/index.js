@@ -9,11 +9,8 @@ import {UserContextProvider} from './context/UserContext';
 import axios from 'axios';
 
 
-/* axios.defaults.baseURL="https://back-proyecto-final-production.up.railway.app" */
-
-axios.defaults.baseURL =
-	'https://back-proyecto-final-production.up.railway.app';
-// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = 'https://back-proyecto-final-production.up.railway.app';
+//axios.defaults.baseURL="http://localhost:3001";
 
 
 ReactDOM.render(
@@ -30,4 +27,3 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 
-axios.defaults.baseURL="http://localhost:3001"
