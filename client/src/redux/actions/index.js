@@ -338,16 +338,12 @@ export const adminEditarUsuario = (id, userActualizado) => {
 
 // pago
 
-export function realizarPago(id, amount) {
-  return async function () {
-    const { data } = await axios.post("http://localhost:3001/pagos", {
-      id,
-      amount,
-    });
-    console.log(data);
-    return data;
-  };
-}
+
+/* export function realizarPago(id, amount) {
+
+  return async function() {
+    const {data}= await axios.post("http://localhost:3001/pagos" , {
+
 
 // carrito
 
@@ -387,9 +383,26 @@ export function decreaseCart(payload) {
 
 export function refreshCart(payload) {
   return {
+
+      type: "REFRESH_CART",
+      payload
+  }
+};
+
+export function realizarPago(id, amount) {
+	return async function () {
+		const {data} = await axios.post(`/pagos`, {
+			id,
+			amount,
+		});
+		console.log(data);
+		return data;
+	};
+
     type: "REFRESH_CART",
     payload,
   };
+
 }
 // return async function () {
 //   const { data } = await axios.post(`/pagos`, {
