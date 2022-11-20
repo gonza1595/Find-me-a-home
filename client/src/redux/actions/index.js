@@ -353,7 +353,7 @@ export function addToCart(payload) {
     payload,
   };
 }
-
+ */
 export function getNumberCart() {
   return {
     type: "GET_NUMBER_CART",
@@ -401,20 +401,8 @@ export function realizarPago(id, amount) {
 
     type: "REFRESH_CART",
     payload,
-  };
+};
 
-}
-// return async function () {
-//   const { data } = await axios.post(`/pagos`, {
-//     id,
-//     amount,
-//   });
-//   console.log(data);
-//   return data;
-// };
-
-// trae la mascota por ID para bajar toda la data a un form y poder editar
-// blabla
 export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
   dispatch({
     type: "LOADING",
