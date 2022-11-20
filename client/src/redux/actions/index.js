@@ -398,7 +398,6 @@ export function realizarPago(id, amount) {
     payload,
   };
 
-}
 // return async function () {
 //   const { data } = await axios.post(`/pagos`, {
 //     id,
