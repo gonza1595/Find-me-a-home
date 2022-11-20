@@ -286,6 +286,7 @@ export function adminCrearNuevaMascota(obj) {
       });
 }
 
+
 // acciones para traer, borrar y editar usuarios
 
 export const traerUsuarios = () => {
@@ -337,12 +338,6 @@ export const adminEditarUsuario = (id, userActualizado) => {
 };
 
 // pago
-
-
-/* export function realizarPago(id, amount) {
-
-  return async function() {
-    const {data}= await axios.post("http://localhost:3001/pagos" , {
 
 
 // carrito
