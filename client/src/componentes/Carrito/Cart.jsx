@@ -80,7 +80,7 @@ export default function Cart() {
       </div>
       <section >
         <div >
-      {(productsInTheCart.length === 0) && (<div ><h1 >Your cart is empty.</h1>
+      {(productsInTheCart.length === 0) && (<div ><h1 >Tu carrito esta vacio.</h1>
       {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
           <div>
           </div>
