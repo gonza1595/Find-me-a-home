@@ -64,24 +64,20 @@ useEffect(() => {
 function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
-
-    /*
-    setTimeout(() => {
+    alert('Producto añadido al carrito')
+    history.push("/productos")
+    /* setTimeout(() => {
         history.push(console.log)
     }, 3000);*/
 };
-
 
 
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
     history.push("/carrito")
-
- 
-
-
 }
+
   return (
     <>
 

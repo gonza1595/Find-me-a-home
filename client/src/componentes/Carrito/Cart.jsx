@@ -68,6 +68,10 @@ export default function Cart() {
     dispatch(deleteCart(e.target.id));
     
   };
+  function añadir(e){
+    e.preventDefault()
+    history.push("/productos")
+  }
 
   function handleNext() {
     history.push('/pagos');
@@ -76,7 +80,7 @@ export default function Cart() {
   return (
     <div className="carrito-container" >
       <div >
-        <div className="myCart">My Cart ( {myCartQuantity} )</div>
+        <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
       </div>
       <section >
         <div >
@@ -88,16 +92,18 @@ export default function Cart() {
             {
               listCart.map((item, key) => {
                 return (
-                  <div  key={key}>
-                    <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
-                    <a href={`/mascotas/${item.id}`}> {/* VER */}
+                  <div key={key}>
+                    <div  className="botonBorra">
+                    <button   id={item.id} onClick={e => handleDelete(e)}>❌</button>
+                     </div>
+                      <a href={`/mascotas/${item.id}`}> {/* VER */}
                     <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
-                    <div className="img-carrito">
-                    <img  src={item.imagen} alt={item.nombre} />
+                    <div >
+                    <img  className="img-carrito" src={item.imagen} alt={item.nombre} />
                     </div>
                     </a>
                     <ul className="items-carrito">
-                        <li><strong>Stock: </strong>{item.stock}</li>
+                        {/* <li><strong>Stock: </strong>{item.stock}</li> */}
                     </ul>
                     <div >
                     <button  onClick={e => handleDecrease(e)} id={item.id}>−</button>
@@ -105,7 +111,7 @@ export default function Cart() {
                     <button onClick={e => handleIncrease(e)} id={item.id}>＋</button>
                     </div>
                     <div  className="items-carrito" >
-                    <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
+                    <span className="precioTotal">Total $ {totalPrice(item.precio, item.quantity)} </span>
                     </div>
                     <hr/>
                   </div>
@@ -128,7 +134,7 @@ export default function Cart() {
                 </ul>
               </div>
               <div className="items-carrito" >
-                <a href="/productos">Comprar mas productos </a>
+                <button onClick={e => añadir(e)} >Comprar mas productos </button>
               </div>
               <br />
               <br />
@@ -147,7 +153,3 @@ export default function Cart() {
  
     </div>
   )}
-
-
-/* , {onRedirecting:()=><Loading/>}) ;
- */
