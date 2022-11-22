@@ -103,7 +103,7 @@ export default function Cart() {
                     </div>
                     </a>
                     <ul className="items-carrito">
-                        {/* <li><strong>Stock: </strong>{item.stock}</li> */}
+                      <li><strong>Stock: </strong>{item.stock}</li> 
                     </ul>
                     <div >
                     <button  onClick={e => handleDecrease(e)} id={item.id}>−</button>

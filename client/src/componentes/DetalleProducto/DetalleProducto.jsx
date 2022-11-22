@@ -19,6 +19,7 @@ const DetalleProducto = () => {
 
   useEffect(() => {
     dispatch(detalleProducto(id));
+ 
     return () => {
       dispatch(limpiarEstadoDetalle());
     };
@@ -61,9 +62,11 @@ useEffect(() => {
 
 
 
+
 function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
+    
     alert('Producto añadido al carrito')
     history.push("/productos")
     /* setTimeout(() => {
