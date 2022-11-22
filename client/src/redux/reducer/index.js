@@ -12,7 +12,7 @@ const initialState = {
   usuarioEditado: [],
   loading: false,
   actualizarMascota: [],
-  cart: [],
+  cart: JSON.parse(localStorage.getItem("cart")) || [],
   numberCart: 0,
 
   //agregar mas estados si se requiere...
