@@ -19,9 +19,6 @@ export default function Dashboard() {
   const mascotas = useSelector((state) => state.mascotas);
   const usuarios = useSelector((state) => state.usuarios);
   // const refugios = useSelector((state)=> state.refugios);
-  const ultimosUsuarios = usuarios.slice(-3)
-  console.log(ultimosUsuarios)
-
 
   const dispatch = useDispatch();
 
