@@ -19,6 +19,7 @@ const DetalleProducto = () => {
 
   useEffect(() => {
     dispatch(detalleProducto(id));
+ 
     return () => {
       dispatch(limpiarEstadoDetalle());
     };
@@ -61,27 +62,25 @@ useEffect(() => {
 
 
 
+
 function handleAddToCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
-
-    /*
-    setTimeout(() => {
+    
+    alert('Producto añadido al carrito')
+    history.push("/productos")
+    /* setTimeout(() => {
         history.push(console.log)
     }, 3000);*/
 };
-
 
 
 function handleBuyCart(){
     producto.quantitySelected = quantitySelected;
     dispatch(addToCart(producto));
     history.push("/carrito")
-
- 
-
-
 }
+
   return (
     <>
 
@@ -113,9 +112,9 @@ function handleBuyCart(){
                 <h4>Descripción:</h4>
                 <p>{producto.descripcion}</p>
               </div>
-              <NavLink to="/comprar" className="link">
+              {/*<NavLink to="/comprar" className="link">
                 <button className="adopta">Comprar</button>
-              </NavLink>
+              </NavLink>*/}
             </div>
             {/* carrito */}
           <div> 
@@ -138,8 +137,8 @@ function handleBuyCart(){
                                          </div>)  
                                          : 
                                          (<div >
-                                         <button type="button" onClick={handleBuyCart}  id="comprar">Buy now</button>
-                                         <button type="button" onClick={handleAddToCart} id='agregarAlCarrito'>Add to cart</button>
+                                         <button type="button" onClick={handleBuyCart}  id="comprar">Comprar ahora</button>
+                                         <button type="button" onClick={handleAddToCart} id='agregarAlCarrito'>Añadir al carrito</button>
                                         </div>)
                                     }
                                    
