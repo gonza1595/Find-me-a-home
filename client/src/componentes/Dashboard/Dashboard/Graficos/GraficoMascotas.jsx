@@ -32,7 +32,7 @@ export default function GraficoMascotas() {
         data: dataPie,
         angleField: 'value',
         colorField: 'type',
-        height: 450,
+        height: 250,
         radius: 0.5,
         color: ['#d62728', '#2ca02c', '#000000'],
         label: {

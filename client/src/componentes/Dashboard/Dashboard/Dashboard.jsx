@@ -19,6 +19,9 @@ export default function Dashboard() {
   const mascotas = useSelector((state) => state.mascotas);
   const usuarios = useSelector((state) => state.usuarios);
   // const refugios = useSelector((state)=> state.refugios);
+  const ultimosUsuarios = usuarios.slice(-3)
+  console.log(ultimosUsuarios)
+
 
   const dispatch = useDispatch();
 
@@ -66,31 +69,28 @@ export default function Dashboard() {
 				</div> */} 
         </div>
 
+        <div className="grafUser">
+
         <div className="graficosDash">
           <GraficoMascotas />
           <GraficoProductos />
-        </div>
           <GraficoUsers />
+        </div>
 
-        {/* -------- PRODUCTOS -----------  */}
-        {/* <div className="prodMain_dashb">
-				<ListaProductos/>
-			</div> */}
+        <div className="ultimos">
+          <h4>ULTIMOS USUARIOS REGISTRADOS</h4>
 
-        {/* -------- MASCOTAS ----------- */}
-        {/* <div key="ListaMascotas" className="mascMain_dashb">
-				<ListaMascotas />
-		    </div> */}
-
-        {/* -------- USUARIOS ----------- */}
-        {/* <div className="userMain_dashb">
-				<ListaUsuarios/>
-			</div> */}
-
-        {/* -------- REFUGIOS ----------- */}
-        {/* <div className="refuMain_dashb">
-				<ListaRefugios/>
-			</div> */}
+        { usuarios.slice(-3).map((e)=>(
+          <div className="listaUs">
+            <br />
+            <p>Nombre: {e.nombre}</p>
+            <p>Correo: {e.correo}</p>
+            <p>Rango: {e.rango}</p>
+            <br />
+          </div>
+            ))}
+        </div>
+        </div>
       </main>
     </div>
   );

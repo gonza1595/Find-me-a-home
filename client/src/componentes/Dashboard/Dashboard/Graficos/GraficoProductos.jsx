@@ -42,7 +42,7 @@ export default function GraficoProductos() {
         data: dataPie,
         angleField: 'value',
         colorField: 'type',
-        height: 450,
+        height: 250,
         radius: 0.5,
         label: {
           type: 'inner',
