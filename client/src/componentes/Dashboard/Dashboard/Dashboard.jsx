@@ -63,34 +63,31 @@ export default function Dashboard() {
 			            <img src={refugio} width='30px'/>
 			            <h4>{refugios.length}</h4>
 			        </div>
-				</div> */}
+				</div> */} 
         </div>
+
+        <div className="grafUser">
 
         <div className="graficosDash">
           <GraficoMascotas />
           <GraficoProductos />
-        </div>
           <GraficoUsers />
+        </div>
 
-        {/* -------- PRODUCTOS -----------  */}
-        {/* <div className="prodMain_dashb">
-				<ListaProductos/>
-			</div> */}
+        <div className="ultimos">
+          <h4>ULTIMOS USUARIOS REGISTRADOS</h4>
 
-        {/* -------- MASCOTAS ----------- */}
-        {/* <div key="ListaMascotas" className="mascMain_dashb">
-				<ListaMascotas />
-		    </div> */}
-
-        {/* -------- USUARIOS ----------- */}
-        {/* <div className="userMain_dashb">
-				<ListaUsuarios/>
-			</div> */}
-
-        {/* -------- REFUGIOS ----------- */}
-        {/* <div className="refuMain_dashb">
-				<ListaRefugios/>
-			</div> */}
+        { usuarios.slice(-3).map((e)=>(
+          <div className="listaUs">
+            <br />
+            <p>Nombre: {e.nombre}</p>
+            <p>Correo: {e.correo}</p>
+            <p>Rango: {e.rango}</p>
+            <br />
+          </div>
+            ))}
+        </div>
+        </div>
       </main>
     </div>
   );

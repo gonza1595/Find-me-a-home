@@ -3,6 +3,7 @@ import { Pie } from '@ant-design/charts';
 import './Grafico.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { traerUsuarios } from '../../../../redux/actions';
+import { AutoComplete } from 'antd';
 
 export default function GraficoUsers() {
 
@@ -18,7 +19,7 @@ export default function GraficoUsers() {
 
     const dataPie = [
         {
-          type: 'Usuarios', 
+          type: 'Usuarios',
           value: usuario,
         },
         {
@@ -32,8 +33,9 @@ export default function GraficoUsers() {
         data: dataPie,
         angleField: 'value',
         colorField: 'type',
-        height: 450,
+        height: 250,
         radius: 0.5,
+        color: ['#e69528', '#2cf02c'],
         label: {
           type: 'inner',
           offset: '-0.5',
