@@ -68,19 +68,23 @@ export default function Cart() {
     dispatch(deleteCart(e.target.id));
     
   };
+  function añadir(e){
+    e.preventDefault()
+    history.push("/productos")
+  }
 
   function handleNext() {
-    history.push('/payment');
+    history.push('/pagos');
   }
 
   return (
     <div className="carrito-container" >
       <div >
-        <div className="myCart">My Cart ( {myCartQuantity} )</div>
+        <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
       </div>
       <section >
         <div >
-      {(productsInTheCart.length === 0) && (<div ><h1 >Your cart is empty.</h1>
+      {(productsInTheCart.length === 0) && (<div ><h1 >Tu carrito esta vacio.</h1>
       {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
           <div>
           </div>
@@ -88,16 +92,18 @@ export default function Cart() {
             {
               listCart.map((item, key) => {
                 return (
+
                   <div  key={key}>
                     <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
                     <a href={`/productos/${item.id}`}> 
+
                     <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
-                    <div className="img-carrito">
-                    <img  src={item.imagen} alt={item.nombre} />
+                    <div >
+                    <img  className="img-carrito" src={item.imagen} alt={item.nombre} />
                     </div>
                     </a>
                     <ul className="items-carrito">
-                        <li><strong>Stock: </strong>{item.stock}</li>
+                      <li><strong>Stock: </strong>{item.stock}</li> 
                     </ul>
                     {/* <div >
                     <button  onClick={e => handleDecrease(e)} id={item.id}>−</button>
@@ -105,12 +111,16 @@ export default function Cart() {
                     <button onClick={e => handleIncrease(e)} id={item.id}>＋</button>
                     </div>
                     <div  className="items-carrito" >
+
                     <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
                     </div> */}
                     <div>
                                   <button  onClick={e => handleDecrease(e)} id={item.id}> - </button>
                                   {(item.stock <= 0) ? <span>0</span>  : <span >{quantityState}</span>}
                                   <button  onClick={e => handleIncrease(e)} id={item.id}> + </button>
+
+                    <span className="precioTotal">Total $ {totalPrice(item.precio, item.quantity)} </span>
+
                     </div>
                     <hr/>
                   </div>
@@ -124,7 +134,7 @@ export default function Cart() {
       {<section >
             <div >
               <div >
-                <div className="items-carrito"  >Purchase Summary</div>
+                <div className="items-carrito" >Resumen de compra</div>
                 <ul >
                   <li >
               <span className="items-carrito">Total</span> 
@@ -133,17 +143,17 @@ export default function Cart() {
                 </ul>
               </div>
               <div className="items-carrito" >
-                <a href="/productos">Buy more Products </a>
+                <button onClick={e => añadir(e)} >Comprar mas productos </button>
               </div>
               <br />
               <br />
               {(productsInTheCart.length === 0) ? 
               (<div>
-                <button type="button" onClick={handleNext} >Continue</button>
+                <button type="button" onClick={handleNext} >Continuar</button>
               </div>)
               :
               (<div >
-              <button type="button" onClick={handleNext} >Continue</button>
+              <button type="button" onClick={handleNext} >Continuar</button>
             </div>)
             }
             </div>
@@ -152,7 +162,3 @@ export default function Cart() {
  
     </div>
   )}
-
-
-/* , {onRedirecting:()=><Loading/>}) ;
- */
