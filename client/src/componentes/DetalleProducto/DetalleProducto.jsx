@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./DetalleProducto.css";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {  useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { detalleProducto, limpiarEstadoDetalle,addToCart} from "../../redux/actions/index";
 import axios from "axios";
 import Loader from "../Loader/Loader";
+import Review from "../Review/Review";
 
 
 
@@ -68,7 +69,7 @@ function handleAddToCart(){
     dispatch(addToCart(producto));
     
     alert('Producto añadido al carrito')
-    history.push("/productos")
+    //history.push("/productos")
     /* setTimeout(() => {
         history.push(console.log)
     }, 3000);*/
@@ -146,6 +147,7 @@ function handleBuyCart(){
                                
                             </form>
           </div>
+          <Review></Review>
           </div>
         )}
       </div>
