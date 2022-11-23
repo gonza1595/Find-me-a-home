@@ -9,7 +9,7 @@ import Loader from "../Loader/Loader";
 import Review from "../Review/Review";
 
 import Comentarios from "../Comentarios/Comentarios.jsx"
-
+/* holaaa */
 
 
 const DetalleProducto = () => {

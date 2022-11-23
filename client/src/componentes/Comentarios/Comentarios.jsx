@@ -113,4 +113,4 @@ export const Comentarios = (id) => {
   );
 };
 
-export default Comentarios;
+export default Comentarios; /* holaaa */

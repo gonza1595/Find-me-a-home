@@ -17,6 +17,7 @@ const initialState = {
   numberCart: 0,
 
   //agregar mas estados si se requiere...
+  /* holaaa */
 };
 
 function rootReducer(state = initialState, action) {

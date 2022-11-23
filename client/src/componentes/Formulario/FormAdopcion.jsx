@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { formularioPostAdopcion } from "../../redux/actions/index"; 
 import "./FormAdopcion.css"; 
-
+/* holaaa */
 function validate(input) {
   let errors = {};
 
