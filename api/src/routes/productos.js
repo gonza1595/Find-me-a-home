@@ -4,6 +4,8 @@ const router = Router();
 const { Product } = require("../db");
 const products = require("../../productos.json");
 const { filtroProductos } = require("./controllers");
+const { subirImagen } = require("../helpers/cloudinary");
+const fs = require('fs-extra')
 
 router.get("/", async (req, res) => {
   const { filtro, orden, nombre, tipo } = req.query;
@@ -80,19 +82,30 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo } =
-    req.body;
+  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo } = req.body;
+  console.log(req.files)
 
+  ///// cloudinary
+
+  if(req.files?.imagen){
+    const foto = await subirImagen(req.files.imagen.tempFilePath)
+    var foto_url = foto.secure_url
+  }
+  await fs.unlink(req.files?.imagen.tempFilePath)
+
+  ///// cloudinary
+  
   try {
     let nuevoProducto = await Product.create({
       nombre,
       descripcion,
-      imagen,
+      imagen: foto_url,
       stock,
       calificacion,
       precio,
       tipo,
     });
+
     res.status(200).send(nuevoProducto);
   } catch (error) {
     next(error);
