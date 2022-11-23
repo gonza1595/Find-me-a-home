@@ -146,6 +146,7 @@ router.put("/nueva-pass", async (req, res) => {
   const {correo} = req.body;
   const nuevaContraseña= generateRandom(6);
   console.log(nuevaContraseña);
+  console.log(correo);
   try{
     const contraseñaHash = await encrypt(nuevaContraseña);
     const usuario = await User.findOne({

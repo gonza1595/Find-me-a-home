@@ -156,6 +156,20 @@ export function formularioIniciarSesion(payload) {
     let json = await axios.post(`/`, payload);
     return json;
   };
+};
+
+export function solicitarContraseña(correo) {
+  return async function () {
+    let json= await axios.put("/usuario/nueva-pass", {correo});
+    return json;
+  }
+};
+
+export function cambiarContraseña(payload) {
+  return async function () {
+    let json = await axios.put("/usuario/login/new-pass", payload);
+    return json;
+  }
 }
 
 // Filtrados
