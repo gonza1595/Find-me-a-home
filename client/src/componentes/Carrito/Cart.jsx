@@ -76,7 +76,7 @@ export default function Cart() {
   function handleNext() {
     history.push('/pagos');
   }
-
+ 
   return (
     <div className="carrito-container" >
       <div >
@@ -105,23 +105,17 @@ export default function Cart() {
                     <ul className="items-carrito">
                       <li><strong>Stock: </strong>{item.stock}</li> 
                     </ul>
-                    {/* <div >
-                    <button  onClick={e => handleDecrease(e)} id={item.id}>−</button>
+                    <div >
+               <button onClick={e => handleDecrease(e)} id={item.id}>−</button>
                     <span id={item.id}>{quantityState.shift()}</span>
-                    <button onClick={e => handleIncrease(e)} id={item.id}>＋</button>
+                    <button  disabled={item.quantity === item.stock ? true : false} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
+
                     </div>
                     <div  className="items-carrito" >
 
                     <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
-                    </div> */}
-                    <div>
-                                  <button  onClick={e => handleDecrease(e)} id={item.id}> - </button>
-                                  {(item.stock <= 0) ? <span>0</span>  : <span >{quantityState}</span>}
-                                  <button  onClick={e => handleIncrease(e)} id={item.id}> + </button>
-
-                    <span className="precioTotal">Total $ {totalPrice(item.precio, item.quantity)} </span>
-
                     </div>
+        
                     <hr/>
                   </div>
                 )

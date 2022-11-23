@@ -3,17 +3,29 @@ const { DATEONLY } = require("sequelize");
 const router = Router();
 const { Pet } = require("../db");
 const { getMascotas } = require("./controllers");
+const { subirImagen } = require("../helpers/cloudinary");
+const fs = require('fs-extra')
 
 router.post("/", async (req, res, next) => {
   const { nombre, descripcion, edad, imagen, tamaño, raza, sexo, especie } =
     req.body;
+
+  ///// cloudinary
+
+  if(req.files?.imagen){
+    const foto = await subirImagen(req.files.imagen.tempFilePath)
+    var foto_url = foto.secure_url
+  }
+  await fs.unlink(req.files?.imagen.tempFilePath)
+
+  ///// cloudinary
 
   try {
     let nuevaMascota = await Pet.create({
       nombre,
       descripcion,
       edad,
-      imagen,
+      imagen: foto_url,
       tamaño,
       raza,
       sexo,
