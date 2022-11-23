@@ -85,6 +85,18 @@ const filtroProductos = (array, filtro, orden, tipo) => {
   }
 };
 
+const generateRandom= (len) => {
+  let randomPass= "";
+  let wordChars= "asdfghjklñpoiuytrewqzxcvbnm1234567890"
+
+  for(let i=0; i< len; i++){
+    randomPass += wordChars.charAt(Math.floor(Math.random() * wordChars.length));
+    console.log("randomPass en for:", randomPass);
+  };
+  console.log(randomPass);
+  return randomPass;
+};
+
 // elimina un usuario por id
 
 const borrarUsuario = async (id) => {
@@ -103,4 +115,5 @@ module.exports = {
   getMascotas,
   filtroProductos,
   borrarUsuario,
+  generateRandom
 };
