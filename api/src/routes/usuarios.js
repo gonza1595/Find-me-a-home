@@ -174,6 +174,40 @@ router.put("/nueva-pass", async (req, res) => {
 } );
 
 
+router.put("/login/new-pass", async (req, res) => {
+  const{correo, contraseña, nuevaContraseña} = req.body;
+
+  try{
+    const contraseñaHash = await encrypt(nuevaContraseña);
+    const usuario= await User.findOne({
+      where: {
+        correo: correo
+      }
+    });
+
+    if(!usuario){
+      res.status(404).send("usuario no encontrado");
+    }
+    const checkContraseña = await compare(contraseña, usuario.contraseña);
+
+    if(!checkContraseña){
+      res.status(400).send("contraseña incorrecta");
+    }
+
+    if(checkContraseña){
+      await usuario.update({
+        contraseña: contraseñaHash
+      });
+      await usuario.save();
+
+      res.status(200).send("contraseña modificada con éxito");
+    }
+    
+  }catch(error){
+    res.status(400).send({error: error.message});
+  }
+})
+
 //// USUARIO FAVORITOS PRODUCTO ////
 
 // trae todos los productos de la lista de favoritos del usuario por id
