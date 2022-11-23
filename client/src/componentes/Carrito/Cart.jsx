@@ -105,23 +105,26 @@ export default function Cart() {
                     <ul className="items-carrito">
                       <li><strong>Stock: </strong>{item.stock}</li> 
                     </ul>
-                    {/* <div >
-                    <button  onClick={e => handleDecrease(e)} id={item.id}>−</button>
+                    <div >
+                    <button type="number" min="5" onClick={e => handleDecrease(e)} id={item.id}>−</button>
                     <span id={item.id}>{quantityState.shift()}</span>
-                    <button onClick={e => handleIncrease(e)} id={item.id}>＋</button>
+                    <button type="number" max={item.stock} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
                     </div>
                     <div  className="items-carrito" >
 
                     <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
-                    </div> */}
-                    <div>
+                    </div>
+
+                    
+                    {/* <div>
+                    <input type="number" min="" max={item.stock}/>
                                   <button  onClick={e => handleDecrease(e)} id={item.id}> - </button>
                                   {(item.stock <= 0) ? <span>0</span>  : <span >{quantityState}</span>}
                                   <button  onClick={e => handleIncrease(e)} id={item.id}> + </button>
 
                     <span className="precioTotal">Total $ {totalPrice(item.precio, item.quantity)} </span>
 
-                    </div>
+                    </div> */}
                     <hr/>
                   </div>
                 )
