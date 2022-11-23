@@ -100,13 +100,13 @@ router.post("/registro", async (req, res) => {
 
     ///// notificación por mail - usuario registrado
 
-    const asunto = "Bienvenid@ a Find me a home";
+    // const asunto = "Bienvenid@ a Find me a home";
 
-    const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar 
-						una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
-						<br><br>Nos vemos!</p>`;
+    // const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar 
+		// 				una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
+		// 				<br><br>Nos vemos!</p>`;
 
-    mailUsuarioCreado(correo, asunto, texto);
+    // mailUsuarioCreado(correo, asunto, texto);
 
     /////////
 
@@ -146,6 +146,7 @@ router.put("/nueva-pass", async (req, res) => {
   const {correo} = req.body;
   const nuevaContraseña= generateRandom(6);
   console.log(nuevaContraseña);
+  console.log(correo);
   try{
     const contraseñaHash = await encrypt(nuevaContraseña);
     const usuario = await User.findOne({
