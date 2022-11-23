@@ -443,9 +443,15 @@ return (
             {errors.tipoDeCompañia && <p>{errors.tipoDeCompañia}</p>}
         </div>
           
-        <div className="formAdopcion-container">
+        <div className="formAdopcion-container"> {/* arreglado */}
             <label className="formAdopcion-label">15. ¿Cuántas horas estima que el animal estará solo en la propiedad?</label>
-            <input type="text" value={input.mascotaSola} name="input.mascotaSola" onChange={handleChange} className="formAdopcion-input" />
+            <input 
+            type="number" 
+            value={input.mascotaSola} 
+            name="mascotaSola" 
+            onChange={handleChange} 
+            className="formAdopcion-input" 
+            />
             {errors.mascotaSola && <p>{errors.mascotaSola}</p>}
         </div>  
 

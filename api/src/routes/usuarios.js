@@ -4,7 +4,7 @@ const { User, Product, Pet } = require("../db");
 const { encrypt, compare } = require("../helpers/bcrypt");
 const { tokenSign } = require("../helpers/generarToken");
 const { mailUsuarioCreado } = require("../helpers/mailsService");
-const { borrarUsuario } = require("./controllers.js");
+const { borrarUsuario, generateRandom } = require("./controllers.js");
 
 // ruta para traer los usuarios
 
@@ -141,6 +141,72 @@ router.post("/login", async (req, res) => {
     res.status(400).send({ error: "contraseña incorrecta" });
   }
 });
+
+router.put("/nueva-pass", async (req, res) => {
+  const {correo} = req.body;
+  const nuevaContraseña= generateRandom(6);
+  console.log(nuevaContraseña);
+  try{
+    const contraseñaHash = await encrypt(nuevaContraseña);
+    const usuario = await User.findOne({
+      where: {
+        correo: correo
+      }
+    });
+
+    if(usuario){
+
+      await usuario.update({
+        contraseña: contraseñaHash
+      });
+      await usuario.save();
+    }
+
+    const asunto= "Nueva contraseña Find Me a Home"
+    
+    const texto= `Hola ${usuario.nombre}<br></br> A su peticion le hemos generado una nueva contraseña provisoria: <br></br><h2>${nuevaContraseña}</h2><br></br>sientase libre de cambiarla en cualquier momento.<br></br>Saludos atentos, equipo de Find Me a Home`
+    mailUsuarioCreado(correo, asunto, texto);
+
+    res.status(200).send(`se a enviado una nueva contraseña a ${correo}`);
+  }catch(error){
+    res.status(400).send({error: "correo no encontrado"});
+  }
+} );
+
+
+router.put("/login/new-pass", async (req, res) => {
+  const{correo, contraseña, nuevaContraseña} = req.body;
+
+  try{
+    const contraseñaHash = await encrypt(nuevaContraseña);
+    const usuario= await User.findOne({
+      where: {
+        correo: correo
+      }
+    });
+
+    if(!usuario){
+      res.status(404).send("usuario no encontrado");
+    }
+    const checkContraseña = await compare(contraseña, usuario.contraseña);
+
+    if(!checkContraseña){
+      res.status(400).send("contraseña incorrecta");
+    }
+
+    if(checkContraseña){
+      await usuario.update({
+        contraseña: contraseñaHash
+      });
+      await usuario.save();
+
+      res.status(200).send("contraseña modificada con éxito");
+    }
+    
+  }catch(error){
+    res.status(400).send({error: error.message});
+  }
+})
 
 //// USUARIO FAVORITOS PRODUCTO ////
 

@@ -6,14 +6,20 @@
 
 
 .myCart{
-    color: brown;
+    color: rgb(42, 149, 165);
    font-size: 1.5rem;
    padding: 1rem;
    font-family: roboto;
 }
 
 .img-carrito{
-   width: 40%;
+   display: flex;
+   flex-wrap:wrap;
+   width: 15%;
+   gap: 2.5em;
+   right: 20%;
+   padding: 1.25rem;
+
     
 }
 
@@ -28,4 +34,16 @@ font-size: 2rem;
 .items-carrito{
     font-size: 1.5rem;
     padding: 1rem;
+}
+
+.boton_Mas_Menos{
+    width: 80%;
+}
+
+.botonBorra{
+    margin-left: 25rem;
+}
+
+.precioTotal{
+    color: rgb(22, 19, 26);
 }

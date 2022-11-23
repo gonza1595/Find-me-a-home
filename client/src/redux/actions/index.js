@@ -355,7 +355,7 @@ export function addToCart(payload) {
     payload,
   };
 }
-
+ 
 export function getNumberCart() {
   return {
     type: "GET_NUMBER_CART",
@@ -383,14 +383,14 @@ export function decreaseCart(payload) {
   };
 }
 
-export function refreshCart(payload) {
-  return {
+// export function refreshCart(payload) {
+//   return {
 
-      type: "REFRESH_CART",
-      payload
-  }
-};
-
+//       type: "REFRESH_CART",
+//       payload
+//   }
+// };
+////////////////////////////
 export function realizarPago(id, amount) {
 	return async function () {
 		const {data} = await axios.post(`/pagos`, {
@@ -428,4 +428,22 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
     console.log(e);
     alert("No se pudo encontrar lo que buscaba");
   }
+};
+
+
+export function Review(payload) {
+  return async function () {
+    let json = await axios.post(`/comentarios`, payload);
+    return json;
+  };
+}
+
+export function traerReview () {
+  return async (dispatch) => {
+    let comentarios = await axios.get(`/comentarios`);
+    dispatch({
+      type: "TRAER_REVIEW",
+      payload: comentarios.data,
+    });
+  };
 };

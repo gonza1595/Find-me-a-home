@@ -1,12 +1,32 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import carrito from "../Carrito/carritoimg.png"
 
 function NavBar() {
   const [clicked, setClicked] = useState(false); //false
+
+  const [cartQuantity, setcartQuantity] = useState(0);
+  const numberCart = useSelector((state) => state.numberCart);
+  const cart = useSelector((state) => state.cart);
+
+////carrito
+const calculateCartQuantity = () => {
+  let counter = 0;
+  cart.forEach((item) => {
+    counter += item.quantity;
+  });
+  setcartQuantity(counter);
+};
+
+useEffect(() => {
+  calculateCartQuantity();
+}, [numberCart]);
+
+
+///
 
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
@@ -66,7 +86,7 @@ function NavBar() {
         </li>
         <li >
           <Link to="/carrito" >
-        <img src={carrito} alt="carrito" width="25px" />
+        <img src={carrito} alt="carrito" width="25px" /> {cartQuantity}
         </Link>
         </li>
       </ul>
