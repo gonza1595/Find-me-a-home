@@ -8,6 +8,8 @@ import axios from "axios";
 import Loader from "../Loader/Loader";
 import Review from "../Review/Review";
 
+import Comentarios from "../Comentarios/Comentarios.jsx"
+
 
 
 const DetalleProducto = () => {
@@ -148,6 +150,7 @@ function handleBuyCart(){
                             </form>
           </div>
           <Review></Review>
+          <Comentarios />
           </div>
         )}
       </div>

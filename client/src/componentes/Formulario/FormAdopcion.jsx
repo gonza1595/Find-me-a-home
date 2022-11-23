@@ -447,6 +447,8 @@ return (
             <label className="formAdopcion-label">15. ¿Cuántas horas estima que el animal estará solo en la propiedad?</label>
             <input 
             type="number" 
+            min="1" 
+            max="48"
             value={input.mascotaSola} 
             name="mascotaSola" 
             onChange={handleChange} 

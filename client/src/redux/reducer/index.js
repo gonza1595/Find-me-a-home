@@ -335,6 +335,9 @@ function rootReducer(state = initialState, action) {
         ...state,
         comentarios: action.payload,
       };
+      case "BORRAR_COMENTARIO":
+      return {
+        ...state}
 
     default:
       return state;
