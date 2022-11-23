@@ -35,7 +35,7 @@ function App() {
 				<Route exact path='/' component={NavBar} />
 				<Route exact path='/' component={home} />
 
-				<Route path='/mascotas/:id' component={NavBar} />
+				{/* <Route path='/mascotas/:id' component={NavBar} /> */}
 				<Route exact path='/mascotas/:id' component={Detalle} />
 
 				<Route path='/contacto' component={NavBar} />

@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import "./NavBar.css";
-import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 
 import carrito from "../Carrito/carritoimg.png"
@@ -50,17 +49,12 @@ function NavBar() {
             Adopta!
           </a>
         </li>
-        <Header> </Header>
-       { /*ACA IRIA EL COMPONENTE HEADER <Header> </Header>*/}
-        {/*<li>
-          <a
-            className="title_textNavBar"
-            onClick={handleClick}
-            href="/iniciarSesion"
-          >
-            Iniciar sesion
-          </a>
-        </li>*/}
+
+        <Link to="/iniciarSesion">
+         
+        <button >Iniciar Sesion</button>
+        
+        </Link>
         <li>
           <a
             className="title_textNavBar"
