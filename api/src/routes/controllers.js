@@ -85,16 +85,18 @@ const filtroProductos = (array, filtro, orden, tipo) => {
 	}
 };
 
-const generateRandom= (len) => {
-  let randomPass= "";
-  let wordChars= "asdfghjklñpoiuytrewqzxcvbnm1234567890"
+const generateRandom = (len) => {
+	let randomPass = '';
+	let wordChars = 'asdfghjklñpoiuytrewqzxcvbnm1234567890';
 
-  for(let i=0; i< len; i++){
-    randomPass += wordChars.charAt(Math.floor(Math.random() * wordChars.length));
-    console.log("randomPass en for:", randomPass);
-  };
-  console.log(randomPass);
-  return randomPass;
+	for (let i = 0; i < len; i++) {
+		randomPass += wordChars.charAt(
+			Math.floor(Math.random() * wordChars.length)
+		);
+		console.log('randomPass en for:', randomPass);
+	}
+	console.log(randomPass);
+	return randomPass;
 };
 
 // elimina un usuario por id
@@ -106,20 +108,6 @@ const borrarUsuario = async (id) => {
 				id: id,
 			},
 		});
-	} catch (error) {
-		throw error;
-	}
-};
-
-// trae comentarios de un usuario por ID
-const traeComentariosUsuario = async (userId) => {
-	try {
-		const comentarios = await Comentario.findAll({
-			where: {
-				userId,
-			},
-		});
-		return comentarios;
 	} catch (error) {
 		throw error;
 	}
@@ -139,23 +127,8 @@ const traeComentariosProducto = async (productId) => {
 	}
 };
 
-// trae todos los comentarios
-const traeTodosComentarios = async (userId, productId) => {
-	let comentario;
-	if (userId) {
-		comentario = traeComentariosUsuario(userId);
-		return comentario;
-	}
-	if (productId) {
-		comentario = traeComentariosProducto(userId);
-		return comentario;
-	} else {
-		throw new Error('Datos indefinidos');
-	}
-};
-
 // agregar comentario por ID
-const agregarComentario = async (userId, productId, text) => {
+const agregarComentario = async (userId, productId, texto) => {
 	const producto = await Product.findByPk(productId);
 	const usuario = await User.findByPk(userId);
 	try {
@@ -165,9 +138,8 @@ const agregarComentario = async (userId, productId, text) => {
 		if (!usuario) {
 			throw new Error(`El usuario con el id: ${userId} no existe!`);
 		}
-		const comentario = await Comentario.create({text, userId, productId});
-		await producto.addComentario(comentario);
-		await usuario.addComentario(comentario);
+		const comentario = await Comentario.create({texto, userId, productId});
+		return comentario;
 	} catch (error) {
 		throw error;
 	}
@@ -182,14 +154,22 @@ const eliminarComentario = async (comentarioId) => {
 	}
 };
 
-module.exports = {
+const traeTodosLosComentarios = async () => {
+	try {
+		const comentarios = await Comentario.findAll();
+		return comentarios;
+	} catch (error) {
+		throw error;
+	}
+};
 
+module.exports = {
 	getMascotas,
 	filtroProductos,
 	borrarUsuario,
-	traeTodosComentarios,
 	agregarComentario,
 	eliminarComentario,
-  generateRandom
-
+	generateRandom,
+	traeComentariosProducto,
+	traeTodosLosComentarios,
 };
