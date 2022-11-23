@@ -12,6 +12,7 @@ const initialState = {
   usuarioEditado: [],
   loading: false,
   actualizarMascota: [],
+  comentarios: [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
   numberCart: 0,
 
@@ -270,16 +271,16 @@ function rootReducer(state = initialState, action) {
         numberCart: state.numberCart - deleteItem.quantity,
         cart: newCart,
       };
-    case "REFRESH_CART":
-      let cart = [];
-      if (localStorage.getItem("cart")) {
-        cart = JSON.parse(localStorage.getItem("cart"));
-      }
-      return {
-        ...state,
-        numberCart: 1,
-        cart: cart,
-      };
+    // case "REFRESH_CART":
+    //   let cart = [];
+    //   if (localStorage.getItem("cart")) {
+    //     cart = JSON.parse(localStorage.getItem("cart"));
+    //   }
+    //   return {
+    //     ...state,
+    //     numberCart: 1,
+    //     cart: cart,
+    //   };
     case "ADMIN_EDITAR_PRODUCTO":
       return {
         ...state,
@@ -328,6 +329,11 @@ function rootReducer(state = initialState, action) {
         usuarios: state.usuarios.filter(
           (usuario) => usuario.id !== action.payload
         ),
+      };   
+      case "TRAER_REVIEW":
+      return {
+        ...state,
+        comentarios: action.payload,
       };
 
     default:

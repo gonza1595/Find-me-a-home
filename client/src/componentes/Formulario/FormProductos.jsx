@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { crearProducto } from "../../redux/actions/index";
@@ -41,7 +41,7 @@ export default function Form() {
     calificacion: "",
     tipo: "",
     precio: "",
-    //arreglo de Product
+   
   });
 
   function handleChange(e) {
