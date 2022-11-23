@@ -35,7 +35,8 @@ function App() {
 				<Route exact path='/' component={NavBar} />
 				<Route exact path='/' component={home} />
 
-				<Route path='/mascotas/:id' component={NavBar} />
+				<Route path='/mascotas' component={NavBar} />
+				<Route exact path='/mascotas' component={HomeMascotas} />
 				<Route exact path='/mascotas/:id' component={Detalle} />
 
 				<Route path='/contacto' component={NavBar} />
@@ -63,9 +64,6 @@ function App() {
 
 				<Route path='/requisitos' component={NavBar} />
 				<Route exact path='/requisitos' component={ReqAdopcion} />
-
-				<Route path='/mascotas' component={NavBar} />
-				<Route exact path='/mascotas' component={HomeMascotas} />
 
 				<Route path='/formAdopcion' component={NavBar} />
 				<Route exact path='/formAdopcion' component={FormAdopcion} />

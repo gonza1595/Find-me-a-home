@@ -348,7 +348,7 @@ export function addToCart(payload) {
     payload,
   };
 }
-
+ 
 export function getNumberCart() {
   return {
     type: "GET_NUMBER_CART",

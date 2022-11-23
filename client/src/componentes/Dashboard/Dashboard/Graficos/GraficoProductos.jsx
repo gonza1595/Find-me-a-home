@@ -37,12 +37,12 @@ export default function GraficoProductos() {
         } 
       ];
     
-      const configPie = {
+      const configPie = { 
         appendPadding: 10,
         data: dataPie,
         angleField: 'value',
         colorField: 'type',
-        height: 450,
+        height: 250,
         radius: 0.5,
         label: {
           type: 'inner',

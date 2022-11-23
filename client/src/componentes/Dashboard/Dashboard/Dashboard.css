@@ -24,6 +24,7 @@ position: fixed;
 
 .card-dash{
     border-radius: 10px;
+    background-color: #e3fcfa;
     border: 2px solid #015c57;
     padding: 10px;
     margin: 20px 0 0 50px;
@@ -43,6 +44,39 @@ position: fixed;
 }
 
 .graficosDash{
+    display: flex;
+    flex-direction: column;
+}
+
+.ultimos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    /* border: #015c57 2px solid ; */
+    border-left: #015c57 2px solid;
+    border-right: #015c57 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    margin: 50px 0 0 50px;
+    background-color: #e3fcfa;
+}
+
+.ultimos h4{
+    /* text-decoration: underline; */
+    background-color: #c5f5f2;
+    border-radius: 20px;
+    padding: 15px;
+text-align: center;}
+
+.listaUs{
+    border-bottom: 1px solid #015c57;
+}
+
+.grafUser{
     display: flex;
     flex-direction: row;
 }

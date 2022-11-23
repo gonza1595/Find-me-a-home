@@ -5,7 +5,7 @@ import home from '../img/home.png'
 import producto from '../img/productos.png'
 import mascota from '../img/mascotas.png'
 import user from '../img/user.png'
-import refugio from '../img/refugio.png'
+import ventas from '../img/ventas.png'
 
 export default function SideBar() {
   
@@ -52,6 +52,17 @@ export default function SideBar() {
                         <span>Usuarios</span>
                     </a>
                 </li>
+                <li className="side-nav_ventas">
+                    <a href="/dashboard/ventas">
+                    <img src={ventas} width='25px'/>
+                        <span>Ventas</span>
+                    </a>
+                </li>
+             
+                    <a className='cerrarSesion' href="/dashboard/cerrarSesion">
+                        <span>Cerrar Sesión</span>
+                    </a>
+                
                 {/* <li className="side-nav_refug">
                     <a href="/dashboard/refugios">
                     <img src={refugio} width='25px'/>
