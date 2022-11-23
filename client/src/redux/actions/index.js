@@ -440,3 +440,19 @@ export function traerReview () {
     });
   };
 };
+
+
+export const deleteComment = (comment) => {
+  return async function (dispatch) {
+    try {
+      console.log(comment)
+      const deleteComment = axios.delete('/comentarios' + comment);
+      dispatch({
+        type: "BORRAR_COMENTARIO",
+        payload: deleteComment,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

@@ -7,6 +7,7 @@ import { detalleProducto, limpiarEstadoDetalle,addToCart} from "../../redux/acti
 import axios from "axios";
 import Loader from "../Loader/Loader";
 import Review from "../Review/Review";
+import AllReview  from "../Review/AllReview.jsx"
 
 
 
@@ -148,6 +149,7 @@ function handleBuyCart(){
                             </form>
           </div>
           <Review></Review>
+          <AllReview></AllReview>
           </div>
         )}
       </div>
