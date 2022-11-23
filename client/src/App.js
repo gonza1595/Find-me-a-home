@@ -37,6 +37,7 @@ function App() {
 
 				<Route path='/mascotas' component={NavBar} />
 				<Route exact path='/mascotas' component={HomeMascotas} />
+        
 				<Route exact path='/mascotas/:id' component={Detalle} />
 
 				<Route path='/contacto' component={NavBar} />

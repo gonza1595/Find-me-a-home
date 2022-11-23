@@ -118,6 +118,13 @@ export function formularioPostMascota(payload) {
   };
 }
 
+export function formularioLogin(payload) {
+  return async function () {
+    let json = await axios.post(`/usuario/login`, payload);
+    return json;
+  };
+}
+
 export function formularioPostAdopcion(payload) {
   return async function () {
     let json = await axios.post(`/formAdopcion`, payload);

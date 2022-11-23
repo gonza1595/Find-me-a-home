@@ -1,29 +1,37 @@
 import React, { useState, useEffect } from "react";
 import GoogleLogin from "react-google-login";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import useUser from "../hooks/useUser";
+import {formularioLogin} from "../../redux/actions/index"
 import './FormInicioSesion.css'
 
 export default function FormInicioSesion() {
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const  [, {login}] = useUser()
+ 
  
 
 const history = useHistory();
+const dispatch = useDispatch();
 
-// useEffect(()=>{
-//   if(isLogged) history.push('/')
-// }, [isLogged, history])    //quiza tambien le tengo que poner el history, pero no deberia cambiar
+
+  const cambioContraseña = (e) => {
+
+  };
 
   const handleSubmit = (e) => {
     // e.preventDefault();  
-    alert(username,password)
-    login(
-      username, password) //fijarse si tiene que ser el mismo nombre que los models
-   //history.push('/')
-
+    if (!username || !password ) {
+      e.preventDefault();
+      alert("Verifique los campos para poder continuar");
+    } else {
+      e.preventDefault();
+      dispatch(formularioLogin(username,password));
+      alert("Login Exitoso");
+      // history.push('/')
+    }
   };
 
   return (
