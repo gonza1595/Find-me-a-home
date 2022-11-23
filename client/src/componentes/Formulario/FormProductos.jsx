@@ -70,7 +70,7 @@ export default function Form() {
       })
     );
   }
-
+  
   function handleSubmit(e) {
     if (
       !input.precio ||
@@ -85,7 +85,8 @@ export default function Form() {
       alert("Verifique los campos para poder continuar");
     } else {
       e.preventDefault();
-      dispatch(crearProducto(input));
+      const formData = new FormData(e.target); /// esta línea es para mandar la imagen y el resto del form
+      dispatch(crearProducto(formData));
       alert("Su producto ha sido creado exitosamente");
       // history.push("/"); //fijarse si se deja o no
 
@@ -112,7 +113,7 @@ export default function Form() {
       <div className="createFormMascota">
         <h1 className="tituloFormMascota">CREAR PRODUCTO</h1>
 
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
           <div className="containerFormMascotas">
             <label> Nombre: </label>
             <input
@@ -136,18 +137,6 @@ export default function Form() {
               className="inputFormMascotas"
             />
             {errors.descripcion && <p>{errors.descripcion}</p>}
-          </div>
-          <div className="containerFormMascotas">
-            <label>Imagen: </label>
-            <input
-              type="text"
-              autoComplete="off"
-              value={input.imagen}
-              name="imagen"
-              onChange={handleChange}
-              className="inputFormMascotas"
-            />
-            {errors.imagen && <p>{errors.imagen}</p>}
           </div>
           <div className="containerFormMascotas">
             <label>Stock: </label>
@@ -197,6 +186,18 @@ export default function Form() {
               className="inputFormMascotas"
             />
             {errors.tipo && <p>{errors.tipo}</p>}
+          </div>
+          <div className="containerFormMascotas">
+            <label>Imagen: </label>
+            <input
+              type="file"
+              autoComplete="off"
+              value={input.imagen}
+              name="imagen"
+              onChange={handleChange}
+              //className="inputFormMascotas"
+            />
+            {errors.imagen && <p>{errors.imagen}</p>}
           </div>
           <div>
             <button type="submit"> Crear</button>
