@@ -1,28 +1,17 @@
 const {Router} = require('express');
 const {
-	traeTodosComentarios,
 	agregarComentario,
 	eliminarComentario,
+	traeComentariosProducto,
+	traeTodosLosComentarios,
 } = require('./controllers');
 const router = Router();
 
-// si se pasa el id de un usuario, retorna todos los comentarios de ese usuario
-// si se pasa el id de un producto, retorna todos los comentarios de ese producto
-router.get('', async (req, res) => {
-	const {userId, productId} = req.query;
-	try {
-		const comentarios = await traeTodosComentarios(userId, productId);
-		res.status(200).json(comentarios);
-	} catch (error) {
-		res.status(404).json({error: error.message});
-	}
-});
-
-// agrega un comentario al producto por ID
+// agrega un comentario al producto por ID (CREO QUE ANDA BIEN)
 router.post('', async (req, res) => {
-	const {text, userId, productId} = req.body;
+	const {texto, userId, productId} = req.body;
 	try {
-		const comentario = await agregarComentario(userId, productId, text);
+		const comentario = await agregarComentario(userId, productId, texto);
 		res.status(200).json(comentario);
 	} catch (error) {
 		res.status(404).json({error: error.message});
@@ -35,6 +24,27 @@ router.delete('', async (req, res) => {
 	try {
 		const comentario = await eliminarComentario(comentarioId);
 		res.status(200).json(comentario);
+	} catch (error) {
+		res.status(404).json({error: error.message});
+	}
+});
+
+//trae todos los comentarios
+router.get('', async (req, res) => {
+	try {
+		const comentarios = await traeTodosLosComentarios();
+		res.status(200).json(comentarios);
+	} catch (error) {
+		res.status(404).json({error: error.message});
+	}
+});
+
+// trae comentarios de un producto por ID (ANDA BIEN)
+router.get('/:productId', async (req, res) => {
+	const {productId} = req.params;
+	try {
+		const comentarios = await traeComentariosProducto(productId);
+		res.status(200).json(comentarios);
 	} catch (error) {
 		res.status(404).json({error: error.message});
 	}
