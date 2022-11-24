@@ -27,7 +27,7 @@ export const Comentarios = (id) => {
 
   const handlePost = () => {
     dispatch(
-        Review({/*  userId: userLogged.id, */ productId: id.id, text: comment })
+        Review({/*  userId: userLogged.id, */ productId: id, texto: comment })
     ).then(() => {
       setComment("");
       dispatch(traerReview(id.id))
