@@ -100,13 +100,13 @@ router.post("/registro", async (req, res) => {
 
     ///// notificación por mail - usuario registrado
 
-    // const asunto = "Bienvenid@ a Find me a home";
+    const asunto = "Bienvenid@ a Find me a home";
 
-    // const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar 
-		// 				una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
-		// 				<br><br>Nos vemos!</p>`;
+    const texto = `<p>Hola ${nombre}!<br><br>Estamos muy felices de recibirte en Find me a home!<br><br>A partir de ahora vas a poder adoptar 
+						una mascota y comprar nuestros productos!<br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
+						<br><br>Nos vemos!</p>`;
 
-    // mailUsuarioCreado(correo, asunto, texto);
+    mailUsuarioCreado(correo, asunto, texto);
 
     /////////
 
@@ -127,18 +127,21 @@ router.post("/login", async (req, res) => {
     });
 
     if (!usuario) {
-      res.status(404).send({ error: "Usuario no encontrado" });
+      res.status(404).send("Usuario no encontrado" );
     }
-    const checkContraseña = await compare(contraseña, usuario.contraseña);
-    const tokenSesion = await tokenSign(usuario);
-    if (checkContraseña) {
-      res.status(200).send({ usuario, tokenSesion });
-    }
-    if (!checkContraseña) {
-      res.status(400).send({ error: "contraseña incorrecta" });
-    }
+
+      const checkContraseña = await compare(contraseña, usuario.contraseña);
+      const tokenSesion = await tokenSign(usuario);
+      if (checkContraseña) {
+        res.status(200).send({ usuario, tokenSesion });
+      }
+      if (!checkContraseña) {
+        res.status(400).send({ error: "contraseña incorrecta" });
+      }
+    
+
   } catch (error) {
-    res.status(400).send({ error: "contraseña incorrecta" });
+   console.log(error);
   }
 });
 

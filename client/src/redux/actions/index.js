@@ -118,9 +118,9 @@ export function formularioPostMascota(payload) {
   };
 }
 
-export function formularioLogin(payload) {
+export function formularioLogin(correo,contraseña) {
   return async function () {
-    let json = await axios.post(`/usuario/login`, payload);
+    let json = await axios.post(`/usuario/login`, {correo, contraseña} );
     return json;
   };
 }

@@ -29,7 +29,6 @@ module.exports = (sequelize) => {
       },
       tamaño: {
         type: DataTypes.ENUM("pequeño", "mediano", "grande"),
-        //allowNull: false
       },
       raza: {
         type: DataTypes.STRING,
