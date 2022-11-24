@@ -2,7 +2,8 @@ import axios from "axios";
 
 // const {URL_BACK} = process.env;
 
-//crear actions necesarias
+//crear actions necesarias 
+
 
 export function buscarPorNombreMascota(nombre) {
   //MASCOTAS
@@ -118,9 +119,11 @@ export function formularioPostMascota(payload) {
   };
 }
 
+
 export function formularioLogin(correo,contraseña) {
   return async function () {
     let json = await axios.post(`/usuario/login`, {correo, contraseña} );
+
     return json;
   };
 }
@@ -156,6 +159,20 @@ export function formularioIniciarSesion(payload) {
     let json = await axios.post(`/`, payload);
     return json;
   };
+};
+
+export function solicitarContraseña(correo) {
+  return async function () {
+    let json= await axios.put("/usuario/nueva-pass", {correo});
+    return json;
+  }
+};
+
+export function cambiarContraseña(payload) {
+  return async function () {
+    let json = await axios.put("/usuario/login/new-pass", payload);
+    return json;
+  }
 }
 
 // Filtrados
@@ -447,3 +464,18 @@ export function traerReview () {
     });
   };
 };
+
+export const deleteComment = (comment) => {
+  return async function (dispatch) {
+    try {
+      console.log(comment)
+      const deleteComment = axios.delete('/comentarios ' + comment); 
+      dispatch({
+        type: "BORRAR_COMENTARIO",
+        payload: deleteComment,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}

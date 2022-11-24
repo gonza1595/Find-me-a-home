@@ -32,6 +32,7 @@
         "test": "react-scripts test --openssl-legacy-provider",
         "eject": "react-scripts eject --openssl-legacy-provider"
 
+
     },
     "eslintConfig": {
         "extends": [

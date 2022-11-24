@@ -10,6 +10,7 @@ export default function FormInicioSesion() {
 
   const [correo, setUsername] = useState("");
   const [contraseña, setPassword] = useState("");
+
  
  
 
@@ -23,14 +24,18 @@ const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     // e.preventDefault();  
+
     if (!correo || !contraseña ) {
+
       e.preventDefault();
       alert("Verifique los campos para poder continuar");
     } else {
       e.preventDefault();
+
       dispatch(formularioLogin(correo,contraseña));
       // alert("Login Exitoso");
       history.push('/')
+
     }
   };
 

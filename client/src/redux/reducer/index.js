@@ -17,6 +17,7 @@ const initialState = {
   numberCart: 0,
 
   //agregar mas estados si se requiere...
+  
 };
 
 function rootReducer(state = initialState, action) {
@@ -335,6 +336,9 @@ function rootReducer(state = initialState, action) {
         ...state,
         comentarios: action.payload,
       };
+      case "BORRAR_COMENTARIO":
+      return {
+        ...state}
 
     default:
       return state;
