@@ -150,7 +150,7 @@ function handleBuyCart(){
                             </form>
           </div>
           <Review></Review>
-          <Comentarios />
+          <Comentarios id={id}/>
           </div>
         )}
       </div>
