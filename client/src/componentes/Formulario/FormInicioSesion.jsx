@@ -8,8 +8,9 @@ import './FormInicioSesion.css'
 
 export default function FormInicioSesion() {
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [correo, setUsername] = useState("");
+  const [contraseña, setPassword] = useState("");
+
  
  
 
@@ -23,14 +24,18 @@ const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     // e.preventDefault();  
-    if (!username || !password ) {
+
+    if (!correo || !contraseña ) {
+
       e.preventDefault();
       alert("Verifique los campos para poder continuar");
     } else {
       e.preventDefault();
-      dispatch(formularioLogin(username,password));
-      alert("Login Exitoso");
-      // history.push('/')
+
+      dispatch(formularioLogin(correo,contraseña));
+      // alert("Login Exitoso");
+      history.push('/')
+
     }
   };
 
@@ -46,7 +51,6 @@ const dispatch = useDispatch();
             type="email"
             placeholder="correo"
             onChange={(e) => setUsername(e.target.value)}
-            value={username}
           />
           </label>
 <div>
@@ -57,7 +61,6 @@ const dispatch = useDispatch();
               placeholder="contraseña"
               autoComplete="on"
               onChange={(e) => setPassword(e.target.value)}
-              value={password}
             />
           </label>
           </div>

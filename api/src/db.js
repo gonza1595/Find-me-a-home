@@ -5,7 +5,6 @@ const path = require('path');
 const {DB_USER, DB_PASSWORD, DATABASE_URL, DB_DEPLOY} = process.env;
 
 
-
  /*const sequelize = new Sequelize(
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DATABASE_URL}/pf_pets`,
  	{
@@ -14,10 +13,10 @@ const {DB_USER, DB_PASSWORD, DATABASE_URL, DB_DEPLOY} = process.env;
  	}
  ); */
 
- const sequelize = new Sequelize(DB_DEPLOY, {
+  const sequelize = new Sequelize(DB_DEPLOY, {
 	logging: false,
-	native: false,
-}); 
+ 	native: false,
+ }); 
 
 
 const basename = path.basename(__filename);
