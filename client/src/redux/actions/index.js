@@ -166,9 +166,13 @@ export function solicitarContraseña(correo) {
   };
 }
 
-export function cambiarContraseña(payload) {
+export function cambiarContraseña(correo, contraseña, nuevaContraseña) {
   return async function () {
-    let json = await axios.put("/usuario/login/new-pass", payload);
+    let json = await axios.put("/usuario/login/new-pass", {
+      correo,
+      contraseña,
+      nuevaContraseña
+    });
     return json;
   };
 }

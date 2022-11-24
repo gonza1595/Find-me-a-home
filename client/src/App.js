@@ -28,6 +28,8 @@ import EditarUsuario from './componentes/Dashboard/ListaUsuarios/EditarUsuario';
 import FormActualizarMascota from './componentes/Formulario/FormActualizarMascota';
 import FormActualizarProducto from './componentes/Formulario/FormActualizarProductos';
 import FormSolicitudContraseña from './componentes/Formulario/FormSolicitarContraseña.jsx';
+import FormCambioContraseña from './componentes/Formulario/FormCambiarContraseña.jsx';
+
 function App() {
 	return (
 		<>
@@ -46,6 +48,9 @@ function App() {
 
 				<Route path='/iniciarSesion' component={NavBar} />
 				<Route exact path='/iniciarSesion' component={FormInicioSesion} />
+
+				<Route path="/cambiarContraseña" component={NavBar} />
+				<Route exact path="/cambiarContraseña" component={FormCambioContraseña} />
 
 				<Route path="/solicitarContraseña" component={NavBar} />
 				<Route exact path="/solicitarContraseña" component={FormSolicitudContraseña} />
