@@ -3,11 +3,14 @@ const initialState = {
   allMascotas: [],
   filteredBySexo: [],
   filteredByTamaño: [],
+  filteredByEspecie: [],
   productos: [],
+  allProductos: [],
   productoActualizado: [],
   detalle: {},
   productoDetalle: {},
   usuarios: [],
+  allUsuarios: [],
   usuarioId: {},
   usuarioEditado: [],
   loading: false,
@@ -67,94 +70,386 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         productos: action.payload,
+        allProductos: action.payload,
         loading: false,
+      };
+
+    case "FILTER_BY_PERRO":
+      state.filteredByEspecie = "perro";
+
+      const byPerro = () => {
+        if (!state.filteredBySexo.length && !state.filteredByTamaño.length) {
+          return state.allMascotas.filter((e) => e.especie === "perro");
+        } else if (
+          !state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === "perro" && e.tamaño === state.filteredByTamaño
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === "perro" && e.sexo === state.filteredBySexo
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.especie === "perro" &&
+              e.tamaño === state.filteredByTamaño &&
+              e.sexo === state.filteredBySexo
+          );
+        }
+      };
+
+      return {
+        ...state,
+        mascotas: byPerro(),
+      };
+    case "FILTER_BY_GATO":
+      state.filteredByEspecie = "gato";
+
+      const byGato = () => {
+        if (!state.filteredBySexo.length && !state.filteredByTamaño.length) {
+          return state.allMascotas.filter((e) => e.especie === "gato");
+        } else if (
+          !state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === "gato" && e.tamaño === state.filteredByTamaño
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === "gato" && e.sexo === state.filteredBySexo
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.especie === "gato" &&
+              e.tamaño === state.filteredByTamaño &&
+              e.sexo === state.filteredBySexo
+          );
+        }
+      };
+      return {
+        ...state,
+        mascotas: byGato(),
+      };
+
+    case "FILTER_BY_TODAS_ESPECIES":
+      state.filteredByEspecie = "";
+
+      const byTodasLasEspecies = () => {
+        if (!state.filteredBySexo.length && !state.filteredByTamaño.length) {
+          return state.allMascotas;
+        } else if (
+          !state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.tamaño === state.filteredByTamaño && state.allMascotas
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.sexo === state.filteredBySexo && state.allMascotas
+          );
+        } else if (
+          state.filteredBySexo.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.sexo === state.filteredBySexo &&
+              e.tamaño === state.filteredByTamaño &&
+              state.allMascotas
+          );
+        }
+      };
+      return {
+        ...state,
+        mascotas: byTodasLasEspecies(),
       };
 
     case "FILTER_BY_SEXOMASCULINO":
       state.filteredBySexo = "masculino";
-      const bySexoMasculino = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.sexo.toLowerCase() === "masculino" &&
-              e.sexo === state.filteredBySexo
-          : e.sexo.toLowerCase() === "masculino";
-      });
+
+      const masculino = () => {
+        if (!state.filteredByEspecie.length && !state.filteredByTamaño.length) {
+          return state.allMascotas.filter((e) => e.sexo === "masculino");
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.sexo === "masculino" && e.tamaño === state.filteredByTamaño
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.sexo === "masculino" && e.especie === state.filteredByEspecie
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.sexo === "masculino" &&
+              e.especie === state.filteredByEspecie &&
+              e.tamaño === state.filteredByTamaño
+          );
+        }
+      };
       return {
         ...state,
-        mascotas: bySexoMasculino,
+        mascotas: masculino(),
       };
 
     case "FILTER_BY_SEXOFEMENINO":
       state.filteredBySexo = "femenino";
-      const bySexoFemenino = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.sexo.toLowerCase() === "femenino" &&
-              e.sexo === state.filteredBySexo
-          : e.sexo.toLowerCase() === "femenino";
-      });
+
+      const femenino = () => {
+        if (!state.filteredByEspecie.length && !state.filteredByTamaño.length) {
+          return state.allMascotas.filter((e) => e.sexo === "femenino");
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.sexo === "femenino" && e.tamaño === state.filteredByTamaño
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.sexo === "femenino" && e.especie === state.filteredByEspecie
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.sexo === "femenino" &&
+              e.especie === state.filteredByEspecie &&
+              e.tamaño === state.filteredByTamaño
+          );
+        }
+      };
       return {
         ...state,
-        mascotas: bySexoFemenino,
+        mascotas: femenino(),
       };
 
     case "FILTER_BY_AMBOS_SEXOS":
-      state.filteredBySexo = null;
-      const byAmbosSexos = state.filteredByTamaño
-        ? state.allMascotas.filter((e) => e.tamaño === state.filteredByTamaño)
-        : state.allMascotas;
+      state.filteredBySexo = "";
+
+      const byAmbosSexos = () => {
+        if (!state.filteredByEspecie.length && !state.filteredByTamaño.length) {
+          return state.allMascotas;
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === state.filteredByEspecie && state.allMascotas
+          );
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.tamaño === state.filteredByTamaño && state.allMascotas
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredByTamaño.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === state.filteredByTamaño &&
+              e.especie === state.filteredByEspecie &&
+              state.allMascotas
+          );
+        }
+      };
 
       return {
         ...state,
-        mascotas: byAmbosSexos,
+        mascotas: byAmbosSexos(),
       };
 
     case "FILTER_BY_TAMAÑO_PEQUEÑO":
       state.filteredByTamaño = "pequeño";
-      const byPequeño = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "pequeño" &&
+
+      const byPequeño = () => {
+        if (!state.filteredByEspecie.length && !state.filteredBySexo.length) {
+          return state.allMascotas.filter((e) => e.tamaño === "pequeño");
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.tamaño === "pequeño" && e.sexo === state.filteredBySexo
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "pequeño" && e.especie === state.filteredByEspecie
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "pequeño" &&
+              e.especie === state.filteredByEspecie &&
               e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "pequeño";
-      });
+          );
+        }
+      };
       return {
         ...state,
-        mascotas: byPequeño,
+        mascotas: byPequeño(),
       };
 
     case "FILTER_BY_TAMAÑO_MEDIANO":
       state.filteredByTamaño = "mediano";
-      const byMediano = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "mediano" &&
+
+      const byMediano = () => {
+        if (!state.filteredByEspecie.length && !state.filteredBySexo.length) {
+          return state.allMascotas.filter((e) => e.tamaño === "mediano");
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.tamaño === "mediano" && e.sexo === state.filteredBySexo
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "mediano" && e.especie === state.filteredByEspecie
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "mediano" &&
+              e.especie === state.filteredByEspecie &&
               e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "mediano";
-      });
+          );
+        }
+      };
 
       return {
         ...state,
-        mascotas: byMediano,
+        mascotas: byMediano(),
       };
     case "FILTER_BY_TAMAÑO_GRANDE":
       state.filteredByTamaño = "grande";
-      const byGrande = state.allMascotas.filter((e) => {
-        return state.filteredBySexo
-          ? e.tamaño.toLowerCase() === "grande" &&
+
+      const byGrande = () => {
+        if (!state.filteredByEspecie.length && !state.filteredBySexo.length) {
+          return state.allMascotas.filter((e) => e.tamaño === "grande");
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.tamaño === "grande" && e.sexo === state.filteredBySexo
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "grande" && e.especie === state.filteredByEspecie
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              e.tamaño === "grande" &&
+              e.especie === state.filteredByEspecie &&
               e.sexo === state.filteredBySexo
-          : e.tamaño.toLowerCase() === "grande";
-      });
+          );
+        }
+      };
 
       return {
         ...state,
-        mascotas: byGrande,
+        mascotas: byGrande(),
       };
 
     case "FILTER_BY_TODOS_TAMAÑOS":
-      state.filteredByTamaño = null;
-      const todosTamaños = state.filteredBySexo
-        ? state.allMascotas.filter((e) => e.sexo === state.filteredBySexo)
-        : state.allMascotas;
+      state.filteredByTamaño = "";
+
+      const todosTamaños = () => {
+        if (!state.filteredByEspecie.length && !state.filteredBySexo.length) {
+          return state.allMascotas;
+        } else if (
+          !state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.sexo === state.filteredBySexo && state.allMascotas
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          !state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) => e.especie === state.filteredByEspecie && state.allMascotas
+          );
+        } else if (
+          state.filteredByEspecie.length &&
+          state.filteredBySexo.length
+        ) {
+          return state.allMascotas.filter(
+            (e) =>
+              state.allMascotas &&
+              e.especie === state.filteredByEspecie &&
+              e.sexo === state.filteredBySexo
+          );
+        }
+      };
+
       return {
         ...state,
-        mascotas: todosTamaños,
+        mascotas: todosTamaños(),
       };
 
     case "ORDER_BY_NAMEASC":
@@ -192,6 +487,118 @@ function rootReducer(state = initialState, action) {
         mascotas: orderEdad,
       };
 
+    // filtros para productos dashboard admin
+
+    case "ORDER_BY_NAME_PRODUCTO":
+      const orderPorNombre = () => {
+        if (action.payload === "asc") {
+          return state.productos.sort(function (a, b) {
+            if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+            if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+            return 0;
+          });
+        } else if (action.payload === "des") {
+          return state.productos.sort(function (a, b) {
+            if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return -1;
+            if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
+            return 0;
+          });
+        }
+      };
+      return {
+        ...state,
+        productos: orderPorNombre(),
+      };
+
+    case "FILTER_BY_TIPO":
+      const filtroPorTipo = () => {
+        if (action.payload === "paseo") {
+          return state.allProductos.filter(
+            (e) => e.tipo.toLowerCase() === "paseo"
+          );
+        } else if (action.payload === "alimentación") {
+          return state.allProductos.filter(
+            (e) => e.tipo.toLowerCase() === "alimentación"
+          );
+        } else if (action.payload === "juguetes") {
+          return state.allProductos.filter(
+            (e) => e.tipo.toLowerCase() === "juguetes"
+          );
+        } else if (action.payload === "all") {
+          return state.allProductos;
+        }
+      };
+      return {
+        ...state,
+        productos: filtroPorTipo(),
+      };
+
+    case "ORDER_BY_PRECIO":
+      const orderByPrecio =
+        action.payload === "max"
+          ? state.productos.sort(function (a, b) {
+              return b.precio - a.precio;
+            })
+          : state.productos.sort(function (a, b) {
+              return a.precio - b.precio;
+            });
+      return {
+        ...state,
+        productos: orderByPrecio,
+      };
+
+    case "ORDER_BY_STOCK":
+      const orderByStock =
+        action.payload === "max"
+          ? state.productos.sort(function (a, b) {
+              return b.stock - a.stock;
+            })
+          : state.productos.sort(function (a, b) {
+              return a.stock - b.stock;
+            });
+      return {
+        ...state,
+        productos: orderByStock,
+      };
+
+    // filtros usuarios dashboard admin
+
+    case "ORDER_BY_NAME_USUARIO":
+      const orderUsuario = () => {
+        if (action.payload === "asc") {
+          return state.usuarios.sort(function (a, b) {
+            if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+            if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+            return 0;
+          });
+        } else if (action.payload === "desc") {
+          return state.usuarios.sort(function (a, b) {
+            if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return 1;
+            if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return -1;
+            return 0;
+          });
+        }
+      };
+      return {
+        ...state,
+        usuarios: orderUsuario(),
+      };
+
+    case "FILTER_BY_RANGO":
+      const filterRango = () => {
+        if (action.payload === "usuario") {
+          return state.allUsuarios.filter((e) => e.rango === "usuario");
+        } else if (action.payload === "refugio") {
+          return state.allUsuarios.filter((e) => e.rango === "refugio");
+        } else if (action.payload === "all") {
+          return state.allUsuarios;
+        }
+      };
+      return {
+        ...state,
+        usuarios: filterRango(),
+      };
+
     case "ADMIN_BORRAR_PRODUCTO":
       return {
         ...state,
@@ -204,43 +611,43 @@ function rootReducer(state = initialState, action) {
         ...state,
       };
 
-        case "ADD_TO_CART":
-            if (state.numberCart === 0) {
-                let shoppingCart = {
-                    id: action.payload.id,
-                    quantity: action.payload.quantitySelected,
-                    nombre: action.payload.nombre,
-                    imagen: action.payload.imagen,
-                    precio: action.payload.precio,
-                    stock: action.payload.stock
-                }
-                state.cart.push(shoppingCart);
-            } else {
-                let check = false;
-                state.cart.map((item, key) => {
-                    if (item.id === action.payload.id) {
-                        state.cart[key].quantity++;
-                        check = true;
-                    }
-                });
-                if (!check) {
-                    let cartShopping2 = {
-                        id: action.payload.id,
-                        /* age: action.payload.age, */
-                        quantity: action.payload.quantitySelected,
-                        nombre: action.payload.nombre,
-                        imagen: action.payload.imagen,
-                        precio: action.payload.precio,
-                        stock: action.payload.stock
-                    }
-                    state.cart.push(cartShopping2);
-                }
-            }
-            localStorage.setItem("cart", JSON.stringify(state.cart));
-            return {
-                ...state,
-                numberCart: state.numberCart + 1
-            };
+    case "ADD_TO_CART":
+      if (state.numberCart === 0) {
+        let shoppingCart = {
+          id: action.payload.id,
+          quantity: action.payload.quantitySelected,
+          nombre: action.payload.nombre,
+          imagen: action.payload.imagen,
+          precio: action.payload.precio,
+          stock: action.payload.stock,
+        };
+        state.cart.push(shoppingCart);
+      } else {
+        let check = false;
+        state.cart.map((item, key) => {
+          if (item.id === action.payload.id) {
+            state.cart[key].quantity++;
+            check = true;
+          }
+        });
+        if (!check) {
+          let cartShopping2 = {
+            id: action.payload.id,
+            /* age: action.payload.age, */
+            quantity: action.payload.quantitySelected,
+            nombre: action.payload.nombre,
+            imagen: action.payload.imagen,
+            precio: action.payload.precio,
+            stock: action.payload.stock,
+          };
+          state.cart.push(cartShopping2);
+        }
+      }
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+      return {
+        ...state,
+        numberCart: state.numberCart + 1,
+      };
 
     case "INCREASE_QUANTITY":
       const increaseItem = state.cart.find((x) => x.id === action.payload);
@@ -310,6 +717,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         usuarios: action.payload,
+        allUsuarios: action.payload,
       };
 
     case "ADMIN_EDITAR_USUARIO":
