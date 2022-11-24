@@ -1,4 +1,4 @@
-const {Pet, User, Comentario, Product} = require('../db');
+const {Pet, User, Comentario, Product, Orden} = require('../db');
 const db = require('../db.js');
 const mascotasJson = require('../../mascotas.json');
 const {userInfo} = require('os');
@@ -113,6 +113,8 @@ const borrarUsuario = async (id) => {
 	}
 };
 
+///////////////////////////////////////////////////////////
+
 // trae comentarios de un producto por ID
 const traeComentariosProducto = async (productId) => {
 	try {
@@ -163,6 +165,64 @@ const traeTodosLosComentarios = async () => {
 	}
 };
 
+//////////////////////////////////////////
+
+const traeTodasLasOrdenesOPorEstado = async (estado) => {
+	if (estado) {
+		const ordenesEstado = await Orden.findAll({
+			where: {
+				estado,
+			},
+		});
+		return ordenesEstado;
+	}
+	const ordenes = await Orden.findAll();
+	return ordenes;
+};
+
+const traeDetalleDeOrden = async (ordenId) => {
+	try {
+		let orden = await Orden.findOne({
+			where: {
+				id: ordenId,
+			},
+		});
+		if (!orden) {
+			throw new Error(`La orden ${ordenId} no existe`);
+		}
+		return orden;
+	} catch (error) {
+		throw error;
+	}
+};
+
+const traeOrdenesDeUnUsuario = async (userID) => {
+	try {
+		const ordenesUsuario = await Orden.findAll({
+			where: {
+				userID,
+			},
+		});
+		if (!ordenesUsuario) {
+			throw new Error(`Para el ususario ${userID} no existen ordenes `);
+		}
+		return ordenesUsuario;
+	} catch (error) {
+		throw error;
+	}
+};
+
+const cambiaEstadoOrden = async (ordenId, estado) => {
+	try {
+		let orden = await Orden.findByPk(ordenId);
+		await orden.update({estado: estado});
+	} catch (error) {
+		throw error;
+	}
+};
+
+const crearOrden = async () => {};
+
 module.exports = {
 	getMascotas,
 	filtroProductos,
@@ -172,4 +232,8 @@ module.exports = {
 	generateRandom,
 	traeComentariosProducto,
 	traeTodosLosComentarios,
+	traeTodasLasOrdenesOPorEstado,
+	traeDetalleDeOrden,
+	traeOrdenesDeUnUsuario,
+	cambiaEstadoOrden,
 };
