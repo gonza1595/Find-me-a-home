@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
+  filterByPerro,
+  filterByGato,
+  filterByTodasEspecies,
   filterByTamañoPequeño,
   filterByTamañoMediano,
   filterByTamañoGrande,
@@ -15,6 +18,25 @@ import {
 
 export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
+
+  function handleFilterByEspecie(e) {
+    if (e.target.value === "perro") {
+      e.preventDefault();
+      dispatch(filterByPerro(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    } else if (e.target.value === "gato") {
+      e.preventDefault();
+      dispatch(filterByGato(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    } else if (e.target.value === "all") {
+      e.preventDefault(e);
+      dispatch(filterByTodasEspecies(e.target.value));
+      setPage(1);
+      setFilterSelected(e.target.value);
+    }
+  }
 
   function handleFilterBySexo(e) {
     if (e.target.value === "masc") {
@@ -79,6 +101,16 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
 
   return (
     <div className="filters">
+      <select
+        onChange={(e) => handleFilterByEspecie(e)}
+        defaultValue="Filtrar por especie"
+      >
+        <option disabled>Filtrar por especie</option>
+        <option value="all">Todas las especies</option>
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+      </select>
+
       <select
         onChange={(e) => handleFilterBySexo(e)}
         defaultValue="Filtrar por sexo"
