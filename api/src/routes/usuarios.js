@@ -132,15 +132,20 @@ router.post("/login", async (req, res) => {
 
       const checkContraseña = await compare(contraseña, usuario.contraseña);
       const tokenSesion = await tokenSign(usuario);
+
       if (checkContraseña) {
-        res.status(200).send({ usuario, tokenSesion });
-      }
+        res.status(200).send({
+           data: usuario, 
+           tokenSesion 
+          });
+
+        }
       if (!checkContraseña) {
         res.status(400).send({ error: "contraseña incorrecta" });
       }
     
 
-  } catch (error) {
+  }catch (error) {
    console.log(error);
   }
 });
