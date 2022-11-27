@@ -126,12 +126,11 @@ router.post("/fomAdopcion", async (req, res) => {
   const { nombre, correo} = req.body;
 
   try {
-
     ///// notificación por mail - mascota adoptada
 
     const asunto = "Gracias por adoptar en Find me a Home ";
 
-    const texto = `<p>Hola ${nombre}!<br><br>gracias por adoptar pronto recibiras una respuesta del refugio <br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
+    const texto = `<p>Hola ${nombre}!<br><br>Gracias por adoptar pronto recibiras una respuesta del refugio <br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
 						<br><br>Nos vemos!</p>`;
 
      mailUsuarioCreado(correo, asunto, texto);

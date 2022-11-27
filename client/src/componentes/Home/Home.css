@@ -11,10 +11,12 @@
         .div2_h { 
             display: flex;
             align-items: center;
-            justify-content: center;
+            width: 100%;
+            justify-content: space-evenly;
             font-family: cursive;
-            font-size: 40px;
+            font-size: 60px;
             color: #c5f5f2;
+            margin: 2rem;
            
         }
 
@@ -36,6 +38,7 @@
             font-family: cursive;
             font-size: 20px;   
             border-radius: 20px; 
+
             
         }
         .div5_h { 
@@ -56,4 +59,8 @@
             width: 100%;
             max-height: 40px;
             
+        }
+
+        .div-p{
+            margin-left: 20px;
         }

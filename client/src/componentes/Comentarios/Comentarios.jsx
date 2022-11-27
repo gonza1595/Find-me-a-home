@@ -2,14 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-
-
-import {
-  deleteComment,
-  /* getProductComment, */ traerReview,
- /*  postComment, */ Review,
-} from "../../redux/actions";
+import { deleteComment, traerReview, Review} from "../../redux/actions";
 
 
 
