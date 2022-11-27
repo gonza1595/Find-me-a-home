@@ -125,7 +125,7 @@ router.put("/agregarComentario", async (req,res)  => {
   console.log(id.id,comentarios)
 
 
-  const nuevoComentario = {comentario:comentarios};
+  const nuevoComentario = comentarios;
 
   try {
 

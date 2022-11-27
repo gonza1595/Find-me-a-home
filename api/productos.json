@@ -8,7 +8,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 2500,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             
@@ -19,7 +20,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 3500,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "3",
@@ -29,7 +31,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 1500,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "4",
@@ -39,7 +42,8 @@
             "stock": 15,
             "calificacion": "",
             "precio": 800,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "5",
@@ -49,7 +53,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 800,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "6",
@@ -59,7 +64,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 800,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "7",
@@ -69,7 +75,8 @@
             "stock": 2,
             "calificacion": "",
             "precio": 2800,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "8",
@@ -79,7 +86,8 @@
             "stock": 2,
             "calificacion": "",
             "precio": 2800,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "9",
@@ -89,7 +97,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 8300,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "10",
@@ -99,7 +108,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 2300,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
            "id": "11",
@@ -109,7 +119,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 3800,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
             "id": "12",
@@ -119,7 +130,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 3200,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
            "id": "13",
@@ -129,7 +141,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 3800,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "14",
@@ -139,7 +152,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 8500,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "15",
@@ -149,7 +163,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 1900,
-            "tipo": "Juguetes" 
+            "tipo": "Juguetes",
+            "comentarios":[] 
         },
         {
            "id": "16",
@@ -159,7 +174,8 @@
             "stock": 15,
             "calificacion": "",
             "precio": 600,
-            "tipo": "Juguetes" 
+            "tipo": "Juguetes" ,
+            "comentarios":[]
         },
         {
            "id": "17",
@@ -169,7 +185,8 @@
             "stock": 20,
             "calificacion": "",
             "precio": 1600,
-            "tipo": "Juguetes" 
+            "tipo": "Juguetes" ,
+            "comentarios":[]
         },
         {
            "id": "18",
@@ -179,7 +196,8 @@
             "stock": 7,
             "calificacion": "",
             "precio": 2600,
-            "tipo": "Juguetes" 
+            "tipo": "Juguetes",
+            "comentarios":[] 
         },
         {
            "id": "19",
@@ -189,7 +207,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 1800,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "20",
@@ -199,7 +218,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 1800,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
          {
            "id": "21",
@@ -209,7 +229,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 2000,
-            "tipo": "Paseo" 
+            "tipo": "Paseo",
+            "comentarios":[] 
         },
         {
            "id": "22",
@@ -219,7 +240,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 1800,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "23",
@@ -229,7 +251,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 1200,
-            "tipo": "Alimentación" 
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
            "id": "24",
@@ -239,7 +262,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 2800,
-            "tipo": "Alimentación" 
+            "tipo": "Alimentación" ,
+            "comentarios":[]
         },
         {
            "id": "25",
@@ -249,7 +273,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 3700,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "26",
@@ -259,7 +284,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 2600,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "27",
@@ -269,7 +295,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 2600,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "28",
@@ -279,7 +306,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 2600,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "29",
@@ -289,7 +317,8 @@
             "stock": 3,
             "calificacion": "",
             "precio": 4200,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
            "id": "30",
@@ -299,7 +328,8 @@
             "stock": 3,
             "calificacion": "",
             "precio": 4200,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
             "id": "31",
@@ -309,7 +339,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 2750,
-            "tipo": "Paseo" 
+            "tipo": "Paseo" ,
+            "comentarios":[]
         },
         {
             "id": "32",
@@ -319,7 +350,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 2350,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "33",
@@ -329,7 +361,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 3900,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "34",
@@ -339,7 +372,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 2700,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "35",
@@ -349,7 +383,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 2700,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "36",
@@ -359,7 +394,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 5050,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "36",
@@ -369,7 +405,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 5050,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "37",
@@ -379,7 +416,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 500,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "38",
@@ -389,7 +427,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 750,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "39",
@@ -399,7 +438,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 550,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "40",
@@ -409,7 +449,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 1020,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "41",
@@ -419,7 +460,8 @@
             "stock": 7,
             "calificacion": "",
             "precio": 430,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "42",
@@ -429,7 +471,8 @@
             "stock": 25,
             "calificacion": "",
             "precio": 1300,
-            "tipo": "Paseo"
+            "tipo": "Paseo",
+            "comentarios":[]
         },
         {
             "id": "43",
@@ -439,7 +482,8 @@
             "stock": 4,
             "calificacion": "",
             "precio": 720,
-            "tipo": "Juguetes"
+            "tipo": "Juguetes",
+            "comentarios":[]
         },
         {
             "id": "44",
@@ -449,7 +493,8 @@
             "stock": 10,
             "calificacion": "",
             "precio": 8700,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "45",
@@ -459,7 +504,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 9400,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "46",
@@ -469,7 +515,8 @@
             "stock": 8,
             "calificacion": "",
             "precio": 8700,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "47",
@@ -479,7 +526,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 14300,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "48",
@@ -489,7 +537,8 @@
             "stock": 12,
             "calificacion": "",
             "precio": 7850,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "49",
@@ -499,7 +548,8 @@
             "stock": 6,
             "calificacion": "",
             "precio": 3300,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         },
         {
             "id": "50",
@@ -509,7 +559,8 @@
             "stock": 5,
             "calificacion": "",
             "precio": 5850,
-            "tipo": "Alimentación"
+            "tipo": "Alimentación",
+            "comentarios":[]
         }
     ]
 }

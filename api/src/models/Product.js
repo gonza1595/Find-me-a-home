@@ -39,7 +39,7 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     comentarios: {
-      type: DataTypes.ARRAY(DataTypes.JSON),
+      type: DataTypes.ARRAY(DataTypes.TEXT),
       defaultValue:[],
       allowNull: true
     }
