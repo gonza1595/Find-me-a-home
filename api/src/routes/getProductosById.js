@@ -7,7 +7,7 @@ router.get('/:id', async (req, res, next) => {
 	const {id} = req.params;
 	try {
 		if (id.includes('-')) {
-			const buscaEnBaseDeDatos = await Product.findByPk(id, {include: User});
+			const buscaEnBaseDeDatos = await Product.findByPk(id);
 			return res.status(200).json(buscaEnBaseDeDatos);
 		} else {
 			const buscaEnJson = jsonProductos.productos.filter(
