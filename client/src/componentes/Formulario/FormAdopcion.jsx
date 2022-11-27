@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { formularioPostAdopcion } from "../../redux/actions/index"; 
 import "./FormAdopcion.css"; 
@@ -48,16 +48,16 @@ function validate(input) {
     errors.problemaComportamiento = "Se requiere una respuesta";
   } else if (!input.caractertisticasAdoptado) {
     errors.caractertisticasAdoptado = "Se requiere una respuesta";
-  } else if (!input.contactoNombreApe) {
-    errors.contactoNombreApe = "Se requiere una respuesta";
+  } else if (!input.nombre) {
+    errors.nombre = "Se requiere una respuesta";
   } else if (!input.contactoZona) {
     errors.contactoZona = "Se requiere una respuesta";
   } else if (!input.contactoDireccion) {
     errors.contactoDireccion = "Se requiere una respuesta";
   } else if (!input.contactoOcupacion) {
     errors.contactoOcupacion = "Se requiere una respuesta";
-  } else if (!input.contactoMail) {
-    errors.contactoMail = "Se requiere una respuesta";
+  } else if (!input.correo) {
+    errors.correo = "Se requiere una respuesta";
   } else if (!input.contactoEdad) {
     errors.contactoEdad = "Se requiere una respuesta";
   } else if (!input.contactoTelFijo) {
@@ -102,11 +102,11 @@ export default function FormAdopcion() {
       chachorroAtencion: "",
       chachorroCastrar: "",
       cachorroCrecimiento: "",
-      contactoNombreApe: "",
+      nombre: "",
       contactoZona: "",
       contactoDireccion: "",
       contactoOcupacion: "",
-      contactoMail: "",
+      correo: "",
       contactoEdad: "",
       contactoTelFijo: "",
       contactoCelular: "",
@@ -147,7 +147,7 @@ export default function FormAdopcion() {
           e.preventDefault();
           dispatch(formularioPostAdopcion(input,id)); // check esto
           alert("Su formulario ha sido enviado exitosamente. Nos comunicaremos con usted tan pronto como sea posible");
-          history.push("/contacto"); //fijarse si se deja o no
+          history.push("/contacto"); 
 
         
     
@@ -177,11 +177,11 @@ export default function FormAdopcion() {
             chachorroAtencion: "",
             chachorroCastrar: "",
             cachorroCrecimiento: "",
-            contactoNombreApe: "",
+            nombre: "",
             contactoZona: "",
             contactoDireccion: "",
             contactoOcupacion: "",
-            contactoMail: "",
+            correo: "",
             contactoEdad: "",
             contactoTelFijo: "",
             contactoCelular: "",
@@ -460,7 +460,7 @@ return (
 
         <div className="formAdopcion-container">
             <label className="formAdopcion-label">16. ¿Cuántas veces lo sacará a pasear por día?</label>
-            <input type="text" value={input.mascotaPaseos} name="input.mascotaPaseos" onChange={handleChange} className="formAdopcion-input" />
+            <input type="text" value={input.mascotaPaseos} name="mascotaPaseos" onChange={handleChange} className="formAdopcion-input" />
             {errors.mascotaPaseos && <p>{errors.mascotaPaseos}</p>}
         </div>  
 
@@ -602,12 +602,12 @@ return (
             <input 
             type="text" 
             autoComplete="off" 
-            value={input.contactoNombreApe} 
-            name="contactoNombreApe" 
+            value={input.nombre} 
+            name="nombre" 
             onChange={handleChange} 
             className="formAdopcion-input"
             />
-            {errors.contactoNombreApe && <p>{errors.contactoNombreApe}</p>}
+            {errors.nombre && <p>{errors.nombre}</p>}
         </div>
         <div className="formAdopcion-container">
             <label className="formAdopcion-label">Zona de Residencia (Localidad/Barrio): </label>
@@ -650,12 +650,12 @@ return (
             <input 
             type="email" 
             autoComplete="off" 
-            value={input.contactoMail} 
-            name="contactoMail" 
+            value={input.correo} 
+            name="correo" 
             onChange={handleChange} 
             className="formAdopcion-input"
             />
-            {errors.contactoMail && <p>{errors.contactoMail}</p>}
+            {errors.correo && <p>{errors.correo}</p>}
         </div>
         <div className="formAdopcion-container">
             <label className="formAdopcion-label">Edad: </label>

@@ -8,14 +8,12 @@ import {decreaseCart, deleteCart, increaseCart } from "../../redux/actions/index
 /* withAuthenticationRequired (  */
 
 /**/
-//{ image, name, stock, precio, id, category, genre, age }
+
 export default function Cart() {
   const productsInTheCart = useSelector(state => state.cart);
   const numberCart = useSelector(state => state.numberCart);
   const [myCartQuantity, setmyCartQuantity] = useState(0);
 
-
-  /////////
 
   const calculatemyCartQuantity = () => {
     let counter = 0;
@@ -79,11 +77,11 @@ export default function Cart() {
  
   return (
     <div className="carrito-container" >
-      <div >
+      <div>
         <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
       </div>
-      <section >
-        <div >
+      <section>
+        <div>
       {(productsInTheCart.length === 0) && (<div ><h1 >Tu carrito esta vacio.</h1>
       {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
           <div>
@@ -93,13 +91,13 @@ export default function Cart() {
               listCart.map((item, key) => {
                 return (
 
-                  <div  key={key}>
+                  <div key={key}>
                     <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
                     <a href={`/productos/${item.id}`}> 
 
                     <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
-                    <div >
-                    <img  className="img-carrito" src={item.imagen} alt={item.nombre} />
+                    <div>
+                    <img className="img-carrito" src={item.imagen} alt={item.nombre} />
                     </div>
                     </a>
                     <ul className="items-carrito">
@@ -108,10 +106,10 @@ export default function Cart() {
                     <div >
                <button onClick={e => handleDecrease(e)} id={item.id}>−</button>
                     <span id={item.id}>{quantityState.shift()}</span>
-                    <button  disabled={item.quantity === item.stock ? true : false} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
+                    <button disabled={item.quantity === item.stock ? true : false} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
 
                     </div>
-                    <div  className="items-carrito" >
+                    <div className="items-carrito" >
 
                     <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
                     </div>
