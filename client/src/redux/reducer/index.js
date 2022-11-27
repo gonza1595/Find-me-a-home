@@ -10,6 +10,7 @@ const initialState = {
   detalle: {},
   productoDetalle: {},
   usuarios: [],
+  login: JSON.parse(localStorage.getItem("login")) || [],
   allUsuarios: [],
   usuarioId: {},
   usuarioEditado: [],
@@ -36,6 +37,18 @@ function rootReducer(state = initialState, action) {
         mascotas: action.payload,
         allMascotas: action.payload,
         loading: false,
+      };
+    
+      case "LOGIN":
+      let id = action.payload;
+
+      state.login.push(id);
+
+      localStorage.setItem("login", JSON.stringify(state.login));
+      
+      return {
+      ...state,
+      
       };
     case "BUSCAR_POR_NOMBRE_MASCOTA":
       return {

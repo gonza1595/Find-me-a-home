@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import GoogleLogin from "react-google-login";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import {formularioLogin} from "../../redux/actions/index"
+import {formularioLogin, login, traerUsuarios} from "../../redux/actions/index"
 import './FormInicioSesion.css'
 
 export default function FormInicioSesion() {
@@ -11,8 +11,13 @@ export default function FormInicioSesion() {
   const [correo, setUsername] = useState("");
   const [contraseña, setPassword] = useState("");
 
+  useEffect(() => {
+    dispatch(traerUsuarios());
+  }, []);
  
- 
+  const users = useSelector((state) => state.usuarios);
+
+  const user = users.find((e)=> e.correo === correo)
 
 const history = useHistory();
 const dispatch = useDispatch();
@@ -31,7 +36,7 @@ const dispatch = useDispatch();
       alert("Verifique los campos para poder continuar");
     } else {
       e.preventDefault();
-
+      dispatch(login(user.id))
       dispatch(formularioLogin(correo,contraseña));
       // alert("Login Exitoso");
       history.push('/')

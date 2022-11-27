@@ -5,6 +5,7 @@ const { Pet } = require("../db");
 const { getMascotas } = require("./controllers");
 const { subirImagen } = require("../helpers/cloudinary");
 const fs = require('fs-extra')
+const {mailUsuarioCreado} = require ("../helpers/mailsService")
 
 router.post("/", async (req, res, next) => {
   const { nombre, descripcion, edad, imagen, tamaño, raza, sexo, especie } =
@@ -119,5 +120,30 @@ const borrarMascota = async (id) => {
     throw error;
   }
 };
+
+
+router.post("/fomAdopcion", async (req, res) => {
+  const { nombre, correo} = req.body;
+
+  try {
+
+    ///// notificación por mail - mascota adoptada
+
+    const asunto = "Gracias por adoptar en Find me a Home ";
+
+    const texto = `<p>Hola ${nombre}!<br><br>gracias por adoptar pronto recibiras una respuesta del refugio <br><br>Por cualquier duda, nos escribís a findmeahome2022@gmail.com
+						<br><br>Nos vemos!</p>`;
+
+     mailUsuarioCreado(correo, asunto, texto);
+
+    /////////
+
+    res.status(200).send();
+  } catch (error) {
+    res.status(400).send({ error: error.message });
+  }
+});
+
+
 
 module.exports = router;
