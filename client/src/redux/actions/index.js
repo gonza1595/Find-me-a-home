@@ -523,7 +523,7 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 
 export function Review(payload) {
   return async function () {
-    let json = await axios.post(`productos/agregarComentario`, payload);
+    let json = await axios.put(`productos/agregarComentario`, payload);
     return json;
   };
 }
