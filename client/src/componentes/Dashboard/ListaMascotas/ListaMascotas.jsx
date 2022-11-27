@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -9,6 +9,7 @@ import {
 import FormMascota from "../../Formulario/FormMascota";
 import "../ListaMascotas/ListaMascotas.css";
 import SearchBarMascotas from "../../SearchBar/SearchBarMascota";
+import FiltrosMascotas from "../../HomeMascotas/FiltrosMascotas/FiltrosMascotas";
 
 function TablaMascotas() {
   const dispatch = useDispatch();
@@ -18,11 +19,14 @@ function TablaMascotas() {
     dispatch(traerMascotas());
   }, []);
 
-  // Esta incompleto, aca abajo deberia agregarse funciones (EJ: eliminar, actualizar)
-
   const handleDelete = (id) => {
     dispatch(adminBorrarMascota(id));
   };
+
+  // filtros para las mascotas
+
+  const [filterSelected, setFilterSelected] = useState([]);
+  const [page, setPage] = useState(1);
 
   return (
     <div className="container_tabla_dash">
@@ -30,6 +34,10 @@ function TablaMascotas() {
       <div className="searchBarDashboard">
         <SearchBarMascotas />
       </div>
+      <FiltrosMascotas
+        setFilterSelected={setFilterSelected}
+        setPage={setPage}
+      />
       <table className="tabla-mascotas">
         <thead className="theadMasctotas">
           <tr className="nombres-columnas">
@@ -54,7 +62,11 @@ function TablaMascotas() {
                   {mascota.descripcion}
                 </td>
                 <td className="imagentablamascota">{mascota.imagen}</td>
-                <td className="edadtablamascota">{mascota.edad}</td>
+                <td className="edadtablamascota">
+                  {mascota.edad === 1
+                    ? `${mascota.edad} año`
+                    : `${mascota.edad} años`}
+                </td>
                 <td className="tamañotablamascota">{mascota.tamaño}</td>
                 <td className="razatablamascota">{mascota.raza}</td>
                 <td className="sexotablamascota">{mascota.sexo}</td>

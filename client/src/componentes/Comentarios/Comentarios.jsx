@@ -37,6 +37,7 @@ export const Comentarios = (id) => {
   const handlePost = () => {
     dispatch(
         Review( {id:id , comentarios:comment} )
+
     ).then(() => {
       setComment("");
       dispatch(traerReview(id.id))

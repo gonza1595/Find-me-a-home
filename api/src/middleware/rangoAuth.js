@@ -5,9 +5,11 @@ const checkRangoAuth = (rangos) => async (req, res, next) => {
     try{
        const token= req.headers.authorization.split(" ").pop();
        const tokenData= await verificarToken(token);
-       const usuarioData= await User.findById(tokenData.id);
-
+       console.log(tokenData);
+       const usuarioData= await User.findOne({where: { id:tokenData.id}});
+       console.log(usuarioData);
        if([].concat(rangos).includes(usuarioData.rango)) {
+          console.log(usuarioData.rango);
         next();
        }else{
         res.status(409).send({error: "no tienes permisos"});

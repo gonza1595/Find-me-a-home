@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ListaProductos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { traerProductos } from "../../../redux/actions/index";
@@ -6,6 +6,7 @@ import { adminBorrarProducto } from "../../../redux/actions/index";
 import { Link } from "react-router-dom";
 import SideBar from "../Dashboard/SideBar/SideBar";
 import SearchBarProducto from "../../SearchBar/SearchBarProducto";
+import FiltrosProductos from "./FiltrosProductos";
 
 const TablaProductos = () => {
   const productos = useSelector((state) => state.productos);
@@ -20,6 +21,11 @@ const TablaProductos = () => {
     dispatch(adminBorrarProducto(id));
   };
 
+  //filtros para productos
+
+  const [filterSelected, setFilterSelected] = useState([]);
+  const [page, setPage] = useState(1);
+
   return (
     <div className="container_tabla_dash">
       <h2>PRODUCTOS</h2>
@@ -31,6 +37,10 @@ const TablaProductos = () => {
           <button className="btn-agregar-dash">Agregar Producto</button>
         </Link>
       </div>
+      <FiltrosProductos
+        setFilterSelected={setFilterSelected}
+        setPage={setPage}
+      />
       <table className="tabla-productos">
         <thead>
           <tr className="tabla-head">

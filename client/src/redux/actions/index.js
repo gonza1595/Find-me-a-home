@@ -2,8 +2,7 @@ import axios from "axios";
 
 // const {URL_BACK} = process.env;
 
-//crear actions necesarias 
-
+//crear actions necesarias
 
 export function buscarPorNombreMascota(nombre) {
   //MASCOTAS
@@ -127,8 +126,9 @@ export const login = (payload) => {
 };
 
 export function formularioLogin(correo,contraseña) {
+
   return async function () {
-    let json = await axios.post(`/usuario/login`, {correo, contraseña} );
+    let json = await axios.post(`/usuario/login`, { correo, contraseña });
 
     return json;
   };
@@ -165,24 +165,48 @@ export function formularioIniciarSesion(payload) {
     let json = await axios.post(`/`, payload);
     return json;
   };
-};
+}
 
 export function solicitarContraseña(correo) {
   return async function () {
-    let json= await axios.put("/usuario/nueva-pass", {correo});
+    let json = await axios.put("/usuario/nueva-pass", { correo });
     return json;
-  }
-};
+  };
+}
 
-export function cambiarContraseña(payload) {
+export function cambiarContraseña(correo, contraseña, nuevaContraseña) {
   return async function () {
-    let json = await axios.put("/usuario/login/new-pass", payload);
+    let json = await axios.put("/usuario/login/new-pass", {
+      correo,
+      contraseña,
+      nuevaContraseña
+    });
     return json;
-  }
+  };
 }
 
 // Filtrados
 
+export function filterByPerro(payload) {
+  return {
+    type: "FILTER_BY_PERRO",
+    payload,
+  };
+}
+
+export function filterByGato(payload) {
+  return {
+    type: "FILTER_BY_GATO",
+    payload,
+  };
+}
+
+export function filterByTodasEspecies(payload) {
+  return {
+    type: "FILTER_BY_TODAS_ESPECIES",
+    payload,
+  };
+}
 export function filterBySexoMasculino(payload) {
   return {
     type: "FILTER_BY_SEXOMASCULINO",
@@ -255,6 +279,52 @@ export function orderByEdad(payload) {
   };
 }
 
+// filtros productos para dashboard admin
+
+export function orderByNameProducto(payload) {
+  return {
+    type: "ORDER_BY_NAME_PRODUCTO",
+    payload,
+  };
+}
+
+export function filterByTipo(payload) {
+  return {
+    type: "FILTER_BY_TIPO",
+    payload,
+  };
+}
+
+export function orderByPrecio(payload) {
+  return {
+    type: "ORDER_BY_PRECIO",
+    payload,
+  };
+}
+
+export function orderByStock(payload) {
+  return {
+    type: "ORDER_BY_STOCK",
+    payload,
+  };
+}
+
+// filtros usuarios admin dashboard
+
+export function orderByNameUsuario(payload) {
+  return {
+    type: "ORDER_BY_NAME_USUARIO",
+    payload,
+  };
+}
+
+export function filterByRango(payload) {
+  return {
+    type: "FILTER_BY_RANGO",
+    payload,
+  };
+}
+
 export function adminBorrarProducto(id) {
   return async (dispatch) => {
     await axios.delete(`/productos/${id}`);
@@ -271,6 +341,7 @@ export function adminEditarProducto(id, producto) {
       `/productos/editarProducto?id=${id}`,
       producto
     );
+    alert("Producto editado correctamente");
     return data;
   };
 }
@@ -285,13 +356,13 @@ export function adminBorrarMascota(id) {
   };
 }
 
-// esta accion es provisoria, hay que probar que funcione bien
 export function adminActualizarMascota(id, mascota) {
   return async function () {
     const { data } = await axios.put(
       `/mascotas/editarMascota?id=${id}`,
       mascota
     );
+    alert("Mascota editada correctamente");
     return data;
   };
 }
@@ -315,7 +386,6 @@ export function adminCrearNuevaMascota(obj) {
         });
       });
 }
-
 
 // acciones para traer, borrar y editar usuarios
 
@@ -369,7 +439,6 @@ export const adminEditarUsuario = (id, userActualizado) => {
 
 // pago
 
-
 // carrito
 
 export function addToCart(payload) {
@@ -378,7 +447,7 @@ export function addToCart(payload) {
     payload,
   };
 }
- 
+
 export function getNumberCart() {
   return {
     type: "GET_NUMBER_CART",
@@ -415,15 +484,15 @@ export function decreaseCart(payload) {
 // };
 ////////////////////////////
 export function realizarPago(id, amount) {
-	return async function () {
-		const {data} = await axios.post(`/pagos`, {
-			id,
-			amount,
-		});
-		console.log(data);
-		return data;
-	};
+  return async function () {
+    const { data } = await axios.post(`/pagos`, {
+      id,
+      amount,
+    });
+    console.log(data);
+    return data;
   };
+}
 
 // return async function () {
 //   const { data } = await axios.post(`/pagos`, {
@@ -453,7 +522,6 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
   }
 };
 
-
 export function Review(payload) {
   return async function () {
     let json = await axios.put(`productos/agregarComentario`, payload);
@@ -461,7 +529,7 @@ export function Review(payload) {
   };
 }
 
-export function traerReview () {
+export function traerReview() {
   return async (dispatch) => {
     let comentarios = await axios.get(`/comentarios`);
     dispatch({
@@ -469,13 +537,13 @@ export function traerReview () {
       payload: comentarios.data,
     });
   };
-};
+}
 
 export const deleteComment = (comment) => {
   return async function (dispatch) {
     try {
-      console.log(comment)
-      const deleteComment = axios.delete('/comentarios ' + comment); 
+      console.log(comment);
+      const deleteComment = axios.delete("/comentarios " + comment);
       dispatch({
         type: "BORRAR_COMENTARIO",
         payload: deleteComment,
@@ -484,4 +552,4 @@ export const deleteComment = (comment) => {
       console.log(error);
     }
   };
-}
+};

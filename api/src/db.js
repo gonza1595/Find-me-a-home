@@ -4,6 +4,14 @@ const fs = require('fs');
 const path = require('path');
 const {DB_USER, DB_PASSWORD, DATABASE_URL, DB_DEPLOY} = process.env;
 
+// const sequelize = new Sequelize(
+// 	`postgres://${DB_USER}:${DB_PASSWORD}@${DATABASE_URL}/pf_pets`,
+// 	{
+// 		logging: false, // set to console.log to see the raw SQL queries
+// 		native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// 	}
+// );
+
 
  const sequelize = new Sequelize(
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DATABASE_URL}/pf_pets`,
@@ -17,6 +25,11 @@ const {DB_USER, DB_PASSWORD, DATABASE_URL, DB_DEPLOY} = process.env;
 // 	logging: false,
 //  	native: false,
 //  }); 
+
+const sequelize = new Sequelize(DB_DEPLOY, {
+	logging: false,
+	native: false,
+});
 
 
 const basename = path.basename(__filename);
@@ -45,14 +58,20 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const {Pet, Product, User, Orden, Comentario} = sequelize.models;
+const {Pet, Product, User, Orden, Comentario, Carrito} = sequelize.models;
 // Aca vendrian las relaciones
+
+Carrito.belongsToMany(Product, {
+	through: 'producto_carrito',
+});
+Product.belongsToMany(Carrito, {
+	through: 'producto_carrito',
+});
+User.hasMany(Carrito);
+Carrito.belongsTo(User);
 
 Product.belongsToMany(Orden, {through: 'producto_orden', timestamps: false});
 Orden.belongsToMany(Product, {through: 'producto_orden', timestamps: false});
-
-User.belongsToMany(Product, {through: 'ventas', timestamps: false});
-Product.belongsToMany(User, {through: 'ventas', timestamps: false});
 
 User.hasMany(Pet, {foreignKey: 'userId'});
 Pet.belongsTo(User);
