@@ -79,79 +79,81 @@ export default function Cart() {
  
   return (
     <div className="carrito-container" >
-      <div >
-        <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
-      </div>
+
+      <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
+
+     <div className="prodYresum">
+
       <section >
         <div >
-      {(productsInTheCart.length === 0) && (<div ><h1 >Tu carrito esta vacio.</h1>
-      {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
-          <div>
-          </div>
-          <div >
-            {
-              listCart.map((item, key) => {
-                return (
-
-                  <div  key={key}>
-                    <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
-                    <a href={`/productos/${item.id}`}> 
-
-                    <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
-                    <div >
-                    <img  className="img-carrito" src={item.imagen} alt={item.nombre} />
-                    </div>
-                    </a>
-                    <ul className="items-carrito">
-                      <li><strong>Stock: </strong>{item.stock}</li> 
-                    </ul>
-                    <div >
-               <button onClick={e => handleDecrease(e)} id={item.id}>−</button>
-                    <span id={item.id}>{quantityState.shift()}</span>
-                    <button  disabled={item.quantity === item.stock ? true : false} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
-
-                    </div>
-                    <div  className="items-carrito" >
-
-                    <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
-                    </div>
+          {(productsInTheCart.length === 0) && (<div ><h1 >Tu carrito esta vacio.</h1>
+          {/* <p >But we have a lot of products waiting for you!</p>*/}</div>) } 
         
-                    <hr/>
-                  </div>
-                )
-              })
-            }
-          </div>
+        <div >
+          { listCart.map((item, key) => {
+            return (
+
+            <div className="prodCart" key={key}>
+
+              <a href={`/productos/${item.id}`}> 
+                <img  className="img-carrito" src={item.imagen} alt={item.nombre} />
+              </a>
+              
+              <h3 className="nombre-carrito">{item.nombre.toUpperCase()}</h3>
+
+              <h5 className="items-carrito">Stock: {item.stock}</h5>
+              
+              <div >
+                <button onClick={e => handleDecrease(e)} id={item.id}>−</button>
+                <span id={item.id}>{quantityState.shift()}</span>
+                <button  disabled={item.quantity === item.stock ? true : false} onClick={e => handleIncrease(e)} id={item.id}>＋</button>
+              </div>
+
+              <div  className="items-carrito" >
+                <span >Total $ {totalPrice(item.precio, item.quantity)} </span>
+              </div>
+                    
+              <button id={item.id} onClick={e => handleDelete(e)}>❌</button>
+            </div>
+            )
+          })
+        }
         </div>
+      </div>
       </section> 
       
-      {<section >
-            <div >
-              <div >
-                <div className="items-carrito" >Resumen de compra</div>
-                <ul >
-                  <li >
+      <section >
+        <div className="resumen">
+          <div className="resumenCompra" >Resumen de compra</div>
+
+          
               <span className="items-carrito">Total</span> 
-                    <span id="carritoTotal">$ {Number(totalCart).toLocaleString('en-US')}</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="items-carrito" >
-                <button onClick={e => añadir(e)} >Comprar mas productos </button>
-              </div>
-              <br />
-              <br />
-              {(productsInTheCart.length === 0) ? 
-              (<div>
-                <button type="button" onClick={handleNext} >Continuar</button>
-              </div>)
+              <span id="carritoTotal">$ {Number(totalCart).toLocaleString('en-US')}</span>
+       
+          
+
+          <div className="botFinales">
+
+          <div className="items-carrito" >
+            <button onClick={e => añadir(e)} >Comprar mas productos </button>
+          </div>
+
+          <br />
+          <br />
+
+          {(productsInTheCart.length === 0) ? 
+            null
               :
-              (<div >
-              <button type="button" onClick={handleNext} >Continuar</button>
+              (<div className="buttonComprar" >
+              <button type="button" onClick={handleNext} >Finalizar compra</button>
             </div>)
-            }
-            </div>
-      </section>}
+          }
+       </div>
+       </div>
+       
+
+      </section>
+     </div>
 
  
     </div>
