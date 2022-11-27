@@ -119,6 +119,12 @@ export function formularioPostMascota(payload) {
   };
 }
 
+export const login = (payload) => {
+  return {
+    type: "LOGIN",
+    payload,
+  };
+};
 
 export function formularioLogin(correo,contraseña) {
   return async function () {
@@ -130,7 +136,7 @@ export function formularioLogin(correo,contraseña) {
 
 export function formularioPostAdopcion(payload) {
   return async function () {
-    let json = await axios.post(`/formAdopcion`, payload);
+    let json = await axios.post(`mascotas/fomAdopcion`, payload);
   };
 }
 
@@ -271,7 +277,7 @@ export function adminEditarProducto(id, producto) {
 
 export function adminBorrarMascota(id) {
   return async (dispatch) => {
-    await axios.delete(`http://localhost:3001/mascotas/${id}`);
+    await axios.delete(`/mascotas/${id}`);
     dispatch({
       type: "ADMIN_BORRAR_MASCOTA",
       payload: id,
@@ -326,7 +332,7 @@ export const traerUsuarios = () => {
 export const traerUsuariosPorId = (id) => {
   return async (dispatch) => {
     let usuariosId = await axios.get(
-      `http://localhost:3001/usuario/users/${id}`
+      `/usuario/users/${id}`
     );
     dispatch({
       type: "TRAER_USUARIOS_POR_ID",
@@ -338,7 +344,7 @@ export const traerUsuariosPorId = (id) => {
 export const adminBorrarUsuarios = (id) => {
   return async (dispatch) => {
     let borrarUsuario = await axios.delete(
-      `http://localhost:3001/usuario/users/${id}`
+      `/usuario/users/${id}`
     );
     dispatch({
       type: "ADMIN_BORRAR_USUARIOS",
@@ -450,7 +456,7 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 
 export function Review(payload) {
   return async function () {
-    let json = await axios.post(`/comentarios`, payload);
+    let json = await axios.put(`productos/agregarComentario`, payload);
     return json;
   };
 }

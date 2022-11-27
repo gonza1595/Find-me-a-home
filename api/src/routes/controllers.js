@@ -129,8 +129,8 @@ const traeComentariosProducto = async (productId) => {
 
 // agregar comentario por ID
 const agregarComentario = async (userId, productId, texto) => {
-	const producto = await Product.findByPk(productId);
-	const usuario = await User.findByPk(userId);
+	const producto = await Product.findByPk(productId.id);
+	const usuario = await User.findByPk(userId[0]);
 	try {
 		if (!producto) {
 			throw new Error(`El producto con el id: ${productId} no existe!`);

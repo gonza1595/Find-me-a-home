@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
 
     },
     calificacion: {
-      type: DataTypes.FLOAT
+      type: DataTypes.ENUM("1","2","3","4","5")
     },
     precio: {
       type: DataTypes.FLOAT,
@@ -37,6 +37,11 @@ module.exports = (sequelize) => {
     tipo: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    comentarios: {
+      type: DataTypes.ARRAY(DataTypes.JSON),
+      defaultValue:[],
+      allowNull: true
     }
   },
   { timestamps: false }

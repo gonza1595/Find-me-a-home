@@ -19,6 +19,8 @@ router.get("/", async (req, res) => {
           descripcion: p.descripcion,
           precio: p.precio,
           imagen: p.imagen,
+          // comentarios: p.comentarios,
+          // calificacion: p.calificacion,
           stock: p.stock,
           tipo: p.tipo,
         };
@@ -45,6 +47,7 @@ router.get("/", async (req, res) => {
               imagen: p.imagen,
               stock: p.stock,
               precio: p.precio,
+              comentarios:p.comentarios,
               calificacion: p.calificacion,
               tipo: p.tipo,
             };
@@ -68,6 +71,7 @@ router.get("/", async (req, res) => {
             imagen: p.imagen,
             stock: p.stock,
             precio: p.precio,
+            comentarios:p.comentarios,
             calificacion: p.calificacion,
             tipo: p.tipo,
           };
@@ -98,6 +102,7 @@ router.post("/", async (req, res, next) => {
   try {
     let nuevoProducto = await Product.create({
       nombre,
+      comentarios,
       descripcion,
       imagen: foto_url,
       stock,
@@ -112,9 +117,66 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.put("/agregarComentario", async (req,res)  => {
+
+  const { id, comentarios } = req.body;
+
+
+  console.log(id.id,comentarios)
+
+
+  const nuevoComentario = {comentario:comentarios};
+
+  try {
+
+
+
+    const productoEncontrado = await Product.findOne({
+      
+      where: {
+        id: id.id,
+      },
+    });
+
+    const comentariosEx = productoEncontrado.comentarios;
+
+    comentariosEx.push(nuevoComentario)
+
+    console.log(comentariosEx,"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+
+    const productoAc = {
+      nombre:productoEncontrado.nombre,
+      descripcion:productoEncontrado.descripcion,
+      imagen:productoEncontrado.imagen,
+      stock:productoEncontrado.stock,
+      calificacion:productoEncontrado.calificacion,
+      precio:productoEncontrado.precio,
+      comentarios:comentariosEx,
+      tipo:productoEncontrado.tipo
+
+    }
+
+    console.log(productoAc)
+
+    await Product.update(productoAc,{
+                where: { id: id.id },
+             });
+
+
+    const dataActualizada = productoAc;
+
+    res.status(200).json(dataActualizada);
+  } catch (error) {
+    res.status(404).json(error);
+  }
+});
+
+
+
 router.put("/editarProducto", async (req, res) => {
   const { id } = req.query;
-  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo } =
+  const { comentarios, nombre, descripcion, imagen, stock, calificacion, precio, tipo } =
     req.body;
   const producto = {
     nombre,
@@ -123,6 +185,7 @@ router.put("/editarProducto", async (req, res) => {
     stock,
     calificacion,
     precio,
+    comentarios,
     tipo,
   };
   try {
@@ -139,6 +202,7 @@ router.put("/editarProducto", async (req, res) => {
       descripcion: productoEncontrado.descripcion,
       imagen: productoEncontrado.imagen,
       stock: productoEncontrado.stock,
+      comentarios: productoEncontrado.comentarios,
       calificacion: productoEncontrado.calificacion,
       precio: productoEncontrado.precio,
       tipo: productoEncontrado.tipo,

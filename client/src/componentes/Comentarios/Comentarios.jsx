@@ -11,23 +11,32 @@ import {
  /*  postComment, */ Review,
 } from "../../redux/actions";
 
+
+
+
+
 export const Comentarios = (id) => {
   const dispatch = useDispatch();
  // const userLogged = JSON.parse(localStorage.getItem("userLogged"));
 
   //console.log(userLogged);
   const allCommentsByProduct = useSelector((state) => state.comentarios);
-
+  const userId = Object.values(useSelector((state) => state.login)) 
+  
   const [comment, setComment] = useState("");
   const [ondelete, onsetDelete] = useState("");
 
+
+
+
   const handleOnChange = (e) => {
     setComment(e.target.value);
+    console.log(comment)
   };
 
   const handlePost = () => {
     dispatch(
-        Review({/*  userId: userLogged.id, */ productId: id.id, text: comment })
+        Review( {id:id , comentarios:comment} )
     ).then(() => {
       setComment("");
       dispatch(traerReview(id.id))
@@ -83,7 +92,7 @@ export const Comentarios = (id) => {
         allCommentsByProduct.map((e) => {
           return (
             <div key={e.id}>
-              <p>{e.text}</p>
+              <p>{e.texto}</p>
               {/* apparently it crashes here after */}
               {/* userLogged?.id === e.UserId &&  */(
                 <div>

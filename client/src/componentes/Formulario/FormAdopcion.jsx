@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useHistory } from "react-router";
 import { formularioPostAdopcion } from "../../redux/actions/index"; 
 import "./FormAdopcion.css"; 
@@ -71,6 +71,7 @@ function validate(input) {
 export default function FormAdopcion() {
     const dispatch = useDispatch();
     const history = useHistory();
+    const { id } = useParams();
   
     const [errors, setErrors] = useState({});
   
@@ -144,7 +145,7 @@ export default function FormAdopcion() {
           alert("Verifique los campos para poder continuar");
         } else {
           e.preventDefault();
-          dispatch(formularioPostAdopcion(input)); // check esto
+          dispatch(formularioPostAdopcion(input,id)); // check esto
           alert("Su formulario ha sido enviado exitosamente. Nos comunicaremos con usted tan pronto como sea posible");
           history.push("/contacto"); //fijarse si se deja o no
 
