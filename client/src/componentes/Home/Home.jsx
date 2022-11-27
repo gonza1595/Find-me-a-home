@@ -1,18 +1,19 @@
 import React from "react";
 import "./Home.css";
-import img from "../Home/imgHome.png";
+import img from "../Home/pets.png";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer.jsx";
+
 
 export default function home() {
   return (
     <div className="parent">
 
       <div className="div2_h"> La felicidad no se compra, se adopta. 
-        <img src={img} alt="img" width="350px" />
+        <img src={img} alt="img" width="300px" />
       </div>
       <div className="div4_h">
-        <p>
+        <p className="div-p">
           Antes de adoptar debés saber la gran responsabilidad que implica tener
           un animal en nuestro hogar. Por eso, te sugerimos que tengas en cuenta
           los siguientes aspectos.
@@ -35,8 +36,8 @@ export default function home() {
           <button>Conocé a nuestras mascotas</button>
         </Link>
 
-        <Link>
-          <button>Doná productos o dinero a nuestros refugios</button>
+        <Link to={"/pagos"}>
+          <button>Donaciones para nuestros refugios</button>
         </Link>
         </div>
 

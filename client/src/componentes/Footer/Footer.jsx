@@ -36,23 +36,6 @@ export default function Footer() {
             <img src={facebook} alt="img" width="25px" />
           </a>
         </div>
-
-        <section>
-          <form className="form_f">
-            <p>Subscrirse al newsletter.</p>
-            <p>
-              <input
-                type="text"
-                name="email"
-                placeholder="Ingresa tu mail..."
-                id="subscribe-field"
-              />
-            </p>
-            <p>
-              <input type="submit" value="Suscribirse" />
-            </p>
-          </form>
-        </section>
         <div>
           <p> © All rights reserved 2022</p>
         </div>

@@ -128,15 +128,14 @@ export const login = (payload) => {
 export function formularioLogin(correo,contraseña) {
 
   return async function () {
-    let json = await axios.post(`/usuario/login`, { correo, contraseña });
-
-    return json;
+    return await axios.post(`/usuario/login`, { correo, contraseña });
   };
 }
 
 export function formularioPostAdopcion(payload) {
   return async function () {
-    let json = await axios.post(`mascotas/fomAdopcion`, payload);
+    return await axios.post(`mascotas/fomAdopcion`, payload);
+  
   };
 }
 
@@ -524,7 +523,7 @@ export const adminTraerMascotaParaActualizar = (id) => (dispatch) => {
 
 export function Review(payload) {
   return async function () {
-    let json = await axios.put(`productos/agregarComentario`, payload);
+    let json = await axios.post(`productos/agregarComentario`, payload);
     return json;
   };
 }
