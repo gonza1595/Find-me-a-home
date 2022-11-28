@@ -50,6 +50,7 @@ const TablaProductos = () => {
             <th scope="col">Stock</th>
             <th scope="col">Descripción</th>
             <th scope="col">Imagen</th>
+            <th scope="col">Estado</th>
             <th scope="col">Borrar</th>
             <th scope="col">Editar</th>
           </tr>
@@ -65,6 +66,7 @@ const TablaProductos = () => {
                 <td>{e.stock}</td>
                 <td>{e.descripcion}</td>
                 <td className="imagentablaprod">{e.imagen}</td>
+                <td>{e.estado}</td>
                 <td className="borrartablamascota">
                   <button onClick={() => handleDelete(e.id)}>Borrar</button>
                 </td>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useParams} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import './FormMascota.css';
 import {
 	detalleMascota,
@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 
 export default function EditarMascota(props) {
 	const mascotaId = useSelector((state) => state.detalle);
+	const history = useHistory();
 
 	const [mascota, setMascota] = useState(mascotaId);
 
@@ -28,6 +29,7 @@ export default function EditarMascota(props) {
 	const handleClick = (e) => {
 		e.preventDefault();
 		dispatch(adminActualizarMascota(petId, mascota));
+		history.push('/dashboard/mascotas');
 	};
 
 	const handleChangeInput = (e) => {
@@ -137,6 +139,18 @@ export default function EditarMascota(props) {
 						type='text'
 					/>
 				</div>
+				<div>
+					<label className='labelUsuario'>Estado: </label>
+					<input
+						value={mascota.estado || ''}
+						name='estado'
+						className='inputUsuario'
+						onChange={(e) => {
+							handleChangeInput(e);
+						}}
+						type='text'
+					/>
+				</div>
 				<div className='buttonUsuario'>
 					<div className='buttonAtras'>
 						<Link to='/dashboard/mascotas'>
@@ -148,7 +162,6 @@ export default function EditarMascota(props) {
 					</div>
 				</div>
 			</form>
-			;
 		</div>
 	);
 }

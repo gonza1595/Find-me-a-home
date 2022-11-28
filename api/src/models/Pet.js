@@ -41,6 +41,10 @@ module.exports = (sequelize) => {
       especie: {
         type: DataTypes.ENUM("perro", "gato"),
         allowNull: false
+      },
+      estado: {
+        type: DataTypes.ENUM("activo", "inactivo"),
+        defaultValue: "activo"
       }
   },
   { timestamps: false }

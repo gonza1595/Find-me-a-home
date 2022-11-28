@@ -29,6 +29,7 @@ import FormActualizarMascota from './componentes/Formulario/FormActualizarMascot
 import FormActualizarProducto from './componentes/Formulario/FormActualizarProductos';
 import FormSolicitudContraseña from './componentes/Formulario/FormSolicitarContraseña.jsx';
 import FormCambioContraseña from './componentes/Formulario/FormCambiarContraseña.jsx';
+import Ventas from './componentes/Dashboard/Ventas/Ventas.jsx';
 
 function App() {
 	return (
@@ -36,7 +37,6 @@ function App() {
 			<div className='app'>
 				<Route exact path='/' component={NavBar} />
 				<Route exact path='/' component={home} />
-
 
 				<Route path='/mascotas' component={NavBar} />
 				<Route exact path='/mascotas' component={HomeMascotas} />
@@ -49,11 +49,19 @@ function App() {
 				<Route path='/iniciarSesion' component={NavBar} />
 				<Route exact path='/iniciarSesion' component={FormInicioSesion} />
 
-				<Route path="/cambiarContraseña" component={NavBar} />
-				<Route exact path="/cambiarContraseña" component={FormCambioContraseña} />
+				<Route path='/cambiarContraseña' component={NavBar} />
+				<Route
+					exact
+					path='/cambiarContraseña'
+					component={FormCambioContraseña}
+				/>
 
-				<Route path="/solicitarContraseña" component={NavBar} />
-				<Route exact path="/solicitarContraseña" component={FormSolicitudContraseña} />
+				<Route path='/solicitarContraseña' component={NavBar} />
+				<Route
+					exact
+					path='/solicitarContraseña'
+					component={FormSolicitudContraseña}
+				/>
 
 				<Route path='/formMascota' component={NavBar} />
 				<Route exact path='/formMascota' component={FormMascota} />
@@ -92,6 +100,8 @@ function App() {
 				<Route exact path='/dashboard/mascotas' component={TablaMascotas} />
 
 				<Route exact path='/dashboard/usuarios' component={ListaUsuarios} />
+
+				<Route exact path='/dashboard/ventas' component={Ventas} />
 
 				<Route
 					exact

@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useParams} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 import './FormMascota.css';
 import {detalleProducto, adminEditarProducto} from '../../redux/actions/index';
 import {Link} from 'react-router-dom';
 
 export default function EditarProducto(props) {
 	const productoId = useSelector((state) => state.productoDetalle);
+	const history = useHistory();
 
 	const [producto, setProducto] = useState(productoId);
 
@@ -25,6 +26,7 @@ export default function EditarProducto(props) {
 	const handleClick = (e) => {
 		e.preventDefault();
 		dispatch(adminEditarProducto(productId, producto));
+		history.push('/dashboard/productos');
 	};
 
 	const handleChangeInput = (e) => {
@@ -122,6 +124,18 @@ export default function EditarProducto(props) {
 						type='text'
 					/>
 				</div>
+				<div>
+					<label className='labelUsuario'>Estado: </label>
+					<input
+						value={producto.estado || ''}
+						name='estado'
+						className='inputUsuario'
+						onChange={(e) => {
+							handleChangeInput(e);
+						}}
+						type='text'
+					/>
+				</div>
 				<div className='buttonUsuario'>
 					<div className='buttonAtras'>
 						<Link to='/dashboard/productos'>
@@ -133,7 +147,6 @@ export default function EditarProducto(props) {
 					</div>
 				</div>
 			</form>
-			;
 		</div>
 	);
 }
