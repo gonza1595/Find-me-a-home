@@ -7,9 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 // import AppAdmin from './AppAdmin';
 import axios from "axios";
 
-// axios.defaults.baseURL =
-// 	'https://back-proyecto-final-production.up.railway.app';
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL =
+	'https://back-proyecto-final-production.up.railway.app';
+// axios.defaults.baseURL = "http://localhost:3001";
 
 ReactDOM.render(
   <BrowserRouter>

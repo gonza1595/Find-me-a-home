@@ -106,9 +106,7 @@ export default function Form() {
                  ...input, 
                 [e.target.name] : e.target.value
              }))    
-        }
-
-       
+        }     
 
 return (
 <div>

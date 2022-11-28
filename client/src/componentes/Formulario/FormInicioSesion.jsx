@@ -46,8 +46,8 @@ const dispatch = useDispatch();
 
   return (
     
-  <div className="container-InicioSesion">
-        <form  onSubmit={handleSubmit}>
+  <div className="cajita-inicio">
+        <form className="formInicio"  onSubmit={handleSubmit}>
       <h1 className="titulo-sesion">Iniciar Sesion</h1>
       <div  className='input-fields-sesion'>
         <label>
@@ -74,11 +74,9 @@ const dispatch = useDispatch();
         </div>
        
 
-          <div>        
-          <button>Iniciar con Google</button>
-         </div>
-          <div className="boton-registrate">
-            <button>
+          <div className="boton-registrate">        
+          <button className="inicioGoogle">Iniciar con Google</button>
+           <button>
           <Link to='/registrate' role="button">Registrate ahora!</Link>
           </button>
   </div>  
