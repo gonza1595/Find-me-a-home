@@ -19,9 +19,10 @@ const initialState = {
   comentarios: [],
   cart: JSON.parse(localStorage.getItem("cart")) || [],
   numberCart: 0,
+  ordenes: [],
+  totalCarrito: [],
 
   //agregar mas estados si se requiere...
-  
 };
 
 function rootReducer(state = initialState, action) {
@@ -38,17 +39,16 @@ function rootReducer(state = initialState, action) {
         allMascotas: action.payload,
         loading: false,
       };
-    
-      case "LOGIN":
+
+    case "LOGIN":
       let id = action.payload;
 
       state.login.push(id);
 
       localStorage.setItem("login", JSON.stringify(state.login));
-      
+
       return {
-      ...state,
-      
+        ...state,
       };
     case "BUSCAR_POR_NOMBRE_MASCOTA":
       return {
@@ -751,15 +751,26 @@ function rootReducer(state = initialState, action) {
         usuarios: state.usuarios.filter(
           (usuario) => usuario.id !== action.payload
         ),
-      };   
-      case "TRAER_REVIEW":
+      };
+    case "TRAER_REVIEW":
       return {
         ...state,
         comentarios: action.payload,
       };
-      case "BORRAR_COMENTARIO":
+    case "BORRAR_COMENTARIO":
       return {
-        ...state}
+        ...state,
+      };
+    case "CREAR_ORDEN":
+      return {
+        ...state,
+        ordenes: action.payload,
+      };
+    case "MONTO_TOTAL":
+      return {
+        ...state,
+        totalCarrito: action.payload,
+      };
 
     default:
       return state;
