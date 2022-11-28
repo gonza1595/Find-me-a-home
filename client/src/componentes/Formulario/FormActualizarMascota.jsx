@@ -137,6 +137,18 @@ export default function EditarMascota(props) {
 						type='text'
 					/>
 				</div>
+				<div>
+					<label className='labelUsuario'>Estado: </label>
+					<input
+						value={mascota.estado || ''}
+						name='estado'
+						className='inputUsuario'
+						onChange={(e) => {
+							handleChangeInput(e);
+						}}
+						type='text'
+					/>
+				</div>
 				<div className='buttonUsuario'>
 					<div className='buttonAtras'>
 						<Link to='/dashboard/mascotas'>

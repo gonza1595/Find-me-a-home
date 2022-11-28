@@ -122,6 +122,18 @@ export default function EditarProducto(props) {
 						type='text'
 					/>
 				</div>
+				<div>
+					<label className='labelUsuario'>Estado: </label>
+					<input
+						value={producto.estado || ''}
+						name='estado'
+						className='inputUsuario'
+						onChange={(e) => {
+							handleChangeInput(e);
+						}}
+						type='text'
+					/>
+				</div>
 				<div className='buttonUsuario'>
 					<div className='buttonAtras'>
 						<Link to='/dashboard/productos'>

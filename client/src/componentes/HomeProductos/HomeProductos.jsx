@@ -33,6 +33,8 @@ export default function HomeProductos() {
 
     const productos = useSelector((state)=>state.productos)
 
+    const productosActivos = productos.filter(e => e.estado === "activo")
+
       const changeFiltro = (e) => {
         
         e.preventDefault();
@@ -64,7 +66,7 @@ export default function HomeProductos() {
       const showPerPage = 10;
       const lastOnPage = page * showPerPage;
       const firstOnPage = lastOnPage - showPerPage;
-      const showProductos = productos.slice(firstOnPage, lastOnPage);
+      const showProductos = productosActivos.slice(firstOnPage, lastOnPage);
 
       function pagination(pageNumber) {
         setPage(pageNumber);
@@ -148,7 +150,7 @@ onChange={(e) => changeFiltro(e)}
     
         <Pagination
             showPerPage={showPerPage}
-            mascotasState={productos.length}
+            mascotasState={productosActivos.length}
             pagination={pagination}
             page={page}
           ></Pagination>

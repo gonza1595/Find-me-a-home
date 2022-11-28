@@ -49,6 +49,7 @@ function TablaMascotas() {
             <th scope="col">Raza</th>
             <th scope="col">Sexo</th>
             <th scope="col">Especie</th>
+            <th scope="col">Estado</th>
             <th scope="col">Borrar</th>
             <th scope="col">Editar</th>
           </tr>
@@ -71,6 +72,7 @@ function TablaMascotas() {
                 <td className="razatablamascota">{mascota.raza}</td>
                 <td className="sexotablamascota">{mascota.sexo}</td>
                 <td className="especietablamascota">{mascota.especie}</td>
+                <td className="especietablamascota">{mascota.estado}</td>
                 <td className="borrartablamascota">
                   <button onClick={() => handleDelete(mascota.id)}>
                     Borrar

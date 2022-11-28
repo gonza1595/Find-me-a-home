@@ -42,6 +42,10 @@ module.exports = (sequelize) => {
       type: DataTypes.ARRAY(DataTypes.TEXT),
       defaultValue:[],
       allowNull: true
+    },
+    estado: {
+      type: DataTypes.ENUM("activo", "inactivo"),
+      defaultValue: "activo"
     }
   },
   { timestamps: false }
