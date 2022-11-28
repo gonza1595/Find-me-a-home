@@ -12,6 +12,8 @@ import Loader from "../Loader/Loader.jsx";
 
 export default function HomeMascotas() {
   let mascotasState = useSelector((state) => state.mascotas);
+  const mascotasActivas = mascotasState.filter(e => e.estado === "activo")
+
   const dispatch = useDispatch();
   const [filterSelected, setFilterSelected] = useState([]);
 
@@ -25,7 +27,7 @@ export default function HomeMascotas() {
   const showPerPage = 10;
   const lastOnPage = page * showPerPage;
   const firstOnPage = lastOnPage - showPerPage;
-  const showMascotas = mascotasState.slice(firstOnPage, lastOnPage);
+  const showMascotas = mascotasActivas.slice(firstOnPage, lastOnPage);
 
   function pagination(pageNumber) {
     setPage(pageNumber);
@@ -63,7 +65,7 @@ export default function HomeMascotas() {
         <div>
           <Pagination
             showPerPage={showPerPage}
-            mascotasState={mascotasState.length}
+            mascotasState={mascotasActivas.length}
             pagination={pagination}
             page={page}
           ></Pagination>
