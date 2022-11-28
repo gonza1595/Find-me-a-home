@@ -80,8 +80,6 @@ export default function Form() {
              }))
         }
 
-
-
         function handleSubmit(e){
             if(!input.nombre || !input.contraseña || !input.correo || !input.edad || !input.direccion || !input.rango ){
                 e.preventDefault();

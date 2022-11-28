@@ -41,7 +41,7 @@ function refreshPage() {
 }
 
 
-  const handlePost2 = () => {
+  const handlePost22 = () => {
     dispatch(
         Review( {id:id , comentarios:comment} )
         

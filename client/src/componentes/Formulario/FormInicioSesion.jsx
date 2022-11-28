@@ -45,7 +45,6 @@ const dispatch = useDispatch();
   };
 
   return (
-    
   <div className="cajita-inicio">
         <form className="formInicio"  onSubmit={handleSubmit}>
       <h1 className="titulo-sesion">Iniciar Sesion</h1>
@@ -58,7 +57,7 @@ const dispatch = useDispatch();
             onChange={(e) => setUsername(e.target.value)}
           />
           </label>
-<div>
+          <div>
           <label >
             Contraseña:{" "}
             <input   className="input-InicioSesion"
@@ -70,10 +69,8 @@ const dispatch = useDispatch();
           </label>
           </div>
         <div className="boton-Sesion">
-        <button >Iniciar Sesion</button>
+        <button>Iniciar Sesion</button>
         </div>
-       
-
           <div className="boton-registrate">        
           <button className="inicioGoogle">Iniciar con Google</button>
            <button>
@@ -83,6 +80,5 @@ const dispatch = useDispatch();
   </div>
         </form>
         </div>
-  
   );
 }
