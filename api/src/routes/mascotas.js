@@ -8,7 +8,7 @@ const fs = require('fs-extra')
 const {mailUsuarioCreado} = require ("../helpers/mailsService")
 
 router.post("/", async (req, res, next) => {
-  const { nombre, descripcion, edad, imagen, tamaño, raza, sexo, especie } =
+  const { nombre, descripcion, edad, imagen, tamaño, raza, sexo, especie, estado } =
     req.body;
 
   ///// cloudinary
@@ -31,6 +31,7 @@ router.post("/", async (req, res, next) => {
       raza,
       sexo,
       especie,
+      estado,
     });
     //console.log(nuevaMascota)
     res.status(200).send(nuevaMascota);
@@ -62,7 +63,7 @@ router.get("/", async (req, res) => {
 
 router.put("/editarMascota", async (req, res) => {
   const { id } = req.query;
-  const { nombre, descripcion, imagen, edad, tamaño, raza, sexo, especie } =
+  const { nombre, descripcion, imagen, edad, tamaño, raza, sexo, especie, estado } =
     req.body;
   const mascota = {
     nombre,
@@ -73,6 +74,7 @@ router.put("/editarMascota", async (req, res) => {
     raza,
     sexo,
     especie,
+    estado,
   };
   try {
     const mascotaEncontrada = await Pet.findOne({
@@ -92,6 +94,7 @@ router.put("/editarMascota", async (req, res) => {
       raza: mascotaEncontrada.raza,
       sexo: mascotaEncontrada.sexo,
       especie: mascotaEncontrada.especie,
+      estado: mascotaEncontrada.estado,
     };
     res.status(200).json(dataActualizada);
   } catch (error) {

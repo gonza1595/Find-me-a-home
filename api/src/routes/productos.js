@@ -23,6 +23,7 @@ router.get("/", async (req, res) => {
           // calificacion: p.calificacion,
           stock: p.stock,
           tipo: p.tipo,
+          estado: p.estado,
         };
       });
 
@@ -50,6 +51,7 @@ router.get("/", async (req, res) => {
               comentarios:p.comentarios,
               calificacion: p.calificacion,
               tipo: p.tipo,
+              estado: p.estado,
             };
           });
           const productoNombreFiltrado = await filtroProductos(
@@ -74,6 +76,7 @@ router.get("/", async (req, res) => {
             comentarios:p.comentarios,
             calificacion: p.calificacion,
             tipo: p.tipo,
+            estado: p.estado,
           };
         });
         const filtrados = await filtroProductos(productos, filtro, orden, tipo);
@@ -86,7 +89,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo } = req.body;
+  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo, estado } = req.body;
   console.log(req.files)
 
   ///// cloudinary
@@ -109,6 +112,7 @@ router.post("/", async (req, res, next) => {
       calificacion,
       precio,
       tipo,
+      estado,
     });
 
     res.status(200).send(nuevoProducto);
@@ -153,7 +157,8 @@ router.put("/agregarComentario", async (req,res)  => {
       calificacion:productoEncontrado.calificacion,
       precio:productoEncontrado.precio,
       comentarios:comentariosEx,
-      tipo:productoEncontrado.tipo
+      tipo:productoEncontrado.tipo,
+      estado:productoEncontrado.estado
 
     }
 
@@ -176,7 +181,7 @@ router.put("/agregarComentario", async (req,res)  => {
 
 router.put("/editarProducto", async (req, res) => {
   const { id } = req.query;
-  const { comentarios, nombre, descripcion, imagen, stock, calificacion, precio, tipo } =
+  const { comentarios, nombre, descripcion, imagen, stock, calificacion, precio, tipo, estado } =
     req.body;
   const producto = {
     nombre,
@@ -187,6 +192,7 @@ router.put("/editarProducto", async (req, res) => {
     precio,
     comentarios,
     tipo,
+    estado,
   };
   try {
     const productoEncontrado = await Product.findOne({
@@ -206,6 +212,7 @@ router.put("/editarProducto", async (req, res) => {
       calificacion: productoEncontrado.calificacion,
       precio: productoEncontrado.precio,
       tipo: productoEncontrado.tipo,
+      estado: productoEncontrado.estado,
     };
     res.status(200).json(dataActualizada);
   } catch (error) {
