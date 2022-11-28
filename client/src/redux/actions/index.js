@@ -125,8 +125,7 @@ export const login = (payload) => {
   };
 };
 
-export function formularioLogin(correo,contraseña) {
-
+export function formularioLogin(correo, contraseña) {
   return async function () {
     return await axios.post(`/usuario/login`, { correo, contraseña });
   };
@@ -135,7 +134,6 @@ export function formularioLogin(correo,contraseña) {
 export function formularioPostAdopcion(payload) {
   return async function () {
     return await axios.post(`mascotas/fomAdopcion`, payload);
-  
   };
 }
 
@@ -178,7 +176,7 @@ export function cambiarContraseña(correo, contraseña, nuevaContraseña) {
     let json = await axios.put("/usuario/login/new-pass", {
       correo,
       contraseña,
-      nuevaContraseña
+      nuevaContraseña,
     });
     return json;
   };
@@ -400,9 +398,7 @@ export const traerUsuarios = () => {
 
 export const traerUsuariosPorId = (id) => {
   return async (dispatch) => {
-    let usuariosId = await axios.get(
-      `/usuario/users/${id}`
-    );
+    let usuariosId = await axios.get(`/usuario/users/${id}`);
     dispatch({
       type: "TRAER_USUARIOS_POR_ID",
       payload: usuariosId.data,
@@ -412,9 +408,7 @@ export const traerUsuariosPorId = (id) => {
 
 export const adminBorrarUsuarios = (id) => {
   return async (dispatch) => {
-    let borrarUsuario = await axios.delete(
-      `/usuario/users/${id}`
-    );
+    let borrarUsuario = await axios.delete(`/usuario/users/${id}`);
     dispatch({
       type: "ADMIN_BORRAR_USUARIOS",
       payload: id,
@@ -546,6 +540,38 @@ export const deleteComment = (comment) => {
       dispatch({
         type: "BORRAR_COMENTARIO",
         payload: deleteComment,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const crearOrden = (userID, productos, montoTotal) => {
+  return async function (dispatch) {
+    try {
+      const orden = await axios.post("/ordenes", {
+        userID,
+        productos,
+        montoTotal,
+      });
+      console.log(orden.data);
+      dispatch({
+        type: "CREAR_ORDEN",
+        payload: orden.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const montoTotal = (total) => {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "MONTO_TOTAL",
+        payload: total,
       });
     } catch (error) {
       console.log(error);
