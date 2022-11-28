@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     background-color: #c5f5f2;
     flex-wrap: wrap;
-    width: 5 rem;
+    width: 100%;
     min-height: 2px;
     font-family: cursive;
     
@@ -13,6 +13,7 @@
 .wsp_item {
   display: flex;
   flex-direction: row;
+  padding-bottom:5px ;
 }
 
 .wsp_item p {
@@ -29,7 +30,12 @@
 .contactanos-items{
     display: flex;
   flex-direction: row;
-  
+  margin-bottom: 10px;
 }
 
+.contactanos{
+  margin-top: 19px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
 

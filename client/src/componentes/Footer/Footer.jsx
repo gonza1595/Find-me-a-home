@@ -4,7 +4,6 @@ import facebook from "../Footer/img/facebook.png";
 import instagram from "../Footer/img/instagram.png";
 import twitter from "../Footer/img/twitter.png";
 import whatsapp from "../Footer/img/whatsapp.png";
-
 import "./Footer.css";
 
 export default function Footer() {

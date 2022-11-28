@@ -67,7 +67,6 @@ button:focus {
   border-radius: 10px;
   font-family: roboto;
   font-weight: 300;
-  letter-spacing: 0px;
   letter-spacing: 0.02rem;
   font-size: 19px;
   font-size: 1.2rem;
@@ -101,7 +100,7 @@ button:focus {
   -ms-flex-pack: center;
   justify-content: center;
   background: #027a74;
-  height: 770px;
+  height: 670px;
 }
 
 
@@ -114,6 +113,7 @@ button:focus {
   background-color: #027a74;
   font-family: cursive;
   color: #c5f5f2;
+
 }
 
 
@@ -152,6 +152,7 @@ button:focus {
     background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') left no-repeat;
   background-size:cover;
 }
+
 
 @media (max-width: 500px) {
   .window {

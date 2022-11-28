@@ -17,6 +17,7 @@ const sequelize = new Sequelize(DB_DEPLOY, {
 	native: false,
 });
 
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

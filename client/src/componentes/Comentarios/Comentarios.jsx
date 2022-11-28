@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteComment, traerReview, Review} from "../../redux/actions";
-
+import "./Comentarios.css"
+import { useHistory } from "react-router";
 
 
 
@@ -18,21 +19,35 @@ export const Comentarios = (id) => {
   
   const [comment, setComment] = useState("");
   const [ondelete, onsetDelete] = useState("");
-
-
-
+  const history = useHistory();
 
   const handleOnChange = (e) => {
+    e.preventDefault()
     setComment(e.target.value);
     console.log(comment)
   };
 
-  const handlePost = () => {
+function handlePost(e){
+  e.preventDefault()
+  dispatch(Review({id:id , comentarios:comment}))
+  setComment("");
+ 
+  refreshPage()
+}
+
+
+function refreshPage() {
+  window.location.reload();
+}
+
+
+  const handlePost22 = () => {
     dispatch(
         Review( {id:id , comentarios:comment} )
-
+        
     ).then(() => {
       setComment("");
+      history.push("/productos/" + id)
       dispatch(traerReview(id.id))
         .then(() => {
           document.getElementById("commentSent").style.display = "block";
@@ -73,46 +88,27 @@ export const Comentarios = (id) => {
       dispatch(traerReview(id.id));
     }, 1000);
   };
-  /* 
-  useEffect(() => {
-    dispatch(getProductComment(id.id));
-  }, [dispatch]); */
+  
+  // useEffect(() => {
+  //   dispatch(Review);
+  // }, [dispatch]);
 
   //comments only show after second click
 
   return (
-    <div>
-      {allCommentsByProduct &&
-        allCommentsByProduct.map((e) => {
-          return (
-            <div key={e.id}>
-              <p>{e.texto}</p>
-              {/* apparently it crashes here after */}
-              {/* userLogged?.id === e.UserId &&  */(
-                <div>
-                  <button onClick={() => handleDelete(e.id)}>X</button>
-                  <div id="commentDeleted" className="commentSent">
-                    <span>Comentario Borrado</span>
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
 
-      {/* userLogged &&  */(
-        <div>
-          <span>Post Your Comments</span>
-          <textarea onChange={handleOnChange} />
-          <button onClick={handlePost}>add your review!</button>
+        <div className="review-comentario">
+          <span className="titulo-comentario">Postea tu comentario!</span>
+          <textarea className="input-comentario" onChange={handleOnChange} />
+          <button className="boton-comentario"  onClick={(e)=> handlePost(e)}>Enviar</button>
           <div id="commentSent" className="commentSent">
-            <div>
+            {/* <div>
               <span>Comentario enviado existosameente!</span>
-            </div>
+            </div> */}
           </div>
         </div>
-      )}
-    </div>
+     
+   
   );
 };
 
