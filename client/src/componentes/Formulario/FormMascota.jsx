@@ -172,19 +172,6 @@ export default function Form() {
             {errors.raza && <p>{errors.raza}</p>}
           </div>
           <div className="containerFormMascotas">
-            <label>Imagen: </label>
-            <input
-              type="file"
-              autoComplete="off"
-              value={input.imagen}
-              name="imagen"
-              onChange={handleChange}
-              //className="inputFormMascotas"
-            />
-            {errors.imagen && <p>{errors.imagen}</p>}
-          </div>
-
-          <div className="containerFormMascotas">
             <label>Sexo: </label>
             <label>
               <input
@@ -266,6 +253,19 @@ export default function Form() {
             </label>
             {errors.tamaño && <p>{errors.tamaño}</p>}
           </div>
+          <div className="containerFormMascotas">
+            <label>Imagen: </label>
+            <input
+              type="file"
+              autoComplete="off"
+              value={input.imagen}
+              name="imagen"
+              onChange={handleChange}
+              //className="inputFormMascotas"
+            />
+            {errors.imagen && <p>{errors.imagen}</p>}
+          </div>
+          <br />
           <div>
             <button type="submit"> Postear </button>
             <Link to="/requisitos">
