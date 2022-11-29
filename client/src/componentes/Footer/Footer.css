@@ -8,8 +8,12 @@
     width: 100%;
     min-height: 2px;
     font-family: cursive;
-    
 }
+
+.main-footer.dark{
+    background-color: #027a74;
+}
+
 .wsp_item {
   display: flex;
   flex-direction: row;

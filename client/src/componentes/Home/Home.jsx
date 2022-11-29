@@ -6,13 +6,15 @@ import Footer from "../Footer/Footer.jsx";
 
 
 export default function home() {
-  return (
-    <div className="parent">
+const modo = localStorage.getItem('modo');
 
-      <div className="div2_h"> La felicidad no se compra, se adopta. 
+  return (
+    <div className={`parent ${modo}`}>
+
+      <div className={`div2_h ${modo}`}> La felicidad no se compra, se adopta. 
         <img src={img} alt="img" width="300px" />
       </div>
-      <div className="div4_h">
+      <div className={`div4_h ${modo}`}>
         <p className="div-p">
           Antes de adoptar debés saber la gran responsabilidad que implica tener
           un animal en nuestro hogar. Por eso, te sugerimos que tengas en cuenta

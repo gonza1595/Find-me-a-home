@@ -4,6 +4,7 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import carrito from "../Carrito/carritoimg.png"
+import Dark from "./Dark";
 
 function NavBar() {
   const [clicked, setClicked] = useState(false); //false
@@ -11,6 +12,8 @@ function NavBar() {
   const [cartQuantity, setcartQuantity] = useState(0);
   const numberCart = useSelector((state) => state.numberCart);
   const cart = useSelector((state) => state.cart);
+  const modo = localStorage.getItem('modo');
+
 
 ////carrito
 const calculateCartQuantity = () => {
@@ -34,17 +37,17 @@ useEffect(() => {
   };
 
   return (
-    <nav className="headerNavBar">
-        <h2 className="titleNavBar">Find me a HOME</h2>
+    <nav className={`headerNavBar ${modo}`}>
+        <h2 className={`titleNavBar ${modo}`}>Find me a HOME</h2>
       <ul className="navega">
         <li>
-          <a className="title_textNavBar" onClick={handleClick} href="/">
+          <a className={`title_textNavBar ${modo}`} onClick={handleClick} href="/">
             Inicio
           </a>
         </li>
         <li>
           <a
-            className="title_textNavBar"
+            className={`title_textNavBar ${modo}`}
             onClick={handleClick}
             href="/QuienesSomos?"
           >
@@ -53,7 +56,7 @@ useEffect(() => {
         </li>
         <li>
           <a
-            className="title_textNavBar"
+            className={`title_textNavBar ${modo}`}
             onClick={handleClick}
             href="/productos"
           >
@@ -62,7 +65,7 @@ useEffect(() => {
         </li>
         <li>
           <a
-            className="title_textNavBar"
+            className={`title_textNavBar ${modo}`}
             onClick={handleClick}
             href="/mascotas"
           >
@@ -77,7 +80,7 @@ useEffect(() => {
         </Link>
         <li>
           <a
-            className="title_textNavBar"
+            className={`title_textNavBar ${modo}`}
             onClick={handleClick}
             href="/requisitos"
           >
@@ -88,6 +91,9 @@ useEffect(() => {
           <Link to="/carrito" >
         <img src={carrito} alt="carrito" width="25px" /> {cartQuantity}
         </Link>
+        </li>
+        <li>
+          <Dark/>
         </li>
       </ul>
     </nav>
