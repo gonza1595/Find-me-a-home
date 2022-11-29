@@ -1,0 +1,19 @@
+.filtersSelectUsuario {
+    background-color: #c5f5f2;
+    border-radius: 10px;
+    padding: 5px;
+    color: #027a74;
+    font-family: cursive;
+    font-weight:bolder;
+
+  }
+
+  .filterUsuario {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;;
+    flex-direction: row;
+    gap: 5rem;
+    background-color: #027a74;
+    margin-top: 20px;
+  }
