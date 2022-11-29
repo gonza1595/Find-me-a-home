@@ -41,12 +41,7 @@ function rootReducer(state = initialState, action) {
       };
 
     case "LOGIN":
-      let id = action.payload;
-
-      state.login.push(id);
-
-      localStorage.setItem("login", JSON.stringify(state.login));
-
+     
       return {
         ...state,
       };

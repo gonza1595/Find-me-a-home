@@ -118,16 +118,26 @@ export function formularioPostMascota(payload) {
   };
 }
 
-export const login = (payload) => {
-  return {
-    type: "LOGIN",
-    payload,
-  };
-};
+// export const login = (payload) => {
+//   return {
+//     type: "LOGIN",
+//     payload,
+//   };
+// };
 
 export function formularioLogin(correo, contraseña) {
   return async function () {
-    return await axios.post(`/usuario/login`, { correo, contraseña });
+    const json = await axios.post(`/usuario/login`, { correo, contraseña });
+
+    localStorage.setItem("login", JSON.stringify(json.data)
+  );
+
+    console.log(json.data)
+
+    return {
+      type: "LOGIN",
+      payload: json.data ,
+    }
   };
 }
 
