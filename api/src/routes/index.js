@@ -10,6 +10,7 @@ const checkAuth = require('../middleware/auth');
 const checkRangoAuth = require('../middleware/rangoAuth');
 const comentarios = require('./comentarios');
 const ordenes = require('./ordenes');
+const donaciones= require("./donaciones");
 const router = Router();
 
 // Configurar los routers
@@ -23,5 +24,6 @@ router.use('/usuario', postUser);
 router.use('/pagos', pagos);
 router.use('/comentarios', comentarios);
 router.use('/ordenes', ordenes);
+router.use("/donaciones", donaciones);
 
 module.exports = router;

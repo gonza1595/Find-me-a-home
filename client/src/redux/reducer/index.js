@@ -21,6 +21,7 @@ const initialState = {
   numberCart: 0,
   ordenes: [],
   totalCarrito: [],
+  donaciones: [],
 
   //agregar mas estados si se requiere...
 };
@@ -766,11 +767,23 @@ function rootReducer(state = initialState, action) {
         ...state,
         ordenes: action.payload,
       };
+    case "CREAR_DONACION":
+      return{
+        ...state,
+        donaciones: action.payload,
+      }  
     case "MONTO_TOTAL":
       return {
         ...state,
         totalCarrito: action.payload,
       };
+
+    case "CLEAR_MONTO":
+      return {
+        ...state,
+        totalCarrito: [],
+      };
+     
 
     default:
       return state;

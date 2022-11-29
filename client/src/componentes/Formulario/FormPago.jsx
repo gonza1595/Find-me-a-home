@@ -7,7 +7,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { realizarPago, crearOrden } from "../../redux/actions";
+import { realizarPago, crearOrden, clearMonto } from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 
 const stripePromise = loadStripe(
@@ -46,6 +46,7 @@ const PagoForm = () => {
       const amount = montoTotal * 100;
       dispatch(realizarPago(id, amount));
       dispatch(crearOrden(userID, productos, montoTotal));
+      dispatch(clearMonto());
       alert("su pago se a realizado con exito");
       history.push("/");
     }

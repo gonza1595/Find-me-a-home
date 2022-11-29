@@ -566,6 +566,24 @@ export const crearOrden = (userID, productos, montoTotal) => {
   };
 };
 
+export const crearDonacion = (refugio, userID, montoTotal) => {
+  return async function (dispatch) {
+    try{
+      const donacion= await axios.post("/donaciones", {
+        refugio,
+        userID,
+        montoTotal
+      });
+      dispatch({
+        type: "CREAR_DONACION",
+        payload: donacion.data,
+      })
+    }catch(error){
+      console.log(error);
+    }
+  };
+};
+
 export const montoTotal = (total) => {
   return async function (dispatch) {
     try {
@@ -578,3 +596,15 @@ export const montoTotal = (total) => {
     }
   };
 };
+
+export const clearMonto= () => {
+  return async function (dispatch) {
+    try {
+      dispatch({
+        type: "CLEAR_MONTO"
+      })
+    }catch(error){
+      console.log(error);
+    }
+  }
+}

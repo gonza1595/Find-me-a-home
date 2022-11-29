@@ -30,6 +30,7 @@ import FormActualizarProducto from './componentes/Formulario/FormActualizarProdu
 import FormSolicitudContraseña from './componentes/Formulario/FormSolicitarContraseña.jsx';
 import FormCambioContraseña from './componentes/Formulario/FormCambiarContraseña.jsx';
 import Ventas from './componentes/Dashboard/Ventas/Ventas.jsx';
+import DonacionForm from './componentes/Formulario/FormDonaciones.jsx';
 
 function App() {
 	return (
@@ -88,6 +89,9 @@ function App() {
 
 				<Route path='/pagos' component={NavBar} />
 				<Route exact path='/pagos' component={FormPago} />
+
+				<Route path='/donaciones' component={NavBar} />
+				<Route exact path='/donaciones' component={ DonacionForm } />
 
 				<Route path={'/carrito'} component={NavBar} />
 				<Route exact path={'/carrito'} component={Cart} />
