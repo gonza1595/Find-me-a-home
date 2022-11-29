@@ -62,14 +62,16 @@ export default function Detalle() {
   }
 
   return (
-    <div className="container">
+    <div className="cajita-detalleMascota">
+      
+      <NavLink  to="/mascotas">
+            <button className="boton-detelleMascota">Volver</button>
+          </NavLink>
       {!mascotas ? (
         <Loader />
       ) : (
-        <div>
-          <a href="javascript:history.back()">
-            <button className="home_button">Volver</button>
-          </a>
+        <div className="caja-detalle">
+          
           <div className="informacionDetalleMascotas">
             <div className="nombreimg">
               <h2 id="nombre">{mascotas.nombre}</h2>
@@ -79,25 +81,31 @@ export default function Detalle() {
                 width="250px"
                 height="auto"
               />
-            </div>
-            <ul>
-              <li>
-                Edad:{" "}
+               <div className="info-mascota"> 
+            <ul > 
+              <li > 
+                <strong>Edad</strong>:{" "}
                 {mascotas.edad === 1
                   ? `${mascotas.edad} año`
                   : `${mascotas.edad} años`}
               </li>
-              <li>Sexo: {mascotas.sexo}</li>
-              <li>Raza: {mascotas.raza}</li>
-              <li>Tamaño: {mascotas.tamaño}</li>
-            </ul>
-            <div className="descripDetalleMascota">
-              <h4>Descripción:</h4>
-              <p>{mascotas.descripcion}</p>
+              <li>  <strong>Sexo</strong>: {mascotas.sexo}</li>
+              <li>  <strong>Raza</strong>: {mascotas.raza}</li>
+              <li>  <strong>Tamaño</strong>: {mascotas.tamaño}</li>
+</ul>
             </div>
-            <NavLink to="/formAdopcion" className="link">
-              <button className="adopta">Adopta</button>
+            </div>
+           
+            <div className="descripDetalleMascota">
+              <h4 className="titulo-mascota">Descripción:</h4>
+              <p className="descripcion-mascota">{mascotas.descripcion}</p>
+           
+          
+            <NavLink to="/formAdopcion" >
+          
+              <button className="adopta-boton"> {""} Adopta {""}</button>
             </NavLink>
+            </div>
           </div>
         </div>
         
