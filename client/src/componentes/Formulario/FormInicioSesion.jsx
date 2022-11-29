@@ -11,13 +11,13 @@ export default function FormInicioSesion() {
   const [correo, setUsername] = useState("");
   const [contraseña, setPassword] = useState("");
 
-  useEffect(() => {
-    dispatch(traerUsuarios());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(traerUsuarios());
+  // }, []);
  
-  const users = useSelector((state) => state.usuarios);
+  // const users = useSelector((state) => state.usuarios);
 
-  const user = users.find((e)=> e.correo === correo)
+  // const user = users.find((e)=> e.correo === correo)
 
 const history = useHistory();
 const dispatch = useDispatch();
@@ -35,9 +35,10 @@ const dispatch = useDispatch();
       e.preventDefault();
       alert("Verifique los campos para poder continuar");
     } else {
-      e.preventDefault();
-      dispatch(login(user.id))
+
       dispatch(formularioLogin(correo,contraseña));
+
+      
       // alert("Login Exitoso");
       history.push('/')
 
