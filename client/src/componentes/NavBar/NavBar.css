@@ -4,8 +4,19 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    background-color: #c5f5f2;
     padding: 1rem;
+  }
+
+  .headerNavBar.light {
+    background-color: #c5f5f2;
+  }
+
+  .headerNavBar.dark {
+    background-color: #027a74;
+  }
+
+  .title_textNavBar.dark {
+    color: #c5f5f2;
   }
   
   .titleNavBar {
@@ -20,6 +31,11 @@
    font-family: cursive;
    font-weight: bold;
    font-size: 30px;
+  }
+
+  .titleNavBar.dark{
+    background-color: rgb(196, 153, 36);
+   color: #297973;
   }
   
   .header_iconNavBar {
@@ -38,7 +54,6 @@
     text-decoration: none;
     margin-right: 1rem;
   }
-
 
   ul.navega li {
     display: inline-block;
