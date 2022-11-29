@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const {
-  traeTodasLasOrdenesOPorEstado,
+  traeTodasLasOrdenes,
   traeDetalleDeOrden,
   traeOrdenesDeUnUsuario,
   cambiaEstadoOrden,
@@ -11,10 +11,9 @@ const router = Router();
 
 // Si se le pasa el estado de la orden por query devuelve eso
 // Si no se le pasa nada devuelve todas
-router.get("", async (req, res) => {
-  const { estado } = req.query;
+router.get("/", async (req, res) => {
   try {
-    const ordenes = await traeTodasLasOrdenesOPorEstado(estado);
+    const ordenes = await traeTodasLasOrdenes();
     res.status(200).json(ordenes);
   } catch (error) {
     res.status(404).json({ error: error.message });

@@ -8,13 +8,9 @@ module.exports = (sequelize) => {
     "Orden",
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
-        validate: {
-          notEmpty: true,
-          isUUID: 4,
-        },
       },
       productos: {
         type: DataTypes.ARRAY(DataTypes.JSON),
@@ -31,7 +27,7 @@ module.exports = (sequelize) => {
           "aprobada",
           "cancelada"
         ),
-        defaultValue: "creada",
+        defaultValue: "aprobada",
         allowNull: false,
         validate: {
           notEmpty: true,
@@ -40,6 +36,14 @@ module.exports = (sequelize) => {
       },
       montoTotal: {
         type: DataTypes.FLOAT,
+      },
+      fecha: {
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW,
+        validate: {
+          notEmpty: true,
+          isDate: true,
+        },
       },
     },
     { timestamps: false }

@@ -60,7 +60,6 @@ function sumar(e) {
 };
 
 useEffect(() => {
-    //console.log(quantitySelected, "3")
 }, [quantitySelected])
 
 
@@ -86,7 +85,6 @@ function handleBuyCart(){
 
   return (
     <>
-
       <div className="container">
         {!producto ? (
           <Loader/>
@@ -114,18 +112,13 @@ function handleBuyCart(){
               <div className="descripDetalleProducto">
                 <h4>Descripción:</h4>
                 <p>{producto.descripcion}</p>
-              </div>
-              {/*<NavLink to="/comprar" className="link">
-                <button className="adopta">Comprar</button>
-              </NavLink>*/}
-            </div>
-            {/* carrito */}
-          <div> 
+                 {/* carrito */}
+          <div className="carrito-enDetalle"> 
           <form action='/carrito/agregar/${id}' name="form" method="post">
                                 
                                 <div>
                                     <div>
-                                        <div>
+                                        <div className="botones-carrito">
                                             <button  onClick={e => restar(e)} value> - </button>
                                             {(producto.stock <= 0) ? <span>0</span>  : <span >{quantitySelected}</span>}
                                             <button  onClick={e => sumar(e)} value> + </button>
@@ -149,9 +142,24 @@ function handleBuyCart(){
                                
                             </form>
           </div>
-          <Review></Review>
-          <Comentarios id={id}/>
+              </div>
+            </div>
+            <div className="comentari"> 
+           <Comentarios id={id}/>
+           <div className="comentarios-Detalle"> 
+
+           <h4>Comentarios:</h4>
+            <div> 
+
+           { !producto.comentarios.length? (<p>No hay comentarios</p>) :
+           producto.comentarios.map(e => (
+            <ul>💬 {e}</ul>
+           
+           ))} </div>      
+            </div>
+            </div>
           </div>
+          
         )}
       </div>
     </>

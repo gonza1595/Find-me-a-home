@@ -118,16 +118,26 @@ export function formularioPostMascota(payload) {
   };
 }
 
-export const login = (payload) => {
-  return {
-    type: "LOGIN",
-    payload,
-  };
-};
+// export const login = (payload) => {
+//   return {
+//     type: "LOGIN",
+//     payload,
+//   };
+// };
 
 export function formularioLogin(correo, contraseña) {
   return async function () {
-    return await axios.post(`/usuario/login`, { correo, contraseña });
+    const json = await axios.post(`/usuario/login`, { correo, contraseña });
+
+    localStorage.setItem("login", JSON.stringify(json.data)
+  );
+
+    console.log(json.data)
+
+    return {
+      type: "LOGIN",
+      payload: json.data ,
+    }
   };
 }
 
@@ -338,7 +348,6 @@ export function adminEditarProducto(id, producto) {
       `/productos/editarProducto?id=${id}`,
       producto
     );
-    alert("Producto editado correctamente");
     return data;
   };
 }
@@ -359,7 +368,6 @@ export function adminActualizarMascota(id, mascota) {
       `/mascotas/editarMascota?id=${id}`,
       mascota
     );
-    alert("Mascota editada correctamente");
     return data;
   };
 }
@@ -422,7 +430,6 @@ export const adminEditarUsuario = (id, userActualizado) => {
       `/usuario/editarUsuario?id=${id}`,
       userActualizado
     );
-    alert("Usuario editado correctamente");
     dispatch({
       type: "ADMIN_EDITAR_USUARIO",
       payload: editarUsuario.data,
@@ -597,6 +604,7 @@ export const montoTotal = (total) => {
   };
 };
 
+
 export const clearMonto= () => {
   return async function (dispatch) {
     try {
@@ -606,5 +614,20 @@ export const clearMonto= () => {
     }catch(error){
       console.log(error);
     }
-  }
-}
+  };
+};
+
+export const traerOrdenes = () => {
+  return async function (dispatch) {
+    try {
+      const ordenes = await axios.get("/ordenes");
+      dispatch({
+        type: "TRAER_ORDENES",
+        payload: ordenes.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+

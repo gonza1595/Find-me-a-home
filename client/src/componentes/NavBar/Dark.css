@@ -1,0 +1,47 @@
+
+.darkButton{
+    background-color: #343D5B;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    display: flex;
+    outline: none;
+    padding: 0;
+    margin-left: 15px;
+}
+
+.darkButton::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #F1F1F1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+.darkButton:hover{
+    border: none;
+    background: #343D5B ;
+    padding: 0;
+    text-decoration: none;
+}
+
+.darkButton span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+}
+
+
+.dark::after{
+    right: 0;
+    left: unset;
+}
+

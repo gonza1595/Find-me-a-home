@@ -80,8 +80,6 @@ export default function Form() {
              }))
         }
 
-
-
         function handleSubmit(e){
             if(!input.nombre || !input.contraseña || !input.correo || !input.edad || !input.direccion || !input.rango ){
                 e.preventDefault();
@@ -106,18 +104,13 @@ export default function Form() {
                  ...input, 
                 [e.target.name] : e.target.value
              }))    
-        }
-
-       
+        }     
 
 return (
-<div>
-       
-       <h1 className='welcome'>Registrarse</h1>
-     
-       <form  onSubmit={(e) => handleSubmit(e)}>
-      
-       <div className='container_formUs'>
+<div className='cajita-usuario'>
+       <form   className='container_formUs' onSubmit={(e) => handleSubmit(e)}>
+                  <h1 className='welcome'>Registrarse</h1>
+       <div>
  <div className='window'>
 
    <div className='input-fields'>

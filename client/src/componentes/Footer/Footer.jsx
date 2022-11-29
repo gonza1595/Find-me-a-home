@@ -4,13 +4,15 @@ import facebook from "../Footer/img/facebook.png";
 import instagram from "../Footer/img/instagram.png";
 import twitter from "../Footer/img/twitter.png";
 import whatsapp from "../Footer/img/whatsapp.png";
-
 import "./Footer.css";
 
 export default function Footer() {
+
+const modo = localStorage.getItem('modo');
+
   return (
     <footer>
-      <div className="main-footer">
+      <div className={`main-footer ${modo}`}>
         <div className="contactanos-info">
           <div className="contactanos">
             <p className="titulo.contacto">CONTACTANOS</p>

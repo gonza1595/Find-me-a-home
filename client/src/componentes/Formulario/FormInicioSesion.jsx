@@ -11,13 +11,13 @@ export default function FormInicioSesion() {
   const [correo, setUsername] = useState("");
   const [contraseña, setPassword] = useState("");
 
-  useEffect(() => {
-    dispatch(traerUsuarios());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(traerUsuarios());
+  // }, []);
  
-  const users = useSelector((state) => state.usuarios);
+  // const users = useSelector((state) => state.usuarios);
 
-  const user = users.find((e)=> e.correo === correo)
+  // const user = users.find((e)=> e.correo === correo)
 
 const history = useHistory();
 const dispatch = useDispatch();
@@ -35,9 +35,10 @@ const dispatch = useDispatch();
       e.preventDefault();
       alert("Verifique los campos para poder continuar");
     } else {
-      e.preventDefault();
-      dispatch(login(user.id))
+
       dispatch(formularioLogin(correo,contraseña));
+
+      
       // alert("Login Exitoso");
       history.push('/')
 
@@ -45,9 +46,8 @@ const dispatch = useDispatch();
   };
 
   return (
-    
-  <div className="container-InicioSesion">
-        <form  onSubmit={handleSubmit}>
+  <div className="cajita-inicio">
+        <form className="formInicio"  onSubmit={handleSubmit}>
       <h1 className="titulo-sesion">Iniciar Sesion</h1>
       <div  className='input-fields-sesion'>
         <label>
@@ -58,7 +58,7 @@ const dispatch = useDispatch();
             onChange={(e) => setUsername(e.target.value)}
           />
           </label>
-<div>
+          <div>
           <label >
             Contraseña:{" "}
             <input   className="input-InicioSesion"
@@ -70,21 +70,16 @@ const dispatch = useDispatch();
           </label>
           </div>
         <div className="boton-Sesion">
-        <button >Iniciar Sesion</button>
+        <button>Iniciar Sesion</button>
         </div>
-       
-
-          <div>        
-          <button>Iniciar con Google</button>
-         </div>
-          <div className="boton-registrate">
-            <button>
+          <div className="boton-registrate">        
+          <button className="inicioGoogle">Iniciar con Google</button>
+           <button>
           <Link to='/registrate' role="button">Registrate ahora!</Link>
           </button>
   </div>  
   </div>
         </form>
         </div>
-  
   );
 }

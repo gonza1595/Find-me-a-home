@@ -16,9 +16,11 @@ function validate(input) {
     errors.imagen = "Se requiere imagen";
   } else if (!input.stock) {
     errors.stock = "Se requiere stock";
-  } else if (!input.calificacion) {
-    errors.calificacion = "Se requiere calificacion";
-  } else if (!input.tipo) {
+  } 
+  // else if (!input.calificacion) {
+  //   errors.calificacion = "Se requiere calificacion";
+  // } 
+  else if (!input.tipo) {
     errors.tipo = "Se requiere tipo";
   } else if (!input.precio) {
     errors.precio = "Se requiere precio";
@@ -38,10 +40,9 @@ export default function Form() {
     descripcion: "",
     imagen: "",
     stock: "",
-    calificacion: "",
+    // calificacion: "",
     tipo: "",
     precio: "",
-   
   });
 
   function handleChange(e) {
@@ -70,12 +71,12 @@ export default function Form() {
       })
     );
   }
-  
+
   function handleSubmit(e) {
     if (
       !input.precio ||
       !input.tipo ||
-      !input.calificacion ||
+      // !input.calificacion ||
       !input.stock ||
       !input.imagen ||
       !input.descripcion ||
@@ -88,14 +89,14 @@ export default function Form() {
       const formData = new FormData(e.target); /// esta línea es para mandar la imagen y el resto del form
       dispatch(crearProducto(formData));
       alert("Su producto ha sido creado exitosamente");
-      // history.push("/"); //fijarse si se deja o no
+      history.push("/dashboard/productos");
 
       setInput({
         nombre: "",
         descripcion: "",
         imagen: "",
         stock: "",
-        calificacion: "",
+        // calificacion: "",
         tipo: "",
         precio: "",
       });
@@ -150,7 +151,7 @@ export default function Form() {
             />
             {errors.stock && <p>{errors.stock}</p>}
           </div>
-          <div className="containerFormMascotas">
+          {/* <div className="containerFormMascotas">
             <label>Calificacion: </label>
             <input
               type="text"
@@ -161,7 +162,7 @@ export default function Form() {
               className="inputFormMascotas"
             />
             {errors.calificacion && <p>{errors.calificacion}</p>}
-          </div>
+          </div> */}
 
           <div className="containerFormMascotas">
             <label>Precio: </label>
@@ -189,6 +190,7 @@ export default function Form() {
           </div>
           <div className="containerFormMascotas">
             <label>Imagen: </label>
+            <br />
             <input
               type="file"
               autoComplete="off"
@@ -199,6 +201,7 @@ export default function Form() {
             />
             {errors.imagen && <p>{errors.imagen}</p>}
           </div>
+          <br />
           <div>
             <button type="submit"> Crear</button>
             <Link to="/dashboard/productos">
