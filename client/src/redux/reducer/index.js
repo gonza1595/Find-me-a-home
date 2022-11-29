@@ -21,6 +21,7 @@ const initialState = {
   numberCart: 0,
   ordenes: [],
   totalCarrito: [],
+  traerOrdenes: [],
 
   //agregar mas estados si se requiere...
 };
@@ -765,6 +766,11 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         totalCarrito: action.payload,
+      };
+    case "TRAER_ORDENES":
+      return {
+        ...state,
+        traerOrdenes: action.payload,
       };
 
     default:
