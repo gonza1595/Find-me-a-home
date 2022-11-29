@@ -38,8 +38,9 @@ const modo = localStorage.getItem('modo');
           <button>Conocé a nuestras mascotas</button>
         </Link>
 
-        <Link to={"/pagos"}>
+        <Link to={"/donaciones"}>
           <button>Donaciones para refugios</button>
+
         </Link>
         </div>
 
