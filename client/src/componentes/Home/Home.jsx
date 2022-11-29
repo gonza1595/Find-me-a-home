@@ -39,7 +39,7 @@ const modo = localStorage.getItem('modo');
         </Link>
 
         <Link to={"/pagos"}>
-          <button>Donaciones para nuestros refugios</button>
+          <button>Donaciones para refugios</button>
         </Link>
         </div>
 

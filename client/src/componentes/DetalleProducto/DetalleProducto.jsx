@@ -85,7 +85,7 @@ function handleBuyCart(){
 
   return (
     <>
-      <div className="container">
+      <div className="container-detalleProdu">
         {!producto ? (
           <Loader/>
         ) : ( 
@@ -93,6 +93,7 @@ function handleBuyCart(){
             <a href="javascript:history.back()">
               <button className="home_button">Volver</button>
             </a>
+            <div className="caja">
             <div className="informacionDetalleProducto">
               <div className="nombreimg">
                 <h2 id="nombre">{producto.nombre}</h2>
@@ -103,14 +104,17 @@ function handleBuyCart(){
                   height="auto"
                 />
               </div>
+              <div>
               <ul>
                 <li>Precio: ${producto.precio}</li>
                 <li>Calificación: {producto.calificacion}</li>
                 <li>Stock: {producto.stock}</li>
                 <li>Tipo: {producto.tipo}</li>
               </ul>
+
+              </div>
               <div className="descripDetalleProducto">
-                <h4>Descripción:</h4>
+                <h4 >Descripción:</h4>
                 <p>{producto.descripcion}</p>
                  {/* carrito */}
           <div className="carrito-enDetalle"> 
@@ -141,6 +145,7 @@ function handleBuyCart(){
                                 </div>
                                
                             </form>
+                            </div>
           </div>
               </div>
             </div>
@@ -160,8 +165,10 @@ function handleBuyCart(){
             </div>
           </div>
           
+          
         )}
       </div>
+      
     </>
   );
 };
