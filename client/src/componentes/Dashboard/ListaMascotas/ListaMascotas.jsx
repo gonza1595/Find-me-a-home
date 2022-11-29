@@ -9,7 +9,8 @@ import {
 import FormMascota from "../../Formulario/FormMascota";
 import "../ListaMascotas/ListaMascotas.css";
 import SearchBarMascotas from "../../SearchBar/SearchBarMascota";
-import FiltrosMascotas from "../../HomeMascotas/FiltrosMascotas/FiltrosMascotas";
+import FiltrosMascotasDashboard from "./FiltrosMascotasDashboard";
+import "./FiltroMascotas.css";
 
 function TablaMascotas() {
   const dispatch = useDispatch();
@@ -34,10 +35,12 @@ function TablaMascotas() {
       <div className="searchBarDashboard">
         <SearchBarMascotas />
       </div>
-      <FiltrosMascotas
-        setFilterSelected={setFilterSelected}
-        setPage={setPage}
-      />
+      <div className="filtersSelectMascota">
+        <FiltrosMascotasDashboard
+          setFilterSelected={setFilterSelected}
+          setPage={setPage}
+        />
+      </div>
       <table className="tabla-mascotas">
         <thead className="theadMasctotas">
           <tr className="nombres-columnas">

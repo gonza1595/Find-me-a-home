@@ -4,6 +4,7 @@ import {
   orderByNameUsuario,
   filterByRango,
 } from "../../../redux/actions/index";
+import "./FiltrosUsuarios.css";
 
 export default function FiltroUsuarios({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
@@ -21,10 +22,11 @@ export default function FiltroUsuarios({ setPage, setFilterSelected }) {
   }
 
   return (
-    <div className="filters">
+    <div className="filterUsuario">
       <select
         onChange={(e) => handleorderByNameUsuario(e)}
         defaultValue="Ordenar Alfabeticamente"
+        className="filtersSelectUsuario"
       >
         <option disabled>Ordenar Alfabeticamente</option>
         <option value="asc">A-Z</option>
@@ -34,6 +36,7 @@ export default function FiltroUsuarios({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleFilterByRango(e)}
         defaultValue="Filtrar por Rango"
+        className="filtersSelectUsuario"
       >
         <option disabled>Filtrar por Rango</option>
         <option value="all">Todos los rangos</option>

@@ -29,7 +29,9 @@ const PagoForm = () => {
   });
 
   const login = useSelector((state) => state.login);
-  const userID = login[0];
+  const userID = login.id;
+
+  console.log(userID);
 
   const montoTotal = useSelector((state) => state.totalCarrito);
 
