@@ -6,7 +6,7 @@ import {
   decreaseCart,
   deleteCart,
   increaseCart,
-  montoTotal,
+  montoTotal
 } from "../../redux/actions/index";
 
 /* import {withAuthenticationRequired} from '@auth0/auth0-react' */
@@ -79,6 +79,7 @@ export default function Cart() {
     dispatch(montoTotal(totalCart));
     history.push("/pagos");
   }
+  
 
   return (
     <div className="carrito-container">
@@ -168,6 +169,7 @@ export default function Cart() {
                   </button>
                 </div>
               )}
+              
             </div>
           </div>
         </section>
