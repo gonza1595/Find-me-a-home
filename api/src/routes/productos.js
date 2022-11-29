@@ -5,7 +5,7 @@ const { Product } = require("../db");
 const products = require("../../productos.json");
 const { filtroProductos } = require("./controllers");
 const { subirImagen } = require("../helpers/cloudinary");
-const fs = require('fs-extra')
+const fs = require("fs-extra");
 
 router.get("/", async (req, res) => {
   const { filtro, orden, nombre, tipo } = req.query;
@@ -48,7 +48,7 @@ router.get("/", async (req, res) => {
               imagen: p.imagen,
               stock: p.stock,
               precio: p.precio,
-              comentarios:p.comentarios,
+              comentarios: p.comentarios,
               calificacion: p.calificacion,
               tipo: p.tipo,
               estado: p.estado,
@@ -73,7 +73,7 @@ router.get("/", async (req, res) => {
             imagen: p.imagen,
             stock: p.stock,
             precio: p.precio,
-            comentarios:p.comentarios,
+            comentarios: p.comentarios,
             calificacion: p.calificacion,
             tipo: p.tipo,
             estado: p.estado,
@@ -89,19 +89,29 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const { nombre, descripcion, imagen, stock, calificacion, precio, tipo, estado } = req.body;
-  console.log(req.files)
+  const {
+    nombre,
+    descripcion,
+    imagen,
+    stock,
+    calificacion,
+    precio,
+    tipo,
+    estado,
+    comentarios,
+  } = req.body;
+  console.log(req.files);
 
   ///// cloudinary
 
-  if(req.files?.imagen){
-    const foto = await subirImagen(req.files.imagen.tempFilePath)
-    var foto_url = foto.secure_url
+  if (req.files?.imagen) {
+    const foto = await subirImagen(req.files.imagen.tempFilePath);
+    var foto_url = foto.secure_url;
   }
-  await fs.unlink(req.files?.imagen.tempFilePath)
+  await fs.unlink(req.files?.imagen.tempFilePath);
 
   ///// cloudinary
-  
+
   try {
     let nuevoProducto = await Product.create({
       nombre,
@@ -121,22 +131,15 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.put("/agregarComentario", async (req,res)  => {
-
+router.put("/agregarComentario", async (req, res) => {
   const { id, comentarios } = req.body;
 
-
-  console.log(id.id,comentarios)
-
+  console.log(id.id, comentarios);
 
   const nuevoComentario = comentarios;
 
   try {
-
-
-
     const productoEncontrado = await Product.findOne({
-      
       where: {
         id: id.id,
       },
@@ -144,30 +147,27 @@ router.put("/agregarComentario", async (req,res)  => {
 
     const comentariosEx = productoEncontrado.comentarios;
 
-    comentariosEx.push(nuevoComentario)
+    comentariosEx.push(nuevoComentario);
 
-    console.log(comentariosEx,"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-
+    console.log(comentariosEx, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 
     const productoAc = {
-      nombre:productoEncontrado.nombre,
-      descripcion:productoEncontrado.descripcion,
-      imagen:productoEncontrado.imagen,
-      stock:productoEncontrado.stock,
-      calificacion:productoEncontrado.calificacion,
-      precio:productoEncontrado.precio,
-      comentarios:comentariosEx,
-      tipo:productoEncontrado.tipo,
-      estado:productoEncontrado.estado
+      nombre: productoEncontrado.nombre,
+      descripcion: productoEncontrado.descripcion,
+      imagen: productoEncontrado.imagen,
+      stock: productoEncontrado.stock,
+      calificacion: productoEncontrado.calificacion,
+      precio: productoEncontrado.precio,
+      comentarios: comentariosEx,
+      tipo: productoEncontrado.tipo,
+      estado: productoEncontrado.estado,
+    };
 
-    }
+    console.log(productoAc);
 
-    console.log(productoAc)
-
-    await Product.update(productoAc,{
-                where: { id: id.id },
-             });
-
+    await Product.update(productoAc, {
+      where: { id: id.id },
+    });
 
     const dataActualizada = productoAc;
 
@@ -177,12 +177,19 @@ router.put("/agregarComentario", async (req,res)  => {
   }
 });
 
-
-
 router.put("/editarProducto", async (req, res) => {
   const { id } = req.query;
-  const { comentarios, nombre, descripcion, imagen, stock, calificacion, precio, tipo, estado } =
-    req.body;
+  const {
+    comentarios,
+    nombre,
+    descripcion,
+    imagen,
+    stock,
+    calificacion,
+    precio,
+    tipo,
+    estado,
+  } = req.body;
   const producto = {
     nombre,
     descripcion,

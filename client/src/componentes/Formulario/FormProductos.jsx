@@ -41,7 +41,6 @@ export default function Form() {
     calificacion: "",
     tipo: "",
     precio: "",
-   
   });
 
   function handleChange(e) {
@@ -70,7 +69,7 @@ export default function Form() {
       })
     );
   }
-  
+
   function handleSubmit(e) {
     if (
       !input.precio ||
@@ -88,7 +87,7 @@ export default function Form() {
       const formData = new FormData(e.target); /// esta línea es para mandar la imagen y el resto del form
       dispatch(crearProducto(formData));
       alert("Su producto ha sido creado exitosamente");
-      // history.push("/"); //fijarse si se deja o no
+      history.push("/dashboard/productos");
 
       setInput({
         nombre: "",

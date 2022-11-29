@@ -348,7 +348,6 @@ export function adminEditarProducto(id, producto) {
       `/productos/editarProducto?id=${id}`,
       producto
     );
-    alert("Producto editado correctamente");
     return data;
   };
 }
@@ -369,7 +368,6 @@ export function adminActualizarMascota(id, mascota) {
       `/mascotas/editarMascota?id=${id}`,
       mascota
     );
-    alert("Mascota editada correctamente");
     return data;
   };
 }
@@ -432,7 +430,6 @@ export const adminEditarUsuario = (id, userActualizado) => {
       `/usuario/editarUsuario?id=${id}`,
       userActualizado
     );
-    alert("Usuario editado correctamente");
     dispatch({
       type: "ADMIN_EDITAR_USUARIO",
       payload: editarUsuario.data,
@@ -582,6 +579,20 @@ export const montoTotal = (total) => {
       dispatch({
         type: "MONTO_TOTAL",
         payload: total,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const traerOrdenes = () => {
+  return async function (dispatch) {
+    try {
+      const ordenes = await axios.get("/ordenes");
+      dispatch({
+        type: "TRAER_ORDENES",
+        payload: ordenes.data,
       });
     } catch (error) {
       console.log(error);

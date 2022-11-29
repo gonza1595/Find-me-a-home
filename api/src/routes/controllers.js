@@ -167,15 +167,7 @@ const traeTodosLosComentarios = async () => {
 
 //////////////////////////////////////////
 
-const traeTodasLasOrdenesOPorEstado = async (estado) => {
-  if (estado) {
-    const ordenesEstado = await Orden.findAll({
-      where: {
-        estado,
-      },
-    });
-    return ordenesEstado;
-  }
+const traeTodasLasOrdenes = async () => {
   const ordenes = await Orden.findAll();
   return ordenes;
 };
@@ -253,7 +245,7 @@ module.exports = {
   generateRandom,
   traeComentariosProducto,
   traeTodosLosComentarios,
-  traeTodasLasOrdenesOPorEstado,
+  traeTodasLasOrdenes,
   traeDetalleDeOrden,
   traeOrdenesDeUnUsuario,
   cambiaEstadoOrden,
