@@ -34,6 +34,7 @@
     gap: 2.5em;
     right: 20%;
     padding: 1.25rem;
+    justify-content: center;
     /* border: solid black 1px; */
 }
 

@@ -1,8 +1,10 @@
 .contenedor {
     background-color: #027a74;
-    
-}
+    display: flex;
+    justify-content: space-evenly;
+    height: 805px;
 
+}
 .foto-contenedor {
     padding: 3rem 3rem;
     display: flex;
@@ -11,14 +13,12 @@
     align-content: center;
     
 }
-
-    
     .foto-contenedor img{
         border-radius: 10px;
         box-shadow: 4px 4px 8px #999;
         margin: 35px;
+        margin-bottom: 100px;
     }
-
 
 .parrafo-contenedor {
     padding: 1rem 8rem;
@@ -27,14 +27,14 @@
     align-items: center;
     align-content: center;
     font-family: cursive;
-    margin: 20px;
+    margin-bottom: 100px;
+
     
 }
-
 .parrafo-contenedor{
-   
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     color: #c5f5f2;
     line-height: 2rem;
-    text-align:justify;
+    text-align:center;
+    
 }

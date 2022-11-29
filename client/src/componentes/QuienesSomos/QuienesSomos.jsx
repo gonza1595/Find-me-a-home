@@ -12,9 +12,9 @@ const QuienesSomos = () => {
                 </div>
                 <div className="parrafo-contenedor">
                     <p>
-                        Somos una organización que se propone unir a personas con animales rescatados que necesitan amor y cuidado.
+                    Somos una organización que se propone unir a personas con animales rescatados que necesitan amor y cuidado.
                         Desde nuestro lugar queremos concientizar a la sociedad a respetar la vida de los animales y su bienestar.
-                        Nuestros pilares son: el cuidado adecuado y el no abandono de las mascotas y la adopción en lugar de la compra de animales.  
+                        Nuestros pilares son: el cuidado adecuado y el no abandono de las mascotas y la adopción en lugar de la compra de animales.
                     </p>
                 </div>
             </div>

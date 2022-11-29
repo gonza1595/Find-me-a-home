@@ -9,7 +9,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   background: #027a74;
-  height: 770px
+  height: 805px
    }
 
    .formInicio{
@@ -19,7 +19,7 @@
    height: 400px;
    width: 100%; 
    flex-direction: column;
-   
+   margin-bottom: 70px;
    align-items: center;
    }
 
