@@ -8,6 +8,7 @@ import {
   increaseCart,
   montoTotal
 } from "../../redux/actions/index";
+import { Link } from "react-router-dom";
 
 /* import {withAuthenticationRequired} from '@auth0/auth0-react' */
 /* withAuthenticationRequired (  */
@@ -176,7 +177,11 @@ export default function Cart() {
 
                 :
 
-                <button>Logueate para continuar con la compra</button>
+                <Link to="/iniciarSesion">
+            
+                <button>Logueate para comprar</button>
+    
+                </Link>
                 
               )}
               

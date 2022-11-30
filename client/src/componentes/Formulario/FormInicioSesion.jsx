@@ -45,8 +45,11 @@ const dispatch = useDispatch();
       dispatch(formularioLogin(correo,contraseña));
 
       
-      // alert("Login Exitoso");
+      alert("Login Exitoso");
+
       history.push('/')
+
+      window.location.reload();
 
     }
   };
@@ -72,6 +75,8 @@ const onSuccess = (response) => {
   alert("login exitoso")
 
   history.push("/")
+
+  window.location.reload();
 }
 
 

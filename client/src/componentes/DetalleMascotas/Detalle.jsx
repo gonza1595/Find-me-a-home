@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useParams} from "react-router-dom";
 import { useHistory } from "react-router";
 import { addToCart } from "../../redux/actions/index";
+import { Link } from "react-router-dom";
 
 import {
   detalleMascota,
@@ -120,7 +121,11 @@ export default function Detalle() {
   
   :
 
+  <Link to="/iniciarSesion">
+            
   <button>Logueate para adoptar</button>
+
+  </Link>
 
 
 }

@@ -132,7 +132,6 @@ function App() {
         />
         <Route exact path="/dashboard/formProducto" component={FormProducto} />
         
-        <Route exact path='/google' component={google} />
       </div>
     </>
   );

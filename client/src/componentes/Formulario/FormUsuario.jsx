@@ -63,6 +63,12 @@ console.log(response)
 
     dispatch(formularioRegistroUsuario(res))
     document.getElementsByClassName("btn").hidden = true;
+
+    alert("Usuario creado")
+
+    history.push("/")
+
+
   }
   const onFailure = (response) => {
     console.log(response);
