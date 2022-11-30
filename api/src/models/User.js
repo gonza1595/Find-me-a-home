@@ -25,11 +25,11 @@ module.exports = (sequelize) => {
 		},
 		edad: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
+			allowNull: true,
 		},
 		direccion: {
 			type: DataTypes.STRING,
-			allowNull: false,
+			allowNull: true,
 		},
 		rango: {
 			type: DataTypes.ENUM('admin', 'usuario', 'refugio'),

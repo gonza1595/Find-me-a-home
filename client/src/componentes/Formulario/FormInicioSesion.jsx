@@ -3,7 +3,7 @@ import GoogleLogin from "react-google-login";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import {formularioLogin, login, traerUsuarios} from "../../redux/actions/index"
+import {formularioLogin} from "../../redux/actions/index"
 import './FormInicioSesion.css'
 import { gapi } from "gapi-script";
 import Google from "../Google";
@@ -60,8 +60,21 @@ const [loggeIn, setLoggetInfo] = useState(false);
 
 const onSuccess = (response) => {
   setUser(response.profileObj);
+
+  console.log(response)
+
+  const correo = response.profileObj.email
+  const contraseña =  response.googleId
+
+  dispatch(formularioLogin(correo,contraseña))
   document.getElementsByClassName("btn").hidden = true;
+
+  alert("login exitoso")
+
+  history.push("/")
 }
+
+
 const onFailure = (response) => {
   console.log(response);
   console.log(response.profileObj);
