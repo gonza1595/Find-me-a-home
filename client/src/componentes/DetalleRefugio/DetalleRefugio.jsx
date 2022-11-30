@@ -17,7 +17,7 @@ export default function DetalleRefugio() {
       <a href="productos">
         <button className="home_button_detalle">Conoce nuestros productos! 🐾</button>
       </a>
-      <a href="pagos">
+      <a href="donaciones">
         <button className="home_button_detalle">Donaciones 🐾</button>
       </a>
       </div>

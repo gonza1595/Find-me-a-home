@@ -107,7 +107,7 @@ function handleBuyCart(){
               <div>
               <ul>
                 <li>Precio: ${producto.precio}</li>
-                <li>Calificación: {producto.calificacion}</li>
+                {/* <li>Calificación: {producto.calificacion}</li> */}
                 <li>Stock: {producto.stock}</li>
                 <li>Tipo: {producto.tipo}</li>
               </ul>

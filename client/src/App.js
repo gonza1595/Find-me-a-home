@@ -31,6 +31,7 @@ import FormSolicitudContraseña from './componentes/Formulario/FormSolicitarCont
 import FormCambioContraseña from './componentes/Formulario/FormCambiarContraseña.jsx';
 import Ventas from './componentes/Dashboard/Ventas/Ventas.jsx';
 import DonacionForm from './componentes/Formulario/FormDonaciones.jsx';
+import google from './componentes/Google.jsx';
 
 function App() {
 	return (
@@ -125,6 +126,9 @@ function App() {
 					component={FormActualizarProducto}
 				/>
 				<Route exact path='/dashboard/formProducto' component={FormProducto} />
+
+				<Route exact path='/google' component={google} />
+
 			</div>
 		</>
 	);
