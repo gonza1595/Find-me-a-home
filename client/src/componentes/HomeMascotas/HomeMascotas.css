@@ -1,12 +1,11 @@
 .containerMascotas {
+    background-color: #027a74;
     display: flex;
     flex-wrap:wrap;
     gap: 2.5em;
     right: 20%;
     padding: 1.25rem;
     justify-content: center;
+
 }
 
-.containerMascotas.dark{
-    background-color: #043a37;
-}

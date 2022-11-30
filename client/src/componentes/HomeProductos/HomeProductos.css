@@ -2,15 +2,15 @@
 *{text-decoration: none;}
 
 .container_homeProd{
+    background-color: #027a74;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
+
 }
 
-.container_homeProd.dark{
-  background-color: #043a37;
-}
+
 
 .paginatedDiv{
     /* border: solid black 1px; */
@@ -46,11 +46,8 @@
     justify-content: center;;
     flex-direction: row;
     gap: 5rem;
+    background-color: #027a74;
   }
-
-.filters.dark{
-  background-color: #043a37;
-}
 
   .filters select {
     background-color: #c5f5f2;
@@ -62,15 +59,10 @@
     width: 100%;
   }
 
-  .filters.dark select {
-    background-color: #027a74;
-    color: #c5f5f2;
-  }
-
   .filters select:hover {
-    /* background-color: #027a74; */
+    background-color: #027a74;
     border: #c5f5f2 1px solid;
-    /* color:#c5f5f2 */
+    color:#c5f5f2
   }
   
   .underline{

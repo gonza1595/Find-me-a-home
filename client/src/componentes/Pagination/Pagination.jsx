@@ -13,10 +13,8 @@ export default function Pagination({
     pageNumber.push(i);
   }
 
-  const modo = localStorage.getItem('modo');
-
   return (
-    <div className={`pagination ${modo}`}>
+    <div className="pagination">
       <button
         className="buttonPagination"
         onClick={page > 1 ? () => pagination(page - 1) : null}

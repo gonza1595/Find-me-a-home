@@ -14,8 +14,6 @@ export default function HomeMascotas() {
   let mascotasState = useSelector((state) => state.mascotas);
   const mascotasActivas = mascotasState.filter(e => e.estado === "activo")
 
-  const modo = localStorage.getItem('modo');
-
   const dispatch = useDispatch();
   const [filterSelected, setFilterSelected] = useState([]);
 
@@ -47,7 +45,7 @@ export default function HomeMascotas() {
         />
       </div>
 
-      <div className={`containerMascotas ${modo}`}>
+      <div className="containerMascotas">
         {showMascotas.length > 0 ? (
           showMascotas.map((mascota) => (
             <Link key={mascota.id} to={`/mascotas/${mascota.id}`}>

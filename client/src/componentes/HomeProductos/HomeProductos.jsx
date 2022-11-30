@@ -13,7 +13,6 @@ import Loader from "../Loader/Loader";
 export default function HomeProductos() {
 	const dispatch = useDispatch();
     
-  const modo = localStorage.getItem('modo');
   
  
 
@@ -77,10 +76,10 @@ export default function HomeProductos() {
     return (
 
 
-    <div className={`container_homeProd ${modo}`}>
+    <div className="container_homeProd">
 
         <SearchBarProducto/>
-        <div className={`filters ${modo}`}>
+        <div className="filters">
 
 {/* <h4 className="underline">Filters</h4> */}
 

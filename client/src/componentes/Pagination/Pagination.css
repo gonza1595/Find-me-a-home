@@ -2,10 +2,7 @@
     display: flex;
     justify-content: center;
     padding: 62px;
-}
-
-.pagination.dark{
-    background-color: #043a37;
+    background-color: #027a74;
 }
 
 .buttonPagination {

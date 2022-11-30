@@ -13,11 +13,6 @@
     font-weight: bold;
     color: #027a74; 
 }
-
-.cardProductos.dark{
-    background-color: #027a74;
-    color: #c5f5f2;
-}
  
 .cardProductos:hover{
     border: 2px solid #027a74;

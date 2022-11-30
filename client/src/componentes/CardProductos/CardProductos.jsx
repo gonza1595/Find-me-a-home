@@ -3,11 +3,8 @@ import "./CardProductos.css";
 import img from "../../assets/img/img1.png";
 
 export default function CardProductos({ imagen, precio, nombre }) {
-
-  const modo = localStorage.getItem('modo');
-
   return (
-    <div className={`cardProductos ${modo}`}>
+    <div className="cardProductos">
       <div className="descripcion">
         <div className="image">
           <img

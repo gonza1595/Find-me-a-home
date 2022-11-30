@@ -25,8 +25,6 @@ export const Comentarios = (id) => {
   const [ondelete, onsetDelete] = useState("");
   const history = useHistory();
 
-  const modo = localStorage.getItem('modo');
-
   const handleOnChange = (e) => {
     e.preventDefault()
     setComment(e.target.value);
@@ -122,9 +120,12 @@ function refreshPage() {
             logged?
 
         <div className="review-comentario">
-          <span className={`titulo-comentario ${modo}`}>Postea tu comentario!</span>
-          <textarea className={`input-comentario ${modo}`} onChange={handleOnChange} />
 
+        
+
+
+          <span className="titulo-comentario">Postea tu comentario!</span>
+          <textarea className="input-comentario" onChange={handleOnChange} />
           <button className="boton-comentario"  onClick={(e)=> handlePost(e)}>Enviar</button>
           <div id="commentSent" className="commentSent">
             {/* <div>

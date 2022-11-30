@@ -1,9 +1,6 @@
 .conteinerRequisitos {
+    background-color: #027a74;
     font-family: cursive;
-}
-
-.conteinerRequisitos.dark{
-    background-color: #043a37;
 }
 
 .tituloReq {
@@ -11,12 +8,9 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    color: #043a37;
-    font-size: 30px;
-}
-
-.tituloReq.dark{
     color: #c5f5f2;
+    font-size: 30px;
+
 }
 
 .img {
@@ -35,13 +29,8 @@
 .texto1{
     padding: 1rem 8rem;
     text-align:justify;
-    color: #043a37;
-}
-
-.texto1.dark{
     color: #c5f5f2;
 }
-
 .texto1 p {
     padding: 1rem 4rem;
     font-size: 18px;

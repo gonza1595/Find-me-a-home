@@ -1,6 +1,6 @@
 
 .darkButton{
-    background-color:#f7f57e ;
+    background-color: #343D5B;
     border-radius: 1000px;
     border: none;
     position: relative;
@@ -8,11 +8,6 @@
     outline: none;
     padding: 0;
     margin-left: 15px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
-}
-
-.darkButton.dark{
-    background-color:  #343D5B;
 }
 
 .darkButton::after{

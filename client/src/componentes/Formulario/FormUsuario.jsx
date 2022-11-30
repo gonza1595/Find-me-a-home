@@ -33,8 +33,6 @@ export default function Form() {
 
   const [errors, setErrors] = useState({});
 
-  const modo = localStorage.getItem('modo');
-
   // Inputs
   const [input, setInput] = useState({
     nombre: "",
@@ -91,8 +89,8 @@ export default function Form() {
       e.preventDefault();
       dispatch(formularioRegistroUsuario(input));
       alert("Su usuario ha sido creado exitosamente");
-      
-            history.push("/iniciarSesion"); //fijarse si se deja o no
+
+      history.push("/iniciarSesion"); //fijarse si se deja o no
 
       setInput({
         nombre: "",
@@ -111,41 +109,73 @@ export default function Form() {
     );
   }
 
-return (
-<div className={`cajita-usuario ${modo}`}>
-       <form   className={`container_formUs ${modo}`} onSubmit={(e) => handleSubmit(e)}>
-                  <h1 className={`welcome ${modo}`}>Registrarse</h1>
-       <div>
- <div className='window'>
-
-   <div className={`input-fields ${modo}`}>
-           <div>
-               <label >Nombre: </label>
-               <input className={`input-line full-width  ${modo}`}type="text" autoComplete="off" value={input.nombre} name='nombre' onChange={handleChange}/>
-               {errors.nombre && (<p>{errors.nombre}</p>)}
-           </div>
-           <div>
-               <label >Contraseña: </label>
-               <input className={`input-line full-width  ${modo}`} type="password" autoComplete="off" value={input.contraseña} name='contraseña' onChange={handleChange}/>
-               {errors.contraseña && (<p>{errors.contraseña}</p>)}
-           </div>
-           <div>
-               <label >Correo: </label>
-               <input className={`input-line full-width  ${modo}`} type="text" autoComplete="off" value={input.correo} name='correo' onChange={handleChange}/>
-               {errors.correo && (<p>{errors.correo}</p>)}
-           </div>
-           <div>
-               <label>Edad: </label>
-               <input className={`input-line full-width  ${modo}`}type="number" autoComplete="off" value={input.edad} name='edad' onChange={handleChange}/>
-               {errors.edad && (<p>{errors.edad}</p>)}
-           </div>
-           <div>
-               <label >Direccion: </label>
-               <input  className={`input-line full-width  ${modo}`} type="text" autoComplete="off" value={input.direccion} name='direccion' onChange={handleChange}/>
-               {errors.direccion && (<p>{errors.direccion}</p>)}
-           </div>
-           
-
+  return (
+    <div className="cajita-usuario">
+      <form className="container_formUs" onSubmit={(e) => handleSubmit(e)}>
+        <h1 className="welcome">Registrarse</h1>
+        <div>
+          <div className="window">
+            <div className="input-fields">
+              <div>
+                <label>Nombre: </label>
+                <input
+                  className="input-line full-width"
+                  type="text"
+                  autoComplete="off"
+                  value={input.nombre}
+                  name="nombre"
+                  onChange={handleChange}
+                />
+                {errors.nombre && <p>{errors.nombre}</p>}
+              </div>
+              <div>
+                <label>Contraseña: </label>
+                <input
+                  className="input-line full-width"
+                  type="password"
+                  autoComplete="off"
+                  value={input.contraseña}
+                  name="contraseña"
+                  onChange={handleChange}
+                />
+                {errors.contraseña && <p>{errors.contraseña}</p>}
+              </div>
+              <div>
+                <label>Correo: </label>
+                <input
+                  className="input-line full-width"
+                  type="email"
+                  autoComplete="off"
+                  value={input.correo}
+                  name="correo"
+                  onChange={handleChange}
+                />
+                {errors.correo && <p>{errors.correo}</p>}
+              </div>
+              <div>
+                <label>Edad: </label>
+                <input
+                  className="input-line full-width"
+                  type="number"
+                  autoComplete="off"
+                  value={input.edad}
+                  name="edad"
+                  onChange={handleChange}
+                />
+                {errors.edad && <p>{errors.edad}</p>}
+              </div>
+              <div>
+                <label>Direccion: </label>
+                <input
+                  className="input-line full-width"
+                  type="text"
+                  autoComplete="off"
+                  value={input.direccion}
+                  name="direccion"
+                  onChange={handleChange}
+                />
+                {errors.direccion && <p>{errors.direccion}</p>}
+              </div>
 
               <div>
                 <label className="rango">Rango: </label>

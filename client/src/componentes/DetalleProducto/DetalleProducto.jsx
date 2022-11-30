@@ -18,8 +18,6 @@ const DetalleProducto = () => {
   const [producto, setProducto] = React.useState();
   const history = useHistory();
 
-  const modo = localStorage.getItem('modo');
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -87,17 +85,16 @@ function handleBuyCart(){
 
   return (
     <>
-      <div className={`container ${modo}`}>
-
+      <div className="container-detalleProdu">
         {!producto ? (
           <Loader/>
         ) : ( 
-          <div className={`container ${modo}`}>
+          <div>
             <a href="javascript:history.back()">
               <button className="home_button">Volver</button>
             </a>
-            <div className={`informacionDetalleProducto ${modo}`}>
-
+            <div className="caja">
+            <div className="informacionDetalleProducto">
               <div className="nombreimg">
                 <h2 id="nombre">{producto.nombre}</h2>
                 <img
@@ -154,7 +151,7 @@ function handleBuyCart(){
             </div>
             <div className="comentari"> 
            <Comentarios id={id}/>
-           <div className={`comentarios-Detalle ${modo}`}> 
+           <div className="comentarios-Detalle"> 
 
            <h4>Comentarios:</h4>
             <div> 

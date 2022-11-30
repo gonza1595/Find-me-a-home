@@ -5,14 +5,12 @@ import {
   traerUsuarios,
   adminBorrarUsuarios,
 } from "../../../redux/actions/index";
-import Dark from "../../NavBar/Dark";
 import "../ListaUsuarios/ListaUsuario.css";
 import FiltroUsuarios from "./FiltrosUsuarios";
 
 const TablaUsuarios = () => {
   const usuarios = useSelector((state) => state.usuarios);
   const dispatch = useDispatch();
-  const modo = localStorage.getItem('modo');
 
   useEffect(() => {
     dispatch(traerUsuarios());
@@ -28,14 +26,9 @@ const TablaUsuarios = () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div className={`container_tabla_dash ${modo}`}>
-        <div className="darkMode">
-          <Dark />
-        </div>
+    <div className="container_tabla_dash">
       <h2>USUARIOS</h2>
-      <div className={`filters ${modo}`}>
       <FiltroUsuarios setPage={setPage} setFilterSelected={setFilterSelected} />
-      </div>
       <table className="tabla-usuarios">
         <thead className="theadMasctotas">
           <tr className="nombres-columnasUsuario">

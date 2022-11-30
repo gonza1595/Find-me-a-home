@@ -2,13 +2,11 @@
 .search {
   display: flex;
   justify-content: center;
+  background-color: #027a74;
   width: 100%;
   position: relative;
 }
 
-.search.dark{
-  background-color: #043a37;
-}
 
 .searchTerm {
     border: 3px solid #a1cec1;
@@ -18,10 +16,6 @@
     outline: none;
     color: #9DBFAF;
   }
-
-  .searchTerm.dark{
-    background-color: #027a74;
-  }
   
   .searchTerm:focus{
     color: #027a74;
@@ -29,10 +23,6 @@
 
   .searchTerm:hover {
     border: 3px solid rgb(253,215,112);
-  }
-
-  .searchTerm.dark:hover{
-    border: 3px solid rgb(224, 197, 121);
   }
 
   /* .searchButton {

@@ -5,7 +5,6 @@ html {  /* fijarse esto, cambia los margenes de toda la pagina*/
 
 }
 
-
 input {
   border: none;
 }
@@ -76,10 +75,6 @@ button:focus {
   transition: all .2s ease;
 }
 
-.input-line.dark{
-  background-color: #47d4cb;
-}
-
 .full-width {
   width: 100%;
 }
@@ -94,11 +89,6 @@ button:focus {
   padding: 10px;
 }
 
-.input-fields.dark{
-  background-color: #027a74;
-  color: #c5f5f2;
-}
-
 .container_formUs {
   display: flex;
   -webkit-box-align: center;
@@ -109,14 +99,11 @@ button:focus {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  background: #027a74;
   height: 805px;
   width: 100%; 
   flex-direction: column;
   align-items: center;
-}
-
-.container_formUs.dark{
-  background-color: #043a37;
 }
 
 
@@ -127,16 +114,15 @@ display: flex;
 justify-content: space-around;
   font-size: 40px;
   letter-spacing: 0.05rem;
+  background-color: #027a74;
   font-family: cursive;
-  color: #027a74;
+  color: #c5f5f2;
   margin: 20px;
     align-items: center;
+    color: aliceblue;
     font-family: cursive;
     font-weight: bold;
-}
-
-.welcome.dark{
-  color: #c5f5f2;
+  
 }
 
 

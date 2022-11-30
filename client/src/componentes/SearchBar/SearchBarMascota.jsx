@@ -10,8 +10,6 @@ export default function SearchBar(){
 
     const [nombre, setNombre] = useState("");
 
-  const modo = localStorage.getItem('modo');
-
   function handleInputChange(e) {
     e.preventDefault();
     setNombre(e.target.value);
@@ -25,10 +23,10 @@ export default function SearchBar(){
   console.log(nombre)
 
     return(
-        <form className={`search ${modo}`} onSubmit={(event) => handleClick(event)}>
+        <form className="search" onSubmit={(event) => handleClick(event)}>
             <div >
                 <input
-                className={`searchTerm ${modo}`}
+                className="searchTerm"
                 type="text"
                 placeholder="Buscar mascota..."
                 onChange={(e) => handleInputChange(e)}

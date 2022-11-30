@@ -1,35 +1,23 @@
-.containerRef{
-
+.container-contacto{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
-
+    height: 83.1vh;
+    background-color:  #027a74 ;
     background-size: cover;
 
-}
-
-.containerRef.dark{
-    background-color: #043a37;
 }
 
 .datosDetalleRefugio{
     display: flex;
-    justify-content:center;
-    width: 50%;
-    background-color:  #c5f5f2 ;
-    background-size: cover;
-    border-radius: 20px;
-    font-family: cursive;
-    margin-top: 10px ;
-}
-
-.datosDetalleRefugio.dark{
-    background-color: #027a74;
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
 }
 
 .datosDetalleRefugio h3{
@@ -38,14 +26,11 @@
     padding: 20px;
     border-radius: 20px; 
     color:#027a74;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
-.datosDetalleRefugio.dark h3{
-    background-color: #027a74;
-    color: #c5f5f2;
-}
+    box-shadow: 8px 8px 8px #999;
+    font-family: cursive;
+    display: flex;
+   justify-content: center;
+   text-align: center;
 
 
 }
@@ -67,6 +52,20 @@
     font-size: 17px;
 }
 
-.home_button_detalle{
-    margin: 30px;
-padding: 10px;
+.datosDetalleRefugio img{
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 8px 8px 8px #999;
+}
+
+
+.botonesDeContacto{
+display: flex;
+flex-direction: row;
+}

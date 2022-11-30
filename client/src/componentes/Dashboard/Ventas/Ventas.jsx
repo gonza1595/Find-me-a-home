@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { traerOrdenes } from "../../../redux/actions";
-import Dark from "../../NavBar/Dark";
 import "./Ventas.css";
 
 function Ventas() {
@@ -16,9 +15,6 @@ function Ventas() {
 
   return (
     <div className="container_tabla_dash">
-        <div className="darkMode">
-          <Dark />
-        </div>
       <h2>VENTAS</h2>
       <table className="tabla-productos">
         <thead>

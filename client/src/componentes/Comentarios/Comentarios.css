@@ -12,12 +12,7 @@ margin-top: 5px;
 margin-bottom: 5px;
 border-radius: 10px;
 box-shadow: 0 0 20px #222;
-}
 
-.input-comentario.dark{
-    background-color: #027a74;
-    border: #043a37 solid 1px;
-    color: #c5f5f2;
 }
 
 .titulo-comentario{
@@ -28,10 +23,6 @@ color: rgb(232, 233, 232);
 font-weight: bolder;
 font-family: cursive;
 margin-bottom: 5px;
-}
-
-.titulo-comentario.dark{
-    color: #c5f5f2;
 }
 
 .boton-comentario{

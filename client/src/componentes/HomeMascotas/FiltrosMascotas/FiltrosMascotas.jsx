@@ -19,8 +19,6 @@ import {
 export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
 
-  const modo = localStorage.getItem('modo');
-
   function handleFilterByEspecie(e) {
     if (e.target.value === "perro") {
       e.preventDefault();
@@ -102,7 +100,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   }
 
   return (
-    <div className={`filters ${modo}`}>
+    <div className="filters">
       <select
         onChange={(e) => handleFilterByEspecie(e)}
         defaultValue="Filtrar por especie"

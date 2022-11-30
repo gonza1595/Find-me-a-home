@@ -4,15 +4,13 @@ import img from '../../assets/img/quienes-somos.jpg'
 
 const QuienesSomos = () => {
 
-  const modo = localStorage.getItem('modo');
-
     return (
         <div>
-            <div className={`contenedor ${modo}`}>
+            <div className="contenedor">
                 <div className="foto-contenedor">
                     <img src={img} alt="img not found" width='600px' height='auto' />
                 </div>
-                <div className={`parrafo-contenedor ${modo}`}>
+                <div className="parrafo-contenedor">
                     <p>
                     Somos una organización que se propone unir a personas con animales rescatados que necesitan amor y cuidado.
                         Desde nuestro lugar queremos concientizar a la sociedad a respetar la vida de los animales y su bienestar.

@@ -13,10 +13,6 @@ import Loader from "../Loader/Loader";
 
 export default function Detalle() {
   const dispatch = useDispatch();
-
-  const modo = localStorage.getItem('modo');
-
-
   const LS = localStorage.getItem('login');
   const params = useParams();
   const mascotas = useSelector((state) => state.detalle);
@@ -66,17 +62,17 @@ export default function Detalle() {
   }
 
   return (
-    <div >
+    <div className="cajita-detalleMascota">
+      
+      <NavLink  to="/mascotas">
+            <button className="boton-detelleMascota">Volver</button>
+          </NavLink>
       {!mascotas ? (
         <Loader />
       ) : (
-        <div className={`containerDetalle ${modo}`}>
-          <a href="javascript:history.back()">
-            <button className="home_button">Volver</button>
-          </a>
-          <div className={`informacionDetalleMascotas ${modo}`}>
-
-        
+        <div className="caja-detalle">
+          
+          <div className="informacionDetalleMascotas">
             <div className="nombreimg">
               <h2 id="nombre">{mascotas.nombre}</h2>
               <img

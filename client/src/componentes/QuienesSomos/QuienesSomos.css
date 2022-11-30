@@ -1,13 +1,10 @@
 .contenedor {
+    background-color: #027a74;
     display: flex;
     justify-content: space-evenly;
     height: 805px;
-}
 
-.contenedor.dark{
-    background-color: #043a37;
 }
-
 .foto-contenedor {
     padding: 3rem 3rem;
     display: flex;
@@ -36,11 +33,8 @@
 }
 .parrafo-contenedor{
     font-size: 1.45rem;
-    color: #043a37;
+    color: #c5f5f2;
     line-height: 2rem;
     text-align:center;
-}
-
-.parrafo-contenedor.dark{
-    color: #c5f5f2;
+    
 }
