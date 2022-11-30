@@ -151,7 +151,6 @@ function handleBuyCart(){
                             </div>
           </div>
               </div>
-            </div>
             <div className="comentari"> 
            <Comentarios id={id}/>
            <div className={`comentarios-Detalle ${modo}`}> 

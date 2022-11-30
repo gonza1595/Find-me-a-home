@@ -32,6 +32,5 @@ export default function DetalleRefugio() {
         </div>
 
       </div>
-    </div>
   );
 }

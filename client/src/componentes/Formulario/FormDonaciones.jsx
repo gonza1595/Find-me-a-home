@@ -42,9 +42,6 @@ const FormDonacion = () => {
 
   const modo = localStorage.getItem('modo');
       
-      const [refugio, setRefugio]= useState("");
-      const [monto, setMonto] = useState(0);
-      
   const handleRefugio = (e) => {
     e.preventDefault();
     setRefugio(e.target.value);
@@ -55,11 +52,6 @@ const FormDonacion = () => {
     setMonto(e.target.value);
   };
 
-      const handleMonto= (e) => {
-        e.preventDefault();
-        setMonto(e.target.value);
-      }
- 
       const handleSubmit = async (e) => {
         e.preventDefault();
     
