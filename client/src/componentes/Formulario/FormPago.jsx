@@ -7,7 +7,12 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { realizarPago, crearOrden, clearMonto } from "../../redux/actions";
+import {
+  realizarPago,
+  crearOrden,
+  clearMonto,
+  crearDonacion,
+} from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 
 const stripePromise = loadStripe(
