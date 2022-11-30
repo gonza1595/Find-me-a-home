@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import SideBar from "../Dashboard/SideBar/SideBar";
 import SearchBarProducto from "../../SearchBar/SearchBarProducto";
 import FiltrosProductos from "./FiltrosProductos";
+import Dark from "../../NavBar/Dark";
 
 const TablaProductos = () => {
   const productos = useSelector((state) => state.productos);
 
   const dispatch = useDispatch();
+  const modo = localStorage.getItem('modo');
 
   useEffect(() => {
     dispatch(traerProductos());
@@ -27,7 +29,10 @@ const TablaProductos = () => {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="container_tabla_dash">
+    <div className={`container_tabla_dash ${modo}`}>
+        <div className="darkMode">
+          <Dark />
+        </div>
       <h2>PRODUCTOS</h2>
       <div className="searchYbtn">
         <div className="searchBarDashboard">
@@ -37,10 +42,12 @@ const TablaProductos = () => {
           <button className="btn-agregar-dash">Agregar Producto</button>
         </Link>
       </div>
+      <div className={`filters ${modo}`}>
       <FiltrosProductos
         setFilterSelected={setFilterSelected}
         setPage={setPage}
       />
+      </div>
       <table className="tabla-productos">
         <thead>
           <tr className="tabla-head">

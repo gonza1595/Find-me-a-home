@@ -19,6 +19,8 @@ export default function Cart() {
   const numberCart = useSelector((state) => state.numberCart);
   const [myCartQuantity, setmyCartQuantity] = useState(0);
 
+  const modo = localStorage.getItem('modo');
+
   /////////
 
   const calculatemyCartQuantity = () => {
@@ -82,8 +84,8 @@ export default function Cart() {
   
 
   return (
-    <div className="carrito-container">
-      <div className="myCart">Productos en mi carrito ( {myCartQuantity} )</div>
+    <div className={`carrito-container ${modo}`}>
+      <div className={`myCart ${modo}`}>Productos en mi carrito ( {myCartQuantity} )</div>
 
       <div className="prodYresum">
         <section>
@@ -144,8 +146,8 @@ export default function Cart() {
         </section>
 
         <section>
-          <div className="resumen">
-            <div className="resumenCompra">Resumen de compra</div>
+          <div className={`resumen ${modo}`}>
+            <div className={`resumenCompra ${modo}`}>Resumen de compra</div>
 
             <span className="items-carrito">Total</span>
             <span id="carritoTotal">

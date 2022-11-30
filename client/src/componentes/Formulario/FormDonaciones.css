@@ -1,0 +1,70 @@
+.containerDon{
+    font-family: cursive;
+    color: #043a37;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    /* background-color: #c5f5f2; */
+    height: 100vh;
+}
+
+.formu{
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+}
+
+.formu.dark{
+    box-shadow: 1px 2px 3px 4px rgba(226, 230, 231, 0.4);
+}
+
+.containerDon.dark{
+    background-color: #043a37;    
+    color: #c5f5f2;
+}
+
+.containerDon select{
+    padding: 5px;
+    height: fit-content;
+    border-radius: 7px;
+    margin-top: 55px;
+    margin-left: 20px;
+}
+
+.containerDon.dark select{
+    background-color: #027a74;
+
+}
+
+.containerDon input{
+    border-radius: 7px;
+    padding: 10px;
+    border: #027a74 1px solid;
+    margin-left: 20px;
+}
+
+.containerDon.dark input{
+    background-color: #027a74;
+    border: #4a706e 1px solid;
+}
+
+.refugioDonar{
+    display: flex;
+    flex-direction: row;
+}
+
+.containerDon p{
+    margin-top: 50px;
+}
+
+.datosTarjeta{
+    border: #027a74 1px solid;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.datosTarjeta.dark{
+ border: #c5f5f2 1px solid;
+}
+

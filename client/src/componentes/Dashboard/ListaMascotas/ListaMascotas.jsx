@@ -10,10 +10,12 @@ import FormMascota from "../../Formulario/FormMascota";
 import "../ListaMascotas/ListaMascotas.css";
 import SearchBarMascotas from "../../SearchBar/SearchBarMascota";
 import FiltrosMascotas from "../../HomeMascotas/FiltrosMascotas/FiltrosMascotas";
+import Dark from "../../NavBar/Dark";
 
 function TablaMascotas() {
   const dispatch = useDispatch();
   const mascotas = useSelector((state) => state.mascotas);
+  const modo = localStorage.getItem('modo');
 
   useEffect(() => {
     dispatch(traerMascotas());
@@ -29,15 +31,20 @@ function TablaMascotas() {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="container_tabla_dash">
+    <div className={`container_tabla_dash ${modo}`}>
+        <div className="darkMode">
+          <Dark />
+        </div>
       <h2>MASCOTAS</h2>
       <div className="searchBarDashboard">
         <SearchBarMascotas />
       </div>
+      <div className={`filters ${modo}`}>
       <FiltrosMascotas
         setFilterSelected={setFilterSelected}
         setPage={setPage}
       />
+      </div>
       <table className="tabla-mascotas">
         <thead className="theadMasctotas">
           <tr className="nombres-columnas">

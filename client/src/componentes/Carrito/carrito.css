@@ -1,6 +1,11 @@
 .carrito-container{
-  margin: 5%;
   font-family: cursive;
+  height: 100vh;
+}
+
+.carrito-container.dark{
+    background-color: #043a37;
+    color: #c5f5f2;
 }
 
 .myCart{
@@ -9,8 +14,10 @@
     color: rgb(42, 149, 165);
    font-size: 1.5rem;
    padding: 1rem;
+}
 
-
+.myCart.dark{
+    color: #c5f5f2;
 }
 
 .prodCart{
@@ -77,9 +84,17 @@ flex-direction: row;
     border-radius: 10px;
 }
 
+.resumen.dark{
+    border: #c5f5f2 1px solid;
+}
+
 .resumenCompra{
     font-size: 1.5rem;
     padding: 1rem;
     text-decoration: underline;
     color: rgb(42, 149, 165);
+}
+
+.resumenCompra.dark{
+    color: #c5f5f2;
 }

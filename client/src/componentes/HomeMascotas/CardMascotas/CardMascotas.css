@@ -11,7 +11,11 @@
     font-family: cursive;
     font-weight: bold;
     color: #027a74; 
-     
+}
+
+.cardMascotas.dark{
+    background-color: #027a74;
+    color: #c5f5f2;
 }
  
 .cardMascotas:hover{

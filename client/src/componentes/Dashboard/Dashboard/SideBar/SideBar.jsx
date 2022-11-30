@@ -8,10 +8,11 @@ import user from '../img/user.png'
 import ventas from '../img/ventas.png'
 
 export default function SideBar() {
+    const modo = localStorage.getItem('modo');
   
 
   return (
-    <div className="sideBar_dash">
+    <div className={`sideBar_dash ${modo}`}>
         <nav>
             {/* <div className="button_sidebar">
                 <label htmlFor="check" className="menuButton">

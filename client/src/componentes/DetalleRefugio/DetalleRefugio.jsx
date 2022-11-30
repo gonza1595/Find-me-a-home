@@ -4,13 +4,16 @@ import wsp from "./iconWsp.png";
 import insta from "./iconInsta.png";
 
 export default function DetalleRefugio() {
+
+  const modo = localStorage.getItem('modo');
+
   return (
-    <div className="container">
+    <div className={`containerRef ${modo}`}>
       <a href="javascript:history.back()">
         <button className="home_button">Volver</button>
       </a>
 
-     <div className="datosDetalleRefugio">
+     <div className={`datosDetalleRefugio ${modo}`}>
         <div className="titleDetalleRefugio">
            <h3>Gracias por su interes! para ayudarnos puedes colaborar comprando nuestros productos o donando dinero a nuestros refugios</h3>      
            <a href="productos">
@@ -20,16 +23,6 @@ export default function DetalleRefugio() {
         <button className="home_button_detalle">Donaciones 🐾</button>
       </a>
        
-        </div>
-        <div className="listaDetalleRefugio">
-          <ul>
-        
-          </ul>
-        </div>
-        <div className="botoncitosDetalleRefugio">
-        
-
-        
         </div>
       </div>
     </div>

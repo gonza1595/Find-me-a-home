@@ -9,6 +9,10 @@
     background-size: cover;
 }
 
+.container.dark{
+    background-color: #043a37;
+}
+
 .informacionDetalleProducto {
     display: flex;
     flex-direction: row;
@@ -16,8 +20,8 @@
     justify-content:center;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    margin-right: 20vh;
-    
+    margin-left: 10vh;
+    margin-right: 10vh;
     border: solid 1px rgb(171, 212, 180);
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -31,6 +35,12 @@
     font-family: cursive;
     color: #027a74;
     font-size: 18px;
+}
+
+.informacionDetalleProducto.dark{
+background-color: #027a74;
+color: #c5f5f2;
+border: #043a37 solid 1px;
 }
 
 .informacionDetalleProducto ul{
@@ -120,6 +130,12 @@ button:hover{
     font-size: 18px;
 }
 
+.comentarios-Detalle.dark{
+    background-color: #027a74;
+    color: #c5f5f2;
+    border: #043a37 solid 1px;
+}
+
 .comentarios-Detalle h4{
     display: flex;
     justify-content: center;
@@ -128,7 +144,6 @@ button:hover{
 .comentarios-Detalle ul{
     border-bottom: #222 1px solid;
     padding: 10px;
-
 }
 
 .comentari{

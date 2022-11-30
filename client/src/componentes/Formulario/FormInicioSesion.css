@@ -8,8 +8,11 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #027a74;
   height: 805px
+   }
+
+   .cajita-inicio.dark{
+    background-color: #043a37;
    }
 
    .formInicio{
@@ -53,7 +56,10 @@
     border-radius: 15px  ;
 	padding: 12px 15px;
 	margin: 15px 0;	
-    
+}
+
+.input-InicioSesion.dark{
+    background-color: #043a37;
 }
 
 .input-fields-sesion {
@@ -68,12 +74,21 @@
     height: 80%;
   }
 
+  .input-fields-sesion.dark{
+    background-color: #027a74;
+    color: #c5f5f2;
+  }
+
   .titulo-sesion{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 35px;
-    color: aliceblue;
+    color: #043a37;
     font-family: cursive;
     font-weight: bold;
+}
+
+.titulo-sesion.dark{
+    color: #c5f5f2;
 }

@@ -3,7 +3,7 @@
     text-align: center;
     background-color: #027a74;
     font-family: cursive;
-    color: #c5f5f2;
+    color: #7ec4bf;
     width: 200px;
     height:100%;
     border-right: solid #053d3a 2px ;
@@ -11,6 +11,10 @@
     margin-top: 0px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     /* left: -200px; */
+}
+ 
+.sideBar_dash.dark{
+  background-color: #043a37;
 }
 
 .sideBar_dash ul li {
