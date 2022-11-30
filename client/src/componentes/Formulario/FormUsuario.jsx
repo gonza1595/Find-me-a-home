@@ -1,113 +1,115 @@
-import React, {useState, useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router'
-import {formularioRegistroUsuario} from "../../redux/actions/index"
-import './FormUsuario.css'
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
+import { formularioRegistroUsuario } from "../../redux/actions/index";
+import "./FormUsuario.css";
 /* recordar cuando usar usuario */
 
 function validate(input) {
-    let errors = {}
+  let errors = {};
 
-    if(!input.nombre){
-        errors.nombre = ("Se requiere un nombre") 
-    } 
-    
-    else if(!input.contraseña){
-        errors.contraseña = ("Se requiere una contraseña")
-    }
+  if (!input.nombre) {
+    errors.nombre = "Se requiere un nombre";
+  } else if (!input.contraseña) {
+    errors.contraseña = "Se requiere una contraseña";
+  } else if (!input.correo || !input.correo.includes("@")) {
+    errors.correo = "Se requiere correo";
+  } else if (!input.edad) {
+    errors.edad = "Se requiere edad";
+  } else if (!input.direccion) {
+    errors.direccion = "Se requiere direccion";
+  } else if (!input.rango) {
+    errors.rango = "Se requiere rango";
+  }
 
-    else if(!input.correo){
-        errors.correo = ("Se requiere correo")
-    }
-
-    else if(!input.edad){
-        errors.edad = ("Se requiere edad")
-    }
-    else if(!input.direccion){
-        errors.direccion = ("Se requiere direccion")
-    }
-    else if(!input.rango){
-        errors.rango = ("Se requiere rango")
-    }
-    
-   
-    return errors
+  return errors;
 }
-    
-export default function Form() {
-    const dispatch = useDispatch()
-    const history = useHistory() 
-    const usuario = useSelector((state) => state.usuario) //no haria falta
-    
-    const [errors, setErrors] = useState({})  
 
-    // Inputs 
-    const [input, setInput] = useState({ 
-        "nombre": '',
-        "contraseña": '',
-        "correo": '',
-        "edad":'',
-        "direccion": '',
-        "rango": '',
-        "usuario": [],
-    })
+export default function Form() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const usuario = useSelector((state) => state.usuario); //no haria falta
+
+  const [errors, setErrors] = useState({});
 
   const modo = localStorage.getItem('modo');
 
+  // Inputs
+  const [input, setInput] = useState({
+    nombre: "",
+    contraseña: "",
+    correo: "",
+    edad: "",
+    direccion: "",
+    rango: "",
+    usuario: [],
+  });
 
-    function handleChange(e){
-        e.preventDefault();
-        console.log(input);
-        setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-        setErrors(validate({
-          ...input,
-          [e.target.name]: [e.target.value]
-        })
-        )
+  function handleChange(e) {
+    e.preventDefault();
+    console.log(input);
+    setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: [e.target.value],
+      })
+    );
+  }
+
+  function handleCheck(e) {
+    // rango
+    if (e.target.checked) {
+      console.log(input);
+
+      setInput({
+        ...input,
+        rango: e.target.value, // [e.target.name]
+      });
     }
-        
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: e.target.value,
+      })
+    );
+  }
 
-        function handleCheck(e){ // rango
-            if(e.target.checked){
-            console.log(input)
-                
-                setInput({
-                    ...input, 
-                    rango : e.target.value // [e.target.name]
-                })
-            }
-             setErrors(validate({
-                 ...input, 
-                 [e.target.name] : e.target.value  
-             }))
-        }
+  function handleSubmit(e) {
+    if (
+      !input.nombre ||
+      !input.contraseña ||
+      !input.correo ||
+      !input.edad ||
+      !input.direccion ||
+      !input.rango
+    ) {
+      e.preventDefault();
+      alert("Verifique los campos para poder continuar");
+    } else {
+      e.preventDefault();
+      dispatch(formularioRegistroUsuario(input));
+      alert("Su usuario ha sido creado exitosamente");
+      
+            history.push("/iniciarSesion"); //fijarse si se deja o no
 
-        function handleSubmit(e){
-            if(!input.nombre || !input.contraseña || !input.correo || !input.edad || !input.direccion || !input.rango ){
-                e.preventDefault();
-                alert('Verifique los campos para poder continuar')
-            } else {
-                e.preventDefault();
-                dispatch(formularioRegistroUsuario(input));
-                alert('Su usuario ha sido creado exitosamente');
-                
-                history.push('/') //fijarse si se deja o no
-                
-                setInput({
-                    nombre: '',
-                    contraseña: '',
-                    correo: '',
-                    edad:'',
-                    direccion:'',
-                    rango: ''             
-                })
-            }
-             setErrors(validate({
-                 ...input, 
-                [e.target.name] : e.target.value
-             }))    
-        }     
+      setInput({
+        nombre: "",
+        contraseña: "",
+        correo: "",
+        edad: "",
+        direccion: "",
+        rango: "",
+      });
+    }
+    setErrors(
+      validate({
+        ...input,
+        [e.target.name]: e.target.value,
+      })
+    );
+  }
 
 return (
 <div className={`cajita-usuario ${modo}`}>
@@ -144,24 +146,40 @@ return (
            </div>
            
 
-           <div>
-               <label className='rango' >Rango: </label>
-               <label>
-               <input  type="radio" value='usuario' name='rango' onClick={(e) => handleCheck(e)}/> Usuario </label>
-               <label>
-               <input   type="radio" value='refugio' name='rango' onClick={(e) => handleCheck(e)}/> Refugio </label>
-               {errors.rango && (<p>{errors.rango}</p>)}
-           </div>
-           </div>
 
-           <div>
-               <button  className='ghost-round full-width' type='submit'> Registrarse </button>
-           </div>
-           </div>
-           </div>
-           
-       </form>
-   
-   </div>
+              <div>
+                <label className="rango">Rango: </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="usuario"
+                    name="rango"
+                    onClick={(e) => handleCheck(e)}
+                  />{" "}
+                  Usuario{" "}
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="refugio"
+                    name="rango"
+                    onClick={(e) => handleCheck(e)}
+                  />{" "}
+                  Refugio{" "}
+                </label>
+                {errors.rango && <p>{errors.rango}</p>}
+              </div>
+            </div>
 
-)}
+            <div>
+              <button className="ghost-round full-width" type="submit">
+                {" "}
+                Registrarse{" "}
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}

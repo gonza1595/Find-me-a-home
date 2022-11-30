@@ -1,4 +1,4 @@
-const { Pet, User, Comentario, Product, Orden } = require("../db");
+const { Pet, User, Comentario, Product, Orden, Donacion } = require("../db");
 const db = require("../db.js");
 const mascotasJson = require("../../mascotas.json");
 const { userInfo } = require("os");
@@ -236,6 +236,11 @@ const crearOrden = async (userID, productos, montoTotal) => {
   }
 };
 
+const traeTodasLasDonaciones = async () => {
+  const donacion = await Donacion.findAll();
+  return donacion;
+};
+
 module.exports = {
   getMascotas,
   filtroProductos,
@@ -250,4 +255,5 @@ module.exports = {
   traeOrdenesDeUnUsuario,
   cambiaEstadoOrden,
   crearOrden,
+  traeTodasLasDonaciones,
 };

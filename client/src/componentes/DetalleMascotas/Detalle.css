@@ -13,23 +13,29 @@
 background-color: #043a37;
 height: 100vh;
 }
+.caja-detalle{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
 
 .informacionDetalleMascotas{
     display: flex;
-    flex-direction: row;
     align-items:center;
     justify-content:center;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    margin-right: 20vh;
     
+    margin-top: 2vh;
+
+
     border: solid 1px rgb(171, 212, 180);
     border-radius: 20px;
     backdrop-filter: blur(10px);
-    padding: 20px;
+    /* padding: 100px; */
     box-shadow: 0 0 30px #222;
-    width: auto;
+
+    width: 70%;
     height: auto;
+
     background-color:  #c5f5f2 ;
     background-size: cover;
     border-radius: 20px;
@@ -44,13 +50,27 @@ height: 100vh;
 }
 
 .descripDetalleMascota {
+    font-size: 23px;
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
-    margin-left: 40px;
+    padding: 1rem 8rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 100px;
 }
 .informacionDetalleMascotas ul{
     padding: 20px;
+    font-size: 20px;
+}
+
+
+.nombreimg{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 25px;
 }
 
 .nombreimg img{
@@ -58,6 +78,42 @@ height: 100vh;
 }
 
 #nombre {
+    display: flex;
     align-items:center;
     justify-content:center;
+    background-color: rgb(253, 215, 112);
+    border-radius: 50px;
+    width: 70%;
+  
 }
+
+.titulo-mascota{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    background-color: rgb(253, 215, 112);
+    border-radius: 50px;
+    width: 50%;
+}
+
+
+.cajita-detalleMascota{
+    background-color: #027a74;
+    height: 805px ;
+}
+
+.adopta-boton{
+margin-bottom: -20px;
+    font-size: 17px;
+  
+}
+
+.descripcion-mascota{
+    margin-bottom: 80px;
+}
+
+.boton-detelleMascota{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+

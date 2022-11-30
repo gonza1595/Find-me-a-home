@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 // const {URL_BACK} = process.env;
 
 //crear actions necesarias
@@ -118,26 +119,28 @@ export function formularioPostMascota(payload) {
   };
 }
 
-// export const login = (payload) => {
-//   return {
-//     type: "LOGIN",
-//     payload,
-//   };
-// };
+export const logOut = () => {
+
+  localStorage.removeItem("login")
+  
+  return {
+    type: "LOGOUT",
+  };
+};
 
 export function formularioLogin(correo, contraseña) {
   return async function () {
     const json = await axios.post(`/usuario/login`, { correo, contraseña });
-
+    
     localStorage.setItem("login", JSON.stringify(json.data)
   );
 
-    console.log(json.data)
+    console.log(json.data);
 
     return {
       type: "LOGIN",
-      payload: json.data ,
-    }
+      payload: json.data,
+    };
   };
 }
 
@@ -483,13 +486,36 @@ export function decreaseCart(payload) {
 //   }
 // };
 ////////////////////////////
+
 export function realizarPago(id, amount) {
   return async function () {
-    const { data } = await axios.post(`/pagos`, {
-      id,
-      amount,
+
+    const dataa = localStorage.getItem('login');
+    const {tokenSesion}= dataa
+    const token = `bearer ${tokenSesion}`
+
+
+    console.log(dataa);
+    console.log(tokenSesion);
+    console.log(token);
+
+    const { data } = await axios.post(`/pagos`,
+    
+    {
+      headers:{
+        
+        authorization: token
+
+      },
+
+      body:{
+        id,
+        amount
+
+      }
     });
     console.log(data);
+
     return data;
   };
 }
@@ -575,17 +601,17 @@ export const crearOrden = (userID, productos, montoTotal) => {
 
 export const crearDonacion = (refugio, userID, montoTotal) => {
   return async function (dispatch) {
-    try{
-      const donacion= await axios.post("/donaciones", {
+    try {
+      const donacion = await axios.post("/donaciones", {
         refugio,
         userID,
-        montoTotal
+        montoTotal,
       });
       dispatch({
         type: "CREAR_DONACION",
         payload: donacion.data,
-      })
-    }catch(error){
+      });
+    } catch (error) {
       console.log(error);
     }
   };
@@ -604,14 +630,13 @@ export const montoTotal = (total) => {
   };
 };
 
-
-export const clearMonto= () => {
+export const clearMonto = () => {
   return async function (dispatch) {
     try {
       dispatch({
-        type: "CLEAR_MONTO"
-      })
-    }catch(error){
+        type: "CLEAR_MONTO",
+      });
+    } catch (error) {
       console.log(error);
     }
   };
@@ -631,3 +656,16 @@ export const traerOrdenes = () => {
   };
 };
 
+export const traerDonaciones = () => {
+  return async function (dispatch) {
+    try {
+      const donaciones = await axios.get("/donaciones");
+      dispatch({
+        type: "TRAER_DONACIONES",
+        payload: donaciones.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

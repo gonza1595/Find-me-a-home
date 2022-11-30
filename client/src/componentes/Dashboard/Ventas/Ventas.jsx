@@ -8,10 +8,7 @@ function Ventas() {
   const dispatch = useDispatch();
   const ventas = useSelector((state) => state.traerOrdenes);
   const ver = ventas.map((e) => e.productos.map((e) => e.cantidad));
-  console.log(ver);
-  //   const totalProductos = ver.reduce((acc, item) => acc + item.cantidad, 0);
-  const totalProductos = ver?.reduce((a, b) => a + b, 0);
-  console.log(totalProductos);
+  console.log(ventas);
 
   useEffect(() => {
     dispatch(traerOrdenes());
@@ -32,9 +29,7 @@ function Ventas() {
             <th scope="col">Cantidad</th>
             <th scope="col">Descripción</th>
             <th scope="col">P. Unitario</th>
-            <th scope="col">Importe</th>
-            <th scope="col">Borrar</th>
-            <th scope="col">Editar</th>
+            <th scope="col">Importe Total</th>
           </tr>
         </thead>
         <tbody>
@@ -45,20 +40,19 @@ function Ventas() {
                 <td>{orden.fecha}</td>
                 <td>{orden.userID}</td>
                 <td>
-                  {orden.productos.reduce(
-                    (acc, item) => acc + item.cantidad,
-                    0
-                  )}
+                  {orden.productos.map((producto) => {
+                    return <li>{producto.cantidad}</li>;
+                  })}
                 </td>
                 <td>
-                  {orden.productos
-                    .map((producto) => producto.nombre)
-                    .toString()}
+                  {orden.productos.map((producto) => {
+                    return <li>{producto.nombre}</li>;
+                  })}
                 </td>
                 <td>
-                  {orden.productos
-                    .map((producto) => producto.precio)
-                    .toString()}
+                  {orden.productos.map((producto) => {
+                    return <li>$ {producto.precio}</li>;
+                  })}
                 </td>
                 <td>$ {orden.montoTotal}</td>
               </tr>

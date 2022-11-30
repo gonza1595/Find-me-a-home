@@ -16,7 +16,11 @@ export const Comentarios = (id) => {
   //console.log(userLogged);
   const allCommentsByProduct = useSelector((state) => state.comentarios);
   const userId = Object.values(useSelector((state) => state.login)) 
+  const logged = localStorage.getItem('login');
+
+  console.log(logged)
   
+
   const [comment, setComment] = useState("");
   const [ondelete, onsetDelete] = useState("");
   const history = useHistory();
@@ -26,15 +30,25 @@ export const Comentarios = (id) => {
   const handleOnChange = (e) => {
     e.preventDefault()
     setComment(e.target.value);
-    console.log(comment)
+
   };
 
 function handlePost(e){
-  e.preventDefault()
+
+  if(!logged){
+
+    alert("loguate")
+    
+  }else{
+
+     e.preventDefault()
   dispatch(Review({id:id , comentarios:comment}))
   setComment("");
  
   refreshPage()
+  }
+
+ 
 }
 
 
@@ -98,17 +112,46 @@ function refreshPage() {
   //comments only show after second click
 
   return (
+    
+
+        <div>
+
+
+        {
+
+            logged?
 
         <div className="review-comentario">
           <span className={`titulo-comentario ${modo}`}>Postea tu comentario!</span>
           <textarea className={`input-comentario ${modo}`} onChange={handleOnChange} />
+
           <button className="boton-comentario"  onClick={(e)=> handlePost(e)}>Enviar</button>
           <div id="commentSent" className="commentSent">
             {/* <div>
               <span>Comentario enviado existosameente!</span>
             </div> */}
           </div>
+
+
+
+
         </div>
+
+            :
+
+              <p>
+                logueate por favor
+              </p>
+
+
+
+        }
+
+
+        
+        </div>
+
+
      
    
   );

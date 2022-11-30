@@ -16,7 +16,8 @@ export default function Detalle() {
 
   const modo = localStorage.getItem('modo');
 
- 
+
+  const LS = localStorage.getItem('login');
   const params = useParams();
   const mascotas = useSelector((state) => state.detalle);
   useEffect(() => {
@@ -74,6 +75,8 @@ export default function Detalle() {
             <button className="home_button">Volver</button>
           </a>
           <div className={`informacionDetalleMascotas ${modo}`}>
+
+        
             <div className="nombreimg">
               <h2 id="nombre">{mascotas.nombre}</h2>
               <img
@@ -82,25 +85,49 @@ export default function Detalle() {
                 width="250px"
                 height="auto"
               />
-            </div>
-            <ul>
-              <li>
-                Edad:{" "}
+               <div className="info-mascota"> 
+            <ul > 
+              <li > 
+                <strong>Edad</strong>:{" "}
                 {mascotas.edad === 1
                   ? `${mascotas.edad} año`
                   : `${mascotas.edad} años`}
               </li>
-              <li>Sexo: {mascotas.sexo}</li>
-              <li>Raza: {mascotas.raza}</li>
-              <li>Tamaño: {mascotas.tamaño}</li>
-            </ul>
-            <div className="descripDetalleMascota">
-              <h4>Descripción:</h4>
-              <p>{mascotas.descripcion}</p>
+              <li>  <strong>Sexo</strong>: {mascotas.sexo}</li>
+              <li>  <strong>Raza</strong>: {mascotas.raza}</li>
+              <li>  <strong>Tamaño</strong>: {mascotas.tamaño}</li>
+</ul>
             </div>
-            <NavLink to="/formAdopcion" className="link">
+            </div>
+           
+            <div className="descripDetalleMascota">
+              <h4 className="titulo-mascota">Descripción:</h4>
+              <p className="descripcion-mascota">{mascotas.descripcion}</p>
+           
+          
+            <NavLink to="/formAdopcion" >
+          
+              <button className="adopta-boton"> {""} Adopta {""}</button>
+            </NavLink>
+            </div>
+
+{
+  LS?
+  
+  <NavLink to="/formAdopcion" className="link">
               <button className="adopta">Adopta</button>
             </NavLink>
+  
+  :
+
+  <button>Logueate para adoptar</button>
+
+
+}
+
+            
+
+
           </div>
         </div>
         

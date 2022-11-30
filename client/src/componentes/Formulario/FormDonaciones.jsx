@@ -1,7 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { realizarPago, crearDonacion, clearMonto, traerUsuarios } from "../../redux/actions/index.js";
+import {
+  realizarPago,
+  crearDonacion,
+  clearMonto,
+  traerUsuarios,
+} from "../../redux/actions/index.js";
 import { loadStripe } from "@stripe/stripe-js";
 import './FormDonaciones.css'
 import {
@@ -11,15 +16,13 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 
-
 const stripePromise = loadStripe(
-    "pk_test_51M4ABWC8eMk9oyZJvAjADqxtDYWgXtA1ZH74dL5yANtT4MlFqYt68FEDStgG7k6LwTBZTTPQzi24vl4SatiAGBft00dI2TA07a"
-  );
+  "pk_test_51M4ABWC8eMk9oyZJvAjADqxtDYWgXtA1ZH74dL5yANtT4MlFqYt68FEDStgG7k6LwTBZTTPQzi24vl4SatiAGBft00dI2TA07a"
+);
 
 const FormDonacion = () => {
-
-    const dispatch = useDispatch();
-    const stripe = useStripe();
+  const dispatch = useDispatch();
+  const stripe = useStripe();
   const elements = useElements();
   const history = useHistory();
 
@@ -27,23 +30,30 @@ const FormDonacion = () => {
     dispatch(traerUsuarios());
   }, []);
 
-    const users = useSelector((state) => state.usuarios);
-    const usuarios= users;
-    const refugios= usuarios.filter((usuario) => usuario.rango === "refugio");
-    
-      const login = useSelector((state) => state.login);
-      const userID = login[0];
+  const users = useSelector((state) => state.usuarios);
+  const usuarios = users;
+  const refugios = usuarios.filter((usuario) => usuario.rango === "refugio");
+
+  const login = useSelector((state) => state.login);
+  const userID = login.id;
+
+  const [refugio, setRefugio] = useState("");
+  const [monto, setMonto] = useState(0);
 
   const modo = localStorage.getItem('modo');
       
       const [refugio, setRefugio]= useState("");
       const [monto, setMonto] = useState(0);
       
+  const handleRefugio = (e) => {
+    e.preventDefault();
+    setRefugio(e.target.value);
+  };
 
-      const handleRefugio= (e) => {
-        e.preventDefault();
-        setRefugio(e.target.value);
-      };
+  const handleMonto = (e) => {
+    e.preventDefault();
+    setMonto(e.target.value);
+  };
 
       const handleMonto= (e) => {
         e.preventDefault();
@@ -84,8 +94,13 @@ const FormDonacion = () => {
           <p>A que refugio desea donar?</p>  
           <select
           onChange={(e) => handleRefugio(e)}>
+
             {refugios.map((refugio) => {
-                return <option key={refugio.id} value={refugio.nombre}>{refugio.nombre} </option>
+              return (
+                <option key={refugio.id} value={refugio.nombre}>
+                  {refugio.nombre}{" "}
+                </option>
+              );
             })}
           </select>
             </div>
@@ -107,11 +122,12 @@ const FormDonacion = () => {
     
 }
 
+
 function DonacionForm() {
-    return (
-      <Elements stripe={stripePromise}>
-        <FormDonacion />
-      </Elements>
-    );
-  }
+  return (
+    <Elements stripe={stripePromise}>
+      <FormDonacion />
+    </Elements>
+  );
+}
 export default DonacionForm;

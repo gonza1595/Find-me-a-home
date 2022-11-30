@@ -1,7 +1,6 @@
 import React from "react";
 import "./DetalleRefugio.css";
-import wsp from "./iconWsp.png";
-import insta from "./iconInsta.png";
+import perrito from "./perrito.png"
 
 export default function DetalleRefugio() {
 
@@ -14,16 +13,24 @@ export default function DetalleRefugio() {
       </a>
 
      <div className={`datosDetalleRefugio ${modo}`}>
+
         <div className="titleDetalleRefugio">
-           <h3>Gracias por su interes! para ayudarnos puedes colaborar comprando nuestros productos o donando dinero a nuestros refugios</h3>      
-           <a href="productos">
+           <h3>Gracias por su interes! para ayudarnos puedes colaborar <br></br> comprando nuestros productos o
+             donando dinero a nuestros refugios</h3>            
+          
+        </div>  
+        <img src={perrito} width="55%" alt= "contacto not found"/>
+      </div>
+           <div className="botonesDeContacto">
+      <a href="productos">
         <button className="home_button_detalle">Conoce nuestros productos! 🐾</button>
       </a>
-      <a href="pagos">
+      <a href="donaciones">
         <button className="home_button_detalle">Donaciones 🐾</button>
       </a>
        
         </div>
+
       </div>
     </div>
   );
