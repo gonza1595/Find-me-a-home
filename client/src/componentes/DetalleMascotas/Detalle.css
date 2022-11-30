@@ -1,4 +1,4 @@
-.page{
+/* .page{
     display: flex;
     flex-direction: row;
     align-items:center;
@@ -7,6 +7,11 @@
     height: auto;
     background-color:  #027a74 ;
     background-size: cover;
+} */
+
+.containerDetalle.dark{
+background-color: #043a37;
+height: 100vh;
 }
 .caja-detalle{
     display: flex;
@@ -37,7 +42,11 @@
     font-family: cursive;
     color: #027a74;
     font-size: 18px;
+}
 
+.informacionDetalleMascotas.dark{
+    background-color: #027a74;
+    color: #c5f5f2;
 }
 
 .descripDetalleMascota {

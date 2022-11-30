@@ -1,8 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./NavBar.css";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import {  useSelector } from "react-redux";
+
 import carrito from "../Carrito/carritoimg.png"
 import Dark from "./Dark";
 import { logOut, traerUsuarios } from "../../redux/actions";

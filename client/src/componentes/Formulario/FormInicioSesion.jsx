@@ -14,6 +14,9 @@ export default function FormInicioSesion() {
   const [correo, setUsername] = useState("");
   const [contraseña, setPassword] = useState("");
 
+  const modo = localStorage.getItem('modo');
+
+
   // useEffect(() => {
   //   dispatch(traerUsuarios());
   // }, []);
@@ -80,13 +83,13 @@ useEffect(() => {
 
 
   return (
-  <div className="cajita-inicio">
+  <div className={`cajita-inicio ${modo}`}>
         <form className="formInicio"  onSubmit={handleSubmit}>
-      <h1 className="titulo-sesion">Iniciar Sesion</h1>
-      <div  className='input-fields-sesion'>
+      <h1 className={`titulo-sesion ${modo}`}>Iniciar Sesion</h1>
+      <div  className={`input-fields-sesion ${modo}`}>
         <label>
             Correo:{" "}
-            <input  className="input-InicioSesion"
+            <input  className={`input-InicioSesion ${modo}`}
             type="email"
             placeholder="correo"
             onChange={(e) => setUsername(e.target.value)}
@@ -95,7 +98,7 @@ useEffect(() => {
           <div>
           <label >
             Contraseña:{" "}
-            <input   className="input-InicioSesion"
+            <input   className={`input-InicioSesion ${modo}`}
               type="password"
               placeholder="contraseña"
               autoComplete="on"

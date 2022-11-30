@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadStripe } from "@stripe/stripe-js";
+import './FormPago.css'
 import {
   Elements,
   CardElement,
@@ -48,6 +49,7 @@ const PagoForm = () => {
       card: elements.getElement(CardElement),
     });
 
+
     if (!error) {
       const { id } = paymentMethod;
       const amount = montoTotal * 100;
@@ -62,11 +64,18 @@ const PagoForm = () => {
       history.push("/");
     }
   };
+
+  const modo = localStorage.getItem('modo');
+
   return (
+    <div className={`pagos ${modo}`}>
     <form onSubmit={handleSubmit}>
-      <CardElement />
+      <div className={`datosTarjetaPago ${modo}`}>
+        <CardElement />
+      </div>
       <button>Comprar</button>
     </form>
+    </div>
   );
 };
 

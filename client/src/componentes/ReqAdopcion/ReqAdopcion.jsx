@@ -2,14 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import requisito from "./img/adop.jpg";
 import "./ReqAdopcion.css";
-import ListaUsuarios from "../Dashboard/ListaUsuarios/ListaUsuarios";
-import ListaMascotas from "../Dashboard/ListaMascotas/ListaMascotas";
-import ListaProductos from "../Dashboard/ListaProductos/ListaProductos";
+
 function ReqAdopcion() {
+
+  const modo = localStorage.getItem('modo');
+
   return (
     <div>
-      <div className="conteinerRequisitos">
-        <div className="tituloReq">
+      <div className={`conteinerRequisitos ${modo}`}>
+        <div className={`tituloReq ${modo}`}>
           <h3>Requisitos de adopción</h3>
         </div>
         <div className="img">
@@ -22,7 +23,7 @@ function ReqAdopcion() {
           />
         </div>
 
-        <div className="texto1">
+        <div className={`texto1 ${modo}`}>
           <p>
             Adoptar es un acto de responsabilidad y compromiso por lo que es
             importante que estes capacitado para hacerlo. Un perro puede vivir

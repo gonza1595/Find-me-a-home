@@ -3,9 +3,17 @@ import "./DetalleRefugio.css";
 import perrito from "./perrito.png"
 
 export default function DetalleRefugio() {
+
+  const modo = localStorage.getItem('modo');
+
   return (
-    <div className="container-contacto">
-     <div className="datosDetalleRefugio">
+    <div className={`containerRef ${modo}`}>
+      <a href="javascript:history.back()">
+        <button className="home_button">Volver</button>
+      </a>
+
+     <div className={`datosDetalleRefugio ${modo}`}>
+
         <div className="titleDetalleRefugio">
            <h3>Gracias por su interes! para ayudarnos puedes colaborar <br></br> comprando nuestros productos o
              donando dinero a nuestros refugios</h3>            
@@ -20,6 +28,9 @@ export default function DetalleRefugio() {
       <a href="donaciones">
         <button className="home_button_detalle">Donaciones 🐾</button>
       </a>
+       
+        </div>
+
       </div>
     </div>
   );

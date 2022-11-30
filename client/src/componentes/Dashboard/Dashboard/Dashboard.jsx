@@ -9,6 +9,7 @@ import { traerMascotas, traerProductos, traerUsuarios} from "../../../redux/acti
 import GraficoMascotas from "./Graficos/GraficoMascotas";
 import GraficoProductos from "./Graficos/GraficoProductos";
 import GraficoUsers from "./Graficos/GraficoUsers";
+import Dark from "../../NavBar/Dark";
 // import ListaProductos from "../ListaProductos/ListaProductos";
 // import ListaMascotas from '../ListaMascotas/ListaMascotas'
 // import ListaUsuarios from '../ListaUsuarios/ListaUsuarios'
@@ -21,6 +22,7 @@ export default function Dashboard() {
   // const refugios = useSelector((state)=> state.refugios);
 
   const dispatch = useDispatch();
+  const modo = localStorage.getItem('modo');
 
   useEffect(() => {
     dispatch(traerProductos());
@@ -29,31 +31,34 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="containerDashboard">
+    <div className={`containerDashboard ${modo}`}>
       {/* ------------- MAIN ------------- */}
       <main className="containerMain_dash">
+        <div className="darkMode">
+          <Dark />
+        </div>
         <div className="headerDash">
           <h1>Admin Dashboard</h1>
         </div>
         <div className="cardsDash">
-          <div className="card-dash">
+          <div className={`card-dash ${modo}`}>
             <h2>Productos</h2>
             <div className="img_cant">
-              <img src={producto} width="30px" />
+              <img src={producto} width="30px" height='35px'/>
               <h4>{productos.length}</h4>
             </div>
           </div>
-          <div className="card-dash">
+          <div className={`card-dash ${modo}`}>
             <h2>Mascotas</h2>
             <div className="img_cant">
-              <img src={mascota} width="50px" />
+              <img src={mascota} width="50px" height='35px' />
               <h4>{mascotas.length}</h4>
             </div>
           </div>
-          <div className="card-dash">
+          <div className={`card-dash ${modo}`}>
             <h2>Usuarios</h2>
             <div className="img_cant">
-              <img src={user} width="30px" />
+              <img src={user} width="30px" height='35px'/>
               <h4>{usuarios.length}</h4>
             </div>
           </div>
@@ -74,7 +79,7 @@ export default function Dashboard() {
           <GraficoUsers />
         </div>
 
-        <div className="ultimos">
+        <div className={`ultimos ${modo}`}>
           <h4>ULTIMOS USUARIOS REGISTRADOS</h4>
 
         { usuarios.slice(-3).map((e)=>(

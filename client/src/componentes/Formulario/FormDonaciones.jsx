@@ -8,6 +8,7 @@ import {
   traerUsuarios,
 } from "../../redux/actions/index.js";
 import { loadStripe } from "@stripe/stripe-js";
+import './FormDonaciones.css'
 import {
   Elements,
   CardElement,
@@ -39,6 +40,11 @@ const FormDonacion = () => {
   const [refugio, setRefugio] = useState("");
   const [monto, setMonto] = useState(0);
 
+  const modo = localStorage.getItem('modo');
+      
+      const [refugio, setRefugio]= useState("");
+      const [monto, setMonto] = useState(0);
+      
   const handleRefugio = (e) => {
     e.preventDefault();
     setRefugio(e.target.value);
@@ -49,35 +55,46 @@ const FormDonacion = () => {
     setMonto(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+      const handleMonto= (e) => {
+        e.preventDefault();
+        setMonto(e.target.value);
+      }
+ 
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+          type: "card",
+          card: elements.getElement(CardElement),
+        });
+    
+        if (!error) {
+          
+            
+            const { id } = paymentMethod;
+            const amount = monto * 100;
+            const montoTotal= monto;
+            console.log(montoTotal);
+            dispatch(realizarPago(id, amount));
+            dispatch(crearDonacion(refugio, userID, montoTotal));
+            dispatch(clearMonto());
+            setRefugio("");
+            setMonto(0);
+            alert("su donación se a realizado con exito");
+            history.push("/");
+          }  
+        
+      };
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: "card",
-      card: elements.getElement(CardElement),
-    });
+      return (
+        <div className={`containerDon ${modo}`}>
+        <form  onSubmit={(e) => handleSubmit(e)}>
+         <div className={`formu ${modo}`}>  
+          <div className={`refugioDonar ${modo}`}>
+          <p>A que refugio desea donar?</p>  
+          <select
+          onChange={(e) => handleRefugio(e)}>
 
-    if (!error) {
-      const { id } = paymentMethod;
-      const amount = monto * 100;
-      const montoTotal = monto;
-      console.log(montoTotal);
-      dispatch(realizarPago(id, amount));
-      dispatch(crearDonacion(refugio, userID, montoTotal));
-      dispatch(clearMonto());
-      setRefugio("");
-      setMonto(0);
-      alert("su donación se a realizado con exito");
-      history.push("/");
-    }
-  };
-
-  return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <div>
-        <div>
-          <p>A que refugio desea donar?</p>
-          <select onChange={(e) => handleRefugio(e)}>
             {refugios.map((refugio) => {
               return (
                 <option key={refugio.id} value={refugio.nombre}>
@@ -86,20 +103,25 @@ const FormDonacion = () => {
               );
             })}
           </select>
-        </div>
-        <div>
-          <p>seleccionar monto a donar:</p>
-          <input type="number" onChange={(e) => handleMonto(e)} />
-        </div>
-        <div>
-          <p>completar los datos de su tarjeta:</p>
+            </div>
+            <div className={`montoDonar ${modo}`}>
+            <p>Seleccionar monto a donar:</p>    
+          <input type="number" onChange={(e) => handleMonto(e)}/>
+                </div>  
+          <div>
+            <p>Completar los datos de su tarjeta:</p>
+            <div className={`datosTarjeta ${modo}`}>
           <CardElement />
+            </div>
+          </div>
+          <button>Donar</button>
+          </div> 
+        </form>
         </div>
-        <button>Donar</button>
-      </div>
-    </form>
-  );
-};
+      );
+    
+}
+
 
 function DonacionForm() {
   return (

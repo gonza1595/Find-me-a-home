@@ -1,0 +1,28 @@
+.datosTarjetaPago{
+    border: #027a74 1px solid;
+    padding: 10px;
+    border-radius: 7px;
+    width: 700px;
+    margin: 50px;
+    margin-bottom: 20px;
+}
+
+.datosTarjetaPago.dark{
+ border: #c5f5f2 1px solid;
+}
+
+.pagos button{
+    margin-left: 680px;
+}
+
+.pagos {
+    display: flex;
+    justify-content: center;
+    background-color: #cbeeec;
+    width: 100%;
+    height: 100vh;
+}
+
+.pagos.dark{
+    background-color: #043a37;
+}
