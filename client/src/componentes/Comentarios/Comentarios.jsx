@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteComment, traerReview, Review} from "../../redux/actions";
 import "./Comentarios.css"
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 
 
@@ -139,9 +140,12 @@ function refreshPage() {
 
             :
 
-              <p>
-                logueate por favor
-              </p>
+            <Link to="/iniciarSesion">
+            
+            <button>Logueate para comentar</button>
+
+            </Link>
+              
 
 
 

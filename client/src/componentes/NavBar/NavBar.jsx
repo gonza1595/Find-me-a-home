@@ -3,36 +3,33 @@ import { useState, useEffect } from "react";
 import "./NavBar.css";
 import { Link, useHistory } from "react-router-dom";
 import {  useDispatch, useSelector } from "react-redux";
-
 import carrito from "../Carrito/carritoimg.png"
 import Dark from "./Dark";
-import { logOut, traerUsuarios } from "../../redux/actions";
+import { logOut } from "../../redux/actions";
 
 function NavBar() {
   const [clicked, setClicked] = useState(false); //false
 
   const [cartQuantity, setcartQuantity] = useState(0);
 
+  const [LS , setLS] = useState(null)
+
   const numberCart = useSelector((state) => state.numberCart);
 
-
-  useEffect(() => {
-    dispatch(traerUsuarios())
-    calculateCartQuantity();
-  }, [numberCart]);
-
-  
+  const modo = localStorage.getItem('modo'); 
   const cart = useSelector((state) => state.cart);
-  const LS = localStorage.getItem('login');
-  const modo = localStorage.getItem('modo');
-  const logged = JSON.parse(LS)
-  const rango = logged?.rango
-  
-  console.log(logged)
-  console.log(rango)
+
+
+  // const LS = localStorage.getItem('login');
+  // const logged = JSON.parse(LS)
+
+
+  // console.log(logged)
+  // console.log(rango)
   
   const history = useHistory()
   const dispatch = useDispatch()
+
 
   // console.log(logged)
 
@@ -45,11 +42,6 @@ const calculateCartQuantity = () => {
   setcartQuantity(counter);
 };
 
-
-
-
-///
-
   const handleClick = () => {
     //cuando esta true lo pasa a false y vice versa
     setClicked(!clicked);
@@ -58,6 +50,17 @@ const calculateCartQuantity = () => {
   const handleLogOut = () => {
 ;     dispatch(logOut());
   };
+
+
+  useEffect(() => {
+    setLS(JSON.parse(localStorage.getItem('login')))
+  }, [localStorage.getItem('login')]);
+
+
+  useEffect(() => {
+    calculateCartQuantity();
+  }, [numberCart]);
+
 
   return (
     <nav className={`headerNavBar ${modo}`}>
@@ -105,7 +108,7 @@ const calculateCartQuantity = () => {
           </a>
         </li>
        
-          { logged?
+          { LS?
 
             <li >
             <Link to="/">
@@ -116,7 +119,6 @@ const calculateCartQuantity = () => {
             
             </li> 
            
-
              :
 
             <li >
@@ -132,7 +134,7 @@ const calculateCartQuantity = () => {
            
           {
 
-             logged?.rango==="admin"?
+          LS?.rango==="admin"?
             
             <Link to="/dashboard">
             
@@ -145,11 +147,7 @@ const calculateCartQuantity = () => {
              :
              <r></r>
 
-
          }
-
-
-
 
          <li >
           <Link to="/carrito" >

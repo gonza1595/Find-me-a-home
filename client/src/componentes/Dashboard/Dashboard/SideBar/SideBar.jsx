@@ -6,12 +6,33 @@ import producto from "../img/productos.png";
 import mascota from "../img/mascotas.png";
 import user from "../img/user.png";
 import ventas from "../img/ventas.png";
+import { logOut } from "../../../../redux/actions";
+import { useHistory } from "react-router-dom";
 
 export default function SideBar() {
     const modo = localStorage.getItem('modo');
-  
+    const LS = JSON.parse(localStorage.getItem('login'));
+    const rango = LS.rango
+    const history = useHistory()
+
+    const loggOut =()=>{
+
+      logOut()
+      history.push("/")
+
+    }
+
+    console.log(LS)
 
   return (
+
+
+    <div>
+
+    {
+
+      LS&&rango==="admin"?
+
     <div className={`sideBar_dash ${modo}`}>
         <nav>
             {/* <div className="button_sidebar">
@@ -67,8 +88,8 @@ export default function SideBar() {
             </a>
           </li>
 
-          <a className="cerrarSesion" href="/dashboard/cerrarSesion">
-            <span>Cerrar Sesión</span>
+          <a className="cerrarSesion" onClick={loggOut}>
+            <button>Cerrar Sesión</button>
           </a>
 
           {/* <li className="side-nav_refug">
@@ -79,6 +100,18 @@ export default function SideBar() {
                 </li> */}
         </ul>
       </nav>
+    </div>
+
+      :
+
+                <r></r>
+
+
+    }
+
+
+
+    
     </div>
   );
 }

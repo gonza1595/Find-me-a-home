@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
 import { formularioRegistroUsuario } from "../../redux/actions/index";
 import "./FormUsuario.css";
@@ -31,8 +32,10 @@ export default function Form() {
   const history = useHistory();
   const usuario = useSelector((state) => state.usuario); //no haria falta
 
-  const [errors, setErrors] = useState({});
 
+  const clientID ="937620879306-paserb1mqre208feu49eakrpjogk8eip.apps.googleusercontent.com"
+  const [errors, setErrors] = useState({});
+  const [user, setUser] = useState({});
   const modo = localStorage.getItem('modo');
 
   // Inputs
@@ -45,6 +48,33 @@ export default function Form() {
     rango: "",
     usuario: [],
   });
+
+
+  const onSuccess = (response) => {
+    setUser(response.profileObj);
+
+    const res = {
+      nombre : response.profileObj.name,
+      contraseña : response.googleId ,
+      correo: response.profileObj.email 
+
+    }
+console.log(response)
+
+    dispatch(formularioRegistroUsuario(res))
+    document.getElementsByClassName("btn").hidden = true;
+
+    alert("Usuario creado")
+
+    history.push("/")
+
+
+  }
+  const onFailure = (response) => {
+    console.log(response);
+    console.log(response.profileObj);
+  }
+
 
   function handleChange(e) {
     e.preventDefault();
@@ -176,6 +206,21 @@ return (
                 {" "}
                 Registrarse{" "}
               </button>
+
+            <div>
+            <GoogleLogin
+ 
+            clientId={clientID}
+            onSuccess={onSuccess} //si le cambio a onfailure puedo ver la data guardada
+            onFailure={onFailure}
+            buttonText="Registrate con Google"
+            cookiePolicy={"single_host_origin"}
+            />
+
+            </div>
+
+
+
             </div>
           </div>
         </div>

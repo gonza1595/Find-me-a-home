@@ -48,6 +48,8 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         login: action.payload,
+        loading: true,
+        loading: false,
       };
     case "BUSCAR_POR_NOMBRE_MASCOTA":
       return {
