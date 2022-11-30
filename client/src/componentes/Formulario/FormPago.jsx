@@ -7,7 +7,12 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { realizarPago, crearOrden, clearMonto } from "../../redux/actions";
+import {
+  realizarPago,
+  crearOrden,
+  clearMonto,
+  crearDonacion,
+} from "../../redux/actions";
 import { useHistory } from "react-router-dom";
 
 const stripePromise = loadStripe(
@@ -29,7 +34,9 @@ const PagoForm = () => {
   });
 
   const login = useSelector((state) => state.login);
-  const userID = login[0];
+  const userID = login.id;
+
+  console.log(userID);
 
   const montoTotal = useSelector((state) => state.totalCarrito);
 

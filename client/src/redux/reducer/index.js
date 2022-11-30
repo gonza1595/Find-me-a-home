@@ -26,7 +26,6 @@ const initialState = {
 
   traerOrdenes: [],
 
-
   //agregar mas estados si se requiere...
 };
 
@@ -46,9 +45,9 @@ function rootReducer(state = initialState, action) {
       };
 
     case "LOGIN":
-     
       return {
         ...state,
+        login: action.payload,
       };
     case "BUSCAR_POR_NOMBRE_MASCOTA":
       return {
@@ -767,10 +766,15 @@ function rootReducer(state = initialState, action) {
         ordenes: action.payload,
       };
     case "CREAR_DONACION":
-      return{
+      return {
         ...state,
         donaciones: action.payload,
-      }  
+      };
+    case "TRAER_DONACIONES":
+      return {
+        ...state,
+        donaciones: action.payload,
+      };
     case "MONTO_TOTAL":
       return {
         ...state,
@@ -787,7 +791,6 @@ function rootReducer(state = initialState, action) {
         ...state,
         totalCarrito: [],
       };
-     
 
     default:
       return state;

@@ -6,6 +6,7 @@ import {
   orderByPrecio,
   orderByStock,
 } from "../../../redux/actions";
+import "./FiltrosProductos.css";
 
 export default function FiltrosProductos({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
@@ -35,10 +36,11 @@ export default function FiltrosProductos({ setPage, setFilterSelected }) {
   }
 
   return (
-    <div className="filters">
+    <div className="filterProducto">
       <select
         onChange={(e) => handleFilterByType(e)}
         defaultValue="Filtrar por tipo"
+        className="filtersSelectProducto"
       >
         <option disabled>Filtrar por tipo</option>
         <option value="all">Todos los tipos</option>
@@ -50,6 +52,7 @@ export default function FiltrosProductos({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleOrderByName(e)}
         defaultValue="Ordenar Alfabeticamente"
+        className="filtersSelectProducto"
       >
         <option disabled>Ordenar Alfabeticamente</option>
         <option value="asc">A-Z</option>
@@ -59,6 +62,7 @@ export default function FiltrosProductos({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleOrderByPrecio(e)}
         defaultValue="Ordenar por Precio"
+        className="filtersSelectProducto"
       >
         <option disabled>Ordenar por Precio</option>
         <option value="max">Mayor Precio</option>
@@ -67,6 +71,7 @@ export default function FiltrosProductos({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleOrderByStock(e)}
         defaultValue="Ordenar por Stock"
+        className="filtersSelectProducto"
       >
         <option disabled>Ordenar por Stock</option>
         <option value="max">Mayor Stock</option>

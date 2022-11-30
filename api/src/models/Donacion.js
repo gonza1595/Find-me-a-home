@@ -5,43 +5,32 @@ const { createDeflate } = require("zlib");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "Donacion",
+    "donacion",
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         primaryKey: true,
-        validate: {
-          notEmpty: true,
-          isUUID: 4,
-        },
       },
       refugio: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: false,
       },
       userID: {
         type: DataTypes.TEXT,
       },
-      estado: {
-        type: DataTypes.ENUM(
-          "abiera",
-          "creada",
-          "procesando",
-          "aprobada",
-          "cancelada"
-        ),
-        defaultValue: "creada",
-        allowNull: false,
-        validate: {
-          notEmpty: true,
-          isIn: [["abiera", "creada", "procesando", "aprobada", "cancelada"]],
-        },
-      },
       montoTotal: {
         type: DataTypes.FLOAT,
       },
+      fecha: {
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW,
+        validate: {
+          notEmpty: true,
+          isDate: true,
+        },
+      },
     },
-    
+    { timestamps: false }
   );
 };
