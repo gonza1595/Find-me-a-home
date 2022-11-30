@@ -5,6 +5,9 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import {formularioLogin, login, traerUsuarios} from "../../redux/actions/index"
 import './FormInicioSesion.css'
+import { gapi } from "gapi-script";
+import Google from "../Google";
+
 
 export default function FormInicioSesion() {
 
@@ -45,6 +48,37 @@ const dispatch = useDispatch();
     }
   };
 
+
+///GOOGLE
+
+const clientID ="937620879306-paserb1mqre208feu49eakrpjogk8eip.apps.googleusercontent.com"
+const [user, setUser] = useState({});
+const [loggeIn, setLoggetInfo] = useState(false); 
+
+const onSuccess = (response) => {
+  setUser(response.profileObj);
+  document.getElementsByClassName("btn").hidden = true;
+}
+const onFailure = (response) => {
+  console.log(response);
+  console.log(response.profileObj);
+}
+
+
+const handleLogout  = () => {
+  setUser({}); 
+}
+useEffect(() => {
+  function start() {
+    gapi.auth2.init({ 
+      clientId: clientID,
+    });
+  }
+  gapi.load("client:auth2", start);
+});
+
+
+
   return (
   <div className="cajita-inicio">
         <form className="formInicio"  onSubmit={handleSubmit}>
@@ -73,12 +107,35 @@ const dispatch = useDispatch();
         <button>Iniciar Sesion</button>
         </div>
           <div className="boton-registrate">        
-          <button className="inicioGoogle">Iniciar con Google</button>
-           <button>
-          <Link to='/registrate' role="button">Registrate ahora!</Link>
-          </button>
+          
   </div>  
   </div>
+
+  {/* <Google/> */}
+
+
+  <div>
+
+<GoogleLogin
+ 
+  clientId={clientID}
+  onSuccess={onSuccess} //si le cambio a onfailure puedo ver la data guardada
+  onFailure={onFailure}
+  buttonText="Ingresar con Google"
+  cookiePolicy={"single_host_origin"}
+/>
+
+</div>
+
+<div>
+
+<h3>{user.name}</h3>
+
+</div>
+{/* <button className="inicioGoogle">Iniciar con Google</button> */}
+<button>
+          <Link to='/registrate' role="button">Registrate ahora!</Link>
+          </button>
         </form>
         </div>
   );

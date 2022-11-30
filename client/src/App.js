@@ -22,6 +22,7 @@ import SideBar from "./componentes/Dashboard/Dashboard/SideBar/SideBar.jsx";
 import TablaMascotas from "./componentes/Dashboard/ListaMascotas/ListaMascotas.jsx";
 import TablaProductos from "./componentes/Dashboard/ListaProductos/ListaProductos.jsx";
 // // import ListaRefugios from './componentes/Dashboard/ListaRefugios/ListaRefugios.jsx';
+
 import ListaUsuarios from "./componentes/Dashboard/ListaUsuarios/ListaUsuarios.jsx";
 import FormProducto from "./componentes/Formulario/FormProductos";
 import EditarUsuario from "./componentes/Dashboard/ListaUsuarios/EditarUsuario";
@@ -32,6 +33,8 @@ import FormCambioContraseÃ±a from "./componentes/Formulario/FormCambiarContraseÃ
 import Ventas from "./componentes/Dashboard/Ventas/Ventas.jsx";
 import DonacionForm from "./componentes/Formulario/FormDonaciones.jsx";
 import Donaciones from "./componentes/Dashboard/Donaciones/Donaciones.jsx";
+import google from './componentes/Google.jsx';
+
 
 function App() {
   return (
@@ -121,15 +124,19 @@ function App() {
           component={EditarUsuario}
         />
 
+
         <Route
           exact
           path="/dashboard/formActualizarProducto/:id"
           component={FormActualizarProducto}
         />
         <Route exact path="/dashboard/formProducto" component={FormProducto} />
+        
+        <Route exact path='/google' component={google} />
       </div>
     </>
   );
+
 }
 
 export default App;
