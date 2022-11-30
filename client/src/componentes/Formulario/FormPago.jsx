@@ -51,6 +51,10 @@ const PagoForm = () => {
     if (!error) {
       const { id } = paymentMethod;
       const amount = montoTotal * 100;
+
+
+      console.log(amount)
+
       dispatch(realizarPago(id, amount));
       dispatch(crearOrden(userID, productos, montoTotal));
       dispatch(clearMonto());

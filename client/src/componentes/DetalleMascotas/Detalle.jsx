@@ -13,7 +13,7 @@ import Loader from "../Loader/Loader";
 
 export default function Detalle() {
   const dispatch = useDispatch();
- 
+  const LS = localStorage.getItem('login');
   const params = useParams();
   const mascotas = useSelector((state) => state.detalle);
   useEffect(() => {
@@ -106,6 +106,24 @@ export default function Detalle() {
               <button className="adopta-boton"> {""} Adopta {""}</button>
             </NavLink>
             </div>
+
+{
+  LS?
+  
+  <NavLink to="/formAdopcion" className="link">
+              <button className="adopta">Adopta</button>
+            </NavLink>
+  
+  :
+
+  <button>Logueate para adoptar</button>
+
+
+}
+
+            
+
+
           </div>
         </div>
         
