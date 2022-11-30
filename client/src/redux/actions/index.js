@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 // const {URL_BACK} = process.env;
 
 //crear actions necesarias
@@ -118,17 +119,19 @@ export function formularioPostMascota(payload) {
   };
 }
 
-// export const login = (payload) => {
-//   return {
-//     type: "LOGIN",
-//     payload,
-//   };
-// };
+export const logOut = () => {
+
+  localStorage.removeItem("login")
+  
+  return {
+    type: "LOGOUT",
+  };
+};
 
 export function formularioLogin(correo, contraseña) {
   return async function () {
     const json = await axios.post(`/usuario/login`, { correo, contraseña });
-
+    
     localStorage.setItem("login", JSON.stringify(json.data)
   );
 
@@ -483,13 +486,36 @@ export function decreaseCart(payload) {
 //   }
 // };
 ////////////////////////////
+
 export function realizarPago(id, amount) {
   return async function () {
-    const { data } = await axios.post(`/pagos`, {
-      id,
-      amount,
+
+    const dataa = localStorage.getItem('login');
+    const {tokenSesion}= dataa
+    const token = `bearer ${tokenSesion}`
+
+
+    console.log(dataa);
+    console.log(tokenSesion);
+    console.log(token);
+
+    const { data } = await axios.post(`/pagos`,
+    
+    {
+      headers:{
+        
+        authorization: token
+
+      },
+
+      body:{
+        id,
+        amount
+
+      }
     });
     console.log(data);
+
     return data;
   };
 }

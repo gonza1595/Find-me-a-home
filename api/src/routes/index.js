@@ -20,7 +20,7 @@ router.use('/productos', getAllProducts);
 router.use('/productos/', getProductosById);
 router.use('/productos',  productos);
 router.use('/usuario', postUser);
-router.use('/pagos', pagos);
+router.use('/pagos', checkAuth, pagos);
 router.use('/comentarios', comentarios);
 router.use('/ordenes', ordenes);
 

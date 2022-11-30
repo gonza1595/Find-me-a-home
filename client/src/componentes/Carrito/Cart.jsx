@@ -20,7 +20,7 @@ export default function Cart() {
   const [myCartQuantity, setmyCartQuantity] = useState(0);
 
   /////////
-
+  const LS = localStorage.getItem('login');
   const calculatemyCartQuantity = () => {
     let counter = 0;
     productsInTheCart.forEach((item) => {
@@ -162,11 +162,19 @@ export default function Cart() {
               <br />
 
               {productsInTheCart.length === 0 ? null : (
+
+                LS?
+
                 <div className="buttonComprar">
                   <button type="button" onClick={handleNext}>
                     Finalizar compra
                   </button>
                 </div>
+
+                :
+
+                <button>Logueate para continuar con la compra</button>
+                
               )}
             </div>
           </div>

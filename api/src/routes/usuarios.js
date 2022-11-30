@@ -136,7 +136,8 @@ router.post("/login", async (req, res) => {
       if (checkContraseña) {
         res.status(200).send({
            id: usuario.id, 
-           tokenSesion 
+           tokenSesion, 
+           rango:usuario.rango
           });
 
         }
