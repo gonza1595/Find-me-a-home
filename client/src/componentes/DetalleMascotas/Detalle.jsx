@@ -106,29 +106,27 @@ export default function Detalle() {
               <p className="descripcion-mascota">{mascotas.descripcion}</p>
            
           
-            <NavLink to="/formAdopcion" >
+{
+LS?
+ <NavLink to="/formAdopcion" >
           
               <button className="adopta-boton"> {""} Adopta {""}</button>
             </NavLink>
-            </div>
-
-{
-  LS?
-  
-  <NavLink to="/formAdopcion" className="link">
-              <button className="adopta">Adopta</button>
-            </NavLink>
-  
-  :
-
-  <Link to="/iniciarSesion">
+:
+ <Link to="/iniciarSesion">
             
   <button>Logueate para adoptar</button>
 
   </Link>
-
-
 }
+
+
+           
+
+
+
+            </div>
+
 
             
 

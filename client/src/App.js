@@ -68,9 +68,9 @@ function App() {
           component={FormSolicitudContraseña}
         />
 
-        <Route path="/formMascota" component={NavBar} />
-        <Route exact path="/formMascota" component={FormMascota} />
 
+        <Route exact path="/dashboard/formMascota" component={FormMascota} />
+        
         <Route path="/registrate" component={NavBar} />
         <Route exact path="/registrate" component={FormUsuario} />
 

@@ -120,8 +120,8 @@ export default function Form() {
   return (
     <div>
       <div className="createFormMascota">
-       
-
+     
+      
         <form onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
         <h1 className="tituloFormMascota">Postear Mascota</h1>
           <div >
@@ -269,7 +269,7 @@ export default function Form() {
           <br />
           <div>
             <button type="submit"> Postear </button>
-            <Link to="/requisitos">
+            <Link to="/dashboard/mascotas">
               <button>Volver</button>
             </Link>
           </div>

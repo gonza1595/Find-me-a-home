@@ -178,26 +178,8 @@ return (
 
 
               <div>
-                <label className="rango">Rango: </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="usuario"
-                    name="rango"
-                    onClick={(e) => handleCheck(e)}
-                  />{" "}
-                  Usuario{" "}
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="refugio"
-                    name="rango"
-                    onClick={(e) => handleCheck(e)}
-                  />{" "}
-                  Refugio{" "}
-                </label>
-                {errors.rango && <p>{errors.rango}</p>}
+
+  
               </div>
             </div>
 

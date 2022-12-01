@@ -40,7 +40,16 @@ function TablaMascotas() {
       <h2>MASCOTAS</h2>
       <div className="searchBarDashboard">
         <SearchBarMascotas />
+
+      <div>
+
+        <Link to={"/dashboard/formMascota"}>
+        <button className="btn-agregar-dash">Agregar Mascota</button>
+        </Link></div>
+
       </div>
+
+
 
       <div className="filtersSelectMascota">
         <FiltrosMascotasDashboard
