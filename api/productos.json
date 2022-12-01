@@ -561,6 +561,171 @@
             "precio": 5850,
             "tipo": "Alimentación",
             "comentarios":[]
+        },
+        {
+            "id": "51",
+            "nombre": "Comedero elevado",
+            "descripcion": "Para perros chicos",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/447/957/products/ces2m20n_f1-602f6bf931344b7cdc16606788941235-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 10200,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "52",
+            "nombre": "Comedero elevado SIGMA",
+            "descripcion": "Para perros chicos, triple plato.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/447/957/products/657de237-e264-46b2-9896-1e61abb9f4721-aceba9796094740df916610433675659-640-0.jpeg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 16800,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "53",
+            "nombre": "Pretal",
+            "descripcion": "Para perros chicos.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/447/957/products/fe6f3950-c535-4858-8ed3-a9dd77b55d8a_nube-68569e76b4d75fc95d16104659446203-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 16800,
+            "tipo": "Paseo",
+            "comentarios":[]
+        },
+        {
+            "id": "54",
+            "nombre": "Collar y correa",
+            "descripcion": "Combo para galgos.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/447/957/products/8179375e-f6d8-445a-8fec-803c7330b84a1-8369ce46c35086c25f16260357110298-640-0.jpeg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2500,
+            "tipo": "Paseo",
+            "comentarios":[]
+        },
+        {
+            "id": "55",
+            "nombre": "Pelota de goma",
+            "descripcion": "Pelota limpia dientes.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/447/957/products/634898c7-babf-4637-bd1e-c20f6d032ac51-7c5056b8485b37214816422652547780-640-0.jpeg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2500,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "56",
+            "nombre": "Comedero de ceramica",
+            "descripcion": "El material es apto para alimentos y seguro para tu gato.",
+            "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/092/583/products/lavanda-copia1-dcc2d77ecd37f8de8a16599727631298-640-0.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 4230,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "57",
+            "nombre": "Alimento para perro",
+            "descripcion": "Dog chow longevidad x 15kg. Adultos, todos los tamaños",
+            "imagen": "https://statics.dinoonline.com.ar/imagenes/large_460x460/2520751_l.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 4320,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "58",
+            "nombre": "Alimento para perro",
+            "descripcion": "Dog chow longevidad x 3kg. Para cachorros",
+            "imagen": "https://statics.dinoonline.com.ar/imagenes/large_460x460/2520745_l.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 1610,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "59",
+            "nombre": "Alimento para perro",
+            "descripcion": "Dog selection carne y vegetales x 15kg.",
+            "imagen": "https://statics.dinoonline.com.ar/imagenes/large_460x460/2520565_l.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 1610,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "60",
+            "nombre": "Alimento para perro",
+            "descripcion": "Purina one adulto mini, cordero x 6kg.",
+            "imagen": "https://statics.dinoonline.com.ar/imagenes/large_460x460/2520712_l.jpg",
+            "stock": 5,
+            "calificacion": "",
+            "precio": 2280,
+            "tipo": "Alimentación",
+            "comentarios":[]
+        },
+        {
+            "id": "61",
+            "nombre": "Pelota soga",
+            "descripcion": "Juguete soga tiron simple, pelota chica 45 cm.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/046/689/products/img_20220321_130108097-11-ced76de38f5544fa3e16479587517201-320-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 800,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "62",
+            "nombre": "Hueso de nylon",
+            "descripcion": "Hueso de nylon de 10 cm.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/046/689/products/20210428_172544-copia1-0d1ab8d89c1ca5771e16470057184677-640-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 350,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "63",
+            "nombre": "Soga",
+            "descripcion": "Soga con nudo.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/046/689/products/img_20220321_1301405851-79061476034b00755516479569693839-640-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 800,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "64",
+            "nombre": "Hueso",
+            "descripcion": "Hueso con pintas, latex.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/046/689/products/20210428_171808-copia1-e8f7a5565861505aad16470006292148-640-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 450,
+            "tipo": "Juguetes",
+            "comentarios":[]
+        },
+        {
+            "id": "65",
+            "nombre": "Soga hueso",
+            "descripcion": "Soga hueso con puas cristal, 30cm.",
+            "imagen": "https://d2r9epyceweg5n.cloudfront.net/stores/002/046/689/products/img_20220321_1300133771-1b8d29d8e30fc28f6b16479566740944-640-0.jpg",
+            "stock": 4,
+            "calificacion": "",
+            "precio": 900,
+            "tipo": "Juguetes",
+            "comentarios":[]
         }
     ]
 }
