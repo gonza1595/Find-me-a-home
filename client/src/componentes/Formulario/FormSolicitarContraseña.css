@@ -8,16 +8,28 @@
     margin-left: 35%;
     margin-top: 10%;
     border-radius: 30px;
-    
-
 }
 
+.contras.dark{
+    display: flex;
+    height: 100vh;
+    background-color: #043a37;
+    margin: 0;
+}
+
+.solicitudContra.dark{
+    background-color: #027a74;
+}
 
 .solicitudContra input{
     height: 35px;
     width: 70%;
     background-color: rgb(141, 219, 226);
     border-radius: 15px;
+}
+
+.solicitudContra.dark input{
+    background-color: #5caca6;
 }
 
 .solicitudContra button{

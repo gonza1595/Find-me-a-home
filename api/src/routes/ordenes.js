@@ -6,7 +6,8 @@ const {
   cambiaEstadoOrden,
   crearOrden,
 } = require("./controllers");
-
+const {User} = require("../db");
+const { mailUsuarioCreado } = require("../helpers/mailsService");
 const router = Router();
 
 // Si se le pasa el estado de la orden por query devuelve eso
@@ -55,9 +56,27 @@ router.put("", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const { userID, productos, montoTotal } = req.body;
-
+  const usuario= await User.findOne({
+    where: {
+      id: userID
+    }
+  })
   try {
     const ordenCreada = await crearOrden(userID, productos, montoTotal);
+     
+
+    const correo= usuario.correo;
+    const asunto= "Su orden de compra a sido efectuada";
+
+    const texto= `<p>Hola ${usuario.nombre}</p><br></br>
+    <p>Le informamos que su compra 
+    con un monto de :</p>
+    <h3>${montoTotal} ARS</h3>
+    <p>a sido efectuada</p><br></br>
+    <p>Puede retirar el pedido en nuestro local a partir de 24hs habiles o puede acordar entrega a domicilio a travez de nuestro email</p><br></br>
+    <p>Muchas gracias, equipo de Find Me a Home</p>
+    `
+    mailUsuarioCreado(correo, asunto, texto);
     res.status(200).send(ordenCreada);
   } catch (error) {
     res.status(400).send({ error: error.message });

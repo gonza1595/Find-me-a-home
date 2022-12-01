@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { crearProducto } from "../../redux/actions/index";
 import "./FormMascota.css";
+import Dark from "../NavBar/Dark";
 
 function validate(input) {
   let errors = {};
@@ -33,6 +34,7 @@ export default function Form() {
   const history = useHistory();
 
   const [errors, setErrors] = useState({});
+  const modo = localStorage.getItem('modo');
 
   // Inputs
   const [input, setInput] = useState({
@@ -110,9 +112,12 @@ export default function Form() {
   }
 
   return (
-    <div>
-      <div className="createFormMascota">
-        <h1 className="tituloFormMascota">CREAR PRODUCTO</h1>
+    <div >
+      <div className={`createFormMascota ${modo}`}>
+      			<div className="darkMode">
+          <Dark />
+        </div>
+        <h1 className={`tituloFormProducto ${modo}`}>CREAR PRODUCTO</h1>
 
         <form onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
           <div className="containerFormMascotas">
@@ -123,7 +128,7 @@ export default function Form() {
               value={input.nombre}
               name="nombre"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.nombre && <p>{errors.nombre}</p>}
           </div>
@@ -135,7 +140,7 @@ export default function Form() {
               value={input.descripcion}
               name="descripcion"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.descripcion && <p>{errors.descripcion}</p>}
           </div>
@@ -147,7 +152,7 @@ export default function Form() {
               value={input.stock}
               name="stock"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.stock && <p>{errors.stock}</p>}
           </div>
@@ -159,7 +164,7 @@ export default function Form() {
               value={input.calificacion}
               name="calificacion"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.calificacion && <p>{errors.calificacion}</p>}
           </div> */}
@@ -172,7 +177,7 @@ export default function Form() {
               value={input.precio}
               name="precio"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.precio && <p>{errors.precio}</p>}
           </div>
@@ -184,7 +189,7 @@ export default function Form() {
               value={input.tipo}
               name="tipo"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.tipo && <p>{errors.tipo}</p>}
           </div>
@@ -197,7 +202,7 @@ export default function Form() {
               value={input.imagen}
               name="imagen"
               onChange={handleChange}
-              //className="inputFormMascotas"
+              //className={`inputFormMascotas ${modo}`}
             />
             {errors.imagen && <p>{errors.imagen}</p>}
           </div>

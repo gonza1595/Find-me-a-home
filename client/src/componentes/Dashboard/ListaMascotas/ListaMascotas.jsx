@@ -57,7 +57,7 @@ function TablaMascotas() {
           setPage={setPage}
         />
       </div>
-      <table className="tabla-mascotas">
+      <table className={`tabla-productos ${modo}`}>
         <thead className="theadMasctotas">
           <tr className="nombres-columnas">
             <th scope="col">Nombre</th>

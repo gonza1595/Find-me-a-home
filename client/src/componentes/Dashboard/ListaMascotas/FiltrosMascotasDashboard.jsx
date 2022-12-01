@@ -18,6 +18,7 @@ import {
 
 export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   const dispatch = useDispatch();
+  const modo = localStorage.getItem('modo');
 
   function handleFilterByEspecie(e) {
     if (e.target.value === "perro") {
@@ -100,11 +101,11 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
   }
 
   return (
-    <div className="filterMascota">
+    <div className={`filterMascota ${modo}`} >
       <select
         onChange={(e) => handleFilterByEspecie(e)}
         defaultValue="Filtrar por especie"
-        className="filtersSelectMascota"
+        className={`filtersSelectMascota ${modo}`}
       >
         <option disabled>Filtrar por especie</option>
         <option value="all">Todas las especies</option>
@@ -115,7 +116,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleFilterBySexo(e)}
         defaultValue="Filtrar por sexo"
-        className="filtersSelectMascota"
+        className={`filtersSelectMascota ${modo}`}
       >
         <option disabled>Filtrar por sexo</option>
         <option value="all">Ambos sexos</option>
@@ -126,7 +127,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleFilterByTamaño(e)}
         defaultValue="Filtrar por tamaño"
-        className="filtersSelectMascota"
+        className={`filtersSelectMascota ${modo}`}
       >
         <option disabled>Filtrar por tamaño</option>
         <option value="all">Todos los tamaños</option>
@@ -138,7 +139,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleOrderByName(e)}
         defaultValue="Ordenar por nombre"
-        className="filtersSelectMascota"
+        className={`filtersSelectMascota ${modo}`}
       >
         <option disabled>Ordenar por nombre</option>
         <option value="asc">A-Z</option>
@@ -148,7 +149,7 @@ export default function FiltrosMascotas({ setPage, setFilterSelected }) {
       <select
         onChange={(e) => handleOrderByEdad(e)}
         defaultValue="Ordenar por edad"
-        className="filtersSelectMascota"
+        className={`filtersSelectMascota ${modo}`}
       >
         <option disabled>Ordenar por Edad</option>
         <option value="max">Mayor Edad</option>

@@ -1,13 +1,37 @@
+.createMascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30rem;
+    font-family: cursive;
+
+}
+
+
+
+.createMascota.dark{
+    background-color: #015e59;
+}
 
 .createFormMascota{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     padding: 5rem;
-    background-position: center;
-    background-size: cover;
-    
+}
+
+.createFormMascota.dark{
+    background-color: #015e59;
+}
+
+
+.containerFormMascota{
+    background: #f9c7c2;
+   width: 40rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    margin: 17px;
+    top: 50%;
+    left: 50%;
+    transform: translate(67%, 50%);
     
 }
 
@@ -21,30 +45,46 @@
     height: 150%;
     margin-top: 5%;
     border-radius: 40px;
+    margin-left: 20rem;
+}
+
+.createFormMascota.dark form{
+    background-color: #027a74;
 }
 
 .createFormMascota label{
     color: #027a74;
     font-family: cursive;
- font-size: 20px;
+    font-size: 20px;
+}
+
+.createFormMascota.dark label{
+    color: #c5f5f2;
 }
 
 
-.tituloFormMascota {
-   
-	 display: inline-block;
-     align-items: center;
+.tituloFormProducto {
+	display: inline-block;
+    align-items: center;
     font-size: 35px;
     color: #043a37;
     font-family: cursive;
     font-weight: bold;
-  
+    margin-left: 28rem;
+}
+
+.tituloFormMascota {
+	display: inline-block;
+    align-items: center;
+    font-size: 35px;
+    color: #043a37;
+    font-family: cursive;
+    font-weight: bold;
 }
 
 
 
 .createFormMascota input{
-    background-color: rgb(141, 219, 226);
     height: 40px;
     margin-top: 7px;
     margin-bottom: 10px;
@@ -68,9 +108,8 @@
 
 
 .inputFormMascotas {
-    
     padding: 5px 50px 5px 10px;
-    font-size: 1.8rem;
+    font-size: 0.8rem;
    
     background-color: #BCE0ED;
     display: grid;
@@ -80,7 +119,10 @@
 	 border-radius: 7px;
 	 height: 38px;
 	 line-height: 38px;
+}
 
+.inputFormMascotas.dark{
+    background-color: #229e98;
 }
 
 .inputFormMascotas:focus{

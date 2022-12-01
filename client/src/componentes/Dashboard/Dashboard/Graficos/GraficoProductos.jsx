@@ -49,7 +49,7 @@ export default function GraficoProductos() {
           offset: '-0.5',
           content: '{name} {value}',
           style: {
-            fill: '#015c57', 
+            fill: 'black', 
             fontSize: 14,
             textDecoration: 'bold',
             textAlign: 'center',
@@ -60,7 +60,7 @@ export default function GraficoProductos() {
     return (
         <Pie {...configPie} 
         style={{ 
-            backgroundColor: '#c5f5f2',
+            // backgroundColor: '#c5f5f2',
         }} />      
     );
 }

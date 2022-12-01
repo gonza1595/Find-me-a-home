@@ -7,6 +7,7 @@ import {
   adminEditarProducto,
 } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
+import Dark from "../NavBar/Dark";
 
 export default function EditarProducto(props) {
   const productoId = useSelector((state) => state.productoDetalle);
@@ -15,6 +16,7 @@ export default function EditarProducto(props) {
   const [producto, setProducto] = useState(productoId);
 
   const productId = props.match.params.id;
+  const modo = localStorage.getItem('modo');
 
   const dispatch = useDispatch();
 
@@ -41,7 +43,10 @@ export default function EditarProducto(props) {
   };
 
   return (
-    <div className="createFormMascota">
+    <div className={`createFormMascota ${modo}`}>
+      <div className="darkMode">
+          <Dark />
+        </div>
       <h1 className="tituloUsuario">Editar Producto</h1>
       <form>
         <div>
@@ -50,7 +55,7 @@ export default function EditarProducto(props) {
             type="text"
             value={producto.nombre || ""}
             name="nombre"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -62,7 +67,7 @@ export default function EditarProducto(props) {
             type="text"
             value={producto.descripcion || ""}
             name="descripcion"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -73,7 +78,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.imagen || ""}
             name="imagen"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -85,7 +90,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.stock || ""}
             name="stock"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -97,7 +102,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.calificacion || ""}
             name="calificacion"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -109,7 +114,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.precio || ""}
             name="precio"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -121,7 +126,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.tipo || ""}
             name="tipo"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}
@@ -133,7 +138,7 @@ export default function EditarProducto(props) {
           <input
             value={producto.estado || ""}
             name="estado"
-            className="inputUsuario"
+               className={`inputFormMascotas ${modo}`}
             onChange={(e) => {
               handleChangeInput(e);
             }}

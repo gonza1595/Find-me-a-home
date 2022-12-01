@@ -48,7 +48,7 @@ const TablaProductos = () => {
         setPage={setPage}
       />
       </div>
-      <table className="tabla-productos">
+      <table className={`tabla-productos ${modo}`}>
         <thead>
           <tr className="tabla-head">
             <th scope="col">Nombre</th>
