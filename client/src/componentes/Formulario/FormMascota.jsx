@@ -7,6 +7,8 @@ import {
   traerMascotas,
 } from "../../redux/actions/index";
 import "./FormMascota.css";
+import Dark from "../NavBar/Dark";
+
 
 function validate(input) {
   let errors = {};
@@ -37,6 +39,7 @@ export default function Form() {
   const history = useHistory();
 
   const [errors, setErrors] = useState({});
+  const modo = localStorage.getItem('modo');
 
   // Inputs
   const [input, setInput] = useState({
@@ -118,12 +121,12 @@ export default function Form() {
   }
 
   return (
-    <div>
-      <div className="createFormMascota">
-       
+    <div className={`cont ${modo}`}>
+    <div className={`createMascota ${modo}`}>
+        <h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
 
         <form onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
-        <h1 className="tituloFormMascota">Postear Mascota</h1>
+      
           <div >
             <label> Nombre: </label>
             <input
@@ -132,7 +135,7 @@ export default function Form() {
               value={input.nombre}
               name="nombre"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.nombre && <p>{errors.nombre}</p>}
           </div>
@@ -144,7 +147,7 @@ export default function Form() {
               value={input.descripcion}
               name="descripcion"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.descripcion && <p>{errors.descripcion}</p>}
           </div>
@@ -156,7 +159,7 @@ export default function Form() {
               value={input.edad}
               name="edad"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.edad && <p>{errors.edad}</p>}
           </div>
@@ -168,7 +171,7 @@ export default function Form() {
               value={input.raza}
               name="raza"
               onChange={handleChange}
-              className="inputFormMascotas"
+              className={`inputFormMascotas ${modo}`}
             />
             {errors.raza && <p>{errors.raza}</p>}
           </div>
@@ -262,7 +265,7 @@ export default function Form() {
               value={input.imagen}
               name="imagen"
               onChange={handleChange}
-              //className="inputFormMascotas"
+              //className={`inputFormMascotas ${modo}`}
             />
             {errors.imagen && <p>{errors.imagen}</p>}
           </div>
@@ -275,6 +278,6 @@ export default function Form() {
           </div>
         </form>
       </div>
-    </div>
+      </div>
   );
 }

@@ -130,16 +130,16 @@ useEffect(() => {
        
         </div>
 
-          <div className="boton-registrate">        
-          <button>
-          <Link to='/registrate' role="button">Registrate ahora!</Link>
-          </button>
-          
-          <div className="olvideContra">
+        <div className={`olvideContra ${modo}`}>
           <Link to="/solicitarContraseña">
           <a>Olvide mi contraseña</a>
         </Link>
 </div>
+
+          <div className="boton-registrate">        
+          <button>
+          <Link to='/registrate' role="button">Registrate ahora!</Link>
+          </button>
 
   <div className="botondeGoogleSesion">
 
