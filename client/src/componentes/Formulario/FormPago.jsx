@@ -60,6 +60,7 @@ const PagoForm = () => {
       dispatch(realizarPago(id, amount));
       dispatch(crearOrden(userID, productos, montoTotal));
       dispatch(clearMonto());
+      localStorage.removeItem("cart");
       alert("su pago se a realizado con exito");
       history.push("/");
     }
