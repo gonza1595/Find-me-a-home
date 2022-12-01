@@ -207,7 +207,7 @@ return (
                 Registrarse{" "}
               </button>
 
-            <div>
+            <div className="botoncitoGoogle">
             <GoogleLogin
  
             clientId={clientID}

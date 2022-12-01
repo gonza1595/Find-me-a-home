@@ -120,10 +120,11 @@ export default function Form() {
   return (
     <div>
       <div className="createFormMascota">
-        <h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
+       
 
         <form onSubmit={(e) => handleSubmit(e)} encType="multipart/form-data">
-          <div className="containerFormMascotas">
+        <h1 className="tituloFormMascota">Postear Mascota</h1>
+          <div >
             <label> Nombre: </label>
             <input
               type="text"
@@ -137,7 +138,7 @@ export default function Form() {
           </div>
           <div className="containerFormMascotas">
             <label>Descripcion: </label>
-            <input
+            <textarea
               type="text"
               autoComplete="off"
               value={input.descripcion}
@@ -253,7 +254,7 @@ export default function Form() {
             </label>
             {errors.tamaño && <p>{errors.tamaño}</p>}
           </div>
-          <div className="containerFormMascotas">
+          <div >
             <label>Imagen: </label>
             <input
               type="file"

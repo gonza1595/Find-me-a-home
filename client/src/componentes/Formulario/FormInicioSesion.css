@@ -38,10 +38,10 @@
 .boton-registrate{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
-    margin-top: 20px;
+   
+    margin-bottom: 30px;
    
 }
 
@@ -70,7 +70,7 @@
     font-family: cursive;
     border-radius: 15px  ;
     padding: 20px;
-    width: 30%;
+    width: 35%;
     height: 80%;
   }
 
@@ -91,4 +91,21 @@
 
 .titulo-sesion.dark{
     color: #c5f5f2;
+}
+
+
+.botondeGoogleSesion{
+    margin-left: 120px;
+   
+}
+
+.olvideContra a{
+    color: 
+    #027a74;
+    
+   
+}
+.olvideContra{
+    margin-right: -170px ;
+    
 }
