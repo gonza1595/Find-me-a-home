@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { solicitarContraseña } from "../../redux/actions";
-
+import "./FormSolicitarContraseña.css"
 
 
 export default function FormSolicitudContraseña () {
@@ -23,9 +23,13 @@ export default function FormSolicitudContraseña () {
     };
 
     return (
+      <div className="solicitudContra">
         <form onSubmit={handleSubmit}>
+          <h3>¿Olvidaste tu contraseña? 
+            Escribi tu mail y te enviaremos una nueva</h3>
             <input type="text" onChange={handleChange}></input>
             <button>Solicitar Contraseña</button>
         </form>
+        </div>
     )
 }

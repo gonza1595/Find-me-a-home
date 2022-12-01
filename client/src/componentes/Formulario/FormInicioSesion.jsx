@@ -9,6 +9,7 @@ import { gapi } from "gapi-script";
 import Google from "../Google";
 
 
+
 export default function FormInicioSesion() {
 
   const [correo, setUsername] = useState("");
@@ -126,16 +127,21 @@ useEffect(() => {
           </div>
         <div className="boton-Sesion">
         <button>Iniciar Sesion</button>
+       
         </div>
+
           <div className="boton-registrate">        
+          <button>
+          <Link to='/registrate' role="button">Registrate ahora!</Link>
+          </button>
           
-  </div>  
-  </div>
+          <div className="olvideContra">
+          <Link to="/solicitarContraseña">
+          <a>Olvide mi contraseña</a>
+        </Link>
+</div>
 
-  {/* <Google/> */}
-
-
-  <div>
+  <div className="botondeGoogleSesion">
 
 <GoogleLogin
  
@@ -144,19 +150,23 @@ useEffect(() => {
   onFailure={onFailure}
   buttonText="Ingresar con Google"
   cookiePolicy={"single_host_origin"}
+ 
 />
 
 </div>
 
+
+  </div>  
+  
+  </div>
+
 <div>
 
-<h3>{user.name}</h3>
 
 </div>
-{/* <button className="inicioGoogle">Iniciar con Google</button> */}
-<button>
-          <Link to='/registrate' role="button">Registrate ahora!</Link>
-          </button>
+
+
+
         </form>
         </div>
   );

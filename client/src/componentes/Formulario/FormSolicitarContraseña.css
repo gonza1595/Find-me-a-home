@@ -1,0 +1,43 @@
+.solicitudContra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #c5f5f2;
+    height: 250px;
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-radius: 30px;
+    
+
+}
+
+
+.solicitudContra input{
+    height: 35px;
+    width: 70%;
+    background-color: rgb(141, 219, 226);
+    border-radius: 15px;
+}
+
+.solicitudContra button{
+margin-top: 30px;
+font-size: 15px;
+}
+
+.solicitudContra h3{
+text-align: center;
+width: 70%;
+margin-bottom: 30px;
+
+font-size: 20px;
+color: #043a37;
+font-family: cursive;
+font-weight: bold;
+}
+.solicitudContra form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

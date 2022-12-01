@@ -1,41 +1,76 @@
 
 .createFormMascota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    height: 49rem;
     padding: 5rem;
     background-position: center;
     background-size: cover;
     
-}
-
-.tituloFormMascota {
-    color: rgba(242, 128, 128, 0.8);
-	 display: inline-block;
-	 font-size: 24px;
-  
-}
-
-.containerFormMascota{
-    background: #f9c7c2;
-    display: grid;
-    grid-template-areas: "." ".";
-   width: 40rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    margin: 17px;
-
-    top: 50%;
-    left: 50%;
-    transform: translate(67%, 50%);
-  
     
 }
+
+.createFormMascota form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #c5f5f2;
+    width: 50%;
+    height: 130%;
+    margin-top: 5%;
+    border-radius: 40px;
+}
+
+.createFormMascota label{
+    color: #027a74;
+    font-family: cursive;
+ font-size: 20px;
+}
+
+
+.tituloFormMascota {
+   
+	 display: inline-block;
+     align-items: center;
+    font-size: 35px;
+    color: #043a37;
+    font-family: cursive;
+    font-weight: bold;
+  
+}
+
+
+
+.createFormMascota input{
+    background-color: rgb(141, 219, 226);
+    height: 40px;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+
+
+
+.createFormMascota textarea{
+    background-color: rgb(141, 219, 226);
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.createFormMascota button{
+    font-size: 17px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
 
 .inputFormMascotas {
     
     padding: 5px 50px 5px 10px;
-    font-size: 0.8rem;
+    font-size: 1.8rem;
    
     background-color: #BCE0ED;
     display: grid;
