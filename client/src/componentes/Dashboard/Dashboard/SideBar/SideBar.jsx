@@ -47,7 +47,7 @@ export default function SideBar() {
 
         <div className="user-profile">
           <img src={admin} alt="admin-picture" width="80px" />
-          <h3>Admin name</h3>
+          <h3>Admin</h3>
         </div>
 
         <ul className="side-nav">

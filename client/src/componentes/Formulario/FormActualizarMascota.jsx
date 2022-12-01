@@ -7,10 +7,12 @@ import {
   adminActualizarMascota,
 } from "../../redux/actions/index";
 import { Link } from "react-router-dom";
+import Dark from "../NavBar/Dark";
 
 export default function EditarMascota(props) {
   const mascotaId = useSelector((state) => state.detalle);
   const history = useHistory();
+  const modo = localStorage.getItem('modo');
 
   const [mascota, setMascota] = useState(mascotaId);
 
@@ -41,7 +43,10 @@ export default function EditarMascota(props) {
   };
 
   return (
-    <div className="createFormMascota">
+    <div className={`createFormMascota ${modo}`}>
+      			<div className="darkMode">
+          <Dark />
+        </div>
       <h1 className="tituloUsuario">Editar Mascota</h1>
       <form>
         <div>

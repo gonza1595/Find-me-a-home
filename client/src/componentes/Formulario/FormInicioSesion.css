@@ -102,10 +102,20 @@
 .olvideContra a{
     color: 
     #027a74;
-    
-   
+    font-size: 13px;
 }
+
+
 .olvideContra{
-    margin-right: -170px ;
+    margin-left: 150px ;
+}
+
+.olvideContra:hover{
+    text-decoration: underline;
+}
+
+.olvideContra.dark a{
+    color: rgb(214, 189, 120);
     
 }
+

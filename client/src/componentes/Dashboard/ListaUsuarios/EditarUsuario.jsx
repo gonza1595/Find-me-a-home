@@ -6,6 +6,7 @@ import {
   traerUsuariosPorId,
 } from "../../../redux/actions/index";
 import "./EditarUsuario.css";
+import Dark from "../../NavBar/Dark";
 
 export default function EditarUsuario(props) {
   const usuarioId = useSelector((state) => state.usuarioId);
@@ -13,6 +14,7 @@ export default function EditarUsuario(props) {
   const [user, setUser] = useState(usuarioId);
   const userId = props.match.params.id;
   const dispatch = useDispatch();
+  const modo = localStorage.getItem('modo');
 
   useEffect(() => {
     dispatch(traerUsuariosPorId(userId));
@@ -38,7 +40,10 @@ export default function EditarUsuario(props) {
 
   return (
     <div>
-      <div className="createFormMascota">
+      <div className={`createFormMascota ${modo}`}>
+      	<div className="darkMode">
+          <Dark />
+        </div>
         <h1 className="tituloUsuario">Editar Usuario</h1>
         <form>
           <div>

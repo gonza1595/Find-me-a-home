@@ -36,7 +36,7 @@ const TablaUsuarios = () => {
       <div className={`filters ${modo}`}>
       <FiltroUsuarios setPage={setPage} setFilterSelected={setFilterSelected} />
       </div>
-      <table className="tabla-usuarios">
+      <table className={`tabla-productos ${modo}`}>
         <thead className="theadMasctotas">
           <tr className="nombres-columnasUsuario">
             <th scope="col">Nombre</th>

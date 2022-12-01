@@ -51,7 +51,12 @@ function FormActualizarProducto() {
 	}
 
 	return (
-		<div>
+		<div className={`cont ${modo}`}>
+		<div className={`createFormMascota ${modo}`}>			
+		<div className="darkMode">
+          <Dark />
+        </div>
+		<h1 className="tituloFormMascota">POSTEAR MASCOTA</h1>
 			<form onSubmit={(e) => handleSubmit(e)}>
 				<div className='containerFormMascotas'>
 					<label> Nombre: </label>
@@ -157,6 +162,7 @@ function FormActualizarProducto() {
 					<button type='submit'> Actualizar </button>
 				</div>
 			</form>
+		</div>
 		</div>
 	);
 }
