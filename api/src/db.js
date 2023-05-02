@@ -12,10 +12,10 @@ const sequelize = new Sequelize(
   }
 );
 
-//  const sequelize = new Sequelize(DB_DEPLOY, {
-//  	logging: false,
-//  	native: false,
-//  });
+// const sequelize = new Sequelize(DB_DEPLOY, {
+//   logging: false,
+//   native: false,
+// });
 
 const basename = path.basename(__filename);
 
