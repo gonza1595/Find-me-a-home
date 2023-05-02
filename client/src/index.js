@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 // import AppAdmin from "./AppAdmin";
 import axios from "axios";
 
-axios.defaults.baseURL = "find-me-a-home-n10a1nrb2-gonza1595.vercel.app";
+axios.defaults.baseURL = "find-me-a-home-zzfu.vercel.app";
 // axios.defaults.baseURL = "http://localhost:3001";
 
 ReactDOM.render(
