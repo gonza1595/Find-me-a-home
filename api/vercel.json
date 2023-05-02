@@ -1,0 +1,38 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "client/build",
+          "buildCommand": "npm run build",
+          "devCommand": "npm run start"
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "client/build/$1"
+      }
+    ],
+    "env": {
+        "LLAVE": "1",
+        "MAILING_EMAIL":"findmeahome2022@gmail.com",
+        "MAILING_PASSWORD":"hbtttqlykibdasja",
+        "DB_USER":"postgres",
+        "DB_PASSWORD":"brancoyluna15",
+        "DATABASE_URL":"localhost"
+        
+    }
+  }
+  
