@@ -33,8 +33,10 @@ import FormCambioContraseña from "./componentes/Formulario/FormCambiarContrase�
 import Ventas from "./componentes/Dashboard/Ventas/Ventas.jsx";
 import DonacionForm from "./componentes/Formulario/FormDonaciones.jsx";
 import Donaciones from "./componentes/Dashboard/Donaciones/Donaciones.jsx";
-import google from './componentes/Google.jsx';
+import google from "./componentes/Google.jsx";
+import axios from "axios";
 
+axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
   return (
@@ -68,9 +70,8 @@ function App() {
           component={FormSolicitudContraseña}
         />
 
-
         <Route exact path="/dashboard/formMascota" component={FormMascota} />
-        
+
         <Route path="/registrate" component={NavBar} />
         <Route exact path="/registrate" component={FormUsuario} />
 
@@ -124,18 +125,15 @@ function App() {
           component={EditarUsuario}
         />
 
-
         <Route
           exact
           path="/dashboard/formActualizarProducto/:id"
           component={FormActualizarProducto}
         />
         <Route exact path="/dashboard/formProducto" component={FormProducto} />
-        
       </div>
     </>
   );
-
 }
 
 export default App;

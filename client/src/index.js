@@ -5,10 +5,6 @@ import { Provider } from "react-redux";
 import store from "./redux/store/index";
 import { BrowserRouter } from "react-router-dom";
 // import AppAdmin from "./AppAdmin";
-import axios from "axios";
-
-axios.defaults.baseURL = "find-me-a-home-zzfu.vercel.app";
-// axios.defaults.baseURL = "http://localhost:3001";
 
 ReactDOM.render(
   <BrowserRouter>
