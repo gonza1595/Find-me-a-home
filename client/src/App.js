@@ -36,7 +36,7 @@ import Donaciones from "./componentes/Dashboard/Donaciones/Donaciones.jsx";
 import google from "./componentes/Google.jsx";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://find-me-a-home-production.up.railway.app";
 
 function App() {
   return (
